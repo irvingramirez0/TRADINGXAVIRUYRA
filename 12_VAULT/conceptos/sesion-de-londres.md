@@ -66,18 +66,18 @@ Documento 07. Vacío de investigación.
 
 ## Fragmentos visuales
 
-![Sesión de Londres en 8gs6HOHXMsc](../media/sesion-de-londres-730.webp)
+![Sesión de Londres en ATh5cTpfgno](../media/sesion-de-londres-747.webp)
 
-**Así he ganado +1000$ operando London Session (no podia dejar pasar este trade)** (`8gs6HOHXMsc`) · **03:00** · **Confianza:** explícito · anotado
-> NQ 4H y ES 4H. FVG de 4H tapeado en NQ; highs/ATH y referencia de SMT.
+**Así gané 800$ en 15 minutos operando el SP500 (trade recap)** (`ATh5cTpfgno`) · **00:15** · **Confianza:** explícito · anotado
+> SP500 5m. Position tool con entrada, stop y target; London highs.
 
-![Sesión de Londres en 8gs6HOHXMsc](../media/sesion-de-londres-729.webp)
+![Sesión de Londres en 579RkuLzgPQ](../media/sesion-de-londres-734.webp)
 
-**Así he ganado +1000$ operando London Session (no podia dejar pasar este trade)** (`8gs6HOHXMsc`) · **03:40** · **Confianza:** explícito · anotado
-> NQ 5m y ES 5m. Zona gris de FVG, línea 'break-even' y highs marcados en ES. Contexto del long de Londres.
+**Así he perdido 450$ en dos días operando el SP500 (trade recap)** (`579RkuLzgPQ`) · **00:18** · **Confianza:** explícito · anotado
+> MESZ25 5m. 'London highs', 'Asian highs' y zona FVG; panel 'Locked out'.
 
-![Sesión de Londres en 8gs6HOHXMsc](../media/sesion-de-londres-731.webp)
+![Sesión de Londres en p6wC7iWh_Ps](../media/sesion-de-londres-707.webp)
 
-**Así he ganado +1000$ operando London Session (no podia dejar pasar este trade)** (`8gs6HOHXMsc`) · **04:10** · **Confianza:** explícito · anotado
-> Herramienta de posición en NQ 5m: entrada, stop, objetivo y ratio riesgo/beneficio 1,29; zona de FVG.
+**TRADE RECAP NQ 28/07/25 (-1.019$) - TOPSTEP** (`p6wC7iWh_Ps`) · **00:32** · **Confianza:** explícito · anotado
+> NQ1! en 5 minutos. Caja azul vertical sobre la sesión de Londres. Etiquetas 'Asian highs' y 'London highs' en la parte superior y 'London lows' en la inferior. Banda horizontal azul claro y rectángulo gris (zona/FVG) baj…
 

@@ -71,11 +71,6 @@ Documento 03.
 
 ## Fragmentos visuales
 
-![Equal Highs / Equal Lows en kJoC4Ee4Uo4](../media/equal-highs-equal-lows-748.webp)
-
-**TRADE RECAP 19/08/25 SP500 (+0$ - BE)** (`kJoC4Ee4Uo4`) · **01:03** · **Confianza:** explícito · anotado
-> SP500 5m. Equilibrium/FVG y BE.
-
 ![Equal Highs / Equal Lows en 8pAesspC0O8](../media/equal-highs-equal-lows-749.webp)
 
 **TRADE RECAP 21/08/25 SP500 (+0$ - BE) NO PUEDO GANAR** (`8pAesspC0O8`) · **01:27** · **Confianza:** explícito · anotado
@@ -85,4 +80,9 @@ Documento 03.
 
 **Trade Recap +15.000$ operando NQ (true manipulation + po3 explicado)** (`OdljBowQurk`) · **01:36** · **Confianza:** explícito · anotado
 > Pantalla dividida: NQ a la izquierda y ES a la derecha, ambos en diario. En ES se marca 'equal highs' y una caja azul de posición.
+
+![Equal Highs / Equal Lows en Imr4TPKUD-c](../media/equal-highs-equal-lows-481.webp)
+
+**Como REACCIONAR al mercado ADAPTANDO TU BIAS (masterclass)** (`Imr4TPKUD-c`) · **02:37** · **Confianza:** explícito · anotado
+> Pantalla dividida NQ/ES en 4H. En NQ se ve una caja azul de FVG y el indicador Equal Highs and Lows; en ES, otra caja azul y el mismo indicador. El precio está reaccionando a la zona.
 

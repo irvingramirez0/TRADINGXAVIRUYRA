@@ -69,18 +69,18 @@ Bootcamp Día 4. La definición de high/low se usa también para estructura.
 
 ## Fragmentos visuales
 
+![Swing High / Swing Low en 7HOAf7vHMqU](../media/swing-high-swing-low-2.webp)
+
+**Bootcamp Día 6: Liquidez pt1** (`7HOAf7vHMqU`) · **01:08** · **Confianza:** explícito · anotado
+> Diapositiva 'LIQUIDEZ PT.1' superpuesta a un gráfico MNQ 15m. Texto: 'todo está lleno de liquidez, en cada alto y bajo hay liquidez, pero no toda la liquidez tiene la misma importancia'. Anotaciones 'swing high' y 'swing…
+
 ![Swing High / Swing Low en 7HOAf7vHMqU](../media/swing-high-swing-low-6.webp)
 
 **Bootcamp Día 6: Liquidez pt1** (`7HOAf7vHMqU`) · **02:43** · **Confianza:** explícito · anotado
 > Gráfico MNQ 15m con un rango amplio. Línea horizontal y etiqueta 'LIQUIDEZ = DINERO' sobre el swing high; otra sobre el swing low. Texto 'TF ALTO O TF BAJO'.
 
-![Swing High / Swing Low en SuRgJd8ONIc](../media/swing-high-swing-low-129.webp)
+![Swing High / Swing Low en AacVWPPYK8Y](../media/swing-high-swing-low-196.webp)
 
-**Bootcamp Día 4: Velas** (`SuRgJd8ONIc`) · **15:43** · **Confianza:** explícito · anotado
-> Diapositiva 'ALTO VS BAJO / HIGH VS LOW' con un dibujo de dos velas y la palabra 'ALTO' sobre el máximo.
-
-![Swing High / Swing Low en TxoOh3MFdO0](../media/swing-high-swing-low-727.webp)
-
-**BIAS 03/11/25** (`TxoOh3MFdO0`) · **00:30** · **Confianza:** explícito · anotado
-> Gráfico MNQZ25 1H. Líneas 'high' y 'DOL' sobre dos highs; zona verde 'FVG' por debajo del precio.
+**COMO uso EQUILIBRIUM para TODAS mis ENTRIES** (`AacVWPPYK8Y`) · **03:22** · **Confianza:** explícito · anotado
+> Esquema dibujado a mano de una tendencia alcista: swing low, swing high y una línea horizontal entre ambos (equilibrium). Etiquetas de premium y descuento.
 

@@ -120,8 +120,12 @@ def ffmpeg_path():
 
 def jpg_a_webp(src, dst):
     ff = ffmpeg_path()
+    # Lanczos en vez del escalado bicúbico por defecto: al reducir 1806 -> 1200
+    # conserva mucho mejor el borde de las velas y del texto. Calidad 90 en
+    # lugar de 82: el texto pequeño del gráfico se emborronaba.
     cmd = [ff, "-hide_banner", "-loglevel", "error", "-i", src,
-           "-vf", "scale='min(1200,iw)':-2", "-c:v", "libwebp", "-quality", "82", "-y", dst]
+           "-vf", "scale='min(1200,iw)':-2:flags=lanczos",
+           "-c:v", "libwebp", "-quality", "90", "-compression_level", "6", "-y", dst]
     subprocess.run(cmd, capture_output=True, text=True, timeout=120)
     return os.path.exists(dst)
 
@@ -262,40 +266,103 @@ def es_pantalla(path, max_croma=0.13):
         return True
 
 
+NEGACIONES = (
+    "no hay", "no se ve", "no verifica", "no muestra", "no identifica",
+    "no aparece", "no aporta", "no se distingue", "no consta", "sin rótulo",
+    "no hay rótulo", "no se aprecia", "no permite ver", "no se observa",
+)
+
+
+def _oraciones(text):
+    return [s for s in re.split(r"(?<=[.:;])\s+|\n+", text or "") if s.strip()]
+
+
+def niega_concepto(desc, alts):
+    """True si la anotación dice, del propio concepto, que no se ve.
+
+    Solo cuenta la negación cuando el concepto y la negación están en la misma
+    oración: así «no hay stop» en una frase sobre el stop no descarta una
+    imagen que sí ilustra otra cosa.
+    """
+    for oracion in _oraciones(desc):
+        o = oracion.lower()
+        if not any(alt_en_texto(a, o) for a in alts if len(a) > 2):
+            continue
+        if any(n in o for n in NEGACIONES):
+            return True
+    return False
+
+
+def justifica_concepto(texto, alts):
+    """True si el texto nombra el concepto con límites de palabra."""
+    return any(alt_en_texto(a, texto) for a in alts if len(a) > 2)
+
+
 def candidate_frames(con, concepto):
+    """Fotogramas para un concepto, solo si la anotación los respalda.
+
+    Antes bastaba con que existiera una fila de `evidence` con `frame_id` para
+    colocar la imagen, sin leer la anotación. Eso metió en la nota de IFVG una
+    captura cuyo comentario dice literalmente «no hay un rótulo legible que
+    identifique el primer IFVG». Ahora manda la anotación:
+
+    - rango 0: la anotación nombra el concepto (lo muestra);
+    - rango 1: la anotación no lo nombra pero no lo niega (contexto);
+    - rango 2: fotograma pendiente de anotación etiquetado con el concepto.
+
+    Se descarta cualquier fotograma cuya anotación niegue el concepto.
+    """
     cid = concepto["id"]
-    name = concepto["name"]
     alts = concepto["alts"]
+    # Alias que identifican el concepto sin ambigüedad; si no hay, se usan
+    # todos (peor evidencia, pero al menos queda etiquetada como contexto).
+    propias = concepto.get("alts_propias") or alts
     picked = []
     seen = set()
 
     def add(row, rank, why):
-        if row["id"] in seen:
+        if row["id"] in seen or rank is None:
             return
         seen.add(row["id"])
         picked.append((rank, row, why))
 
-    # 1) Evidencia con frame_id explícito: los anotados mandan.
+    # 1) Evidencia con frame_id explícito.
     for ev in con.execute(
         "SELECT * FROM evidence WHERE entity_type='concept' AND entity_id=? AND frame_id IS NOT NULL",
         (cid,),
     ):
         fr = con.execute("SELECT * FROM frames WHERE id=?", (ev["frame_id"],)).fetchone()
-        if fr:
-            add(fr, 0 if frame_is_annotated(fr) else 2, "evidencia enlazada")
+        if not fr:
+            continue
+        # Un fotograma sin anotar no se puede verificar: no se publica como
+        # ilustración del concepto, tenga o no fila de evidencia.
+        if not frame_is_annotated(fr):
+            continue
+        desc = fr["description"] or ""
+        if niega_concepto(desc, alts):
+            continue
+        muestra = justifica_concepto(desc, propias)
+        add(fr, 0 if muestra else 1,
+            "la anotación describe el concepto" if muestra else "la anotación no nombra el concepto")
 
-    # 2) Fotogramas anotados que mencionan el concepto.
+    # 2) Fotogramas anotados que nombran el concepto en su descripción.
+    #
+    # Se mira **solo `description`**, que es lo que el anotador vio en pantalla.
+    # `analysis` es la transcripción: dice lo que se hablaba, no lo que se veía.
     for fr in con.execute("SELECT * FROM frames"):
         if not frame_is_annotated(fr):
             continue
-        text = ((fr["description"] or "") + " " + (fr["analysis"] or "")).lower()
-        if any(a in text for a in alts):
-            add(fr, 1, "anotación menciona el concepto")
+        desc = fr["description"] or ""
+        if justifica_concepto(desc, propias) and not niega_concepto(desc, alts):
+            add(fr, 0, "la anotación describe el concepto")
 
-    # 3) Fotogramas nuevos pendientes etiquetados con el concepto.
-    for fr in con.execute("SELECT * FROM frames WHERE description LIKE ?",
-                          (f"pendiente de anotación%concepto:%{name}%",)):
-        add(fr, 3, "fotograma pendiente de anotación")
+    # 3) Fotogramas pendientes de anotación: NO se usan como ilustración.
+    #
+    # Su etiqueta `concepto:` la puso el extractor automático con el primer
+    # concepto que sonaba en una ventana de 5 s de la transcripción. Eso dice
+    # lo que se hablaba, no lo que se ve en pantalla: es la vía por la que la
+    # nota de IFVG acabó mostrando una captura de Judas Swing. Sin anotación no
+    # hay forma de verificar la imagen, y el proyecto no inventa.
 
     picked.sort(key=lambda x: (x[0], x[1]["timestamp_sec"]))
     return picked[:3]
@@ -330,6 +397,10 @@ def build_media(con, concepto, slug_concepto, dry=False):
         video = con.execute("SELECT title FROM videos WHERE id=?", (fr["video_id"],)).fetchone()
         vtitle = video["title"] if video else fr["video_id"]
         estado = "anotado" if frame_is_annotated(fr) else "pendiente de anotación"
+        # Una imagen cuyo comentario no nombra el concepto no es prueba de
+        # nada: se publica, pero se dice que es contexto.
+        if rank == 1:
+            estado += " · imagen de contexto, no muestra el concepto"
         caption = (f"**{vtitle}** (`{fr['video_id']}`) · **{mmss(fr['timestamp_sec'])}** · "
                    f"**Confianza:** {confianza(concepto['certainty'])} · {estado}")
         if frame_is_annotated(fr):
@@ -353,6 +424,19 @@ def conceptos_data(con):
     for r in con.execute("SELECT * FROM concepts ORDER BY id"):
         alts = [r["name"]] + [a.strip() for a in (r["aliases"] or "").split(",") if a.strip()]
         out.append(dict(r, alts=[a.lower() for a in alts]))
+
+    # Un alias compartido no identifica nada: «fvg» vale para FVG, pero no
+    # demuestra que una imagen sea de IFVG. Solo los alias que pertenecen a un
+    # único concepto sirven como prueba visual.
+    from collections import Counter
+    cuenta = Counter()
+    for c in out:
+        for a in set(c["alts"]):
+            if len(a) > 2 and a not in ALIAS_GENERICOS:
+                cuenta[a] += 1
+    for c in out:
+        c["alts_propias"] = [a for a in c["alts"]
+                             if len(a) > 2 and a not in ALIAS_GENERICOS and cuenta[a] == 1]
     return out
 
 

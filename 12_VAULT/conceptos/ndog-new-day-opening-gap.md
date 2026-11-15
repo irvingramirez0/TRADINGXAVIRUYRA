@@ -67,11 +67,6 @@ Documento 03.
 
 ## Fragmentos visuales
 
-![NDOG (New Day Opening Gap) en YB4bOf9F3sk](../media/ndog-new-day-opening-gap-719.webp)
-
-**TRADE RECAP SP500 31/07/25 (''-800$'' TUVE SUERTE TENIENDO MALA SUERTE) TOPSTEP** (`YB4bOf9F3sk`) · **04:02** · **Confianza:** explícito · anotado
-> ES1! 5m. Mismas etiquetas de sesión; el precio ha caído hasta la zona roja del NWOG/Asian lows. Línea 0.5. Precio corriente 6.412,25. Panel: cantidad 10, 'Locked out: Daily Trade 8h 47m 51s'.
-
 ![NDOG (New Day Opening Gap) en 1C4dgloDQrY](../media/ndog-new-day-opening-gap-699.webp)
 
 **La SIMPLE ESTRATEGIA con la que he podido RETIRAR +25k$ en PAYOUTS** (`1C4dgloDQrY`) · **45:18** · **Confianza:** explícito · anotado

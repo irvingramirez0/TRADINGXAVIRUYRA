@@ -64,9 +64,3 @@ EXCLUIDO de la enseñanza. Documento 07.
 
 - «Paráfrasis: los rejection blocks los estaba probando; no los operaría en fondeo.» — `5aBdJLMDGJc` @ 19:16 (explícito)
 
-## Fragmentos visuales
-
-![Rejection Block en 5aBdJLMDGJc](../media/rejection-block-601.webp)
-
-**Aumenta tu WR entendiendo CUANDO y CUANDO NO ir BREAK-EVEN (sesión de backtesting 86% wr)** (`5aBdJLMDGJc`) · **19:17** · **Confianza:** explícito · pendiente de anotación
-

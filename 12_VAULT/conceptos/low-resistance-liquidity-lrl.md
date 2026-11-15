@@ -72,11 +72,6 @@ Definición explícita en PzkT4SC47Jo (2026-08-30, 12:28–12:58). Antes solo es
 
 ## Fragmentos visuales
 
-![Low Resistance Liquidity (LRL) en 8gs6HOHXMsc](../media/low-resistance-liquidity-lrl-729.webp)
-
-**Así he ganado +1000$ operando London Session (no podia dejar pasar este trade)** (`8gs6HOHXMsc`) · **03:40** · **Confianza:** explícito · anotado
-> NQ 5m y ES 5m. Zona gris de FVG, línea 'break-even' y highs marcados en ES. Contexto del long de Londres.
-
 ![Low Resistance Liquidity (LRL) en PzkT4SC47Jo](../media/low-resistance-liquidity-lrl-671.webp)
 
 **APLICANDO la MEJOR ESTRATEGIA de ICT (actualizada 2026)** (`PzkT4SC47Jo`) · **12:28** · **Confianza:** explícito · anotado
@@ -86,4 +81,9 @@ Definición explícita en PzkT4SC47Jo (2026-08-30, 12:28–12:58). Antes solo es
 
 **APLICANDO la MEJOR ESTRATEGIA de ICT (actualizada 2026)** (`PzkT4SC47Jo`) · **12:58** · **Confianza:** explícito · anotado
 > NQ y ES en 5 minutos, miércoles 6 de marzo de 2024, 07:05 en el replay. Se ven los máximos previos y el recorrido desde los mínimos que Xavi identifica como LRL.
+
+![Low Resistance Liquidity (LRL) en 1C4dgloDQrY](../media/low-resistance-liquidity-lrl-691.webp)
+
+**La SIMPLE ESTRATEGIA con la que he podido RETIRAR +25k$ en PAYOUTS** (`1C4dgloDQrY`) · **34:27** · **Confianza:** explícito · anotado
+> Esquema del tercer modelo: una caja gris grande (FVG), un recorrido que barre un mínimo marcado como 'low resistance liquidity' y sube hasta un objetivo. El título no es visible en este fotograma.
 

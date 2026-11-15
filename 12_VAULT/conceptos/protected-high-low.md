@@ -64,9 +64,3 @@ Documento 07. Término usado en ejemplos, no definido como concepto.
 
 - «Paráfrasis: el high/low protegido marca el punto donde la idea deja de ser válida.» — `5aBdJLMDGJc` @ 06:22 (observado)
 
-## Fragmentos visuales
-
-![Protected High / Low en 5aBdJLMDGJc](../media/protected-high-low-563.webp)
-
-**Aumenta tu WR entendiendo CUANDO y CUANDO NO ir BREAK-EVEN (sesión de backtesting 86% wr)** (`5aBdJLMDGJc`) · **06:22** · **Confianza:** observado · pendiente de anotación
-

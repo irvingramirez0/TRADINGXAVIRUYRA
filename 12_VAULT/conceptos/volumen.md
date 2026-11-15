@@ -60,10 +60,3 @@ Bootcamp Día 2.
 
 - «Paráfrasis: quitar el volumen de TradingView.» — `3aG0N7aHu4s` @  (explícito)
 
-## Fragmentos visuales
-
-![Volumen en 3aG0N7aHu4s](../media/volumen-65.webp)
-
-**Bootcamp Día 2: Preparación (configuras TradingView)** (`3aG0N7aHu4s`) · **04:44** · **Confianza:** explícito · anotado
-> Gráfico NQ 4H con velas gris claro y negro, mechas y bordes negros, fondo CAC8C8. Sin volumen ni indicadores.
-

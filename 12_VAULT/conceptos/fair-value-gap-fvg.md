@@ -77,11 +77,6 @@ Documento 02.
 
 ## Fragmentos visuales
 
-![Fair Value Gap (FVG) en ATh5cTpfgno](../media/fair-value-gap-fvg-747.webp)
-
-**Así gané 800$ en 15 minutos operando el SP500 (trade recap)** (`ATh5cTpfgno`) · **00:15** · **Confianza:** explícito · anotado
-> SP500 5m. Position tool con entrada, stop y target; London highs.
-
 ![Fair Value Gap (FVG) en 579RkuLzgPQ](../media/fair-value-gap-fvg-734.webp)
 
 **Así he perdido 450$ en dos días operando el SP500 (trade recap)** (`579RkuLzgPQ`) · **00:18** · **Confianza:** explícito · anotado
@@ -91,4 +86,9 @@ Documento 02.
 
 **BIAS 03/11/25** (`TxoOh3MFdO0`) · **00:30** · **Confianza:** explícito · anotado
 > Gráfico MNQZ25 1H. Líneas 'high' y 'DOL' sobre dos highs; zona verde 'FVG' por debajo del precio.
+
+![Fair Value Gap (FVG) en p6wC7iWh_Ps](../media/fair-value-gap-fvg-707.webp)
+
+**TRADE RECAP NQ 28/07/25 (-1.019$) - TOPSTEP** (`p6wC7iWh_Ps`) · **00:32** · **Confianza:** explícito · anotado
+> NQ1! en 5 minutos. Caja azul vertical sobre la sesión de Londres. Etiquetas 'Asian highs' y 'London highs' en la parte superior y 'London lows' en la inferior. Banda horizontal azul claro y rectángulo gris (zona/FVG) baj…
 

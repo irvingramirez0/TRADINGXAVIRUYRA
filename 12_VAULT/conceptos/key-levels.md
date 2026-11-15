@@ -74,18 +74,3 @@ Bootcamp Día 15. Definición 00:03–01:05; FVG válidos 02:09; liquidez dentro
 - «Estos FVGs de una hora y de 4 horas yo necesito que tengan algún tipo de liquidez... necesito altos y bajos que estén dentro de FVGs.» — `J7Dh-aj9-e0` @ 04:46 (explícito)
 - «Ejemplos de key levels: new day opening gap, new week opening gap y altos y bajos de una hora y 4 horas.» — `J7Dh-aj9-e0` @ 05:49 (explícito)
 
-## Fragmentos visuales
-
-![Key Levels en 1C4dgloDQrY](../media/key-levels-687.webp)
-
-**La SIMPLE ESTRATEGIA con la que he podido RETIRAR +25k$ en PAYOUTS** (`1C4dgloDQrY`) · **24:08** · **Confianza:** explícito · anotado
-> Esquema '2 sistema de entrada' con varias cajas grises (FVGs) y etiquetas de stop y target; el precio dibujado recorre las zonas. Se ven cifras de stop y objetivo, pero no son legibles con precisión.
-
-![Key Levels en J7Dh-aj9-e0](../media/key-levels-787.webp)
-
-**Bootcamp Día 15: Key Levels** (`J7Dh-aj9-e0`) · **00:36** · **Confianza:** explícito · pendiente de anotación
-
-![Key Levels en J7Dh-aj9-e0](../media/key-levels-789.webp)
-
-**Bootcamp Día 15: Key Levels** (`J7Dh-aj9-e0`) · **12:05** · **Confianza:** explícito · pendiente de anotación
-

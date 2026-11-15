@@ -68,11 +68,6 @@ Documento 02.
 
 ## Fragmentos visuales
 
-![NWOG (New Week Opening Gap) en 8gs6HOHXMsc](../media/nwog-new-week-opening-gap-732.webp)
-
-**Así he ganado +1000$ operando London Session (no podia dejar pasar este trade)** (`8gs6HOHXMsc`) · **05:20** · **Confianza:** explícito · anotado
-> NQ 4H y ES 4H después del trade. NQ tapeó el FVG de 4H; ES no. SMT y ATH.
-
 ![NWOG (New Week Opening Gap) en YB4bOf9F3sk](../media/nwog-new-week-opening-gap-715.webp)
 
 **TRADE RECAP SP500 31/07/25 (''-800$'' TUVE SUERTE TENIENDO MALA SUERTE) TOPSTEP** (`YB4bOf9F3sk`) · **01:06** · **Confianza:** explícito · anotado
@@ -82,4 +77,9 @@ Documento 02.
 
 **Trade Recap 09/03/2026** (`8tXtRvwCNeg`) · **01:39** · **Confianza:** explícito · anotado
 > NQ 5m. NWOG/sweep y entrada; 1:1.
+
+![NWOG (New Week Opening Gap) en YB4bOf9F3sk](../media/nwog-new-week-opening-gap-719.webp)
+
+**TRADE RECAP SP500 31/07/25 (''-800$'' TUVE SUERTE TENIENDO MALA SUERTE) TOPSTEP** (`YB4bOf9F3sk`) · **04:02** · **Confianza:** explícito · anotado
+> ES1! 5m. Mismas etiquetas de sesión; el precio ha caído hasta la zona roja del NWOG/Asian lows. Línea 0.5. Precio corriente 6.412,25. Panel: cantidad 10, 'Locked out: Daily Trade 8h 47m 51s'.
 

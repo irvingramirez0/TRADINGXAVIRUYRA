@@ -67,10 +67,3 @@ Bootcamp Día 14. Dos escenarios (pierde y dobla; gana y se valida el hábito) e
 - «No hay ningún truco... soy yo el que tengo que parar.» — `eH7QCo2d0TU` @ 06:13 (explícito)
 - «Las emociones no se van nunca, siempre van a estar ahí. La diferencia es cómo tú las controlas.» — `eH7QCo2d0TU` @ 07:24 (explícito)
 
-## Fragmentos visuales
-
-![Revenge Trading (psicología) en D7WNBTnYHRA](../media/revenge-trading-psicologia-736.webp)
-
-**Trade Recap 25/02/26 (SL estando a un dia del payout...)** (`D7WNBTnYHRA`) · **01:53** · **Confianza:** explícito · anotado
-> NQ 5m. Zona FVG y continuación; el precio está en la zona.
-

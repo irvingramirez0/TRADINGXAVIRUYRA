@@ -62,18 +62,18 @@ Bootcamp Día 5.
 
 ## Fragmentos visuales
 
-![MNQ / MES en 579RkuLzgPQ](../media/mnq-mes-734.webp)
-
-**Así he perdido 450$ en dos días operando el SP500 (trade recap)** (`579RkuLzgPQ`) · **00:18** · **Confianza:** explícito · anotado
-> MESZ25 5m. 'London highs', 'Asian highs' y zona FVG; panel 'Locked out'.
-
-![MNQ / MES en TxoOh3MFdO0](../media/mnq-mes-727.webp)
-
-**BIAS 03/11/25** (`TxoOh3MFdO0`) · **00:30** · **Confianza:** explícito · anotado
-> Gráfico MNQZ25 1H. Líneas 'high' y 'DOL' sobre dos highs; zona verde 'FVG' por debajo del precio.
-
 ![MNQ / MES en Dfx9SQYerVQ](../media/mnq-mes-655.webp)
 
 **14 take profits seguidos operando el NQ** (`Dfx9SQYerVQ`) · **00:35** · **Confianza:** explícito · anotado
 > MNQ 1H del 3 de junio: máximo en 30.786,75 y caída posterior.
+
+![MNQ / MES en Dfx9SQYerVQ](../media/mnq-mes-656.webp)
+
+**14 take profits seguidos operando el NQ** (`Dfx9SQYerVQ`) · **01:06** · **Confianza:** explícito · anotado
+> MNQ 5m del mismo día: caída tras las 9:30 y mecha larga cerca de las 10:00.
+
+![MNQ / MES en 7HOAf7vHMqU](../media/mnq-mes-2.webp)
+
+**Bootcamp Día 6: Liquidez pt1** (`7HOAf7vHMqU`) · **01:08** · **Confianza:** explícito · anotado
+> Diapositiva 'LIQUIDEZ PT.1' superpuesta a un gráfico MNQ 15m. Texto: 'todo está lleno de liquidez, en cada alto y bajo hay liquidez, pero no toda la liquidez tiene la misma importancia'. Anotaciones 'swing high' y 'swing…
 

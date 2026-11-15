@@ -72,7 +72,3 @@ Documento 02.
 **SIN este CONCEPTO NUNCA serás RENTABLE | Como usar FVG's** (`u-fG6bYvK7k`) · **13:32** · **Confianza:** explícito · anotado
 > Esquema de liquidez interna y externa: cajas de FVG, líneas de liquidez (BSL/SSL) y flechas de recorrido. Texto 'internal liquidity'.
 
-![Internal / External Liquidity en u-fG6bYvK7k](../media/internal-external-liquidity-174.webp)
-
-**SIN este CONCEPTO NUNCA serás RENTABLE | Como usar FVG's** (`u-fG6bYvK7k`) · **13:01** · **Confianza:** explícito · pendiente de anotación
-

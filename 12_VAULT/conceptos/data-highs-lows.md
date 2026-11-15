@@ -77,7 +77,3 @@ Documento 04. Uso poco desarrollado.
 **La SIMPLE ESTRATEGIA con la que he podido RETIRAR +25k$ en PAYOUTS** (`1C4dgloDQrY`) · **45:51** · **Confianza:** explícito · anotado
 > La misma diapositiva 'LIQUIDEZ' completa: EH, REH, REL, EL, LRL, NWOG, NDOG, altos de noticias (data highs) e 'ITH, ITL (QUE ESTÉN DENTRO DE FVGS!!!!)'.
 
-![Data Highs / Lows en oP7enoxXpfI](../media/data-highs-lows-328.webp)
-
-**Stacked PO3 + Backtesting (la mejor manera de traderar ICT)** (`oP7enoxXpfI`) · **27:15** · **Confianza:** explícito · pendiente de anotación
-

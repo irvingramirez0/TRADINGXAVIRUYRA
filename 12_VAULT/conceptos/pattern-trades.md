@@ -70,6 +70,6 @@ Es la formulación nombrada de la regla ya documentada en mCMpxc0NaN4 ('no coger
 
 ![Pattern trades en 1C4dgloDQrY](../media/pattern-trades-689.webp)
 
-**La SIMPLE ESTRATEGIA con la que he podido RETIRAR +25k$ en PAYOUTS** (`1C4dgloDQrY`) · **27:47** · **Confianza:** explícito · anotado
+**La SIMPLE ESTRATEGIA con la que he podido RETIRAR +25k$ en PAYOUTS** (`1C4dgloDQrY`) · **27:47** · **Confianza:** explícito · anotado · imagen de contexto, no muestra el concepto
 > El mismo esquema '2 sistema de entrada', ahora con un recorrido en V dibujado a la derecha: el precio sube, gira y vuelve a subir. No hay etiquetas de 'pattern trade' en pantalla.
 

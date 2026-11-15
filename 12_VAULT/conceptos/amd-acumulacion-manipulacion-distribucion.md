@@ -69,11 +69,6 @@ Documento 04.
 
 ## Fragmentos visuales
 
-![AMD (Acumulación, Manipulación, Distribución) en vz4rhIi5Joo](../media/amd-acumulacion-manipulacion-distribucion-378.webp)
-
-**La MEJOR estrategia de ICT para FUTUROS (IFVG updated 2026)** (`vz4rhIi5Joo`) · **01:37** · **Confianza:** explícito · anotado
-> Diapositiva con dos esquemas separados: 'Judas Swing (9:30–9:45)' y 'Open de las 10, PO3 10, el open de la vela de 4h'. No muestra las tres fases AMD rotuladas.
-
 ![AMD (Acumulación, Manipulación, Distribución) en vz4rhIi5Joo](../media/amd-acumulacion-manipulacion-distribucion-402.webp)
 
 **La MEJOR estrategia de ICT para FUTUROS (IFVG updated 2026)** (`vz4rhIi5Joo`) · **10:55** · **Confianza:** explícito · anotado

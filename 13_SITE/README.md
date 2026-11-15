@@ -33,6 +33,29 @@ tiene `depth: -1` (todo el grafo); en cada nota, `depth: 1`.
 - **Conceptos**: definición, interpretación de Xavi, identificación, condiciones,
   temporalidades, aplicación, errores y excepciones; evidencia con vídeo y minuto;
   1–3 fotogramas WebP (máx. 1200 px) con pie de vídeo, timestamp y confianza.
+
+### Regla de las imágenes (estricta)
+
+Un fotograma solo ilustra un concepto si **su anotación lo dice**. Se aplica así:
+
+1. **Solo fotogramas anotados.** Un fotograma «pendiente de anotación» no se
+   publica como ilustración: nadie ha verificado qué se ve en él.
+2. **Manda `description`, no `analysis`.** La descripción es lo que el anotador
+   vio en pantalla; `analysis` es la transcripción, y dice lo que se hablaba.
+3. **Alias distintivo.** Vale el nombre o un alias que pertenezca solo a ese
+   concepto. Que una captura muestre «FVG» no la convierte en prueba de «IFVG».
+4. **Se descarta lo que se contradice.** Si la anotación dice del concepto «no
+   hay un rótulo que lo identifique» o «no muestra las tres fases», la imagen no
+   se usa, aunque tenga fila de `evidence`.
+5. **El contexto se etiqueta.** Si la anotación no nombra el concepto pero
+   tampoco lo niega, la imagen se publica con la etiqueta «imagen de contexto, no
+   muestra el concepto».
+
+Motivo: antes bastaba con que hubiera una fila de `evidence` con `frame_id`, y
+la nota de IFVG llegó a mostrar una captura de Judas Swing cuyo propio
+comentario decía que no identificaba el IFVG.
+
+Auditoría: `python 09_AUTOMATION/auditar_fotogramas.py [--bootcamp] [--detalle]`.
 - **Reglas**: descripción, contexto, condiciones, invalidación, riesgo, objetivos;
   enlaces automáticos a los conceptos que menciona; enlace a la regla que
   **reemplaza** (campo `supersedes`).
@@ -89,14 +112,17 @@ Cada push a `main` compila y publica. Para volver a desplegar sin cambiar nada:
   aparte y no se inventa.
 - La portada declara el proyecto como **estudio no oficial** y lleva fecha de corte.
 
-## Estado verificado (2026-11-14)
+## Estado verificado (2026-11-15)
 
 | Comprobación | Resultado |
 |---|---|
 | `regenerar_vault.py` | 329 notas (53 conceptos, 135 reglas, 54 operaciones, 55 cambios, 31 preguntas) |
 | `verificar_vault.py` | 0 enlaces rotos, 0 imágenes rotas, frontmatter completo |
-| `quartz build` | 818 archivos, ~22 MB, grafo y búsqueda activos |
-| **`npm ci` + build en clon limpio** | 329 notas y 818 archivos partiendo solo de los archivos rastreados en git |
+| `auditar_fotogramas.py` | 54 imágenes muestran su concepto, 13 son de contexto, 26 conceptos sin imagen |
+| `auditar_fotogramas.py --bootcamp` | 5 imágenes, todas muestran el concepto; 0 de contexto |
+| `quartz build` | 791 archivos, grafo y búsqueda activos |
+| **`npm ci` + build en clon limpio** | 329 notas partiendo solo de los archivos rastreados en git |
 | **Sitio en producción** | 200 en `/`, en las notas y en los `.webp`; grafo y búsqueda presentes |
 | Auditoría de contenido | ninguna cita > 246 caracteres; ningún dato personal; sin Reels |
-| Repositorio local | 831 archivos, ~24 MB (sin vídeos, transcripciones, base ni modelos) |
+| Imágenes | 64 WebP; la mayoría a 1200 px de ancho y sin la interfaz del gráfico |
+| Repositorio local | sin vídeos, transcripciones, base ni modelos |

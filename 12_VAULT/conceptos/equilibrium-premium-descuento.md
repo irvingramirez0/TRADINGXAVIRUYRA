@@ -77,18 +77,18 @@ Documento 06. Día 19 (2026-11-13): Fibonacci vigente; Gann histórico; etiqueta
 
 ## Fragmentos visuales
 
-![Equilibrium (premium/descuento) en AacVWPPYK8Y](../media/equilibrium-premium-descuento-723.webp)
-
-**COMO uso EQUILIBRIUM para TODAS mis ENTRIES** (`AacVWPPYK8Y`) · **03:06** · **Confianza:** explícito · anotado
-> Configuración de la Cuadrícula de Gann en TradingView: pestaña Estilo.
-
-![Equilibrium (premium/descuento) en p6wC7iWh_Ps](../media/equilibrium-premium-descuento-707.webp)
-
-**TRADE RECAP NQ 28/07/25 (-1.019$) - TOPSTEP** (`p6wC7iWh_Ps`) · **00:32** · **Confianza:** explícito · anotado
-> NQ1! en 5 minutos. Caja azul vertical sobre la sesión de Londres. Etiquetas 'Asian highs' y 'London highs' en la parte superior y 'London lows' en la inferior. Banda horizontal azul claro y rectángulo gris (zona/FVG) baj…
-
 ![Equilibrium (premium/descuento) en hisdBc9mGQ4](../media/equilibrium-premium-descuento-751.webp)
 
 **Trade Recap 27/01/2026 (A+ day)** (`hisdBc9mGQ4`) · **00:39** · **Confianza:** explícito · anotado
 > NQ 5m. FVG/equilibrium y entrada marcada; contexto A+.
+
+![Equilibrium (premium/descuento) en kJoC4Ee4Uo4](../media/equilibrium-premium-descuento-748.webp)
+
+**TRADE RECAP 19/08/25 SP500 (+0$ - BE)** (`kJoC4Ee4Uo4`) · **01:03** · **Confianza:** explícito · anotado
+> SP500 5m. Equilibrium/FVG y BE.
+
+![Equilibrium (premium/descuento) en UNBxdyHQZWg](../media/equilibrium-premium-descuento-759.webp)
+
+**Manten tu trading simple (Trade Recap 23/07/26)** (`UNBxdyHQZWg`) · **01:33** · **Confianza:** explícito · anotado
+> NQ/ES 5m. Gaps de 4H, equilibrium y FVG 15/30m; TP 1:1.
 

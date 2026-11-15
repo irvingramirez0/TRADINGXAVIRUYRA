@@ -76,8 +76,8 @@ Documento 04.
 **La MEJOR estrategia de ICT para FUTUROS (IFVG updated 2026)** (`vz4rhIi5Joo`) · **01:37** · **Confianza:** explícito · anotado
 > Diapositiva con dos esquemas separados: 'Judas Swing (9:30–9:45)' y 'Open de las 10, PO3 10, el open de la vela de 4h'. No muestra las tres fases AMD rotuladas.
 
-![PO3 (Power of 3) en 7sDT-DDlQDY](../media/po3-power-of-3-742.webp)
+![PO3 (Power of 3) en vz4rhIi5Joo](../media/po3-power-of-3-382.webp)
 
-**Mi CUARTO PAYOUT gracias al TRADING | Trade recap +$2k** (`7sDT-DDlQDY`) · **01:18** · **Confianza:** explícito · anotado
-> NQ 5m. FVG y primera entrada de la mañana.
+**La MEJOR estrategia de ICT para FUTUROS (IFVG updated 2026)** (`vz4rhIi5Joo`) · **03:40** · **Confianza:** explícito · anotado
+> Diapositiva sobre NQ 5m: 'Judas Swing (9:30-9:45)' y 'Open de las 10, PO3 10, el open de la vela de 4h'. Esquema de zigzag con dos zonas azules, una arriba y otra abajo.
 

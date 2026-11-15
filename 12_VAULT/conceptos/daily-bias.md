@@ -76,16 +76,16 @@ Documento 03.
 
 ![Daily Bias en TxoOh3MFdO0](../media/daily-bias-727.webp)
 
-**BIAS 03/11/25** (`TxoOh3MFdO0`) · **00:30** · **Confianza:** explícito · anotado
+**BIAS 03/11/25** (`TxoOh3MFdO0`) · **00:30** · **Confianza:** explícito · anotado · imagen de contexto, no muestra el concepto
 > Gráfico MNQZ25 1H. Líneas 'high' y 'DOL' sobre dos highs; zona verde 'FVG' por debajo del precio.
 
 ![Daily Bias en FjOU3YeVW4E](../media/daily-bias-726.webp)
 
-**BIAS 29/10** (`FjOU3YeVW4E`) · **00:50** · **Confianza:** explícito · anotado
+**BIAS 29/10** (`FjOU3YeVW4E`) · **00:50** · **Confianza:** explícito · anotado · imagen de contexto, no muestra el concepto
 > Pantalla dividida ES (izquierda) y NQ (derecha), 5m. 'London high' y 'London low' en ES; estructura comparable en NQ.
 
 ![Daily Bias en DbWKWSy5ycY](../media/daily-bias-724.webp)
 
-**BIAS 27/10/25** (`DbWKWSy5ycY`) · **01:10** · **Confianza:** explícito · anotado
+**BIAS 27/10/25** (`DbWKWSy5ycY`) · **01:10** · **Confianza:** explícito · anotado · imagen de contexto, no muestra el concepto
 > Gráfico MESZ25 5m. Líneas 'EQ - London high', 'London low' y 'Asian low'. Proyección descendente desde el sweep del London high hasta el Asian low.
 

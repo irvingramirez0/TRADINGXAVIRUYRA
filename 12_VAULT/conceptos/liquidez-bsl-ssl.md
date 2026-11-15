@@ -75,11 +75,6 @@ Bootcamp Día 6. Liquidez pt2 pendiente de publicación.
 
 ## Fragmentos visuales
 
-![Liquidez (BSL/SSL) en 7HOAf7vHMqU](../media/liquidez-bsl-ssl-2.webp)
-
-**Bootcamp Día 6: Liquidez pt1** (`7HOAf7vHMqU`) · **01:08** · **Confianza:** explícito · anotado
-> Diapositiva 'LIQUIDEZ PT.1' superpuesta a un gráfico MNQ 15m. Texto: 'todo está lleno de liquidez, en cada alto y bajo hay liquidez, pero no toda la liquidez tiene la misma importancia'. Anotaciones 'swing high' y 'swing…
-
 ![Liquidez (BSL/SSL) en 7HOAf7vHMqU](../media/liquidez-bsl-ssl-21.webp)
 
 **Bootcamp Día 6: Liquidez pt1** (`7HOAf7vHMqU`) · **08:25** · **Confianza:** explícito · anotado
@@ -89,4 +84,9 @@ Bootcamp Día 6. Liquidez pt2 pendiente de publicación.
 
 **Stacked PO3 + Backtesting (la mejor manera de traderar ICT)** (`oP7enoxXpfI`) · **08:52** · **Confianza:** explícito · anotado
 > Esquema dibujado sobre NQ 1H: zigzag con etiquetas 9:30 y 9:45 y una zona azul superior (BSL). El primer intento de las 9:30 falla y el segundo de las 9:45 continúa.
+
+![Liquidez (BSL/SSL) en 7HOAf7vHMqU](../media/liquidez-bsl-ssl-25.webp)
+
+**Bootcamp Día 6: Liquidez pt1** (`7HOAf7vHMqU`) · **10:30** · **Confianza:** explícito · anotado
+> Gráfico MNQ 15m con múltiples niveles marcados. Se observa el conteo de 'billetes': varios altos (BSL) frente a un solo bajo (SSL) antes del movimiento.
 

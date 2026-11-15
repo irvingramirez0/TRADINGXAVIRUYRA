@@ -69,6 +69,6 @@ Primera definición completa encontrada en el corpus; antes el término aparecí
 
 ![Manipulation leg en 1C4dgloDQrY](../media/manipulation-leg-683.webp)
 
-**La SIMPLE ESTRATEGIA con la que he podido RETIRAR +25k$ en PAYOUTS** (`1C4dgloDQrY`) · **16:51** · **Confianza:** explícito · anotado
+**La SIMPLE ESTRATEGIA con la que he podido RETIRAR +25k$ en PAYOUTS** (`1C4dgloDQrY`) · **16:51** · **Confianza:** explícito · anotado · imagen de contexto, no muestra el concepto
 > NQ 5 minutos, sesión del 30 de diciembre, con una zona gris (FVG) y una línea horizontal corta que marca el último alto previo a la entrada en la zona. El precio barre el mínimo y gira.
 

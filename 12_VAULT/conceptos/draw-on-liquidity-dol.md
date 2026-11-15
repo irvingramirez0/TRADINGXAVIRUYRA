@@ -81,11 +81,11 @@ Documento 03.
 
 ![Draw on Liquidity (DOL) en DbWKWSy5ycY](../media/draw-on-liquidity-dol-724.webp)
 
-**BIAS 27/10/25** (`DbWKWSy5ycY`) · **01:10** · **Confianza:** explícito · anotado
+**BIAS 27/10/25** (`DbWKWSy5ycY`) · **01:10** · **Confianza:** explícito · anotado · imagen de contexto, no muestra el concepto
 > Gráfico MESZ25 5m. Líneas 'EQ - London high', 'London low' y 'Asian low'. Proyección descendente desde el sweep del London high hasta el Asian low.
 
 ![Draw on Liquidity (DOL) en gNsZXb8j1So](../media/draw-on-liquidity-dol-728.webp)
 
-**BIAS 04/11/25** (`gNsZXb8j1So`) · **01:30** · **Confianza:** explícito · anotado
+**BIAS 04/11/25** (`gNsZXb8j1So`) · **01:30** · **Confianza:** explícito · anotado · imagen de contexto, no muestra el concepto
 > Gráfico MNQZ25 5m. Zona verde 'FVG' sin filar por encima del precio; líneas de highs de sesión arriba y abajo.
 

@@ -76,18 +76,13 @@ Documento 02.
 
 ## Fragmentos visuales
 
-![Inverse Fair Value Gap (IFVG) en vz4rhIi5Joo](../media/inverse-fair-value-gap-ifvg-383.webp)
+![Inverse Fair Value Gap (IFVG) en B3zNsJ9LdVA](../media/inverse-fair-value-gap-ifvg-740.webp)
 
-**La MEJOR estrategia de ICT para FUTUROS (IFVG updated 2026)** (`vz4rhIi5Joo`) · **04:11** · **Confianza:** explícito · anotado
-> Captura del esquema de precio durante la explicación del Judas Swing, con zonas horizontales. No hay un rótulo legible que identifique el primer IFVG ni su cierre.
+**Trade Recap 19/02/2026 (5 wins seguidas)** (`B3zNsJ9LdVA`) · **01:33** · **Confianza:** explícito · anotado
+> NQ 5m. Inverse FVG de 1m y entrada marcada.
 
-![Inverse Fair Value Gap (IFVG) en mCMpxc0NaN4](../media/inverse-fair-value-gap-ifvg-645.webp)
+![Inverse Fair Value Gap (IFVG) en _drb5sSmQZE](../media/inverse-fair-value-gap-ifvg-455.webp)
 
-**Sesión de backtesting APLICANDO mi ESTRATEGIA de IFVG** (`mCMpxc0NaN4`) · **05:49** · **Confianza:** explícito · anotado
-> El mismo 5m sin el rectángulo; el precio cae hasta la línea horizontal de 14.780 y rebota.
-
-![Inverse Fair Value Gap (IFVG) en hisdBc9mGQ4](../media/inverse-fair-value-gap-ifvg-751.webp)
-
-**Trade Recap 27/01/2026 (A+ day)** (`hisdBc9mGQ4`) · **00:39** · **Confianza:** explícito · anotado
-> NQ 5m. FVG/equilibrium y entrada marcada; contexto A+.
+**Todo lo que necesitas saber sobre este concepto - CISD** (`_drb5sSmQZE`) · **06:45** · **Confianza:** explícito · anotado
+> Cuadro de texto sobre el gráfico NQ 1m: 'CISD. Primera forma (recomendable): - ifvg + cisd - peor rr (pero trade más probable) - cisd de 1 minuto (el primero)'. Debajo: 'SEGUNDA FORMA (más experiencia en el mercado): cua…
 

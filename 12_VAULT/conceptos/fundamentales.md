@@ -61,9 +61,3 @@ Excluido como método; los niveles de noticia sí se usan.
 - «Paráfrasis: no usa fundamentales como método; solo marca highs/lows de noticias.» — `OdljBowQurk` @ 01:06 (observado)
 - «No tenemos que estar mirando las noticias... Yo de hecho no sé ni qué son la mayoría de noticias.» — `j4f8fV13GQM` @ 01:43 (explícito)
 
-## Fragmentos visuales
-
-![Fundamentales en OdljBowQurk](../media/fundamentales-223.webp)
-
-**Trade Recap +15.000$ operando NQ (true manipulation + po3 explicado)** (`OdljBowQurk`) · **01:05** · **Confianza:** observado · pendiente de anotación
-
