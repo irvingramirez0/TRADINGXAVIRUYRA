@@ -12,7 +12,6 @@
   --xr-accent: var(--secondary);
   --xr-accent-soft: color-mix(in srgb, var(--secondary) 12%, transparent);
   --xr-warn: #b97700;
-  --xr-ok: #2f7a58;
   --xr-radius: 12px;
 }
 
@@ -20,7 +19,6 @@
   --xr-surface: color-mix(in srgb, var(--light) 88%, white);
   --xr-accent-soft: color-mix(in srgb, var(--secondary) 18%, transparent);
   --xr-warn: #e0a83c;
-  --xr-ok: #62c9a0;
 }
 
 /* --- lectura -------------------------------------------------------------- */
@@ -71,8 +69,9 @@ article tbody tr:nth-child(even) {
   background: color-mix(in srgb, var(--lightgray) 30%, transparent);
 }
 
+/* Las citas usan el estilo de Quartz (barra lateral fina). Aquí solo se tiñe
+   el fondo, para no inventar un segundo lenguaje visual para lo mismo. */
 article blockquote {
-  border-left: 3px solid var(--secondary);
   background: var(--xr-accent-soft);
   border-radius: 0 8px 8px 0;
   padding: 0.5rem 0.9rem;
@@ -244,35 +243,6 @@ article h2 {
     flex-direction: row;
     flex-wrap: wrap;
   }
-}
-
-/* --- avisos -------------------------------------------------------------- */
-
-.xr-aviso {
-  margin: 1.25rem 0;
-  padding: 0.8rem 1rem;
-  border-radius: 10px;
-  border: 1px solid var(--lightgray);
-  border-left: 4px solid var(--secondary);
-  background: var(--xr-surface);
-  font-size: 0.86rem;
-  color: var(--darkgray);
-}
-
-.xr-aviso[data-tono="warn"] {
-  border-left-color: var(--xr-warn);
-}
-
-.xr-aviso[data-tono="ok"] {
-  border-left-color: var(--xr-ok);
-}
-
-.xr-aviso p:first-child {
-  margin-top: 0;
-}
-
-.xr-aviso p:last-child {
-  margin-bottom: 0;
 }
 
 /* --- sin cromo sobrante --------------------------------------------------- */

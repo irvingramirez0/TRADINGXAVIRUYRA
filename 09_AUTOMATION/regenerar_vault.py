@@ -1328,10 +1328,8 @@ def comprobador_fuentes(con, slugs_concepto, slugs_regla, slugs_trade, slugs_cam
         ]
     else:
         lineas += [
-            '<div class="xr-aviso" data-tono="warn">',
-            f"**{len(filas)} entidades sin respaldo comprobable.** Aparecen listadas; ninguna se ha "
-            "borrado ni se ha rellenado con una fuente inventada.",
-            "</div>",
+            f"> [!warning] {len(filas)} entidades sin respaldo comprobable",
+            "> Aparecen listadas; ninguna se ha borrado ni se ha rellenado con una fuente inventada.",
             "",
             "| Tipo | Entidad | Confianza | Qué le falta |",
             "|---|---|---|---|",
