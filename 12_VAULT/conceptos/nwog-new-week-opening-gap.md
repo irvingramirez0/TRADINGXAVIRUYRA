@@ -73,13 +73,13 @@ Documento 02.
 **TRADE RECAP SP500 31/07/25 (''-800$'' TUVE SUERTE TENIENDO MALA SUERTE) TOPSTEP** (`YB4bOf9F3sk`) · **01:06** · **Confianza:** explícito · anotado
 > ES1! 5m. Caja azul de sesión con etiquetas 'London highs', 'London lows' y 'Asian lows'. Rectángulo rojo 'NWOG' en la parte inferior. Líneas verticales punteadas de sesión. El precio sube, forma un máximo y empieza a baj…
 
-![NWOG (New Week Opening Gap) en 8tXtRvwCNeg](../media/nwog-new-week-opening-gap-756.webp)
-
-**Trade Recap 09/03/2026** (`8tXtRvwCNeg`) · **01:39** · **Confianza:** explícito · anotado
-> NQ 5m. NWOG/sweep y entrada; 1:1.
-
 ![NWOG (New Week Opening Gap) en YB4bOf9F3sk](../media/nwog-new-week-opening-gap-719.webp)
 
 **TRADE RECAP SP500 31/07/25 (''-800$'' TUVE SUERTE TENIENDO MALA SUERTE) TOPSTEP** (`YB4bOf9F3sk`) · **04:02** · **Confianza:** explícito · anotado
 > ES1! 5m. Mismas etiquetas de sesión; el precio ha caído hasta la zona roja del NWOG/Asian lows. Línea 0.5. Precio corriente 6.412,25. Panel: cantidad 10, 'Locked out: Daily Trade 8h 47m 51s'.
+
+![NWOG (New Week Opening Gap) en xFKKj-ytJNI](../media/nwog-new-week-opening-gap-741.webp)
+
+**Trade Recap 20/04/2026 (+1k$ y adivino todo lo que pasa)** (`xFKKj-ytJNI`) · **05:03** · **Confianza:** explícito · anotado
+> NQ 5m. NWOG, FVG de 15m y estructura de largos.
 

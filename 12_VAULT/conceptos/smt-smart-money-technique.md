@@ -73,13 +73,13 @@ Documento 03. Incluye un ejemplo de doble SMT como refuerzo en VE5H1qX50zA; no r
 
 ## Fragmentos visuales
 
-![SMT (Smart Money Technique) en UBpp2tFKKhw](../media/smt-smart-money-technique-744.webp)
-
-**TERCER PAYOUT ASEGURADO!!! (trade recap)** (`UBpp2tFKKhw`) · **00:53** · **Confianza:** explícito · anotado
-> NQ 5m. SMT en el low y FVG de 5m.
-
 ![SMT (Smart Money Technique) en 6oO3C86Iv2E](../media/smt-smart-money-technique-754.webp)
 
 **Trade Recap 04/02/2026 (A setup)** (`6oO3C86Iv2E`) · **02:03** · **Confianza:** explícito · anotado
 > NQ 5m. FVG de 1H y SMT; setup A que acabó en stop.
+
+![SMT (Smart Money Technique) en 8gs6HOHXMsc](../media/smt-smart-money-technique-730.webp)
+
+**Así he ganado +1000$ operando London Session (no podia dejar pasar este trade)** (`8gs6HOHXMsc`) · **03:00** · **Confianza:** explícito · anotado
+> NQ 4H y ES 4H. FVG de 4H tapeado en NQ; highs/ATH y referencia de SMT.
 
