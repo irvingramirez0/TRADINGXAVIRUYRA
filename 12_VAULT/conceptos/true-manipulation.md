@@ -77,13 +77,3 @@ Documento 03. La explicación general de double SMT sigue incompleta; ver 11_PRE
 **Trade Recap +15.000$ operando NQ (true manipulation + po3 explicado)** (`OdljBowQurk`) · **04:41** · **Confianza:** explícito · anotado · imagen de contexto, no muestra el concepto
 > Pantalla dividida NQ/ES en 5m. Rectángulos grises marcan los gaps de 4H y 5m; el precio los atraviesa y luego invierte.
 
-![True Manipulation en OdljBowQurk](../media/true-manipulation-234.webp)
-
-**Trade Recap +15.000$ operando NQ (true manipulation + po3 explicado)** (`OdljBowQurk`) · **05:42** · **Confianza:** explícito · anotado · imagen de contexto, no muestra el concepto
-> Pantalla dividida con NQ a la izquierda y ES a la derecha durante la explicación del doble SMT.
-
-![True Manipulation en OdljBowQurk](../media/true-manipulation-239.webp)
-
-**Trade Recap +15.000$ operando NQ (true manipulation + po3 explicado)** (`OdljBowQurk`) · **07:35** · **Confianza:** explícito · anotado · imagen de contexto, no muestra el concepto
-> Pantalla dividida de NQ y ES alrededor de la apertura de las 10:00; se ve el movimiento en ambos índices, sin cajas FVG etiquetadas.
-

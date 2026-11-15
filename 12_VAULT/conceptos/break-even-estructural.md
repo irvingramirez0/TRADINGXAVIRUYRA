@@ -74,8 +74,3 @@ Documento 07. Versión mayo 2026 (3m+) conservada como antecedente; vigente desd
 **Así he ganado +1000$ operando London Session (no podia dejar pasar este trade)** (`8gs6HOHXMsc`) · **04:10** · **Confianza:** explícito · anotado · imagen de contexto, no muestra el concepto
 > Herramienta de posición en NQ 5m: entrada, stop, objetivo y ratio riesgo/beneficio 1,29; zona de FVG.
 
-![Break-even estructural en 1C4dgloDQrY](../media/break-even-estructural-687.webp)
-
-**La SIMPLE ESTRATEGIA con la que he podido RETIRAR +25k$ en PAYOUTS** (`1C4dgloDQrY`) · **24:08** · **Confianza:** explícito · anotado · imagen de contexto, no muestra el concepto
-> Esquema '2 sistema de entrada' con varias cajas grises (FVGs) y etiquetas de stop y target; el precio dibujado recorre las zonas. Se ven cifras de stop y objetivo, pero no son legibles con precisión.
-

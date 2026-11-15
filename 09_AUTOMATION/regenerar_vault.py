@@ -400,7 +400,14 @@ def candidate_frames(con, concepto):
     # hay forma de verificar la imagen, y el proyecto no inventa.
 
     picked.sort(key=lambda x: (x[0], x[1]["timestamp_sec"]))
-    return picked[:3]
+    # Si hay al menos una imagen que muestra el concepto, las de contexto
+    # sobran: ilustrar con tres capturas que no enseñan el concepto es peor
+    # que no poner ninguna. El contexto queda como recurso único.
+    con_muestra = [p for p in picked if p[0] == 0]
+    if con_muestra:
+        return con_muestra[:3]
+    contexto = [p for p in picked if p[0] == 1]
+    return contexto[:1]
 
 
 def limpiar_media():

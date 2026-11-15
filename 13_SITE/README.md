@@ -47,9 +47,10 @@ Un fotograma solo ilustra un concepto si **su anotación lo dice**. Se aplica as
 4. **Se descarta lo que se contradice.** Si la anotación dice del concepto «no
    hay un rótulo que lo identifique» o «no muestra las tres fases», la imagen no
    se usa, aunque tenga fila de `evidence`.
-5. **El contexto se etiqueta.** Si la anotación no nombra el concepto pero
-   tampoco lo niega, la imagen se publica con la etiqueta «imagen de contexto, no
-   muestra el concepto».
+5. **El contexto se etiqueta y se limita.** Si la anotación no nombra el
+   concepto pero tampoco lo niega, la imagen se publica como **una sola** imagen
+   de contexto, marcada «no muestra el concepto». Si ya hay alguna imagen que sí
+   lo muestra, las de contexto no se usan.
 
 Motivo: antes bastaba con que hubiera una fila de `evidence` con `frame_id`, y
 la nota de IFVG llegó a mostrar una captura de Judas Swing cuyo propio
@@ -118,11 +119,11 @@ Cada push a `main` compila y publica. Para volver a desplegar sin cambiar nada:
 |---|---|
 | `regenerar_vault.py` | 329 notas (53 conceptos, 135 reglas, 54 operaciones, 55 cambios, 31 preguntas) |
 | `verificar_vault.py` | 0 enlaces rotos, 0 imágenes rotas, frontmatter completo |
-| `auditar_fotogramas.py` | 54 imágenes muestran su concepto, 13 son de contexto, 26 conceptos sin imagen |
+| `auditar_fotogramas.py` | 55 imágenes muestran su concepto, 5 son de contexto, 25 conceptos sin imagen |
 | `auditar_fotogramas.py --bootcamp` | 5 imágenes, todas muestran el concepto; 0 de contexto |
 | `quartz build` | 791 archivos, grafo y búsqueda activos |
 | **`npm ci` + build en clon limpio** | 329 notas partiendo solo de los archivos rastreados en git |
 | **Sitio en producción** | 200 en `/`, en las notas y en los `.webp`; grafo y búsqueda presentes |
 | Auditoría de contenido | ninguna cita > 246 caracteres; ningún dato personal; sin Reels |
-| Imágenes | 64 WebP; la mayoría a 1200 px de ancho y sin la interfaz del gráfico |
+| Imágenes | 57 WebP; la mayoría a 1200 px de ancho y sin la interfaz del gráfico |
 | Repositorio local | sin vídeos, transcripciones, base ni modelos |
