@@ -1,0 +1,55 @@
+# ------------------------------------------------------------------
+# Repositorio publicable: solo el sitio y lo necesario para regenerarlo.
+# El resto del trabajo (vídeos, transcripciones completas, base SQLite,
+# copias de seguridad, informes internos) se queda en local.
+# ------------------------------------------------------------------
+
+# Vídeos descargados y fotogramas: el sitio usa solo 12_VAULT/media/.
+03_FRAMES/videos/
+03_FRAMES/contact_sheets/
+03_FRAMES/[0-9A-Za-z_-]*/
+03_FRAMES/annotations.json
+
+# Transcripciones completas: no se redistribuyen.
+02_TRANSCRIPTS/
+
+# Base de conocimiento y copias: se regenera el vault y se publica el vault.
+07_KNOWLEDGE_BASE/
+
+# Catálogo interno, análisis, informes y kits de compartir.
+01_CATALOG/
+04_ANALYSIS/
+06_TRADES/
+08_TEACHING/
+10_REPORTS/
+11_COMPARTIR/
+reels_xaviruyra.txt
+
+# Modelos, caché y utilidades locales de los scripts.
+09_AUTOMATION/.tmp/
+09_AUTOMATION/.bin/
+09_AUTOMATION/.cache/
+09_AUTOMATION/models/
+09_AUTOMATION/logs/
+__pycache__/
+*.pyc
+*.pyo
+
+# Dependencias y artefactos de Quartz.
+13_SITE/quartz/node_modules/
+13_SITE/quartz/public/
+13_SITE/quartz/.quartz-cache/
+13_SITE/quartz/tsconfig.tsbuildinfo
+
+# Credenciales y material sensible: nunca al repositorio.
+*cookies*.txt
+*_cookies.txt
+.env
+.env.*
+*.pem
+*.key
+
+*.db-journal
+*.part
+*.part-Frag*
+.DS_Store

@@ -1,0 +1,23 @@
+# Dependencias Python del proyecto.
+#
+#   py -3.13 -m pip install -r requirements.txt
+#
+# Python 3.11 o superior. Todo se ha ejecutado con 3.13.
+
+# --- Pipeline del sitio (Fase 0 y Fase 1) -------------------------------
+# Única dependencia de importación real: mide resolución, croma y "tinta"
+# de los fotogramas y calcula el hash perceptual (dHash).
+Pillow>=10.0
+
+# --- Binarios externos (NO van por pip) ---------------------------------
+#   ffmpeg 9.0.2 con libwebp  -> se localiza solo; o FFMPEG_BIN=/ruta/ffmpeg.exe
+#   yt-dlp                    -> en el PATH o en
+#                                ~/Documents/AutoDownloader/.venv/Scripts/yt-dlp.exe
+
+# --- Ingesta de Instagram (opcional, fuera del pipeline del sitio) ------
+# Solo lo necesitan instagram_*.py, que descargan Reels. El sitio excluye
+# los Reels a propósito, así que no hacen falta para regenerarlo.
+#   faster-whisper
+#   instaloader
+#   playwright
+#   requests

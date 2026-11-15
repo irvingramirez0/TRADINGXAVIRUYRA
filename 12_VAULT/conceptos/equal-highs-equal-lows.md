@@ -1,0 +1,88 @@
+---
+tipo: "concepto"
+titulo: "Equal Highs / Equal Lows"
+title: "Equal Highs / Equal Lows"
+confianza: "explícito"
+estado: "vigente"
+video: "Urrb1b2kBso"
+timestamp: "02:06"
+categoria: "SUPPORTING"
+uso: ""
+sinonimos: ["equal highs", "equal lows", "relative equal highs", "relative equal lows"]
+id: 58
+---
+
+# Equal Highs / Equal Lows
+
+> **Confianza:** explícito · **Estado:** vigente · **Categoría:** SUPPORTING
+
+## Definición
+
+Dos o más highs/lows al mismo nivel o muy cercanos; generan una bolsa de liquidez.
+
+## Interpretación de Xavi
+
+Son liquidez pendiente y pueden cambiar el DOL. Los relative equal highs/lows son una versión menos exacta.
+
+## Cómo identificarlo
+
+Marcar highs/lows repetidos; comprobar si están dentro de una zona.
+
+## Cuándo se usa
+
+Como target, como excepción al DOL y como contexto para el stacking.
+
+## Condiciones
+
+Contexto HTF; no operar contra ellos sin razón.
+
+## Temporalidades
+
+15m/1H/4H.
+
+## Aplicación
+
+Esperar el sweep; usarlos como target.
+
+## Errores comunes
+
+Shortear una subida vertical con equal lows; ignorarlos como liquidez.
+
+## Excepciones
+
+Pueden ser relative (no exactos).
+
+## Notas
+
+Documento 03.
+
+## Requiere / se combina con
+
+- [[draw-on-liquidity-dol|Draw on Liquidity (DOL)]]
+- [[po3-power-of-3|PO3 (Power of 3)]]
+- [[low-resistance-liquidity-lrl|Low Resistance Liquidity (LRL)]]
+
+## Evidencia
+
+- «Paráfrasis: los equal highs/lows son una excepción al DOL limpio.» — `Urrb1b2kBso` @ 02:06 (explícito)
+- «Dos mechas que estén a la misma altura, tienen que estar exactamente a la misma altura y relative equal high... son altos relativamente iguales.» — `OtYATAfCfRA` @ 03:40 (explícito)
+- «Si nosotros tuviésemos esto, no cuenta... ya hemos cogido la liquidez, ya hemos cogido ese cash.» — `OtYATAfCfRA` @ 04:10 (explícito)
+- «Esto lo vamos a mirar desde la temporalidad de 5 minutos a 15 minutos... y de hecho es incluso mejor... de cinco al diario.» — `OtYATAfCfRA` @ 04:42 (explícito)
+
+## Fragmentos visuales
+
+![Equal Highs / Equal Lows en kJoC4Ee4Uo4](../media/equal-highs-equal-lows-748.webp)
+
+**TRADE RECAP 19/08/25 SP500 (+0$ - BE)** (`kJoC4Ee4Uo4`) · **01:03** · **Confianza:** explícito · anotado
+> SP500 5m. Equilibrium/FVG y BE.
+
+![Equal Highs / Equal Lows en 8pAesspC0O8](../media/equal-highs-equal-lows-749.webp)
+
+**TRADE RECAP 21/08/25 SP500 (+0$ - BE) NO PUEDO GANAR** (`8pAesspC0O8`) · **01:27** · **Confianza:** explícito · anotado
+> SP500 5m. Equal highs/London highs y BE.
+
+![Equal Highs / Equal Lows en OdljBowQurk](../media/equal-highs-equal-lows-224.webp)
+
+**Trade Recap +15.000$ operando NQ (true manipulation + po3 explicado)** (`OdljBowQurk`) · **01:36** · **Confianza:** explícito · anotado
+> Pantalla dividida: NQ a la izquierda y ES a la derecha, ambos en diario. En ES se marca 'equal highs' y una caja azul de posición.
+
