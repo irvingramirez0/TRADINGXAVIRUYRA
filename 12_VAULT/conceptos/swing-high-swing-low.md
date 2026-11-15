@@ -80,3 +80,8 @@ Bootcamp Día 4. La definición de high/low se usa también para estructura.
 **Bootcamp Día 6: Liquidez pt1** (`7HOAf7vHMqU`) · **02:43** · **Confianza:** explícito · anotado
 > Gráfico MNQ 15m con un rango amplio. Línea horizontal y etiqueta 'LIQUIDEZ = DINERO' sobre el swing high; otra sobre el swing low. Texto 'TF ALTO O TF BAJO'.
 
+![Swing High / Swing Low en AacVWPPYK8Y](../media/swing-high-swing-low-196.webp)
+
+**COMO uso EQUILIBRIUM para TODAS mis ENTRIES** (`AacVWPPYK8Y`) · **03:22** · **Confianza:** explícito · anotado
+> Esquema dibujado a mano de una tendencia alcista: swing low, swing high y una línea horizontal entre ambos (equilibrium). Etiquetas de premium y descuento.
+

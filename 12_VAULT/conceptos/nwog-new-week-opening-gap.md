@@ -78,8 +78,3 @@ Documento 02.
 **TRADE RECAP SP500 31/07/25 (''-800$'' TUVE SUERTE TENIENDO MALA SUERTE) TOPSTEP** (`YB4bOf9F3sk`) · **04:02** · **Confianza:** explícito · anotado
 > ES1! 5m. Mismas etiquetas de sesión; el precio ha caído hasta la zona roja del NWOG/Asian lows. Línea 0.5. Precio corriente 6.412,25. Panel: cantidad 10, 'Locked out: Daily Trade 8h 47m 51s'.
 
-![NWOG (New Week Opening Gap) en xFKKj-ytJNI](../media/nwog-new-week-opening-gap-741.webp)
-
-**Trade Recap 20/04/2026 (+1k$ y adivino todo lo que pasa)** (`xFKKj-ytJNI`) · **05:03** · **Confianza:** explícito · anotado
-> NQ 5m. NWOG, FVG de 15m y estructura de largos.
-

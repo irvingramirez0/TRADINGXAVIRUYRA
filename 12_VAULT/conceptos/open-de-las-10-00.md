@@ -78,3 +78,8 @@ Documento 05.
 **Trade Recap +15.000$ operando NQ (true manipulation + po3 explicado)** (`OdljBowQurk`) · **08:17** · **Confianza:** explícito · anotado
 > Pantalla dividida NQ/ES en 30 segundos con la herramienta de posición larga: entrada 29.580,25, stop 29.576,25, objetivo 29.624,25 (RR 1:11). Zona de break-even marcada en 29.589,75, coincidiendo con gap de 5m y open de …
 
+![Open de las 10:00 en vz4rhIi5Joo](../media/open-de-las-10-00-402.webp)
+
+**La MEJOR estrategia de ICT para FUTUROS (IFVG updated 2026)** (`vz4rhIi5Joo`) · **10:55** · **Confianza:** explícito · anotado
+> Diapositiva 'Judas Swing AMD (9:30-9:45)' y 'Open de las 10 AMD' con un zigzag que baja, acumula, manipula y distribuye al alza. Flecha de entrada tras la manipulación.
+

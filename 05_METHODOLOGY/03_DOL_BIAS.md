@@ -1,7 +1,7 @@
 # 03 — DOL, DAILY BIAS Y CONTEXTO
 
 **Estado:** vigente. Documento central del contexto direccional.
-**Última actualización:** 2026-11-12
+**Última actualización:** 2026-11-15
 **Fuente principal:** `Urrb1b2kBso` (2025-12-22), `zcT31zmE5Uc` (2026-07-27), `F3anMVV-VlI` (2026-07-10), `Imr4TPKUD-c` (2026-09-25), `OdljBowQurk` (2026-10-22), `7HOAf7vHMqU` (2026-10-31), `sTS-iWJvTf0` (2026-11-11, Bootcamp Día 17).
 
 ---
@@ -320,6 +320,7 @@ Estos cinco BIAS diarios son de octubre y noviembre de 2025. Se conservan porque
 - **DOL y London session:** no está desarrollado en el bootcamp; solo se menciona que pasa evaluaciones en Londres.
 - **DOL cuando el precio ya ha tocado el nivel:** ¿se invalida o se busca el siguiente?
 - **Relación exacta entre "daily bias" y "DOL"**: él los usa como sinónimos, pero a veces el bias es la dirección y el DOL el nivel. Pendiente de precisar si son dos pasos o uno.
+- **Día 21 pendiente de revisar:** el RSS publicó `MQyNBiw-QVo` con el título “Daily bias + DOL” (2026-11-15; metadatos, sin timestamp de contenido). No hay transcripción porque `yt-dlp` no está instalado. El título no resuelve la pregunta ni confirma contenido metodológico.
 - **Criterio de "spot de distribución":** el Día 17 exige que los dos índices estén en un punto donde tenga sentido distribuir, pero no da una lista cerrada de condiciones para determinarlo; en los ejemplos usa key level + FVG de 5m o superior + ausencia de LRL [ `sTS-iWJvTf0` 10:04–13:43]. **INFERIDO** en lo demás.
 - **Selección entre SMT alcista y bajista:** no hay jerarquía cuando ambos aparecen en la misma zona; solo dice que da igual qué índice barra el nivel [ `sTS-iWJvTf0` 03:11].
 

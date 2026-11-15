@@ -72,11 +72,6 @@ Documento 03.
 
 ## Fragmentos visuales
 
-![Equal Highs / Equal Lows en 8pAesspC0O8](../media/equal-highs-equal-lows-749.webp)
-
-**TRADE RECAP 21/08/25 SP500 (+0$ - BE) NO PUEDO GANAR** (`8pAesspC0O8`) · **01:27** · **Confianza:** explícito · anotado
-> SP500 5m. Equal highs/London highs y BE.
-
 ![Equal Highs / Equal Lows en OdljBowQurk](../media/equal-highs-equal-lows-224.webp)
 
 **Trade Recap +15.000$ operando NQ (true manipulation + po3 explicado)** (`OdljBowQurk`) · **01:36** · **Confianza:** explícito · anotado

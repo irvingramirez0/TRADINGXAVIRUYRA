@@ -1,7 +1,7 @@
 # 11 — PREGUNTAS ABIERTAS Y VACÍOS DE INFORMACIÓN
 
 **Estado:** vivo. Se actualiza con cada clase y cada vídeo analizado.
-**Última actualización:** 2026-11-14
+**Última actualización:** 2026-11-15
 
 Este documento existe para **no inventar**. Cada punto es algo que Xavi no ha explicado con suficiente claridad, o que aparece de forma contradictoria, o que solo se puede resolver con material visual que aún no se ha extraído.
 
@@ -247,6 +247,8 @@ En el 22/10 mira daily, 4H y 1H [ `OdljBowQurk` 01:35–02:06]. En otros vídeos
 
 Él los usa casi como sinónimos [ `Urrb1b2kBso` 00:32], pero a veces el bias es la dirección y el DOL el nivel. ¿Son dos pasos o uno?
 
+**Actualización (2026-11-15):** el RSS oficial detectó el Bootcamp Día 21, titulado “Daily bias + DOL” (`MQyNBiw-QVo`; metadatos, sin timestamp de contenido). No se obtuvo transcripción: `yt-dlp` no está instalado y no existen archivos `.txt` ni `.segments.json` para ese ID. El título lo hace pertinente, pero no confirma que la clase distinga o equipare ambos términos. La pregunta sigue abierta. **Certeza del contenido del Día 21:** NO CONFIRMADO.
+
 **Estado:** AMBIGUO.
 
 ### 3.3. Si el precio toca equilibrium pero no hay FVG
@@ -329,10 +331,10 @@ En el Día 7 propone "hacerlo durante 60 días" como periodo para construir la h
 
 **Pendientes:**
 
-- Bootcamp: Días 1–18 analizados. El Día 8 (`1McPSXSSR48`, 2026-11-02) está transcrito y revisado (6 filas de `evidence`, sin fotogramas). Días 9–18 analizados a nivel de transcripción: Día 9 "Miedo", Día 10 "Noticias", Día 11 "Liquidez pt2", Día 12 "Gambling", Día 13 "IFVG" (`ICOx4rdFSLg`, 2026-11-07), Día 14 "Revenge Trading" (`eH7QCo2d0TU`, 2026-11-08), Día 15 "Key Levels" (`J7Dh-aj9-e0`, 2026-11-09), Día 16 "Check-in" (`djkeIcfNGgs`, 2026-11-10), Día 17 "SMT's y True Manipulation" (`sTS-iWJvTf0`, 2026-11-11) y Día 18 "FOMO" (`2kBd2-bLuwU`, 2026-11-12).
+- Bootcamp: Días 1–20 analizados. Día 21 publicado el 2026-11-15: título “Daily bias + DOL” (`MQyNBiw-QVo`); solo hay metadatos, sin transcripción ni timestamps porque `yt-dlp` no está instalado. No inferir contenidos. El Día 8 (`1McPSXSSR48`, 2026-11-02) está transcrito y revisado (6 filas de `evidence`, sin fotogramas). Días 9–18 analizados a nivel de transcripción: Día 9 "Miedo", Día 10 "Noticias", Día 11 "Liquidez pt2", Día 12 "Gambling", Día 13 "IFVG" (`ICOx4rdFSLg`, 2026-11-07), Día 14 "Revenge Trading" (`eH7QCo2d0TU`, 2026-11-08), Día 15 "Key Levels" (`J7Dh-aj9-e0`, 2026-11-09), Día 16 "Check-in" (`djkeIcfNGgs`, 2026-11-10), Día 17 "SMT's y True Manipulation" (`sTS-iWJvTf0`, 2026-11-11), Día 18 "FOMO" (`2kBd2-bLuwU`, 2026-11-12), Día 19 "Equilibrium" (`56ES-W1d0xw`, 2026-11-13) y Día 20 "Ego" (`ygJya0srm8g`, 2026-11-14). El Día 21 aparece en el RSS como "Daily bias + DOL" (`MQyNBiw-QVo`, 2026-11-15), pero está pendiente de transcripción; el título es metadato, no evidencia de contenido.
 - Fotogramas de los momentos que solo se explican de palabra: FOMC, noticia de las 10:00, reentries y CPI.
 - Entrada, stop y TP exactos de `Dfx9SQYerVQ`: no se verbalizan en el recap.
-- No quedan vídeos pendientes de transcripción: `XgVeRJ285G0` (66 segmentos), `hdPsie7oJT0` (23) y `bliFVmoG6IQ` (50) se recuperaron con Whisper. Los términos dudosos de `bliFVmoG6IQ` se conservan marcados en su transcript.
+- Transcripciones recuperadas con Whisper: `XgVeRJ285G0` (66 segmentos), `hdPsie7oJT0` (23) y `bliFVmoG6IQ` (50). Los términos dudosos de `bliFVmoG6IQ` se conservan marcados en su transcript. Nuevo pendiente: Bootcamp Día 21 (`MQyNBiw-QVo`), detectado el 2026-11-15; yt-dlp no está instalado y no se generaron archivos de transcripción limpia.
 - Recaps antiguos (2025) transcritos pero sin análisis visual: `p6wC7iWh_Ps` y `YB4bOf9F3sk` ya están en la tabla de operaciones y cuentan con fotogramas anotados; el resto sigue pendiente de muestreo.
 
 **Consecuencia:** la reconstrucción cubre febrero–octubre de 2026 e incluye las sesiones de backtesting y la racha de 14 TP a nivel de discurso, pero no todas con evidencia visual.

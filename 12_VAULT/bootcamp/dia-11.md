@@ -13,7 +13,7 @@ duracion: "18:22"
 
 # Día 11 — Liquidez pt2
 
-> **Clase 11 de 20** · Duración 18:22 · **Vídeo:** `OtYATAfCfRA`
+> **Clase 11 de 21** · Duración 18:22 · **Vídeo:** `OtYATAfCfRA`
 
 > [!note] Apunte del curriculum
 > Anuncia IFVG y CISD para el siguiente episodio.

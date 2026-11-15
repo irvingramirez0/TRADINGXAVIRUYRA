@@ -78,18 +78,8 @@ Documento 06. Día 19 (2026-11-13): Fibonacci vigente; Gann histórico; etiqueta
 
 ## Fragmentos visuales
 
-![Equilibrium (premium/descuento) en hisdBc9mGQ4](../media/equilibrium-premium-descuento-751.webp)
-
-**Trade Recap 27/01/2026 (A+ day)** (`hisdBc9mGQ4`) · **00:39** · **Confianza:** explícito · anotado
-> NQ 5m. FVG/equilibrium y entrada marcada; contexto A+.
-
 ![Equilibrium (premium/descuento) en kJoC4Ee4Uo4](../media/equilibrium-premium-descuento-748.webp)
 
 **TRADE RECAP 19/08/25 SP500 (+0$ - BE)** (`kJoC4Ee4Uo4`) · **01:03** · **Confianza:** explícito · anotado
 > SP500 5m. Equilibrium/FVG y BE.
-
-![Equilibrium (premium/descuento) en AacVWPPYK8Y](../media/equilibrium-premium-descuento-196.webp)
-
-**COMO uso EQUILIBRIUM para TODAS mis ENTRIES** (`AacVWPPYK8Y`) · **03:22** · **Confianza:** explícito · anotado
-> Esquema dibujado a mano de una tendencia alcista: swing low, swing high y una línea horizontal entre ambos (equilibrium). Etiquetas de premium y descuento.
 

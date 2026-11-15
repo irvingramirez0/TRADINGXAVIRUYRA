@@ -13,7 +13,7 @@ duracion: "22:09"
 
 # Día 2 — Preparación: configurar TradingView
 
-> **Clase 2 de 20** · Duración 22:09 · **Vídeo:** `3aG0N7aHu4s`
+> **Clase 2 de 21** · Duración 22:09 · **Vídeo:** `3aG0N7aHu4s`
 
 > [!note] Apunte del curriculum
 > 

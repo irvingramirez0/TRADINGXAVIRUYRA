@@ -13,7 +13,7 @@ duracion: "13:53"
 
 # Día 3 — Objetivos
 
-> **Clase 3 de 20** · Duración 13:53 · **Vídeo:** `NDVbDdE5TW0`
+> **Clase 3 de 21** · Duración 13:53 · **Vídeo:** `NDVbDdE5TW0`
 
 > [!note] Apunte del curriculum
 > 

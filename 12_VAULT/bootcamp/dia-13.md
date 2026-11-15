@@ -13,7 +13,7 @@ duracion: "20:10"
 
 # Día 13 — IFVG
 
-> **Clase 13 de 20** · Duración 20:10 · **Vídeo:** `ICOx4rdFSLg`
+> **Clase 13 de 21** · Duración 20:10 · **Vídeo:** `ICOx4rdFSLg`
 
 > [!note] Apunte del curriculum
 > No explica CISD en el bootcamp. Anuncia key levels, SMT y true manipulation.

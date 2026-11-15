@@ -1,8 +1,8 @@
 # MAPA DE LA METODOLOGÍA DE XAVI RUYRA
 
 **Estado:** investigación en curso. Este documento NO es material didáctico todavía.
-**Última actualización:** 2026-11-14
-**Fuente de máxima autoridad:** Bootcamp (2026-10-26 en adelante), 20 clases publicadas y analizadas.
+**Última actualización:** 2026-11-15
+**Fuente de máxima autoridad:** Bootcamp (2026-10-26 en adelante), Días 1–20 analizados; Día 21 publicado el 2026-11-15 y pendiente de transcripción.
 **Regla del proyecto:** solo se documenta lo que Xavi usa o enseña. Lo que no aparece, no se añade.
 
 ---
@@ -33,6 +33,7 @@
 | 18 | 2026-11-12 | `2kBd2-bLuwU` | Psicología: FOMO, no entrar sin estrategia, refuerzo del mal hábito, pregunta del enfado |
 | 19 | 2026-11-13 | `56ES-W1d0xw` | Equilibrium: premium/descuento con Fibonacci, FVG alineado con 0.5, IFVG como confirmación, secuencia del análisis |
 | 20 | 2026-11-14 | `ygJya0srm8g` | Psicología: ego tras una racha ganadora, muestra estadística, mantener el riesgo, no replicar cuentas, día rojo |
+| 21 | 2026-11-15 | `MQyNBiw-QVo` | Título publicado: “Daily bias + DOL”; contenido pendiente de transcripción y revisión |
 
 ### Videos educativos y recaps usados como fuente secundaria
 
@@ -60,14 +61,14 @@
 
 Además se han analizado **54 operaciones** (julio de 2025 a octubre de 2026), incluidas las pérdidas de 2025 y los Lotes 1–6 de recaps, con contexto, entrada, stop, target, gestión, errores y lecciones. Están en `06_TRADES/` y en la tabla `trades`. La normalización descriptiva está en `06_TRADES/estadisticas_2026-11-01.md` (54 fichas y 59 operaciones individuales en `trade_operations`; 34 fichas con P&L, 36 operaciones con P&L y 8 con R; muestra autodeclarada, no auditoría).
 
-### Corpus cuantitativo a 2026-11-14
+### Corpus cuantitativo a 2026-11-15
 
 | Elemento | Cantidad |
 |---|---|
-| Vídeos catalogados | 181 (181 con fecha de publicación) |
+| Vídeos catalogados | 182 (182 con fecha de publicación) |
 | Segmentos de transcripción | 3.848 |
-| Vídeos con transcripción indexada | 171 de 181 (9 VLOGs fuera de alcance y 1 VLOG pendiente) |
-| Vídeos pendientes de transcribir | 1 VLOG (`0eNJIAZ8Alk`, detectado 2026-11-11, no procesado como bootcamp) |
+| Vídeos con transcripción indexada | 171 de 182 (9 VLOGs fuera de alcance y 2 pendientes: 1 VLOG y Bootcamp Día 21) |
+| Vídeos pendientes de transcribir | 1 VLOG (`0eNJIAZ8Alk`) y Bootcamp Día 21 (`MQyNBiw-QVo`; `yt-dlp` no instalado, sin transcripción) |
 | Fotogramas extraídos | 761, de 52 vídeos |
 | Fotogramas anotados manualmente | 129 |
 | Operaciones analizadas | 54 |
@@ -191,14 +192,14 @@ Candidatos inferidos por frecuencia y función (NO CONFIRMADO): liquidez/DOL, FV
 - **Key levels:** concepto definido en el Día 15 (`J7Dh-aj9-e0`). Sigue abierto qué significa exactamente que un FVG de 15m esté "esponsoreado" por un gap de 1H/4H y si un FVG de 30m puede actuar como key level.
 - Lista exacta de los cuatro conceptos.
 - "RDRs cortos": una sola mención en `oP7enoxXpfI` (2026-10-05, 11:19; segmento 10:54–11:26). La transcripción automática sí recoge el término. No hay definición; sigue sin confirmar.
-- De los 181 vídeos catalogados, 171 tienen segmentos indexados; los 10 restantes son 9 VLOGs fuera de alcance y 1 VLOG pendiente (`0eNJIAZ8Alk`).
+- De los 182 vídeos catalogados, 171 tienen segmentos indexados; los 11 restantes son 9 VLOGs fuera de alcance y 2 pendientes: un VLOG (`0eNJIAZ8Alk`) y el Bootcamp Día 21 (`MQyNBiw-QVo`; sin transcripción, `yt-dlp` no instalado).
 - Regla general de stop por setup: hay stops observados en operaciones concretas, pero no una fórmula que explique Judas vs 10:00 vs continuación.
 - London session: hay un recap ganador y la lógica general, pero falta la secuencia horaria.
 - Configuración exacta del retroceso de Fibonacci: la herramienta está confirmada (Día 2 y Día 19), el diálogo de ajustes no se leyó con claridad. La cuadrícula de Gann queda como configuración histórica de 2025.
 - Rejection blocks: aparecen en el vídeo de break-even como algo que estaba **probando**, no como parte consolidada.
 - Backtesting: `sKSAh5gky1M`, `3ChwQZ8hRN0`, `mCMpxc0NaN4` y `PzkT4SC47Jo` están analizados en `04_ANALYSIS/backtesting_sessions.md` y con fotogramas de los momentos clave (LRL, primer IFVG, stop en mechas, BE en FVG, muchas mechas, criterios A+, escenarios 1H).
 - Racha de 14 take profits (`Dfx9SQYerVQ`): hay fotogramas del SMT en ATH y del break-even, pero no se verbalizan entrada, stop y TP exactos.
-- Días 1–20 del bootcamp: analizados. Día 13 fijó IFVG obligatorio (30s–5m, 3–4 velas) y dejó CISD fuera del temario. Día 14 (Revenge Trading), 16 (Check-in), 18 (FOMO) y 20 (Ego) ampliaron la capa psicológica. Día 15 definió key levels. Día 17 precisó SMT/TM y cerró operativamente el doble SMT. Día 19 fijó el equilibrium con Fibonacci.
+- Días 1–20 del bootcamp: analizados. Día 13 fijó IFVG obligatorio (30s–5m, 3–4 velas) y dejó CISD fuera del temario. Día 14 (Revenge Trading), 16 (Check-in), 18 (FOMO) y 20 (Ego) ampliaron la capa psicológica. Día 15 definió key levels. Día 17 precisó SMT/TM y cerró operativamente el doble SMT. Día 19 fijó el equilibrium con Fibonacci. El Día 21 (`MQyNBiw-QVo`) se publicó el 2026-11-15 con el título “Daily bias + DOL”; está pendiente de transcripción, sin contenido metodológico confirmado.
 - Duración y criterio de salida de la fase de gambling: el Día 12 la declara obligatoria pero no fija cuándo se sale (§3.10 de `11_PREGUNTAS_ABIERTAS.md`).
 - Criterio de "mala racha psicológica" y duración de la pausa (3 días / 1 semana): mencionado en el Día 16 sin detalle operativo.
 - Umbral de "racha ganadora", criterio para mantener o bajar el riesgo y definición de "replicar cuentas en exceso": el Día 20 da la dirección (mantener riesgo, no replicar), pero no fija umbrales (§3.12 de `11_PREGUNTAS_ABIERTAS.md`).

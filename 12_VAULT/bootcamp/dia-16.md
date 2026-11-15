@@ -13,7 +13,7 @@ duracion: "6:46"
 
 # Día 16 — Check-in (psicología)
 
-> **Clase 16 de 20** · Duración 6:46 · **Vídeo:** `djkeIcfNGgs`
+> **Clase 16 de 21** · Duración 6:46 · **Vídeo:** `djkeIcfNGgs`
 
 > [!note] Apunte del curriculum
 > Anuncia FOMO, equilibrium o SMTs.

@@ -31,7 +31,7 @@ from datetime import datetime
 
 BASE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DB = os.path.join(BASE, "07_KNOWLEDGE_BASE", "xavi_ruyra.db")
-TODAY = "2026-11-14"
+TODAY = "2026-11-15"
 
 
 def url(video_id):
@@ -4075,6 +4075,15 @@ CURRICULUM = [
         "concepts": "Ego tras racha ganadora, muestra estadística y win rate, caso personal, mantener el riesgo, no replicar cuentas, día rojo, cadena de rupturas de reglas, protocolo tras el error",
         "status": "publicado",
         "notes": "2026-11-14. Anuncia Daily Bias y Draw on Liquidity para el Día 21.",
+    },
+    {
+        "order_num": 21,
+        "module": "Bootcamp",
+        "lesson": "Día 21 — Daily bias + DOL",
+        "video_id": "MQyNBiw-QVo",
+        "concepts": "",
+        "status": "publicado; transcripción pendiente",
+        "notes": "2026-11-15. Título y fecha confirmados por el RSS oficial. yt-dlp no está instalado; no hay transcripción ni timestamps. No extraer conceptos ni reglas hasta revisar la fuente.",
     },
 ]
 

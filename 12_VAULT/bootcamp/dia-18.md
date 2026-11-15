@@ -13,7 +13,7 @@ duracion: "10:12"
 
 # Día 18 — FOMO (psicología)
 
-> **Clase 18 de 20** · Duración 10:12 · **Vídeo:** `2kBd2-bLuwU`
+> **Clase 18 de 21** · Duración 10:12 · **Vídeo:** `2kBd2-bLuwU`
 
 > [!note] Apunte del curriculum
 > 

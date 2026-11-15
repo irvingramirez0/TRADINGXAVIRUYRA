@@ -13,7 +13,7 @@ duracion: "20:51"
 
 # Día 1 — Mentalidad y formato del bootcamp
 
-> **Clase 1 de 20** · Duración 20:51 · **Vídeo:** `t9rcx-dDGvA`
+> **Clase 1 de 21** · Duración 20:51 · **Vídeo:** `t9rcx-dDGvA`
 
 > [!note] Apunte del curriculum
 > Primera clase.

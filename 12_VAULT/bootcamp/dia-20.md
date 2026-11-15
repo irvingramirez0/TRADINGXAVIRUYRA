@@ -13,7 +13,7 @@ duracion: "11:46"
 
 # Día 20 — Ego (psicología)
 
-> **Clase 20 de 20** · Duración 11:46 · **Vídeo:** `ygJya0srm8g`
+> **Clase 20 de 21** · Duración 11:46 · **Vídeo:** `ygJya0srm8g`
 
 > [!note] Apunte del curriculum
 > Anuncia Daily Bias y Draw on Liquidity para el Día 21.
@@ -37,4 +37,4 @@ Esta clase tiene **5** fotogramas extraídos; **0** están anotados y verificado
 
 ---
 
-[← Día 19](./dia-19) · [Índice del bootcamp](./index)
+[← Día 19](./dia-19) · [Índice del bootcamp](./index) · [Día 21 →](./dia-21)

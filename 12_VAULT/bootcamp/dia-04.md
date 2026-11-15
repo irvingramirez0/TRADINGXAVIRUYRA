@@ -13,7 +13,7 @@ duracion: "21:15"
 
 # Día 4 — Velas
 
-> **Clase 4 de 20** · Duración 21:15 · **Vídeo:** `SuRgJd8ONIc`
+> **Clase 4 de 21** · Duración 21:15 · **Vídeo:** `SuRgJd8ONIc`
 
 > [!note] Apunte del curriculum
 > 

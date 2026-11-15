@@ -13,7 +13,7 @@ duracion: "21:57"
 
 # Día 17 — SMT's y True Manipulation
 
-> **Clase 17 de 20** · Duración 21:57 · **Vídeo:** `sTS-iWJvTf0`
+> **Clase 17 de 21** · Duración 21:57 · **Vídeo:** `sTS-iWJvTf0`
 
 > [!note] Apunte del curriculum
 > Cierra la cuestión del doble SMT: no lo usa. IFVG de entrada solo 30s–5m.

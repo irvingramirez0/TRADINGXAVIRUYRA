@@ -71,11 +71,6 @@ Documento 05.
 
 ## Fragmentos visuales
 
-![Judas Swing en vz4rhIi5Joo](../media/judas-swing-378.webp)
-
-**La MEJOR estrategia de ICT para FUTUROS (IFVG updated 2026)** (`vz4rhIi5Joo`) · **01:37** · **Confianza:** explícito · anotado
-> Diapositiva con dos esquemas separados: 'Judas Swing (9:30–9:45)' y 'Open de las 10, PO3 10, el open de la vela de 4h'. No muestra las tres fases AMD rotuladas.
-
 ![Judas Swing en vz4rhIi5Joo](../media/judas-swing-382.webp)
 
 **La MEJOR estrategia de ICT para FUTUROS (IFVG updated 2026)** (`vz4rhIi5Joo`) · **03:40** · **Confianza:** explícito · anotado

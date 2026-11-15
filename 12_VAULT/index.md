@@ -10,7 +10,7 @@ anotaciones: false
 panel:
   titulo: "El proyecto en cifras"
   bloques:
-    - {etiqueta: "clases de bootcamp", valor: 20}
+    - {etiqueta: "clases de bootcamp", valor: 21}
     - {etiqueta: "conceptos", valor: 53}
     - {etiqueta: "reglas", valor: 135}
     - {etiqueta: "operaciones", valor: 54, nota: "P&L autodeclarado"}
@@ -30,7 +30,7 @@ panel:
 ## Por dónde entrar
 
 <div class="xr-tarjetas">
-<a class="xr-tarjeta" href="./bootcamp"><span class="xr-tarjeta-titulo">Bootcamp</span><span class="xr-tarjeta-desc">Las 20 clases en orden, con lo que da cada una.</span></a>
+<a class="xr-tarjeta" href="./bootcamp"><span class="xr-tarjeta-titulo">Bootcamp</span><span class="xr-tarjeta-desc">Las 21 clases en orden, con lo que da cada una.</span></a>
 <a class="xr-tarjeta" href="./conceptos"><span class="xr-tarjeta-titulo">Conceptos</span><span class="xr-tarjeta-desc">53 conceptos con definición, condiciones y errores.</span></a>
 <a class="xr-tarjeta" href="./reglas"><span class="xr-tarjeta-titulo">Reglas operativas</span><span class="xr-tarjeta-desc">135 reglas, incluidas las obsoletas con su sustituto.</span></a>
 <a class="xr-tarjeta" href="./operaciones"><span class="xr-tarjeta-titulo">Operaciones</span><span class="xr-tarjeta-desc">54 operaciones analizadas, con el P&L autodeclarado.</span></a>

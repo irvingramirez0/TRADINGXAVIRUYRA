@@ -9,7 +9,7 @@ timestamp: ""
 panel:
   titulo: "El bootcamp, de un vistazo"
   bloques:
-    - {etiqueta: "clases publicadas", valor: "20"}
+    - {etiqueta: "clases publicadas", valor: "21"}
     - {etiqueta: "conceptos enlazados", valor: "34"}
     - {etiqueta: "reglas con fuente", valor: "72"}
     - {etiqueta: "fotogramas anotados", valor: "141", nota: "de 222"}
@@ -44,6 +44,7 @@ Las clases del bootcamp, en su orden. Cada día tiene su página con los concept
 <div class="xr-dia"><span class="xr-dia-num">DÍA<br>18</span><div class="xr-dia-cuerpo"><a class="xr-dia-titulo" href="./dia-18">FOMO (psicología)</a><div class="xr-dia-temas">FOMO, no entrar sin estrategia, backtesting sin FOMO, desviación=gambling, refuerzo del mal hábito, control emocional, pregunta del enfado</div></div><div class="xr-dia-meta"><span class="xr-pastilla" >10:12</span><span class="xr-pastilla" >1 conceptos</span><span class="xr-pastilla" >3 reglas</span><a class="xr-dia-ver" href="https://www.youtube.com/watch?v=2kBd2-bLuwU" target="_blank" rel="noopener noreferrer">Ver en YouTube ↗</a></div></div>
 <div class="xr-dia"><span class="xr-dia-num">DÍA<br>19</span><div class="xr-dia-cuerpo"><a class="xr-dia-titulo" href="./dia-19">Equilibrium (premium y discount)</a><div class="xr-dia-temas">Equilibrium con retroceso de Fibonacci, premium arriba/descuento abajo, compras en descuento y ventas en premium, FVG alineado con 0.5, IFVG como confirmación, no operar si no toca equilibrium, no dibujar en lateralización, secuencia del análisis</div></div><div class="xr-dia-meta"><span class="xr-pastilla" >15:56</span><span class="xr-pastilla" >1 conceptos</span><span class="xr-pastilla" >7 reglas</span><a class="xr-dia-ver" href="https://www.youtube.com/watch?v=56ES-W1d0xw" target="_blank" rel="noopener noreferrer">Ver en YouTube ↗</a></div></div>
 <div class="xr-dia"><span class="xr-dia-num">DÍA<br>20</span><div class="xr-dia-cuerpo"><a class="xr-dia-titulo" href="./dia-20">Ego (psicología)</a><div class="xr-dia-temas">Ego tras racha ganadora, muestra estadística y win rate, caso personal, mantener el riesgo, no replicar cuentas, día rojo, cadena de rupturas de reglas, protocolo tras el error</div></div><div class="xr-dia-meta"><span class="xr-pastilla" >11:46</span><span class="xr-pastilla" >1 conceptos</span><span class="xr-pastilla" >6 reglas</span><a class="xr-dia-ver" href="https://www.youtube.com/watch?v=ygJya0srm8g" target="_blank" rel="noopener noreferrer">Ver en YouTube ↗</a></div></div>
+<div class="xr-dia"><span class="xr-dia-num">DÍA<br>21</span><div class="xr-dia-cuerpo"><a class="xr-dia-titulo" href="./dia-21">Daily bias + DOL</a></div><div class="xr-dia-meta"><span class="xr-pastilla" >0:00</span><a class="xr-dia-ver" href="https://www.youtube.com/watch?v=MQyNBiw-QVo" target="_blank" rel="noopener noreferrer">Ver en YouTube ↗</a></div></div>
 </div>
 
 ## Por dónde empezar

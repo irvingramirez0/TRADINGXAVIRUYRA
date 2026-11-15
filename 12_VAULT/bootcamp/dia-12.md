@@ -13,7 +13,7 @@ duracion: "9:22"
 
 # Día 12 — Gambling (psicología)
 
-> **Clase 12 de 20** · Duración 9:22 · **Vídeo:** `ZOxEUWwDSoQ`
+> **Clase 12 de 21** · Duración 9:22 · **Vídeo:** `ZOxEUWwDSoQ`
 
 > [!note] Apunte del curriculum
 > No cumple el anuncio de IFVG/CISD del Día 11. No anuncia el tema siguiente.

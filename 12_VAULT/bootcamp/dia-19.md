@@ -13,7 +13,7 @@ duracion: "15:56"
 
 # Día 19 — Equilibrium (premium y discount)
 
-> **Clase 19 de 20** · Duración 15:56 · **Vídeo:** `56ES-W1d0xw`
+> **Clase 19 de 21** · Duración 15:56 · **Vídeo:** `56ES-W1d0xw`
 
 > [!note] Apunte del curriculum
 > Anuncia psicología, daily bias/DOL y sesiones, backtesting y sistemas de entrada.
