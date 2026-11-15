@@ -34,7 +34,11 @@ jobs:
 
       - name: Construir el sitio
         working-directory: 13_SITE/quartz
-        run: npx quartz build -d ../../12_VAULT -o public
+        # Se invoca el CLI con `node` en vez de `npx quartz`: en Windows el bit
+        # de ejecución no se propaga por git (core.filemode=false), y `npx` con
+        # un binario sin permiso puede acabar resolviendo el paquete "quartz"
+        # del registro de npm, que no es este proyecto.
+        run: node ./quartz/bootstrap-cli.mjs build -d ../../12_VAULT -o public
 
       - name: Configurar Pages
         uses: actions/configure-pages@v5
