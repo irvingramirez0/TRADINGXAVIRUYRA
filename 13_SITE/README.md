@@ -97,5 +97,6 @@ Cada push a `main` compila y publica. Para volver a desplegar sin cambiar nada:
 | `verificar_vault.py` | 0 enlaces rotos, 0 imágenes rotas, frontmatter completo |
 | `quartz build` | 818 archivos, ~22 MB, grafo y búsqueda activos |
 | **`npm ci` + build en clon limpio** | 329 notas y 818 archivos partiendo solo de los archivos rastreados en git |
+| **Sitio en producción** | 200 en `/`, en las notas y en los `.webp`; grafo y búsqueda presentes |
 | Auditoría de contenido | ninguna cita > 246 caracteres; ningún dato personal; sin Reels |
 | Repositorio local | 831 archivos, ~24 MB (sin vídeos, transcripciones, base ni modelos) |
