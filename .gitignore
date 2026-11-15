@@ -35,6 +35,14 @@ __pycache__/
 *.pyc
 *.pyo
 
+# Artefactos de pip (ruedas y entornos locales): cientos de MB que no
+# forman parte del proyecto. Llegaron a colarse en un commit por `git add -A`.
+09_AUTOMATION/.python-packages*/
+09_AUTOMATION/.wheel-downloads-*/
+09_AUTOMATION/.pip-tmp/
+09_AUTOMATION/.av-wheel-report.json
+09_AUTOMATION/.required-wheels.json
+
 # Dependencias y artefactos de Quartz.
 13_SITE/quartz/node_modules/
 13_SITE/quartz/public/

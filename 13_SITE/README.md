@@ -54,14 +54,28 @@ Frontmatter mínimo en cada nota: `tipo`, `titulo`/`title`, `confianza`
 - Datos personales: no se ha encontrado ninguno en el texto que se publica
   (revisión de `trades`, `concepts`, `rules`, `evidence` y `changes`).
 
-## 5. Publicar (cuando se apruebe)
+## 5. Publicación
 
-1. Crear el repositorio y subir el proyecto.
-2. **Settings → Pages → Source: GitHub Actions**.
-3. Ajustar `baseUrl` en `13_SITE/quartz/quartz.config.yaml`:
-   - proyecto: `USUARIO.github.io/NOMBRE-DEL-REPO` (hoy: `irvingramirez0.github.io/TRADINGXAVIRUYRA`)
-   - usuario: `USUARIO.github.io`
-4. Cada push a `main` compila y publica.
+**Publicado:** <https://irvingramirez0.github.io/TRADINGXAVIRUYRA>
+
+| Pieza | Valor |
+|---|---|
+| Repositorio | <https://github.com/irvingramirez0/TRADINGXAVIRUYRA> (público) |
+| Rama de publicación | `main` |
+| Origen de Pages | GitHub Actions (`build_type: workflow`) |
+| `baseUrl` | `irvingramirez0.github.io/TRADINGXAVIRUYRA` |
+
+> **Historial del dominio.** La cuenta tenía `madelove.me` como dominio
+> personalizado en `irvingramirez0.github.io`. Ese dominio lo sirve **Vercel**
+> (SyncLove), no GitHub Pages, y GitHub hereda el dominio personalizado en
+> todas las páginas de proyecto: cualquier URL de proyecto respondía `301`
+> hacia `madelove.me`, donde no existía. Se eliminó el `CNAME` de
+> `irvingramirez0.github.io` para que las páginas de proyecto vuelvan a su URL
+> de `github.io`. Si algún día se recupera un dominio propio, hay que
+> configurarlo **repo por repo** y apuntar el DNS a GitHub, no a Vercel.
+
+Cada push a `main` compila y publica. Para volver a desplegar sin cambiar nada:
+*Actions → Publicar el sitio en GitHub Pages → Run workflow*.
 
 ## 6. Límites conocidos
 
