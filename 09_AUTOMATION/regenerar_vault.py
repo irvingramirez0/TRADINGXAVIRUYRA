@@ -271,25 +271,59 @@ NEGACIONES = (
     "no aparece", "no aporta", "no se distingue", "no consta", "sin rótulo",
     "no hay rótulo", "no se aprecia", "no permite ver", "no se observa",
 )
+_RE_NEG = re.compile("|".join(re.escape(n) for n in NEGACIONES))
 
 
 def _oraciones(text):
     return [s for s in re.split(r"(?<=[.:;])\s+|\n+", text or "") if s.strip()]
 
 
-def niega_concepto(desc, alts):
-    """True si la anotación dice, del propio concepto, que no se ve.
+def global_aliases(con):
+    """[(alias, concept_id)] de todos los conceptos, para saber qué niega una negación.
 
-    Solo cuenta la negación cuando el concepto y la negación están en la misma
-    oración: así «no hay stop» en una frase sobre el stop no descarta una
-    imagen que sí ilustra otra cosa.
+    Hace falta porque «cuando no hay FVG uso CISD» contiene una negación y la
+    palabra CISD en la misma frase, pero lo negado es el FVG.
     """
+    out = []
+    for r in con.execute("SELECT id, name, aliases FROM concepts"):
+        for a in [r["name"]] + [x.strip() for x in (r["aliases"] or "").split(",") if x.strip()]:
+            a = a.lower()
+            if len(a) > 2 and a not in ALIAS_GENERICOS:
+                out.append((a, r["id"]))
+    return out
+
+
+def niega_concepto(desc, alts, cid=None, aliases_globales=None):
+    """True si la anotación dice que *este* concepto no se ve.
+
+    Se busca la negación y se mira cuál es el primer alias que aparece después:
+    si es de este concepto, la negación va sobre él; si es de otro, no. Así
+    «no hay un rótulo que identifique el IFVG» descarta la imagen para IFVG,
+    pero «cuando no hay FVG uso CISD» no descarta nada para CISD.
+    """
+    propias = {a for a in alts if len(a) > 2}
     for oracion in _oraciones(desc):
         o = oracion.lower()
-        if not any(alt_en_texto(a, o) for a in alts if len(a) > 2):
-            continue
-        if any(n in o for n in NEGACIONES):
-            return True
+        for m in _RE_NEG.finditer(o):
+            ventana = o[m.end():m.end() + 70]
+            if not ventana.strip():
+                continue
+            # Primer alias que aparece tras la negación, sea de este concepto o de otro.
+            mejor = None
+            for alt, otro_id in (aliases_globales or []):
+                pos = ventana.find(alt)
+                if pos == -1:
+                    continue
+                if otro_id != cid and alt not in propias:
+                    if mejor is None or pos < mejor[0]:
+                        mejor = (pos, otro_id)
+                elif otro_id == cid or alt in propias:
+                    if mejor is None or pos < mejor[0]:
+                        mejor = (pos, cid)
+            if mejor is not None and mejor[1] == cid:
+                return True
+            if mejor is None and any(alt_en_texto(a, ventana) for a in propias):
+                return True
     return False
 
 
@@ -317,6 +351,7 @@ def candidate_frames(con, concepto):
     # Alias que identifican el concepto sin ambigüedad; si no hay, se usan
     # todos (peor evidencia, pero al menos queda etiquetada como contexto).
     propias = concepto.get("alts_propias") or alts
+    alias_globales = global_aliases(con)
     picked = []
     seen = set()
 
@@ -339,7 +374,7 @@ def candidate_frames(con, concepto):
         if not frame_is_annotated(fr):
             continue
         desc = fr["description"] or ""
-        if niega_concepto(desc, alts):
+        if niega_concepto(desc, alts, cid, alias_globales):
             continue
         muestra = justifica_concepto(desc, propias)
         add(fr, 0 if muestra else 1,
@@ -353,7 +388,7 @@ def candidate_frames(con, concepto):
         if not frame_is_annotated(fr):
             continue
         desc = fr["description"] or ""
-        if justifica_concepto(desc, propias) and not niega_concepto(desc, alts):
+        if justifica_concepto(desc, propias) and not niega_concepto(desc, alts, cid, alias_globales):
             add(fr, 0, "la anotación describe el concepto")
 
     # 3) Fotogramas pendientes de anotación: NO se usan como ilustración.
