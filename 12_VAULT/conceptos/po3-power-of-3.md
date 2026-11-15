@@ -69,15 +69,3 @@ Documento 04.
 - «Paráfrasis: PO3 significa AMD; es lo mismo, con atención al timing y a la hora en que ocurre.» — `vz4rhIi5Joo` @ 01:37 (explícito)
 - «Paráfrasis: PO3 = AMD + tiempo; se puede dar en cada open de 15 minutos.» — `oP7enoxXpfI` @ 02:42 (explícito)
 
-## Fragmentos visuales
-
-![PO3 (Power of 3) en vz4rhIi5Joo](../media/po3-power-of-3-378.webp)
-
-**La MEJOR estrategia de ICT para FUTUROS (IFVG updated 2026)** (`vz4rhIi5Joo`) · **01:37** · **Confianza:** explícito · anotado
-> Diapositiva con dos esquemas separados: 'Judas Swing (9:30–9:45)' y 'Open de las 10, PO3 10, el open de la vela de 4h'. No muestra las tres fases AMD rotuladas.
-
-![PO3 (Power of 3) en vz4rhIi5Joo](../media/po3-power-of-3-382.webp)
-
-**La MEJOR estrategia de ICT para FUTUROS (IFVG updated 2026)** (`vz4rhIi5Joo`) · **03:40** · **Confianza:** explícito · anotado
-> Diapositiva sobre NQ 5m: 'Judas Swing (9:30-9:45)' y 'Open de las 10, PO3 10, el open de la vela de 4h'. Esquema de zigzag con dos zonas azules, una arriba y otra abajo.
-

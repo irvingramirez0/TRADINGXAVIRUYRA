@@ -72,10 +72,3 @@ Documento 03.
 - «Paráfrasis: SMT entre ES y NQ y objetivo en el FVG sin filar.» — `gNsZXb8j1So` @ 01:30 (observado)
 - «Soy súper reactivo.» — `Imr4TPKUD-c` @ 04:51 (explícito)
 
-## Fragmentos visuales
-
-![Daily Bias en TxoOh3MFdO0](../media/daily-bias-727.webp)
-
-**BIAS 03/11/25** (`TxoOh3MFdO0`) · **00:30** · **Confianza:** explícito · anotado · imagen de contexto, no muestra el concepto
-> Gráfico MNQZ25 1H. Líneas 'high' y 'DOL' sobre dos highs; zona verde 'FVG' por debajo del precio.
-

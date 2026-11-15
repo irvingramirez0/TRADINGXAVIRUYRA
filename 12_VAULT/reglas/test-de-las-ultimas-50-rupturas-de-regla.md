@@ -13,6 +13,7 @@ version: 1
 # Test de las últimas 50 rupturas de regla
 
 > **Confianza:** explícito · **Estado:** vigente · **Versión:** 1
+- **Clase del bootcamp:** [[../bootcamp/dia-14|Día 14 — Revenge Trading (psicología)]]
 
 ## Descripción
 

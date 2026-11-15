@@ -13,6 +13,7 @@ version: 1
 # Si el precio no toca equilibrium, no se opera
 
 > **Confianza:** explícito · **Estado:** vigente · **Versión:** 1
+- **Clase del bootcamp:** [[../bootcamp/dia-19|Día 19 — Equilibrium (premium y discount)]]
 
 ## Descripción
 

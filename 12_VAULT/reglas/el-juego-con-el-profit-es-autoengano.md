@@ -13,6 +13,7 @@ version: 1
 # El juego con el profit es autoengaño
 
 > **Confianza:** explícito · **Estado:** vigente · **Versión:** 1
+- **Clase del bootcamp:** [[../bootcamp/dia-14|Día 14 — Revenge Trading (psicología)]]
 
 ## Descripción
 

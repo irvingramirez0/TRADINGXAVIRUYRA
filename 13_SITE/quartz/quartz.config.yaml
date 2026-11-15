@@ -48,6 +48,21 @@ configuration:
     enableSiteMap: true
     enableRSS: true
 plugins:
+  # Componentes propios del sitio. Cada uno es una carpeta de este repo
+  # (`quartz-plugins/<nombre>`) enlazada en `.quartz/plugins/<nombre>`.
+  # En Windows el symlink que hace Quartz no se puede crear sin privilegios,
+  # así que el enlace lo prepara `09_AUTOMATION/preparar_plugin_sitio.cmd` con
+  # `mklink /J` (junction, no requiere administrador) antes de compilar.
+  - source: ./quartz-plugins/ficha-fuente
+    enabled: true
+    layout:
+      position: beforeBody
+      priority: 1
+      display: all
+  - source: ./quartz-plugins/panel-avance
+    enabled: true
+  - source: ./quartz-plugins/anotaciones
+    enabled: true
   - source: "@quartz-community/created-modified-date"
     enabled: true
     options:

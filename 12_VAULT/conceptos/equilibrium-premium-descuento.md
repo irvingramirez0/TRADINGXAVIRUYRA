@@ -15,6 +15,7 @@ id: 53
 # Equilibrium (premium/descuento)
 
 > **Confianza:** explícito · **Estado:** vigente · **Categoría:** CORE
+- **Clase del bootcamp:** [[../bootcamp/dia-19|Día 19 — Equilibrium (premium y discount)]]
 
 ## Definición
 

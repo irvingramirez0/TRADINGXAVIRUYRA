@@ -13,6 +13,7 @@ version: 1
 # CISD es residual: no se enseña en el bootcamp
 
 > **Confianza:** explícito · **Estado:** vigente · **Versión:** 1
+- **Clase del bootcamp:** [[../bootcamp/dia-13|Día 13 — IFVG]]
 
 ## Descripción
 

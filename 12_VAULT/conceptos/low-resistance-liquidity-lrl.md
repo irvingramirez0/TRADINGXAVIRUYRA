@@ -15,6 +15,7 @@ id: 59
 # Low Resistance Liquidity (LRL)
 
 > **Confianza:** explícito · **Estado:** vigente · **Categoría:** SUPPORTING
+- **Clase del bootcamp:** [[../bootcamp/dia-11|Día 11 — Liquidez pt2]]
 
 ## Definición
 

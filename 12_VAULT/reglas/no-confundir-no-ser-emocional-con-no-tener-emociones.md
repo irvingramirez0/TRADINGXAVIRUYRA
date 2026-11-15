@@ -13,6 +13,7 @@ version: 1
 # No confundir no ser emocional con no tener emociones
 
 > **Confianza:** explícito · **Estado:** vigente · **Versión:** 1
+- **Clase del bootcamp:** [[../bootcamp/dia-07|Día 7 — Prisa (psicología)]]
 
 ## Descripción
 

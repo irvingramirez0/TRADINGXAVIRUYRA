@@ -13,6 +13,7 @@ version: 2
 # Equilibrium: comprar en descuento, vender en premium
 
 > **Confianza:** explícito · **Estado:** vigente · **Versión:** 2
+- **Clase del bootcamp:** [[../bootcamp/dia-19|Día 19 — Equilibrium (premium y discount)]]
 
 ## Descripción
 

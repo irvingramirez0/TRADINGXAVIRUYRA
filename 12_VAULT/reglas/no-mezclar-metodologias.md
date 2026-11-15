@@ -13,6 +13,7 @@ version: 1
 # No mezclar metodologías
 
 > **Confianza:** explícito · **Estado:** vigente · **Versión:** 1
+- **Clase del bootcamp:** [[../bootcamp/dia-05|Día 5 — Tiempo (psicología)]]
 
 ## Descripción
 

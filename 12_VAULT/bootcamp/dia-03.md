@@ -1,0 +1,23 @@
+---
+tipo: "bootcamp"
+title: "Día 3 — Objetivos"
+titulo: "Día 3 — Objetivos"
+confianza: "explícito"
+estado: "vigente"
+video: "NDVbDdE5TW0"
+timestamp: "00:00"
+dia: 3
+categoria: "BOOTCAMP"
+duracion: "13:53"
+---
+
+# Día 3 — Objetivos
+
+> **Clase 3 de 20** · Duración 13:53 · **Vídeo:** `NDVbDdE5TW0`
+
+> [!note] Apunte del curriculum
+> 
+
+---
+
+[← Día 2](./dia-02) · [Índice del bootcamp](./index) · [Día 4 →](./dia-04)

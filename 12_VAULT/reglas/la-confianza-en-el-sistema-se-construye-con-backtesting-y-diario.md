@@ -13,6 +13,7 @@ version: 1
 # La confianza en el sistema se construye con backtesting y diario
 
 > **Confianza:** explícito · **Estado:** vigente · **Versión:** 1
+- **Clase del bootcamp:** [[../bootcamp/dia-09|Día 9 — Miedo (psicología)]]
 
 ## Descripción
 

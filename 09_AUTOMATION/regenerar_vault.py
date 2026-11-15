@@ -134,6 +134,11 @@ def normaliza_titulo(text):
     return re.sub(r"\s+", " ", (text or "").strip())
 
 
+# frame_id -> concept_id al que pertenece la imagen. Lo calcula `main()` antes
+# de generar notas; vacío = sin reparto (modo prueba).
+DUENO_FOTOGRAMAS = {}
+
+
 # --------------------------------------------------------------------------
 # Modelo de notas
 # --------------------------------------------------------------------------
@@ -225,21 +230,49 @@ def frame_is_annotated(row):
     return bool(d) and d not in SKIP_DESC and not d.startswith(PENDIENTE) and not d.startswith("frame de contexto")
 
 
-def frame_vacio(path, min_tinta=0.0008):
+def frame_vacio(path, min_tinta=0.0012):
     """Descarta capturas cuya zona de gráfico está vacía (sin velas ni trazos).
-    Ver la misma función en frames_selectivos.py."""
+
+    El umbral está medido sobre las 54 imágenes que publica el sitio: la mediana
+    de «tinta» (fracción de píxeles oscuros en la zona del gráfico) es 0,030, y
+    las diapositivas de texto sobre un gráfico en blanco caen por debajo de
+    0,0015. Con 0,002 se descartan esas diapositivas y no se toca ninguna
+    captura con velas.
+
+    Hay dos capas con el mismo nombre porque miden cosas distintas: esta lee el
+    .jpg de origen que produce el extractor, y `webp_vacio` lee el archivo ya
+    publicado (que puede venir recortado de la recaptura).
+    """
+    return _tinta(path) < min_tinta
+
+
+def _tinta(path):
+    """Fracción de píxeles oscuros en la zona donde debería estar el gráfico."""
     try:
         from PIL import Image
     except ImportError:
-        return False
+        return 1.0
     try:
         im = Image.open(path).convert("L")
         w, h = im.size
         c = im.crop((int(w * 0.06), int(h * 0.10), int(w * 0.72), int(h * 0.88)))
-        px = list(c.getdata())
-        return (sum(1 for p in px if p < 110) / len(px)) < min_tinta
+        datos = list(c.getdata())
+        return sum(1 for p in datos if p < 110) / len(datos)
     except Exception:
-        return False
+        return 1.0
+
+
+def webp_vacio(path, min_tinta=0.002):
+    """Igual que `frame_vacio`, sobre el .webp ya generado.
+
+    NO se usa para filtrar lo publicado: mide píxeles oscuros y un esquema de
+    líneas claras sobre fondo blanco (que sí ilustra el concepto) da valores tan
+    bajos como una diapositiva vacía. Medido: `internal-external-liquidity-175`
+    tiene 0,0009 de tinta y es un gráfico completo con SSL, PDH, BSL, FVG y REL.
+    Esa distinción la hace una persona mirando la imagen; ver
+    `revisar_capturas.py` y `vetar_fotogramas.py`.
+    """
+    return _tinta(path) < min_tinta
 
 
 def es_pantalla(path, max_croma=0.13):
@@ -332,6 +365,53 @@ def justifica_concepto(texto, alts):
     return any(alt_en_texto(a, texto) for a in alts if len(a) > 2)
 
 
+# Una captura puede nombrar el concepto y, aun así, no enseñarlo: la anotación
+# dice que el gráfico está vacío, que es una diapositiva, que no hay velas.
+# Eso no es una negación del concepto («no hay IFVG») sino una negación del
+# contenido visual, y basta para no publicarla como prueba.
+_AUSENCIA = re.compile(
+    r"gr[áa]fico[^.]{0,40}vac[íi]|vac[íi]o,? sin|completamente vac[íi]|"
+    r"sin (?:una sola )?vela|no hay velas|sin velas|"
+    r"diapositiva (?:de|con) (?:texto|t[íi]tulo)|"
+    r"(?:solo|únicamente) (?:se ve|hay|aparece) (?:la )?(?:diapositiva|texto|t[íi]tulo)|"
+    r"fondo (?:negro|vac[íi]o) sin|"
+    r"no (?:hay|se ve|se observa) (?:ninguna|ningún) (?:vela|serie|trazo|dibujo)"
+)
+
+
+def vetos_de(con, cid):
+    """Conjunto de frame_id vetados para este concepto (o para todos).
+
+    Los escribe `vetar_fotogramas.py` cuando alguien mira la imagen y decide que
+    no enseña el concepto. Se guardan en una tabla porque el mismo fotograma
+    puede servir para un concepto y no para otro: una diapositiva de Judas Swing
+    ilustra Judas Swing, pero no el PO3.
+    """
+    vetados = set()
+    try:
+        for r in con.execute(
+            "SELECT frame_id FROM frame_vetos WHERE concept_id IS NULL OR concept_id=?",
+            (cid,),
+        ):
+            vetados.add(r["frame_id"])
+    except sqlite3.OperationalError:
+        # Base antigua sin la tabla: no hay vetos, no es un error.
+        return set()
+    return vetados
+
+
+def frame_sin_contenido(desc):
+    """True si la anotación dice que la imagen no enseña un gráfico.
+
+    Un fotograma de una diapositiva de título o de un gráfico en blanco no
+    ilustra nada aunque su texto mencione el concepto: es el mismo tipo de
+    error que publicar la captura de Judas Swing bajo la nota de IFVG, pero por
+    la vía opuesta —aquí la anotación avisa de que no hay nada que ver y la
+    regla anterior no lo miraba.
+    """
+    return bool(_AUSENCIA.search((desc or "").lower()))
+
+
 def candidate_frames(con, concepto):
     """Fotogramas para un concepto, solo si la anotación los respalda.
 
@@ -352,6 +432,7 @@ def candidate_frames(con, concepto):
     # todos (peor evidencia, pero al menos queda etiquetada como contexto).
     propias = concepto.get("alts_propias") or alts
     alias_globales = global_aliases(con)
+    vetados = vetos_de(con, cid)
     picked = []
     seen = set()
 
@@ -376,6 +457,8 @@ def candidate_frames(con, concepto):
         desc = fr["description"] or ""
         if niega_concepto(desc, alts, cid, alias_globales):
             continue
+        if frame_sin_contenido(desc) or fr["id"] in vetados:
+            continue
         muestra = justifica_concepto(desc, propias)
         add(fr, 0 if muestra else 1,
             "la anotación describe el concepto" if muestra else "la anotación no nombra el concepto")
@@ -388,7 +471,10 @@ def candidate_frames(con, concepto):
         if not frame_is_annotated(fr):
             continue
         desc = fr["description"] or ""
-        if justifica_concepto(desc, propias) and not niega_concepto(desc, alts, cid, alias_globales):
+        if (justifica_concepto(desc, propias)
+                and not niega_concepto(desc, alts, cid, alias_globales)
+                and not frame_sin_contenido(desc)
+                and fr["id"] not in vetados):
             add(fr, 0, "la anotación describe el concepto")
 
     # 3) Fotogramas pendientes de anotación: NO se usan como ilustración.
@@ -419,11 +505,62 @@ def limpiar_media():
                 os.remove(os.path.join(MEDIA, name))
 
 
+
+def asignar_fotogramas(con, conceptos):
+    """Reparte los fotogramas entre conceptos: uno no puede probar dos cosas.
+
+    Un fotograma termina publicado en varias notas porque su anotación nombra
+    más de un concepto («NQ 5m. SMT en el low y FVG de 5m»). Eso no lo hace
+    prueba de los dos: una imagen concreta enseña lo que enseña. Es el mismo
+    error que puso un Judas Swing en la nota de IFVG, pero multiplicado.
+
+    Criterio, por orden:
+      1. si la fila de `evidence` apunta a este concepto explícitamente, gana;
+      2. si no, gana el concepto cuyo alias aparezca **todas** sus veces en la
+         anotación (una mención suelta es más probable que sea contexto);
+      3. si sigue habiendo empate, gana el alias más largo y específico;
+      4. si el empate persiste, el fotograma se queda con el concepto de id
+         menor: es una decisión arbitraria pero estable y declarada.
+
+    Devuelve {frame_id: concept_id_dueño}.
+    """
+    from collections import defaultdict
+    peso = defaultdict(dict)  # fid -> {cid: (evidencia, menciones, largo)}
+    anotados = {c["id"]: c for c in conceptos}
+
+    for c in conceptos:
+        for rank, fr, why in candidate_frames(con, c):
+            fid = fr["id"]
+            desc = (fr["description"] or "").lower()
+            propias = c.get("alts_propias") or c["alts"]
+            menciones = sum(1 for a in propias if len(a) > 2 and alt_en_texto(a, desc))
+            largo = max((len(a) for a in propias if len(a) > 2 and alt_en_texto(a, desc)), default=0)
+            ev = 0
+            fila = con.execute(
+                "SELECT 1 FROM evidence WHERE entity_type='concept' AND entity_id=? AND frame_id=?",
+                (c["id"], fid),
+            ).fetchone()
+            if fila:
+                ev = 1
+            peso[fid][c["id"]] = (ev, menciones, largo, rank)
+
+    dueno = {}
+    for fid, opciones in peso.items():
+        def clave(cid):
+            ev, menciones, largo, rank = opciones[cid]
+            return (-ev, -menciones, -largo, rank, cid)
+        dueno[fid] = sorted(opciones, key=clave)[0]
+    return dueno
+
 def build_media(con, concepto, slug_concepto, dry=False):
     rows = candidate_frames(con, concepto)
     lines = []
     used = 0
     for rank, fr, why in rows:
+        # Un fotograma solo es prueba de un concepto. Si ya se asignó a otro
+        # (o si aquí solo sería contexto), no se vuelve a publicar.
+        if DUENO_FOTOGRAMAS and DUENO_FOTOGRAMAS.get(fr["id"], concepto["id"]) != concepto["id"]:
+            continue
         src = os.path.join(BASE, fr["path"])
         if not os.path.exists(src):
             continue
@@ -482,6 +619,59 @@ def conceptos_data(con):
     return out
 
 
+def clases_bootcamp(con, tipo, eid, video_principal=""):
+    """Clases del bootcamp donde aparece esta entidad.
+
+    No basta con `first_seen_video`: un concepto puede haberse visto primero en
+    un recap y aun así tener su clase. Se miran las dos vías y se devuelve la
+    lista ordenada por número de día, sin duplicados.
+    """
+    ids = {video_principal} if video_principal else set()
+    for ev in con.execute(
+        "SELECT DISTINCT video_id FROM evidence WHERE entity_type=? AND entity_id=?",
+        (tipo, eid),
+    ):
+        if ev["video_id"]:
+            ids.add(ev["video_id"])
+    if not ids:
+        return []
+    marcas = ",".join("?" * len(ids))
+    filas = con.execute(
+        f"SELECT order_num, lesson, video_id FROM curriculum "
+        f"WHERE video_id IN ({marcas}) ORDER BY order_num", tuple(ids)
+    ).fetchall()
+    return filas
+
+
+def enlace_bootcamp(con, video_id):
+    """Enlace a la clase del bootcamp en la que aparece este vídeo, si la hay."""
+    if not video_id:
+        return ""
+    r = con.execute(
+        "SELECT order_num, lesson FROM curriculum WHERE video_id=?", (video_id,)
+    ).fetchone()
+    return _linea_clase(r) if r else ""
+
+
+def _linea_clase(r):
+    titulo = re.sub(r"^Día \d+\s*[—-]\s*", "", r["lesson"])
+    return (f"- **Clase del bootcamp:** [[../bootcamp/dia-{r['order_num']:02d}"
+            f"|Día {r['order_num']} — {titulo}]]")
+
+
+def lineas_clases(con, tipo, eid, video_principal=""):
+    """Bloque «dónde se explica» con todas las clases aplicables."""
+    filas = clases_bootcamp(con, tipo, eid, video_principal)
+    if not filas:
+        return []
+    if len(filas) == 1:
+        return [_linea_clase(filas[0])]
+    enlaces = " · ".join(
+        f"[[../bootcamp/dia-{f['order_num']:02d}|Día {f['order_num']}]]" for f in filas
+    )
+    return [f"- **Clases del bootcamp:** {enlaces}"]
+
+
 def generate_conceptos(con, conceptos, limite=None, sin_media=False, dry=False):
     notas = {}
     slugs = {}
@@ -511,8 +701,9 @@ def generate_conceptos(con, conceptos, limite=None, sin_media=False, dry=False):
         nota.cuerpo += [
             f"> **Confianza:** {confianza(c['certainty'])} · **Estado:** {c['status']} · "
             f"**Categoría:** {c['category'] or '—'}",
-            "",
         ]
+        nota.cuerpo += lineas_clases(con, "concept", c["id"], c["first_seen_video"])
+        nota.cuerpo.append("")
         for titulo, campo in [
             ("Definición", "definition"),
             ("Interpretación de Xavi", "xavi_interpretation"),
@@ -592,8 +783,9 @@ def generate_reglas(con, conceptos, slugs_concepto, notas_obsoletas):
         nota.cuerpo += [
             f"> **Confianza:** {confianza(r['certainty'])} · **Estado:** {r['status']} · "
             f"**Versión:** {r['version'] or 1}",
-            "",
         ]
+        nota.cuerpo += lineas_clases(con, "rule", r["id"], r["first_seen_video"])
+        nota.cuerpo.append("")
         for titulo, campo in [
             ("Descripción", "description"),
             ("Contexto", "context"),
@@ -795,9 +987,81 @@ def generate_preguntas():
 
 
 def generate_index(conceptos_notas, slugs_concepto, reglas_count, trades_count,
-                   cambios_count, preguntas_count):
+                   cambios_count, preguntas_count, estado=None):
+    """Portada: qué es esto, por dónde entrar y en qué estado está.
+
+    El panel se genera con cifras contadas de la base, no escritas a mano: si
+    mañana cambian las notas, la portada cambia con ellas.
+    """
+    estado = estado or {}
     core = [(c.slug, c.titulo, c.frontmatter.get("categoria", "")) for c in conceptos_notas.values()
-            if c.frontmatter.get("categoria") == "CORE"][:8]
+            if c.frontmatter.get("categoria") == "CORE"]
+    categorias = {}
+    for c in conceptos_notas.values():
+        cat = c.frontmatter.get("categoria", "") or "Sin categoría"
+        categorias[cat] = categorias.get(cat, 0) + 1
+
+    frames_total = estado.get("frames_total", 0)
+    frames_anot = estado.get("frames_anotados", 0)
+    boot_dias = estado.get("boot_dias", 20)
+
+    panel = {
+        "titulo": "El proyecto en cifras",
+        "bloques": [
+            {"etiqueta": "clases de bootcamp", "valor": boot_dias},
+            {"etiqueta": "conceptos", "valor": len(conceptos_notas)},
+            {"etiqueta": "reglas", "valor": reglas_count},
+            {"etiqueta": "operaciones", "valor": trades_count,
+             "nota": "P&L autodeclarado"},
+            {"etiqueta": "cambios", "valor": cambios_count},
+            {"etiqueta": "preguntas abiertas", "valor": preguntas_count},
+        ],
+        "barras": [
+            {"etiqueta": "Fotogramas con anotación verificable",
+             "hecho": frames_anot, "total": frames_total,
+             "nota": "el resto está extraído pero sin revisar, y no se publica como prueba visual"},
+        ],
+        "pie": (
+            "Todo lo que aparece en este sitio se regenera desde una base SQLite con "
+            "`python 09_AUTOMATION/pipeline.py`. Las cifras de esta portada se cuentan en cada "
+            "generación, no se escriben a mano."
+        ),
+    }
+
+    def _yaml_panel(p):
+        salida = ["panel:", f"  titulo: {yaml_str(p['titulo'])}"]
+        salida.append("  bloques:")
+        for b in p["bloques"]:
+            partes = [f"etiqueta: {yaml_str(b['etiqueta'])}", f"valor: {b['valor']}"]
+            if b.get("nota"):
+                partes.append(f"nota: {yaml_str(b['nota'])}")
+            salida.append("    - {" + ", ".join(partes) + "}")
+        salida.append("  barras:")
+        for b in p["barras"]:
+            partes = [f"etiqueta: {yaml_str(b['etiqueta'])}",
+                      f"hecho: {b['hecho']}", f"total: {b['total']}"]
+            if b.get("nota"):
+                partes.append(f"nota: {yaml_str(b['nota'])}")
+            salida.append("    - {" + ", ".join(partes) + "}")
+        salida.append(f"  pie: {yaml_str(p['pie'])}")
+        return salida
+
+    secciones = [
+        ("bootcamp", "Bootcamp", f"Las {boot_dias} clases en orden, con lo que da cada una."),
+        ("conceptos", "Conceptos", f"{len(conceptos_notas)} conceptos con definición, condiciones y errores."),
+        ("reglas", "Reglas operativas", f"{reglas_count} reglas, incluidas las obsoletas con su sustituto."),
+        ("operaciones", "Operaciones", f"{trades_count} operaciones analizadas, con el P&L autodeclarado."),
+        ("cambios", "Cambios", f"{cambios_count} cambios de criterio documentados."),
+        ("preguntas", "Preguntas abiertas", f"{preguntas_count} preguntas sin cerrar."),
+        ("comprobador", "Comprobador de fuentes", "Lo que el sitio no puede respaldar, dicho en voz alta."),
+    ]
+    tarjetas = "\n".join(
+        f'<a class="xr-tarjeta" href="./{s}">'
+        f'<span class="xr-tarjeta-titulo">{t}</span>'
+        f'<span class="xr-tarjeta-desc">{d}</span></a>'
+        for s, t, d in secciones
+    )
+
     lines = [
         "---",
         "tipo: portada",
@@ -805,8 +1069,10 @@ def generate_index(conceptos_notas, slugs_concepto, reglas_count, trades_count,
         f"title: {yaml_str('Metodología Xavi Ruyra — estudio no oficial')}",
         f"confianza: {yaml_str('no confirmado')}",
         "estado: vigente",
-        "video: \"\"",
+        'video: ""',
         f"timestamp: {yaml_str('')}",
+        "anotaciones: false",
+        *_yaml_panel(panel),
         "---",
         "",
         "# Metodología Xavi Ruyra — estudio no oficial",
@@ -818,25 +1084,17 @@ def generate_index(conceptos_notas, slugs_concepto, reglas_count, trades_count,
         "",
         f"**Fecha de corte de las cifras:** {CORTE}.",
         "",
-        "## Qué contiene",
+        "## Por dónde entrar",
         "",
-        f"- **{len(conceptos_notas)}** conceptos con definición, condiciones y evidencia.",
-        f"- **{reglas_count}** reglas operativas, incluidas las obsoletas con su sustituto.",
-        f"- **{trades_count}** operaciones analizadas. El P&L es autodeclarado y no está auditado.",
-        f"- **{cambios_count}** cambios metodológicos documentados.",
-        f"- **{preguntas_count}** preguntas abiertas. La regla del proyecto es no inventar: si no hay "
-        "fuente, se dice.",
+        '<div class="xr-tarjetas">',
+        tarjetas,
+        "</div>",
         "",
-        "## Cómo leer este sitio",
+        "## Cómo leer una nota",
         "",
-        "- Cada nota lleva **confianza** (explícito / observado / inferido / no confirmado), "
-        "**estado** (vigente / obsoleta), **vídeo** y **timestamp** de la fuente principal.",
-        "- Los enlaces internos conectan reglas con conceptos, conceptos que se requieren entre sí "
-        "y reglas nuevas con las que reemplazan.",
-        "- La vista de **grafo** (arriba, icono de red) muestra la estructura completa.",
-        "- La **búsqueda** está disponible en la lupa.",
-        "",
-        "## Niveles de confianza",
+        "Cada nota empieza con una **ficha de fuente**: tipo, confianza, estado y un botón que salta "
+        "al minuto exacto del vídeo. Debajo, la nota en sí. Al final, las **anotaciones**: "
+        "se puede comentar por sección, sin cuenta.",
         "",
         "| Nivel | Significado |",
         "|---|---|",
@@ -849,14 +1107,18 @@ def generate_index(conceptos_notas, slugs_concepto, reglas_count, trades_count,
         "",
     ]
     for slug_c, titulo_c, categoria_c in core:
-        lines.append(f"- [[{slug_c}|{titulo_c}]] — {categoria_c}")
+        lines.append(f"- [[{slug_c}|{titulo_c}]]")
     lines += [
         "",
-        "## Fuente",
+        "## Fuente y límites",
         "",
-        "Los datos se regeneran desde SQLite con `09_AUTOMATION/regenerar_vault.py`. "
-        "Los fotogramas son capturas de vídeos públicos usadas como cita visual; "
-        "las transcripciones completas y los Reels de Instagram quedan fuera de este sitio.",
+        "Los datos se regeneran desde SQLite con `09_AUTOMATION/pipeline.py`. Los fotogramas son "
+        "capturas de vídeos públicos usadas como cita visual; las transcripciones completas y los "
+        "Reels de Instagram quedan fuera de este sitio.",
+        "",
+        "Las cifras de operaciones son **autodeclaradas**: no hay extractos de cuenta que las "
+        "respalden. El sitio lo repite en cada ficha porque es la diferencia entre documentar y "
+        "auditar.",
         "",
     ]
     with open(os.path.join(VAULT, "index.md"), "w", encoding="utf-8") as fh:
@@ -880,6 +1142,8 @@ def main():
     if not args.dry_run:
         limpiar_media()
     conceptos = conceptos_data(con)
+    global DUENO_FOTOGRAMAS
+    DUENO_FOTOGRAMAS = asignar_fotogramas(con, conceptos)
     notas, slugs_concepto = generate_conceptos(
         con, conceptos, limite=args.limite_conceptos,
         sin_media=args.sin_media, dry=args.dry_run)
@@ -903,8 +1167,21 @@ def main():
         preguntas_count = len(parse_preguntas())
 
     if not args.dry_run:
+        estado = _estado_proyecto(con)
         generate_index(notas, slugs_concepto, reglas_count, trades_count,
-                       cambios_count, preguntas_count)
+                       cambios_count, preguntas_count, estado)
+        # Páginas de navegación y auditoría.
+        try:
+            import paginas_sitio
+            slugs_regla_todos = {r["id"]: slug(r["name"])
+                                 for r in con.execute("SELECT id, name FROM rules")}
+            paginas_sitio.generar_bootcamp(con, slugs_concepto)
+            paginas_sitio.generar_indices(con, slugs_concepto, slugs_regla_todos)
+            paginas_sitio.generar_indice_preguntas(con)
+        except Exception as e:  # una página de navegación no debe tumbar el vault
+            print(f"AVISO: páginas de navegación: {e}")
+        sin_fuente = comprobador_fuentes(con, slugs_concepto, slugs_regla, {}, {})
+        print(f"Comprobador de fuentes: {sin_fuente} entidades sin respaldo")
 
     print(f"Vault: {VAULT}")
     print(f"Conceptos: {len(notas)}")
@@ -912,6 +1189,169 @@ def main():
     if args.limite_conceptos:
         print("Modo prueba: solo conceptos + portada.")
     return 0
+
+
+def _estado_proyecto(con):
+    """Cifras reales para la portada: se cuentan, no se escriben."""
+    def uno(sql, *a):
+        r = con.execute(sql, a).fetchone()
+        return r[0] if r else 0
+    total = uno("SELECT COUNT(*) FROM frames")
+    # «Anotado» aquí significa con descripción propia, no la etiqueta del
+    # extractor ni el aviso de pendiente.
+    anotados = uno(
+        "SELECT COUNT(*) FROM frames WHERE lower(coalesce(description,'')) "
+        "NOT LIKE 'pendiente de anotaci%' AND trim(coalesce(description,'')) NOT IN "
+        "('keyword','periodic','scene','visual','deictico','déictico','frame de contexto')"
+    )
+    dias = uno("SELECT COUNT(*) FROM curriculum")
+    return {"frames_total": total, "frames_anotados": anotados, "boot_dias": dias}
+
+
+
+
+# --------------------------------------------------------------------------
+# Comprobador de fuentes
+# --------------------------------------------------------------------------
+
+def _cuenta_evidencia(con, tipo, eid):
+    r = con.execute(
+        "SELECT COUNT(*) n FROM evidence WHERE entity_type=? AND entity_id=?",
+        (tipo, eid),
+    ).fetchone()
+    return r["n"] if r else 0
+
+
+def _tiene_video(con, vid):
+    if not vid:
+        return False
+    return con.execute("SELECT 1 FROM videos WHERE id=?", (vid,)).fetchone() is not None
+
+
+def comprobador_fuentes(con, slugs_concepto, slugs_regla, slugs_trade, slugs_cambio):
+    """Página que dice, sin adornos, qué está respaldado y qué no.
+
+    No corrige nada: hace visible el hueco. Un sitio que se presenta como
+    resumen trazable tiene que poder enseñar su propio debe.
+    """
+    filas = []
+
+    # Conceptos sin evidencia citada.
+    for c in con.execute("SELECT id, name, certainty FROM concepts ORDER BY id"):
+        n = _cuenta_evidencia(con, "concept", c["id"])
+        if n == 0:
+            filas.append(("Concepto", c["name"], slugs_concepto.get(c["id"]),
+                          confianza(c["certainty"]), 0, "Sin ninguna cita de vídeo."))
+    # Reglas sin evidencia.
+    for r in con.execute("SELECT id, name, certainty FROM rules ORDER BY id"):
+        n = _cuenta_evidencia(con, "rule", r["id"])
+        if n == 0:
+            filas.append(("Regla", r["name"], slugs_regla.get(r["id"]),
+                          confianza(r["certainty"]), 0, "Sin cita; la regla se apoya en el texto."))
+    # Fuentes que apuntan a un vídeo que no está en la base.
+    for ev in con.execute(
+        "SELECT entity_type, entity_id, video_id FROM evidence ORDER BY id"
+    ):
+        if not _tiene_video(con, ev["video_id"]):
+            filas.append((
+                "Evidencia",
+                f"{ev['entity_type']} #{ev['entity_id']}",
+                None,
+                "no confirmado",
+                0,
+                f"El vídeo `{ev['video_id']}` no está en la base: el enlace no se puede comprobar.",
+            ))
+
+    # Lo que sí está: cifras de cobertura por tipo, contadas de la base.
+    total_conceptos = con.execute("SELECT COUNT(*) n FROM concepts").fetchone()["n"]
+    con_ev = con.execute(
+        "SELECT COUNT(DISTINCT entity_id) n FROM evidence WHERE entity_type='concept'"
+    ).fetchone()["n"]
+    total_reglas = con.execute("SELECT COUNT(*) n FROM rules").fetchone()["n"]
+    reg_con_ev = con.execute(
+        "SELECT COUNT(DISTINCT entity_id) n FROM evidence WHERE entity_type='rule'"
+    ).fetchone()["n"]
+
+    panel = {
+        "titulo": "Cobertura de fuentes",
+        "barras": [
+            {"etiqueta": "Conceptos con cita de vídeo", "hecho": con_ev, "total": total_conceptos},
+            {"etiqueta": "Reglas con cita de vídeo", "hecho": reg_con_ev, "total": total_reglas},
+        ],
+        "pie": (
+            "«Con cita» significa que la base guarda al menos una fila de evidencia con vídeo y "
+            "minuto. No mide si la cita es buena, solo si existe: la lectura crítica es tuya."
+        ),
+    }
+
+    lineas = [
+        "---",
+        "tipo: indice",
+        f"title: {yaml_str('Comprobador de fuentes')}",
+        f"titulo: {yaml_str('Comprobador de fuentes')}",
+        f"confianza: {yaml_str('no confirmado')}",
+        "estado: vigente",
+        'video: ""',
+        'timestamp: ""',
+        "panel:",
+        "  titulo: " + yaml_str(panel["titulo"]),
+        "  barras:",
+        *[
+            f"    - {{etiqueta: {yaml_str(b['etiqueta'])}, hecho: {b['hecho']}, total: {b['total']}}}"
+            for b in panel["barras"]
+        ],
+        "  pie: " + yaml_str(panel["pie"]),
+        "---",
+        "",
+        "# Comprobador de fuentes",
+        "",
+        "Este sitio se presenta como un resumen **trazable**. Esta página es su propia auditoría: "
+        "enumera lo que no tiene fuente y, por tanto, no debería tomarse como establecido.",
+        "",
+        "## Cómo leer una nota",
+        "",
+        "| Marca | Significado |",
+        "|---|---|",
+        "| **explícito** | Se dice literalmente en un vídeo; la nota incluye la cita y el minuto. |",
+        "| **observado** | Se deduce de un ejemplo o un recap, no de una regla formulada. |",
+        "| **inferido** | Interpretación del proyecto a partir de varias fuentes. |",
+        "| **no confirmado** | No hay fuente suficiente. Figura aquí abajo si aplica. |",
+        "",
+        "## Qué falta",
+        "",
+    ]
+    if not filas:
+        lineas += [
+            "> [!success] Todo tiene fuente",
+            "> Todas las entidades tienen al menos una cita y todos los vídeos citados están en la base.",
+            "",
+        ]
+    else:
+        lineas += [
+            '<div class="xr-aviso" data-tono="warn">',
+            f"**{len(filas)} entidades sin respaldo comprobable.** Aparecen listadas; ninguna se ha "
+            "borrado ni se ha rellenado con una fuente inventada.",
+            "</div>",
+            "",
+            "| Tipo | Entidad | Confianza | Qué le falta |",
+            "|---|---|---|---|",
+        ]
+        for tipo, nombre, s, conf, _, motivo in filas:
+            enlace = f"[{nombre}](../{ {'Concepto': 'conceptos', 'Regla': 'reglas'}[tipo] }/{s})" if s and tipo in ("Concepto", "Regla") else nombre
+            lineas.append(f"| {tipo} | {enlace} | {conf} | {motivo} |")
+        lineas.append("")
+
+    lineas += [
+        "## Regla del proyecto",
+        "",
+        "Cuando no hay fuente, no se rellena: se marca. Las anotaciones de fotogramas y las "
+        "preguntas abiertas existen para eso, y por eso el sitio puede decir en voz alta lo que "
+        "todavía no sabe.",
+        "",
+    ]
+    with open(os.path.join(VAULT, "comprobador.md"), "w", encoding="utf-8") as fh:
+        fh.write("\n".join(lineas))
+    return len(filas)
 
 
 if __name__ == "__main__":

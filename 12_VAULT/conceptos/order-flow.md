@@ -15,6 +15,7 @@ id: 74
 # Order Flow
 
 > **Confianza:** explícito · **Estado:** no usado · **Categoría:** NOT USED
+- **Clase del bootcamp:** [[../bootcamp/dia-05|Día 5 — Tiempo (psicología)]]
 
 ## Definición
 

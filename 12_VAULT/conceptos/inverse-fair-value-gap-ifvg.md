@@ -15,6 +15,7 @@ id: 43
 # Inverse Fair Value Gap (IFVG)
 
 > **Confianza:** explícito · **Estado:** vigente · **Categoría:** CORE
+- **Clases del bootcamp:** [[../bootcamp/dia-08|Día 8]] · [[../bootcamp/dia-13|Día 13]]
 
 ## Definición
 
@@ -81,8 +82,8 @@ Documento 02.
 **Trade Recap 19/02/2026 (5 wins seguidas)** (`B3zNsJ9LdVA`) · **01:33** · **Confianza:** explícito · anotado
 > NQ 5m. Inverse FVG de 1m y entrada marcada.
 
-![Inverse Fair Value Gap (IFVG) en _drb5sSmQZE](../media/inverse-fair-value-gap-ifvg-455.webp)
+![Inverse Fair Value Gap (IFVG) en 1C4dgloDQrY](../media/inverse-fair-value-gap-ifvg-681.webp)
 
-**Todo lo que necesitas saber sobre este concepto - CISD** (`_drb5sSmQZE`) · **06:45** · **Confianza:** explícito · anotado
-> Cuadro de texto sobre el gráfico NQ 1m: 'CISD. Primera forma (recomendable): - ifvg + cisd - peor rr (pero trade más probable) - cisd de 1 minuto (el primero)'. Debajo: 'SEGUNDA FORMA (más experiencia en el mercado): cua…
+**La SIMPLE ESTRATEGIA con la que he podido RETIRAR +25k$ en PAYOUTS** (`1C4dgloDQrY`) · **14:40** · **Confianza:** explícito · anotado
+> NQ en temporalidad diaria con el eje temporal amplio y un recuadro de texto sobre el gráfico: 'No siempre me voy a esperar al higher time frame ifvg'. El gráfico está muy alejado; no se distingue la estructura de la leg.
 

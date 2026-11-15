@@ -13,6 +13,7 @@ version: 1
 # No usar indicadores convencionales ni volumen
 
 > **Confianza:** explícito · **Estado:** vigente · **Versión:** 1
+- **Clase del bootcamp:** [[../bootcamp/dia-02|Día 2 — Preparación: configurar TradingView]]
 
 ## Descripción
 

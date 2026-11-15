@@ -13,6 +13,7 @@ version: 1
 # Un diario que no se revisa equivale a no tener diario
 
 > **Confianza:** explícito · **Estado:** vigente · **Versión:** 1
+- **Clase del bootcamp:** [[../bootcamp/dia-09|Día 9 — Miedo (psicología)]]
 
 ## Descripción
 

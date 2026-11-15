@@ -15,6 +15,7 @@ id: 85
 # Bank Holiday (festivo EE. UU.)
 
 > **Confianza:** explícito · **Estado:** vigente · **Categoría:** CONTEXTUAL
+- **Clase del bootcamp:** [[../bootcamp/dia-10|Día 10 — Noticias]]
 
 ## Definición
 

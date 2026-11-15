@@ -1,3 +1,320 @@
-@use "./variables.scss" as *;
+/* ---------------------------------------------------------------------------
+   Ajustes propios del sitio «Metodología Xavi Ruyra».
 
-// put your custom CSS here!
+   Quartz carga las hojas de los componentes en un único CSS por página; aquí
+   va lo que es global: tipografía, ancho de lectura, tarjetas y el aspecto de
+   los índices. Los estilos de cada componente viven en su `css` (para que solo
+   se carguen donde se usan).
+--------------------------------------------------------------------------- */
+
+:root {
+  --xr-surface: color-mix(in srgb, var(--light) 92%, var(--lightgray));
+  --xr-accent: var(--secondary);
+  --xr-accent-soft: color-mix(in srgb, var(--secondary) 12%, transparent);
+  --xr-warn: #b97700;
+  --xr-ok: #2f7a58;
+  --xr-radius: 12px;
+}
+
+:root[saved-theme="dark"] {
+  --xr-surface: color-mix(in srgb, var(--light) 88%, white);
+  --xr-accent-soft: color-mix(in srgb, var(--secondary) 18%, transparent);
+  --xr-warn: #e0a83c;
+  --xr-ok: #62c9a0;
+}
+
+/* --- lectura -------------------------------------------------------------- */
+
+article {
+  text-wrap: pretty;
+}
+
+article img {
+  border-radius: 10px;
+  border: 1px solid var(--lightgray);
+  background: var(--lightgray);
+}
+
+article > p > img {
+  display: block;
+  margin-inline: auto;
+}
+
+/* Los pies de foto del generador son el párrafo que sigue a una imagen. */
+article > p:has(> img) + p {
+  font-size: 0.8rem;
+  color: var(--gray);
+  text-align: center;
+  margin-top: -0.6rem;
+  line-height: 1.45;
+}
+
+article table {
+  font-size: 0.88rem;
+  width: 100%;
+  border-collapse: collapse;
+}
+
+article th {
+  text-align: left;
+  font-weight: 600;
+  color: var(--darkgray);
+  border-bottom: 2px solid var(--lightgray);
+}
+
+article td,
+article th {
+  padding: 0.45rem 0.6rem;
+}
+
+article tbody tr:nth-child(even) {
+  background: color-mix(in srgb, var(--lightgray) 30%, transparent);
+}
+
+article blockquote {
+  border-left: 3px solid var(--secondary);
+  background: var(--xr-accent-soft);
+  border-radius: 0 8px 8px 0;
+  padding: 0.5rem 0.9rem;
+}
+
+article h2 {
+  border-top: 1px solid var(--lightgray);
+  padding-top: 1.4rem;
+  margin-top: 2.2rem;
+}
+
+/* --- tarjetas de enlace (índices y listas generadas) ---------------------- */
+
+.xr-tarjetas {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 260px), 1fr));
+  gap: 0.75rem;
+  margin: 1rem 0 1.75rem;
+  padding: 0;
+  list-style: none;
+}
+
+.xr-tarjeta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  padding: 0.85rem 0.95rem;
+  border: 1px solid var(--lightgray);
+  border-radius: var(--xr-radius);
+  background: var(--xr-surface);
+  text-decoration: none;
+  transition:
+    border-color 140ms ease,
+    transform 140ms ease,
+    box-shadow 140ms ease;
+}
+
+.xr-tarjeta:hover {
+  border-color: var(--secondary);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px -8px var(--secondary);
+}
+
+.xr-tarjeta-titulo {
+  font-weight: 600;
+  color: var(--dark);
+  line-height: 1.3;
+}
+
+.xr-tarjeta-meta {
+  font-size: 0.74rem;
+  color: var(--gray);
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.xr-tarjeta-desc {
+  font-size: 0.82rem;
+  color: var(--darkgray);
+  line-height: 1.45;
+}
+
+.xr-pastilla {
+  font-size: 0.68rem;
+  padding: 0.06rem 0.45rem;
+  border-radius: 999px;
+  border: 1px solid var(--lightgray);
+  color: var(--gray);
+  white-space: nowrap;
+}
+
+.xr-pastilla[data-estado="vigente"],
+.xr-pastilla[data-tipo="concepto"] {
+  border-color: var(--secondary);
+  color: var(--secondary);
+}
+
+.xr-pastilla[data-estado="obsoleta"] {
+  border-color: var(--xr-warn);
+  color: var(--xr-warn);
+}
+
+/* --- índice del bootcamp -------------------------------------------------- */
+
+.xr-dias {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  margin: 1rem 0 2rem;
+}
+
+.xr-dia {
+  display: grid;
+  grid-template-columns: 3.2rem 1fr auto;
+  align-items: start;
+  gap: 0.9rem;
+  padding: 0.8rem 0.95rem;
+  border: 1px solid var(--lightgray);
+  border-radius: var(--xr-radius);
+  background: var(--xr-surface);
+}
+
+.xr-dia-num {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--secondary);
+  border: 1px solid color-mix(in srgb, var(--secondary) 45%, transparent);
+  border-radius: 8px;
+  text-align: center;
+  padding: 0.25rem 0.2rem;
+  background: var(--xr-accent-soft);
+}
+
+.xr-dia-cuerpo,
+.xr-dia a {
+  text-decoration: none;
+}
+
+.xr-dia-titulo {
+  font-weight: 600;
+  color: var(--dark);
+  line-height: 1.3;
+}
+
+.xr-dia-titulo:hover {
+  color: var(--secondary);
+}
+
+.xr-dia-temas {
+  font-size: 0.78rem;
+  color: var(--darkgray);
+  margin-top: 0.15rem;
+  line-height: 1.45;
+}
+
+.xr-dia-meta {
+  text-align: right;
+  font-size: 0.72rem;
+  color: var(--gray);
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  align-items: flex-end;
+}
+
+.xr-dia-ver {
+  font-size: 0.76rem;
+  font-weight: 600;
+  color: var(--secondary);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.xr-dia-ver:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 800px) {
+  .xr-dia {
+    grid-template-columns: 2.6rem 1fr;
+  }
+  .xr-dia-meta {
+    grid-column: 1 / -1;
+    align-items: flex-start;
+    text-align: left;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+
+/* --- avisos -------------------------------------------------------------- */
+
+.xr-aviso {
+  margin: 1.25rem 0;
+  padding: 0.8rem 1rem;
+  border-radius: 10px;
+  border: 1px solid var(--lightgray);
+  border-left: 4px solid var(--secondary);
+  background: var(--xr-surface);
+  font-size: 0.86rem;
+  color: var(--darkgray);
+}
+
+.xr-aviso[data-tono="warn"] {
+  border-left-color: var(--xr-warn);
+}
+
+.xr-aviso[data-tono="ok"] {
+  border-left-color: var(--xr-ok);
+}
+
+.xr-aviso p:first-child {
+  margin-top: 0;
+}
+
+.xr-aviso p:last-child {
+  margin-bottom: 0;
+}
+
+/* --- sin cromo sobrante --------------------------------------------------- */
+
+.search-button {
+  border-radius: 8px;
+}
+
+/* --- retroenlaces y listas largas ---------------------------------------- */
+
+/* El título de una nota de operación es largo por naturaleza («Operación #11 —
+   NQ (Nasdaq 100); referencia SP500 — 2026-04-29»). En la columna de
+   retroenlaces ocupa media pantalla y desplaza la lectura, así que allí se
+   recorta a dos líneas con el resto accesible al pasar el ratón. */
+.backlinks ul li a {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  overflow-wrap: anywhere;
+}
+
+.backlinks ul li {
+  margin-bottom: 0.35rem;
+}
+
+/* Los índices generados usan enlaces internos normales; se marcan para que se
+   distingan de una nota que enlaza a otra (que sí es una relación conceptual). */
+.xr-tarjeta,
+.xr-dia-titulo,
+.xr-dia-ver {
+  border-bottom: none !important;
+  background-image: none !important;
+}
+
+/* Tabla de contenido: el índice de una nota larga se vuelve una lista de
+   navegación, no una lista de enlaces subrayados. */
+.toc-content > ul > li > a {
+  color: var(--darkgray);
+}
+
+.toc-content > ul > li > a:hover {
+  color: var(--secondary);
+}

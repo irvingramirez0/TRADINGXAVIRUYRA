@@ -32,6 +32,26 @@ jobs:
         working-directory: 13_SITE/quartz
         run: npm ci --no-audit --no-fund
 
+      - name: Enlazar los componentes propios
+        working-directory: 13_SITE/quartz
+        # Quartz instala cada plugin de carpeta enlazándolo en `.quartz/plugins`.
+        # En Windows ese symlink exige privilegios (por eso aquí se usa un
+        # junction, `mklink /J`, que no los necesita); en Linux/macOS un symlink
+        # normal basta. Se crea aquí para que el build no dependa de que alguien
+        # lo haya hecho a mano en su equipo.
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p .quartz/plugins
+          for p in ficha-fuente panel-avance anotaciones; do
+            rm -rf ".quartz/plugins/$p"
+            ln -s "../../quartz-plugins/$p" ".quartz/plugins/$p"
+            mkdir -p "quartz-plugins/$p/node_modules"
+            rm -rf "quartz-plugins/$p/node_modules/preact"
+            ln -s "../../../node_modules/preact" "quartz-plugins/$p/node_modules/preact"
+          done
+          ls -l .quartz/plugins
+
       - name: Construir el sitio
         working-directory: 13_SITE/quartz
         # Se invoca el CLI con `node` en vez de `npx quartz`: en Windows el bit

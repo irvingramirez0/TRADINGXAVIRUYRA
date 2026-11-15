@@ -13,6 +13,7 @@ version: 1
 # No fijar objetivos de resultado con fecha
 
 > **Confianza:** explícito · **Estado:** vigente · **Versión:** 1
+- **Clase del bootcamp:** [[../bootcamp/dia-07|Día 7 — Prisa (psicología)]]
 
 ## Descripción
 

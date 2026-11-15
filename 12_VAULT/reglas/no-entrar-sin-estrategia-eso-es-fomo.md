@@ -13,6 +13,7 @@ version: 1
 # No entrar sin estrategia: eso es FOMO
 
 > **Confianza:** explícito · **Estado:** vigente · **Versión:** 1
+- **Clase del bootcamp:** [[../bootcamp/dia-18|Día 18 — FOMO (psicología)]]
 
 ## Descripción
 

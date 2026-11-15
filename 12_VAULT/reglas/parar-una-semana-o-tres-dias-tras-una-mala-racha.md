@@ -13,6 +13,7 @@ version: 1
 # Parar una semana o tres días tras una mala racha
 
 > **Confianza:** explícito · **Estado:** vigente · **Versión:** 1
+- **Clase del bootcamp:** [[../bootcamp/dia-16|Día 16 — Check-in (psicología)]]
 
 ## Descripción
 

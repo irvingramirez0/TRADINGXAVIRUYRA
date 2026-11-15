@@ -15,6 +15,7 @@ id: 92
 # Ego (psicología)
 
 > **Confianza:** explícito · **Estado:** vigente · **Categoría:** CONTEXTUAL
+- **Clase del bootcamp:** [[../bootcamp/dia-20|Día 20 — Ego (psicología)]]
 
 ## Definición
 

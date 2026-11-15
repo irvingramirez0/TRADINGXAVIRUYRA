@@ -13,6 +13,7 @@ version: 1
 # El FVG debe estar alineado con la línea 0.5 del equilibrium
 
 > **Confianza:** explícito · **Estado:** vigente · **Versión:** 1
+- **Clase del bootcamp:** [[../bootcamp/dia-19|Día 19 — Equilibrium (premium y discount)]]
 
 ## Descripción
 

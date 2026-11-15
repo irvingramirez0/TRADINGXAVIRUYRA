@@ -15,6 +15,7 @@ id: 88
 # Key Levels
 
 > **Confianza:** explícito · **Estado:** vigente · **Categoría:** CORE
+- **Clase del bootcamp:** [[../bootcamp/dia-15|Día 15 — Key Levels]]
 
 ## Definición
 

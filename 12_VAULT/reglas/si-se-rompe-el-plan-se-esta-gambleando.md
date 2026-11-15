@@ -13,6 +13,7 @@ version: 1
 # Si se rompe el plan, se está gambleando
 
 > **Confianza:** explícito · **Estado:** vigente · **Versión:** 1
+- **Clase del bootcamp:** [[../bootcamp/dia-12|Día 12 — Gambling (psicología)]]
 
 ## Descripción
 

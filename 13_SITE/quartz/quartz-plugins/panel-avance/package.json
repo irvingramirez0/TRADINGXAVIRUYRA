@@ -1,0 +1,36 @@
+{
+  "name": "panel-avance",
+  "version": "1.0.0",
+  "type": "module",
+  "private": true,
+  "exports": {
+    ".": {
+      "import": "./dist/index.js"
+    },
+    "./components": {
+      "import": "./dist/components/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "main": "./dist/index.js",
+  "peerDependencies": {
+    "preact": "^10.0.0"
+  },
+  "quartz": {
+    "name": "panel-avance",
+    "displayName": "Panel de avance",
+    "category": "component",
+    "version": "1.0.0",
+    "quartzVersion": ">=5.0.0",
+    "dependencies": [],
+    "defaultEnabled": true,
+    "defaultOptions": {},
+    "components": {
+      "PanelAvance": {
+        "displayName": "Panel de avance",
+        "defaultPosition": "afterBody",
+        "defaultPriority": 50
+      }
+    }
+  }
+}

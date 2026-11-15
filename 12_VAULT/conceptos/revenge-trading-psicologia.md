@@ -15,6 +15,7 @@ id: 89
 # Revenge Trading (psicología)
 
 > **Confianza:** explícito · **Estado:** vigente · **Categoría:** CONTEXTUAL
+- **Clase del bootcamp:** [[../bootcamp/dia-14|Día 14 — Revenge Trading (psicología)]]
 
 ## Definición
 

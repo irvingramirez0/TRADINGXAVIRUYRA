@@ -13,6 +13,7 @@ version: 1
 # Un equal con un extremo más alto o más bajo no cuenta
 
 > **Confianza:** explícito · **Estado:** vigente · **Versión:** 1
+- **Clase del bootcamp:** [[../bootcamp/dia-11|Día 11 — Liquidez pt2]]
 
 ## Descripción
 

@@ -65,15 +65,3 @@ Documento 03.
 
 - «Paráfrasis: el NDOG puede ser una excepción que cambia el DOL.» — `Urrb1b2kBso` @ 02:06 (explícito)
 
-## Fragmentos visuales
-
-![NDOG (New Day Opening Gap) en 1C4dgloDQrY](../media/ndog-new-day-opening-gap-699.webp)
-
-**La SIMPLE ESTRATEGIA con la que he podido RETIRAR +25k$ en PAYOUTS** (`1C4dgloDQrY`) · **45:18** · **Confianza:** explícito · anotado
-> Diapositiva de texto en TradingView titulada 'LIQUIDEZ'. Columna izquierda: EH; REH, REL; NWOG, NDOG. Columna derecha: EL; LRL; 'Altos de noticias (data highs)'. Abajo: 'ITH, ITL (QUE ESTÉN DENTRO DE FVGS!!!!)'.
-
-![NDOG (New Day Opening Gap) en 1C4dgloDQrY](../media/ndog-new-day-opening-gap-701.webp)
-
-**La SIMPLE ESTRATEGIA con la que he podido RETIRAR +25k$ en PAYOUTS** (`1C4dgloDQrY`) · **45:51** · **Confianza:** explícito · anotado
-> La misma diapositiva 'LIQUIDEZ' completa: EH, REH, REL, EL, LRL, NWOG, NDOG, altos de noticias (data highs) e 'ITH, ITL (QUE ESTÉN DENTRO DE FVGS!!!!)'.
-

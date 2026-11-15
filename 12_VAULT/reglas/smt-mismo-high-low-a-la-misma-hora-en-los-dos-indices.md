@@ -13,6 +13,7 @@ version: 1
 # SMT: mismo high/low a la misma hora en los dos índices
 
 > **Confianza:** explícito · **Estado:** vigente · **Versión:** 1
+- **Clase del bootcamp:** [[../bootcamp/dia-17|Día 17 — SMT's y True Manipulation]]
 
 ## Descripción
 

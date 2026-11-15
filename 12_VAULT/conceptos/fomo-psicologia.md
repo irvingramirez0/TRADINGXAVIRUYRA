@@ -15,6 +15,7 @@ id: 90
 # FOMO (psicología)
 
 > **Confianza:** explícito · **Estado:** vigente · **Categoría:** CONTEXTUAL
+- **Clase del bootcamp:** [[../bootcamp/dia-18|Día 18 — FOMO (psicología)]]
 
 ## Definición
 

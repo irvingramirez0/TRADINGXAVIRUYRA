@@ -70,8 +70,8 @@ Documento 04.
 
 ## Fragmentos visuales
 
-![Stacked PO3 en oP7enoxXpfI](../media/stacked-po3-260.webp)
+![Stacked PO3 en oP7enoxXpfI](../media/stacked-po3-265.webp)
 
-**Stacked PO3 + Backtesting (la mejor manera de traderar ICT)** (`oP7enoxXpfI`) · **06:18** · **Confianza:** explícito · anotado
-> Diapositiva 'STACKED PO3?' sobre un gráfico NQ 1H vacío.
+**Stacked PO3 + Backtesting (la mejor manera de traderar ICT)** (`oP7enoxXpfI`) · **08:52** · **Confianza:** explícito · anotado · imagen de contexto, no muestra el concepto
+> Esquema dibujado sobre NQ 1H: zigzag con etiquetas 9:30 y 9:45 y una zona azul superior (BSL). El primer intento de las 9:30 falla y el segundo de las 9:45 continúa.
 

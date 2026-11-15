@@ -13,6 +13,7 @@ version: 1
 # NFP y lunes sin noticias: operar solo con cautela
 
 > **Confianza:** explícito · **Estado:** vigente · **Versión:** 1
+- **Clase del bootcamp:** [[../bootcamp/dia-10|Día 10 — Noticias]]
 
 ## Descripción
 

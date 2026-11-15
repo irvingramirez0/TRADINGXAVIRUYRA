@@ -13,6 +13,7 @@ version: 1
 # La liquidez de temporalidades altas manda
 
 > **Confianza:** explícito · **Estado:** vigente · **Versión:** 1
+- **Clase del bootcamp:** [[../bootcamp/dia-06|Día 6 — Liquidez pt1]]
 
 ## Descripción
 

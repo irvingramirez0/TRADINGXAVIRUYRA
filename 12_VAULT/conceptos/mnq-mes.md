@@ -15,6 +15,7 @@ id: 66
 # MNQ / MES
 
 > **Confianza:** explícito · **Estado:** vigente · **Categoría:** CONTEXTUAL
+- **Clase del bootcamp:** [[../bootcamp/dia-05|Día 5 — Tiempo (psicología)]]
 
 ## Definición
 
@@ -71,9 +72,4 @@ Bootcamp Día 5.
 
 **14 take profits seguidos operando el NQ** (`Dfx9SQYerVQ`) · **01:06** · **Confianza:** explícito · anotado
 > MNQ 5m del mismo día: caída tras las 9:30 y mecha larga cerca de las 10:00.
-
-![MNQ / MES en 7HOAf7vHMqU](../media/mnq-mes-2.webp)
-
-**Bootcamp Día 6: Liquidez pt1** (`7HOAf7vHMqU`) · **01:08** · **Confianza:** explícito · anotado
-> Diapositiva 'LIQUIDEZ PT.1' superpuesta a un gráfico MNQ 15m. Texto: 'todo está lleno de liquidez, en cada alto y bajo hay liquidez, pero no toda la liquidez tiene la misma importancia'. Anotaciones 'swing high' y 'swing…
 

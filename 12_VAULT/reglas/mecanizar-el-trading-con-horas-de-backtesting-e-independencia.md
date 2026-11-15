@@ -13,6 +13,7 @@ version: 1
 # Mecanizar el trading con horas de backtesting e independencia
 
 > **Confianza:** explícito · **Estado:** vigente · **Versión:** 1
+- **Clase del bootcamp:** [[../bootcamp/dia-16|Día 16 — Check-in (psicología)]]
 
 ## Descripción
 

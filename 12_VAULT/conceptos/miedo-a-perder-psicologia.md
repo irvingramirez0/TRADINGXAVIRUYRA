@@ -15,6 +15,7 @@ id: 82
 # Miedo a perder (psicología)
 
 > **Confianza:** explícito · **Estado:** vigente · **Categoría:** CONTEXTUAL
+- **Clase del bootcamp:** [[../bootcamp/dia-09|Día 9 — Miedo (psicología)]]
 
 ## Definición
 

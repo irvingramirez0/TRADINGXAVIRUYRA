@@ -13,6 +13,7 @@ version: 1
 # Bajar a 15m/30m/5m para comprobar la liquidez interna del FVG de 1H
 
 > **Confianza:** explícito · **Estado:** vigente · **Versión:** 1
+- **Clase del bootcamp:** [[../bootcamp/dia-15|Día 15 — Key Levels]]
 
 ## Descripción
 

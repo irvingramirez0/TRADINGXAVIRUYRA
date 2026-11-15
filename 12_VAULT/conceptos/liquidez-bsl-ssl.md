@@ -15,6 +15,7 @@ id: 40
 # Liquidez (BSL/SSL)
 
 > **Confianza:** explícito · **Estado:** vigente · **Categoría:** CORE
+- **Clase del bootcamp:** [[../bootcamp/dia-06|Día 6 — Liquidez pt1]]
 
 ## Definición
 
@@ -79,11 +80,6 @@ Bootcamp Día 6. Liquidez pt2 pendiente de publicación.
 
 **Bootcamp Día 6: Liquidez pt1** (`7HOAf7vHMqU`) · **08:25** · **Confianza:** explícito · anotado
 > Gráfico MNQ 15m con varias líneas horizontales cortas en los altos y en los bajos del tramo. Se distinguen BSL en altos sucesivos y SSL en el bajo barrido.
-
-![Liquidez (BSL/SSL) en oP7enoxXpfI](../media/liquidez-bsl-ssl-265.webp)
-
-**Stacked PO3 + Backtesting (la mejor manera de traderar ICT)** (`oP7enoxXpfI`) · **08:52** · **Confianza:** explícito · anotado
-> Esquema dibujado sobre NQ 1H: zigzag con etiquetas 9:30 y 9:45 y una zona azul superior (BSL). El primer intento de las 9:30 falla y el segundo de las 9:45 continúa.
 
 ![Liquidez (BSL/SSL) en 7HOAf7vHMqU](../media/liquidez-bsl-ssl-25.webp)
 

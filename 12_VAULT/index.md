@@ -6,6 +6,19 @@ confianza: "no confirmado"
 estado: vigente
 video: ""
 timestamp: ""
+anotaciones: false
+panel:
+  titulo: "El proyecto en cifras"
+  bloques:
+    - {etiqueta: "clases de bootcamp", valor: 20}
+    - {etiqueta: "conceptos", valor: 53}
+    - {etiqueta: "reglas", valor: 135}
+    - {etiqueta: "operaciones", valor: 54, nota: "P&L autodeclarado"}
+    - {etiqueta: "cambios", valor: 55}
+    - {etiqueta: "preguntas abiertas", valor: 31}
+  barras:
+    - {etiqueta: "Fotogramas con anotación verificable", hecho: 137, total: 1456, nota: "el resto está extraído pero sin revisar, y no se publica como prueba visual"}
+  pie: "Todo lo que aparece en este sitio se regenera desde una base SQLite con `python 09_AUTOMATION/pipeline.py`. Las cifras de esta portada se cuentan en cada generación, no se escriben a mano."
 ---
 
 # Metodología Xavi Ruyra — estudio no oficial
@@ -14,22 +27,21 @@ timestamp: ""
 
 **Fecha de corte de las cifras:** 2026-11-14.
 
-## Qué contiene
+## Por dónde entrar
 
-- **53** conceptos con definición, condiciones y evidencia.
-- **135** reglas operativas, incluidas las obsoletas con su sustituto.
-- **54** operaciones analizadas. El P&L es autodeclarado y no está auditado.
-- **55** cambios metodológicos documentados.
-- **31** preguntas abiertas. La regla del proyecto es no inventar: si no hay fuente, se dice.
+<div class="xr-tarjetas">
+<a class="xr-tarjeta" href="./bootcamp"><span class="xr-tarjeta-titulo">Bootcamp</span><span class="xr-tarjeta-desc">Las 20 clases en orden, con lo que da cada una.</span></a>
+<a class="xr-tarjeta" href="./conceptos"><span class="xr-tarjeta-titulo">Conceptos</span><span class="xr-tarjeta-desc">53 conceptos con definición, condiciones y errores.</span></a>
+<a class="xr-tarjeta" href="./reglas"><span class="xr-tarjeta-titulo">Reglas operativas</span><span class="xr-tarjeta-desc">135 reglas, incluidas las obsoletas con su sustituto.</span></a>
+<a class="xr-tarjeta" href="./operaciones"><span class="xr-tarjeta-titulo">Operaciones</span><span class="xr-tarjeta-desc">54 operaciones analizadas, con el P&L autodeclarado.</span></a>
+<a class="xr-tarjeta" href="./cambios"><span class="xr-tarjeta-titulo">Cambios</span><span class="xr-tarjeta-desc">55 cambios de criterio documentados.</span></a>
+<a class="xr-tarjeta" href="./preguntas"><span class="xr-tarjeta-titulo">Preguntas abiertas</span><span class="xr-tarjeta-desc">31 preguntas sin cerrar.</span></a>
+<a class="xr-tarjeta" href="./comprobador"><span class="xr-tarjeta-titulo">Comprobador de fuentes</span><span class="xr-tarjeta-desc">Lo que el sitio no puede respaldar, dicho en voz alta.</span></a>
+</div>
 
-## Cómo leer este sitio
+## Cómo leer una nota
 
-- Cada nota lleva **confianza** (explícito / observado / inferido / no confirmado), **estado** (vigente / obsoleta), **vídeo** y **timestamp** de la fuente principal.
-- Los enlaces internos conectan reglas con conceptos, conceptos que se requieren entre sí y reglas nuevas con las que reemplazan.
-- La vista de **grafo** (arriba, icono de red) muestra la estructura completa.
-- La **búsqueda** está disponible en la lupa.
-
-## Niveles de confianza
+Cada nota empieza con una **ficha de fuente**: tipo, confianza, estado y un botón que salta al minuto exacto del vídeo. Debajo, la nota en sí. Al final, las **anotaciones**: se puede comentar por sección, sin cuenta.
 
 | Nivel | Significado |
 |---|---|
@@ -40,15 +52,25 @@ timestamp: ""
 
 ## Conceptos núcleo
 
-- [[liquidez-bsl-ssl|Liquidez (BSL/SSL)]] — CORE
-- [[swing-high-swing-low|Swing High / Swing Low]] — CORE
-- [[fair-value-gap-fvg|Fair Value Gap (FVG)]] — CORE
-- [[inverse-fair-value-gap-ifvg|Inverse Fair Value Gap (IFVG)]] — CORE
-- [[draw-on-liquidity-dol|Draw on Liquidity (DOL)]] — CORE
-- [[daily-bias|Daily Bias]] — CORE
-- [[pd-array|PD Array]] — CORE
-- [[po3-power-of-3|PO3 (Power of 3)]] — CORE
+- [[liquidez-bsl-ssl|Liquidez (BSL/SSL)]]
+- [[swing-high-swing-low|Swing High / Swing Low]]
+- [[fair-value-gap-fvg|Fair Value Gap (FVG)]]
+- [[inverse-fair-value-gap-ifvg|Inverse Fair Value Gap (IFVG)]]
+- [[draw-on-liquidity-dol|Draw on Liquidity (DOL)]]
+- [[daily-bias|Daily Bias]]
+- [[pd-array|PD Array]]
+- [[po3-power-of-3|PO3 (Power of 3)]]
+- [[amd-acumulacion-manipulacion-distribucion|AMD (Acumulación, Manipulación, Distribución)]]
+- [[stacked-po3|Stacked PO3]]
+- [[judas-swing|Judas Swing]]
+- [[open-de-las-10-00|Open de las 10:00]]
+- [[equilibrium-premium-descuento|Equilibrium (premium/descuento)]]
+- [[true-manipulation|True Manipulation]]
+- [[manipulation-leg|Manipulation leg]]
+- [[key-levels|Key Levels]]
 
-## Fuente
+## Fuente y límites
 
-Los datos se regeneran desde SQLite con `09_AUTOMATION/regenerar_vault.py`. Los fotogramas son capturas de vídeos públicos usadas como cita visual; las transcripciones completas y los Reels de Instagram quedan fuera de este sitio.
+Los datos se regeneran desde SQLite con `09_AUTOMATION/pipeline.py`. Los fotogramas son capturas de vídeos públicos usadas como cita visual; las transcripciones completas y los Reels de Instagram quedan fuera de este sitio.
+
+Las cifras de operaciones son **autodeclaradas**: no hay extractos de cuenta que las respalden. El sitio lo repite en cada ficha porque es la diferencia entre documentar y auditar.

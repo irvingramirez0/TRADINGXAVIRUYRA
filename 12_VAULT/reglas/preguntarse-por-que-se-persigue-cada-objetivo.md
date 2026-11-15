@@ -13,6 +13,7 @@ version: 1
 # Preguntarse por qué se persigue cada objetivo
 
 > **Confianza:** explícito · **Estado:** vigente · **Versión:** 1
+- **Clase del bootcamp:** [[../bootcamp/dia-07|Día 7 — Prisa (psicología)]]
 
 ## Descripción
 

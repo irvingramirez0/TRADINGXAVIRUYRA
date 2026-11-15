@@ -13,6 +13,7 @@ version: 1
 # El FVG se invierte solo con cierre de cuerpo completo
 
 > **Confianza:** explícito · **Estado:** vigente · **Versión:** 1
+- **Clase del bootcamp:** [[../bootcamp/dia-08|Día 8 — FVG: definición, respeto y validación por temporalidad]]
 
 ## Descripción
 

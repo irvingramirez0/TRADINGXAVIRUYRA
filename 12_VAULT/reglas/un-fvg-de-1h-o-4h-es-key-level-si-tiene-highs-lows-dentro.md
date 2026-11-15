@@ -13,6 +13,7 @@ version: 1
 # Un FVG de 1H o 4H es key level si tiene highs/lows dentro
 
 > **Confianza:** explícito · **Estado:** vigente · **Versión:** 1
+- **Clase del bootcamp:** [[../bootcamp/dia-15|Día 15 — Key Levels]]
 
 ## Descripción
 

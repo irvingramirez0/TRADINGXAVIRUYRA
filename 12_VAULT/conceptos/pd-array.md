@@ -66,10 +66,3 @@ Documento 03. No ampliar el término con ICT genérico.
 - «Paráfrasis: para buscar un PO3 exige un PD array de 15 minutos o más; corrige que un gap de 5 minutos no cuenta.» — `oP7enoxXpfI` @ 07:50 (explícito)
 - «Un PD array viene a ser un fair value gap.» — `F3anMVV-VlI` @ 08:48 (explícito)
 
-## Fragmentos visuales
-
-![PD Array en oP7enoxXpfI](../media/pd-array-263.webp)
-
-**Stacked PO3 + Backtesting (la mejor manera de traderar ICT)** (`oP7enoxXpfI`) · **07:50** · **Confianza:** explícito · anotado
-> Gráfico esquemático durante la explicación del PO3, con zonas y recorrido de precio. La imagen no etiqueta de forma legible cuál zona es el PD array ni el umbral de 15 minutos.
-

@@ -13,6 +13,7 @@ version: 1
 # Consolidación junto al low del key level: esperar el sweep
 
 > **Confianza:** explícito · **Estado:** vigente · **Versión:** 1
+- **Clase del bootcamp:** [[../bootcamp/dia-15|Día 15 — Key Levels]]
 
 ## Descripción
 

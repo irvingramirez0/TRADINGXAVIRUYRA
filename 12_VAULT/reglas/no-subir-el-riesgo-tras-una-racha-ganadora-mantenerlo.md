@@ -13,6 +13,7 @@ version: 1
 # No subir el riesgo tras una racha ganadora; mantenerlo
 
 > **Confianza:** explícito · **Estado:** vigente · **Versión:** 1
+- **Clase del bootcamp:** [[../bootcamp/dia-20|Día 20 — Ego (psicología)]]
 
 ## Descripción
 

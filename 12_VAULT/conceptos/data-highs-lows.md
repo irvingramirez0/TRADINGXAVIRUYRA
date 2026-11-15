@@ -67,11 +67,6 @@ Documento 04. Uso poco desarrollado.
 
 ## Fragmentos visuales
 
-![Data Highs / Lows en 1C4dgloDQrY](../media/data-highs-lows-699.webp)
-
-**La SIMPLE ESTRATEGIA con la que he podido RETIRAR +25k$ en PAYOUTS** (`1C4dgloDQrY`) · **45:18** · **Confianza:** explícito · anotado
-> Diapositiva de texto en TradingView titulada 'LIQUIDEZ'. Columna izquierda: EH; REH, REL; NWOG, NDOG. Columna derecha: EL; LRL; 'Altos de noticias (data highs)'. Abajo: 'ITH, ITL (QUE ESTÉN DENTRO DE FVGS!!!!)'.
-
 ![Data Highs / Lows en 1C4dgloDQrY](../media/data-highs-lows-701.webp)
 
 **La SIMPLE ESTRATEGIA con la que he podido RETIRAR +25k$ en PAYOUTS** (`1C4dgloDQrY`) · **45:51** · **Confianza:** explícito · anotado

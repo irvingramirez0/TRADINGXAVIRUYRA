@@ -13,6 +13,7 @@ version: 1
 # No comprar una evaluación hasta confiar en el sistema
 
 > **Confianza:** explícito · **Estado:** vigente · **Versión:** 1
+- **Clase del bootcamp:** [[../bootcamp/dia-09|Día 9 — Miedo (psicología)]]
 
 ## Descripción
 

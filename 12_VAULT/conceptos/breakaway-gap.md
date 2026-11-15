@@ -15,6 +15,7 @@ id: 91
 # Breakaway Gap
 
 > **Confianza:** explícito · **Estado:** no usado · **Categoría:** NOT USED
+- **Clase del bootcamp:** [[../bootcamp/dia-17|Día 17 — SMT's y True Manipulation]]
 
 ## Definición
 
