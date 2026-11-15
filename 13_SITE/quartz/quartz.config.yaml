@@ -61,8 +61,18 @@ plugins:
       display: all
   - source: ./quartz-plugins/panel-avance
     enabled: true
+    # `position` es obligatorio: el manifest del plugin declara `afterBody` por
+    # defecto, pero `buildLayoutForEntries` solo coloca lo que tiene entrada de
+    # layout. Sin este bloque el componente se carga y no se renderiza.
+    layout:
+      position: beforeBody
+      priority: 2
   - source: ./quartz-plugins/anotaciones
     enabled: true
+    layout:
+      position: afterBody
+      priority: 20
+      display: all
   - source: "@quartz-community/created-modified-date"
     enabled: true
     options:

@@ -186,7 +186,6 @@ const Anotaciones = () => {
           ),
     )
   }
-
   Comp.css = `
 .xr-anot {
   margin: 2.75rem 0 1rem;
@@ -396,14 +395,16 @@ h2:hover > .xr-anot-ancla, h3:hover > .xr-anot-ancla, .xr-anot-ancla:focus { opa
 
   // Guardado compartido opcional.
   //
-  // Si la nota declara `endpoint_anotaciones` en el frontmatter, las
+  // Si la nota declara endpoint_anotaciones en el frontmatter, las
   // anotaciones viajan a un servidor propio además de al navegador. El sitio
   // no trae uno porque un servicio público anónimo no garantiza permanencia y
   // prometerlo sería mentir: cuando no hay endpoint, todo se queda en local y
   // la interfaz lo dice con todas las letras.
   function endpoint(root) {
     var e = (root.getAttribute("data-endpoint") || "").trim();
-    return /^https?:\/\//.test(e) ? e : "";
+    // Se comprueba con indexOf en vez de un regex: dentro de una plantilla de
+    // JS, las barras invertidas del regex se pierden y el patrón queda roto.
+    return e.indexOf("http://") === 0 || e.indexOf("https://") === 0 ? e : "";
   }
 
   function enviar(url, lista, estado) {
@@ -514,7 +515,7 @@ h2:hover > .xr-anot-ancla, h3:hover > .xr-anot-ancla, .xr-anot-ancla:focus { opa
       var blob = new Blob([JSON.stringify(datos, null, 1)], { type: "application/json" });
       var a = document.createElement("a");
       a.href = URL.createObjectURL(blob);
-      a.download = "anotaciones-" + nota.replace(/\\//g, "-") + ".json";
+      a.download = "anotaciones-" + nota.split("/").join("-") + ".json";
       a.click();
       setTimeout(function () { URL.revokeObjectURL(a.href); }, 1500);
     });
