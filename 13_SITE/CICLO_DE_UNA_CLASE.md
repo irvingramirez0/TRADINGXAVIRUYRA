@@ -108,7 +108,7 @@ código 2 con un aviso legible.
 |---|---|---|
 | `verificar_vault.py` | frontmatter completo, enlaces `[[…]]`, imágenes en disco | nada |
 | `auditar_fotogramas.py` | qué concepto ilustra cada imagen publicada | nada |
-| `verificar_sitio.mjs` | 22 casos de uso sobre el sitio renderizado | Chrome + sitio servido |
+| `verificar_sitio.mjs` | 27 casos de uso sobre el sitio renderizado | Chrome + sitio servido |
 | `revisar_capturas.py` | hoja HTML con todas las imágenes para revisar a ojo | nada |
 | `sync_bootcamp.py` | que la comprobación diaria quedó registrada | red |
 

@@ -120,6 +120,31 @@ python 09_AUTOMATION/publicar_sitio.py
 Vista de grafo, búsqueda, explorador y backlinks están activos. El grafo local
 tiene `depth: -1` (todo el grafo); en cada nota, `depth: 1`.
 
+## 2-bis. Lectura, teclado y movimiento
+
+Lo que se midió y se corrigió el 2026-11-16, con la comprobación que lo vigila:
+
+| Defecto | Antes | Ahora | Lo vigila |
+|---|---|---|---|
+| Medida de lectura | 95 caracteres por línea | 74ch (~590 px) | `lectura: la línea no pasa de 75 caracteres` |
+| Gris secundario | 3.05:1 (rótulos y notas) | 5.37:1 oscuro / 4.75:1 claro | `lectura: el gris secundario se lee` |
+| Foco de teclado | `outline: none`, invisible | anillo 2 px + 3 px de aire | `teclado: el foco dibuja un anillo visible` |
+| Formulario de anotaciones | 600 px de alto | 228 px | `formulario: no ocupa media pantalla` |
+| `prefers-reduced-motion` | no existía | ruta completa | `movimiento: hay ruta para quien pide menos animación` |
+
+El movimiento es deliberadamente poco: una transición de 220 ms al cambiar de
+página (el sitio navega sin recargar y el salto era seco), la sección que se
+está leyendo marcada en el índice de la derecha, y la anotación recién escrita
+asentándose. Nada más.
+
+> Dos avisos por si alguien mide esto desde un script:
+> **`content-visibility: auto`** (de fábrica en Quartz) hace que una imagen
+> fuera de pantalla reporte 0×0. No está rota: al hacer scroll mide bien.
+> Y **Chrome headless reporta `prefers-reduced-motion: reduce`** por defecto,
+> así que las animaciones no se ven en una captura headless salvo que se
+> fuerce `no-preference` con `Emulation.setEmulatedMedia`.
+
+
 ## 3. Qué incluye el vault
 
 - **Conceptos**: definición, interpretación de Xavi, identificación, condiciones,
@@ -162,7 +187,7 @@ Las reglas anteriores leen anotaciones. No pueden distinguir una diapositiva de
 otro tema de la que dice ser; eso solo se ve mirando. Para esa parte:
 
 ```bash
-node 09_AUTOMATION/verificar_sitio.mjs     # 22 casos de uso contra el sitio publicado
+node 09_AUTOMATION/verificar_sitio.mjs     # 27 casos de uso contra el sitio publicado
 python 09_AUTOMATION/revisar_capturas.py   # hoja HTML con todas las imágenes publicadas
 # se abre, se marca lo que no cuadre y se descarga veredictos.json
 python 09_AUTOMATION/vetar_fotogramas.py --veredictos veredictos.json
@@ -247,7 +272,7 @@ Cada push a `main` compila y publica. Para volver a desplegar sin cambiar nada:
 | `fotogramas reutilizados` | **0**: 38 imágenes = 38 fotogramas distintos (antes 9 fotogramas se repetían en 2–3 notas) |
 | `vetar_fotogramas.py --listar` | 21 vetos visuales, cada uno con su motivo y su concepto |
 | **Revisión visual de las 38 publicadas** | 38 de 38 miradas una a una contra su definición; 0 sin revisar |
-| `verificar_sitio.mjs` | **22/22** casos de uso contra el sitio publicado (navegador real, no grep). Incluye el Día 21, que existe para que no se vuelva a publicar una clase sin trabajar como si estuviera trabajada. |
+| `verificar_sitio.mjs` | **27/27** casos de uso contra el sitio publicado (navegador real, no grep). Incluye el Día 21 y cinco comprobaciones de lectura, contraste, foco de teclado y movimiento. |
 | `quartz build` | 817 archivos, grafo y búsqueda activos |
 | **Anotaciones en navegador real** | Chrome headless: 14 secciones detectadas, anotación publicada y persistida en `localStorage` |
 | **Sitio en producción** | 200 en `/`, en las notas y en los `.webp`; grafo y búsqueda presentes |
