@@ -5,26 +5,91 @@
    va lo que es global: tipografía, ancho de lectura, tarjetas y el aspecto de
    los índices. Los estilos de cada componente viven en su `css` (para que solo
    se carguen donde se usan).
+
+   Orden de este archivo:
+     1. Tokens
+     2. Lectura (medida, jerarquía, tablas, citas)
+     3. Superficies del navegador (foco, scrollbar, selección, cursor)
+     4. Movimiento
+     5. Tarjetas e índices
+     6. Sin cromo sobrante
 --------------------------------------------------------------------------- */
+
+/* --- 1. Tokens ------------------------------------------------------------ */
 
 :root {
   --xr-surface: color-mix(in srgb, var(--light) 92%, var(--lightgray));
   --xr-accent: var(--secondary);
   --xr-accent-soft: color-mix(in srgb, var(--secondary) 12%, transparent);
-  --xr-warn: #b97700;
+  --xr-warn: #8a5a00;
+  --xr-warn-soft: color-mix(in srgb, #b97700 10%, transparent);
   --xr-radius: 12px;
+
+  /* Medida de lectura: ~72 caracteres. Sin este tope, una línea de 790 px a
+     16 px ronda los 95 caracteres y el ojo pierde el salto de renglón. */
+  --xr-measure: 74ch;
+  /* Cuánto sobresalen las imágenes de la columna de texto. */
+  --xr-bleed: 4.5rem;
+
+  --xr-ease: cubic-bezier(0.16, 1, 0.3, 1);
+  --xr-dur-rapido: 140ms;
+  --xr-dur-normal: 220ms;
 }
 
 :root[saved-theme="dark"] {
   --xr-surface: color-mix(in srgb, var(--light) 88%, white);
   --xr-accent-soft: color-mix(in srgb, var(--secondary) 18%, transparent);
-  --xr-warn: #e0a83c;
+  --xr-warn: #e8b556;
+  --xr-warn-soft: color-mix(in srgb, #e0a83c 12%, transparent);
 }
 
-/* --- lectura -------------------------------------------------------------- */
+/* Gris secundario con contraste suficiente.
+   El de fábrica (#b8b8b8 en claro, #646464 en oscuro) da 1.6:1 y 3.05:1: sirve
+   para adornos, no para texto que alguien tenga que leer. Como Quartz lo usa
+   para rótulos y notas al pie, se corrige en el origen. */
+:root[saved-theme="light"] {
+  --gray: #6f6f6f;
+}
+
+:root[saved-theme="dark"] {
+  --gray: #8c8c8c;
+}
+
+/* --- 2. Lectura ---------------------------------------------------------- */
 
 article {
   text-wrap: pretty;
+}
+
+/* La columna de texto se estrecha; el aire sobrante se reparte a los lados.
+   Las imágenes y las tablas recuperan el ancho completo porque el detalle de un
+   gráfico sí se lee mal a 545 px. */
+/* Una sola columna de lectura.
+   Título, ficha de fuente, panel y cuerpo comparten eje; si solo se estrechara
+   el texto, los bordes izquierdos no coincidirían y la página parecería rota.
+   Las imágenes sí sobresalen: el detalle de un gráfico se pierde a 590 px.
+
+   El tope se aplica a cualquier ancho, no solo al escritorio: la primera
+   versión lo metía en una consulta de medios de 1100 px y entre 800 y 1100 el
+   texto volvía a medir 95 caracteres. En un móvil, 74ch es más ancho que la
+   pantalla, así que la columna ocupa lo que hay y no cambia nada. */
+#quartz-body .center > .page-header,
+#quartz-body .center > article {
+  max-width: var(--xr-measure);
+  margin-inline: auto;
+}
+
+article > .markdown-preview-view > p:has(> img) {
+  max-width: none;
+  margin-inline: calc(var(--xr-bleed) * -1);
+}
+
+@media (max-width: 800px) {
+  /* En un móvil no hay aire que ganar recortando: la imagen usa el ancho
+     disponible y no se sale del margen de la página. */
+  article > .markdown-preview-view > p:has(> img) {
+    margin-inline: 0;
+  }
 }
 
 article img {
@@ -33,13 +98,14 @@ article img {
   background: var(--lightgray);
 }
 
-article > p > img {
+article > .markdown-preview-view > p > img {
   display: block;
   margin-inline: auto;
 }
 
 /* Los pies de foto del generador son el párrafo que sigue a una imagen. */
-article > p:has(> img) + p {
+article > .markdown-preview-view > p:has(> img) + p {
+  max-width: var(--xr-measure);
   font-size: 0.8rem;
   color: var(--gray);
   text-align: center;
@@ -81,9 +147,131 @@ article h2 {
   border-top: 1px solid var(--lightgray);
   padding-top: 1.4rem;
   margin-top: 2.2rem;
+  text-wrap: balance;
 }
 
-/* --- tarjetas de enlace (índices y listas generadas) ---------------------- */
+article h1,
+article h2,
+article h3 {
+  text-wrap: balance;
+}
+
+/* --- 3. Superficies del navegador ---------------------------------------- */
+
+/* Foco de teclado. Quartz lo deja en `outline-style: none`, así que quien
+   navega con Tab no ve dónde está. Se dibuja un anillo con el color de acento,
+   por fuera del elemento, para que no desplace nada. */
+:where(a, button, summary, input, select, textarea, [tabindex]):focus-visible {
+  outline: 2px solid var(--secondary);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* Ratón: sin anillo. Teclado: siempre. */
+:where(a, button, summary, [tabindex]):focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* Barra de desplazamiento delgada y del color del borde, no del sistema. */
+:root {
+  scrollbar-width: thin;
+  scrollbar-color: var(--lightgray) transparent;
+}
+
+*::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: var(--lightgray);
+  border-radius: 999px;
+  border: 3px solid var(--light);
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: var(--gray);
+}
+
+/* Cursor de escritura teñido: el de fábrica es negro puro incluso en oscuro. */
+input,
+textarea,
+select {
+  caret-color: var(--secondary);
+}
+
+mark,
+.text-highlight {
+  border-radius: 3px;
+  padding: 0 0.1rem;
+}
+
+/* Las cifras se alinean en columna: 129 / 1456 no debe bailar. */
+time,
+.xr-cifra-num,
+.xr-barra-val,
+.xr-dia-meta {
+  font-variant-numeric: tabular-nums;
+}
+
+/* --- 4. Movimiento ------------------------------------------------------- */
+
+/* Navegación entre páginas (Quartz usa SPA: sustituye el DOM sin recargar).
+   Sin esto el cambio de página es un salto seco. Con esto, el contenido nuevo
+   entra desde abajo y el ojo entiende que ha cambiado de sitio.
+   La clase la pone `ficha-fuente` en el evento `nav`; nunca se aplica a la
+   carga inicial, que debe aparecer ya puesta. */
+@keyframes xr-entrar {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+:root.xr-navegando .center > .page-header,
+:root.xr-navegando .center > article {
+  animation: xr-entrar var(--xr-dur-normal) var(--xr-ease) both;
+}
+
+:root.xr-navegando .center > article {
+  animation-delay: 40ms;
+}
+
+/* Barras de progreso del panel.
+   Estuvieron animadas con `animation-timeline: view()`, y era un error: si el
+   panel ya está en pantalla al cargar —que es el caso de la portada— la línea
+   de tiempo no avanza y la barra se queda a 0. Una barra a 0 % no es una
+   animación que falta: es un dato falso. El relleno se pinta en su sitio y el
+   movimiento se reserva para lo que no puede mentir (navegación, hover,
+   entrada de una anotación). */
+
+/* Nada de esto si el sistema pide menos movimiento. Se conserva el estado
+   final de cada animación, no se elimina la información. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  :root.xr-navegando .center > .page-header,
+  :root.xr-navegando .center > article {
+    animation: none;
+  }
+}
+
+/* --- 5. Tarjetas de enlace (índices y listas generadas) ------------------- */
 
 .xr-tarjetas {
   display: grid;
@@ -104,15 +292,23 @@ article h2 {
   background: var(--xr-surface);
   text-decoration: none;
   transition:
-    border-color 140ms ease,
-    transform 140ms ease,
-    box-shadow 140ms ease;
+    border-color var(--xr-dur-rapido) ease,
+    transform var(--xr-dur-rapido) var(--xr-ease),
+    box-shadow var(--xr-dur-rapido) ease;
 }
 
+/* La sombra lleva desplazamiento y desenfoque: es una elevación, no un halo. */
 .xr-tarjeta:hover {
-  border-color: var(--secondary);
-  transform: translateY(-1px);
-  box-shadow: 0 4px 14px -8px var(--secondary);
+  border-color: color-mix(in srgb, var(--secondary) 55%, var(--lightgray));
+  transform: translateY(-2px);
+  box-shadow:
+    0 1px 2px -1px rgb(0 0 0 / 0.12),
+    0 6px 16px -8px rgb(0 0 0 / 0.28);
+}
+
+.xr-tarjeta:active {
+  transform: translateY(0);
+  box-shadow: none;
 }
 
 .xr-tarjeta-titulo {
@@ -174,6 +370,14 @@ article h2 {
   border: 1px solid var(--lightgray);
   border-radius: var(--xr-radius);
   background: var(--xr-surface);
+  transition:
+    border-color var(--xr-dur-rapido) ease,
+    background var(--xr-dur-rapido) ease;
+}
+
+.xr-dia:hover {
+  border-color: color-mix(in srgb, var(--secondary) 55%, var(--lightgray));
+  background: color-mix(in srgb, var(--xr-surface) 80%, var(--xr-accent-soft));
 }
 
 .xr-dia-num {
@@ -245,10 +449,20 @@ article h2 {
   }
 }
 
-/* --- sin cromo sobrante --------------------------------------------------- */
+/* --- 6. Sin cromo sobrante ------------------------------------------------ */
 
 .search-button {
   border-radius: 8px;
+}
+
+/* El título del sitio en móvil ocupaba cuatro líneas de 28 px y empujaba el
+   contenido media pantalla hacia abajo. */
+@media (max-width: 800px) {
+  .page-title a,
+  .page-title {
+    font-size: 1.15rem !important;
+    line-height: 1.25;
+  }
 }
 
 /* --- retroenlaces y listas largas ---------------------------------------- */
@@ -287,4 +501,27 @@ article h2 {
 
 .toc-content > ul > li > a:hover {
   color: var(--secondary);
+}
+
+/* Sección que se está leyendo. El TOC de Quartz no marcaba ninguna: en una nota
+   de 2 800 px no había forma de saber por dónde ibas. La marca la pone el
+   script de `ficha-fuente` con IntersectionObserver. */
+.toc-content li[data-xr-actual] > a {
+  color: var(--secondary);
+  font-weight: 600;
+}
+
+.toc-content li[data-xr-actual] {
+  position: relative;
+}
+
+.toc-content li[data-xr-actual]::before {
+  content: "";
+  position: absolute;
+  left: -0.75rem;
+  top: 0.15em;
+  bottom: 0.15em;
+  width: 2px;
+  border-radius: 2px;
+  background: var(--secondary);
 }

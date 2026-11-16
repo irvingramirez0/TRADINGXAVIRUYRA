@@ -119,5 +119,58 @@ A=await abrir(B+"/esto-no-existe","qa-c7",9407)
 check("404: página de error", await A.ev("document.title.includes('404') || document.body.textContent.includes('404')"))
 A.cerrar()
 
+// 8. Calidad de lectura e interacción.
+//
+// Estas cinco comprobaciones existen porque cada una era un defecto real y
+// ninguno se veía mirando la página: un texto de 95 caracteres por línea se
+// lee mal sin parecer roto, y un foco de teclado invisible solo lo nota quien
+// navega con Tab. Se miden sobre el DOM renderizado, no sobre el CSS.
+A=await abrir(u("/conceptos/judas-swing"),"qa-c8",9409)
+check(
+  "lectura: la línea no pasa de 75 caracteres",
+  await A.ev(`(() => {
+    const par=[...document.querySelectorAll("article p")].find(p=>p.textContent.length>120)
+    if(!par) return false
+    const cs=getComputedStyle(par)
+    const s=document.createElement("span")
+    s.textContent="0".repeat(75); s.style.cssText="position:absolute;visibility:hidden;font:"+cs.font
+    par.appendChild(s); const ancho=s.getBoundingClientRect().width; s.remove()
+    return par.getBoundingClientRect().width <= ancho
+  })()`),
+)
+check(
+  "lectura: el gris secundario se lee (>=4.5:1)",
+  await A.ev(`(() => {
+    const lum=c=>{const v=c.match(/[\\d.]+/g).slice(0,3).map(Number).map(x=>{x/=255;return x<=0.03928?x/12.92:Math.pow((x+0.055)/1.055,2.4)});return 0.2126*v[0]+0.7152*v[1]+0.0722*v[2]}
+    const bg=lum(getComputedStyle(document.body).backgroundColor)
+    const el=document.querySelector(".xr-chip")
+    if(!el) return true
+    const L=lum(getComputedStyle(el).color)
+    return (Math.max(L,bg)+0.05)/(Math.min(L,bg)+0.05) >= 4.5
+  })()`),
+)
+check(
+  "teclado: el foco dibuja un anillo visible",
+  await A.ev(`(() => {
+    const reglas=[...document.styleSheets].flatMap(sh=>{try{return [...sh.cssRules]}catch(e){return []}})
+    return reglas.some(r=>r.cssText && r.cssText.includes("focus-visible") && /outline:\\s*2px/.test(r.cssText))
+  })()`),
+)
+check(
+  "formulario de anotaciones: no ocupa media pantalla",
+  await A.ev(`(() => {
+    const f=document.querySelector(".xr-anot-form")
+    return !!f && f.getBoundingClientRect().height < 400
+  })()`),
+)
+check(
+  "movimiento: hay ruta para quien pide menos animación",
+  await A.ev(`(() => {
+    const reglas=[...document.styleSheets].flatMap(sh=>{try{return [...sh.cssRules]}catch(e){return []}})
+    return reglas.some(r=>r.cssText && r.cssText.includes("prefers-reduced-motion"))
+  })()`),
+)
+A.cerrar()
+
 console.log(`\n${n-fallos}/${n} comprobaciones OK`)
 process.exit(fallos?1:0)

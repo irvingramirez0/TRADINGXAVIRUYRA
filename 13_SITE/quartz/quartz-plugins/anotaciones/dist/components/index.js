@@ -210,12 +210,24 @@ const Anotaciones = () => {
 .xr-anot-vacio { font-size: 0.85rem; color: var(--gray); margin: 0 0 1.1rem; }
 .xr-anot-item {
   border: 1px solid var(--lightgray);
-  border-left: 3px solid var(--secondary);
   border-radius: 8px;
   padding: 0.65rem 0.8rem;
   background: var(--xr-surface, var(--light));
+  transition: border-color 120ms ease, box-shadow 120ms ease;
 }
-.xr-anot-item[data-destino="1"] { border-left-color: var(--xr-warn, #c98a00); background: var(--xr-warn-soft, transparent); }
+.xr-anot-item:hover {
+  border-color: color-mix(in srgb, var(--secondary) 40%, var(--lightgray));
+  box-shadow: 0 2px 10px -6px rgb(0 0 0 / 0.25);
+}
+/* Anotación recién añadida: se asienta, para que se vea que entró. */
+@keyframes xr-anot-entra {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: none; }
+}
+.xr-anot-item[data-nueva="1"] { animation: xr-anot-entra 200ms cubic-bezier(0.16, 1, 0.3, 1) both; }
+/* La de otro sitio se marca con un tinte, no con una barra de color: una barra
+   lateral de 3 px es el adorno por defecto de la categoría. */
+.xr-anot-item[data-destino="1"] { background: var(--xr-warn-soft, transparent); border-color: color-mix(in srgb, var(--xr-warn, #c98a00) 45%, var(--lightgray)); }
 .xr-anot-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 0.45rem; font-size: 0.72rem; color: var(--gray); margin-bottom: 0.3rem; }
 .xr-anot-autor { font-weight: 600; color: var(--darkgray); }
 .xr-anot-sec {
@@ -241,6 +253,14 @@ const Anotaciones = () => {
 }
 .xr-anot-fila { display: flex; gap: 0.7rem; flex-wrap: wrap; }
 .xr-anot-campo { display: flex; flex-direction: column; gap: 0.25rem; font-size: 0.74rem; color: var(--gray); flex: 1 1 180px; }
+/* flex-basis en una columna es ALTURA, no anchura.
+   Los campos que cuelgan directamente del formulario (que es
+   flex-direction: column) salían de 180 px de alto y el formulario ocupaba
+   media pantalla. Y no bastaba con corregir el escritorio: en móvil
+   .xr-anot-fila pasa a columna, así que sus dos campos volvían a heredar el
+   180px de altura. Se anula en los dos sitios donde el eje es vertical. */
+.xr-anot-form > .xr-anot-campo,
+.xr-anot-fila > .xr-anot-campo { flex: 0 0 auto; }
 .xr-anot-campo select, .xr-anot-campo input, .xr-anot-campo textarea {
   font: inherit; font-size: 0.88rem; color: var(--dark);
   background: var(--light); border: 1px solid var(--lightgray); border-radius: 7px;
@@ -355,7 +375,7 @@ h2:hover > .xr-anot-ancla, h3:hover > .xr-anot-ancla, .xr-anot-ancla:focus { opa
     return out;
   }
 
-  function pintar(contenedor, lista, nota) {
+  function pintar(contenedor, lista, nota, nueva) {
     contenedor.innerHTML = "";
     var orden = lista.slice().sort(function (a, b) { return a.ts - b.ts; });
     orden.forEach(function (a) {
@@ -364,6 +384,9 @@ h2:hover > .xr-anot-ancla, h3:hover > .xr-anot-ancla, .xr-anot-ancla:focus { opa
       item.setAttribute("role", "listitem");
       item.id = "anot-" + a.id;
       if (a.destino) item.dataset.destino = "1";
+      // La que se acaba de escribir entra con un movimiento corto; el resto de
+      // la lista ya estaba y no debe volver a animarse.
+      if (nueva && a.id === nueva) item.dataset.nueva = "1";
       var meta = document.createElement("div");
       meta.className = "xr-anot-meta";
       var autor = document.createElement("span");
@@ -605,10 +628,11 @@ h2:hover > .xr-anot-ancla, h3:hover > .xr-anot-ancla, .xr-anot-ancla:focus { opa
         ? select.options[select.selectedIndex].textContent
         : "";
       var nueva = leer(nota);
-      nueva.push({
+      var creada = {
         id: uid(), ts: Date.now(), autor: autor, texto: texto,
         seccion: seccion, seccionTexto: seccionTexto,
-      });
+      };
+      nueva.push(creada);
       if (!guardar(nota, nueva)) {
         estado.textContent = "No se pudo guardar (almacenamiento lleno o bloqueado).";
         return;
@@ -617,7 +641,7 @@ h2:hover > .xr-anot-ancla, h3:hover > .xr-anot-ancla, .xr-anot-ancla:focus { opa
       estado.textContent = "Anotación guardada en este navegador.";
       var url = endpoint(root);
       if (url) enviar(url, nueva, estado);
-      pintar(contenedor, nueva, nota);
+      pintar(contenedor, nueva, nota, creada.id);
       actualizarContador(nueva);
       setTimeout(function () { estado.textContent = ""; }, 3200);
     });

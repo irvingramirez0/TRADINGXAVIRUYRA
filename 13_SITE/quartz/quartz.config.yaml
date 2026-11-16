@@ -224,9 +224,12 @@ plugins:
   - source: "@quartz-community/footer"
     enabled: true
     options:
+      # Apuntaba al repositorio de Quartz y a un Discord ajeno: en un visitante
+      # eso se lee como «este sitio es de otra persona». Se enlaza el proyecto
+      # real y la fuente del motor por separado.
       links:
-        GitHub: https://github.com/jackyzha0/quartz
-        Discord Community: https://discord.gg/cRFFHYye7t
+        Repositorio: https://github.com/irvingramirez0/TRADINGXAVIRUYRA
+        Quartz: https://quartz.jzhao.xyz
     layout:
       position: footer
       priority: 50

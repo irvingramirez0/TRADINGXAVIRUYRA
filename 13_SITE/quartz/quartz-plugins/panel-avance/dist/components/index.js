@@ -145,31 +145,46 @@ const PanelAvance = () => {
   border-radius: 12px;
   background: var(--xr-surface, var(--light));
 }
+/* No es un «eyebrow» sobre un título: es el nombre del panel, así que se lee
+   como un encabezado de verdad, con peso y color de texto, no como etiqueta. */
 .xr-panel-titulo {
   margin: 0 0 0.9rem;
-  font-size: 0.78rem;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: var(--gray);
+  font-family: var(--headerFont);
+  font-size: 0.95rem;
+  letter-spacing: 0;
+  color: var(--darkgray);
   font-weight: 600;
 }
+/* Rejilla de cifras.
+   Con auto-fit de 108 px, seis cifras caían 4 + 2 y dejaban dos huérfanas en
+   una fila casi vacía. Seis columnas no caben en el ancho del panel (~590 px
+   tras fijar la medida de lectura), así que el reparto es explícito: 3 + 3 en
+   cuanto hay sitio y 2 + 2 + 2 en móvil. Se adapta por número, no por ancho,
+   porque las cifras siempre son seis. */
 .xr-panel-cifras {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-  gap: 0.9rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.9rem 0.8rem;
   margin-bottom: 1.1rem;
 }
+@media (min-width: 560px) {
+  .xr-panel-cifras { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
 .xr-cifra { display: flex; flex-direction: column; gap: 0.1rem; }
-.xr-cifra-num { font-size: 1.7rem; line-height: 1.05; font-weight: 700; color: var(--dark); font-variant-numeric: tabular-nums; }
+.xr-cifra-num { font-size: 1.65rem; line-height: 1.05; font-weight: 700; color: var(--dark); font-variant-numeric: tabular-nums; letter-spacing: -0.01em; }
 .xr-cifra-etq { font-size: 0.76rem; color: var(--darkgray); }
-.xr-cifra-nota { font-size: 0.7rem; color: var(--gray); }
+.xr-cifra-nota { font-size: 0.71rem; color: var(--gray); }
 .xr-panel-barras { display: flex; flex-direction: column; gap: 0.75rem; }
 .xr-barra-cab { display: flex; justify-content: space-between; font-size: 0.78rem; color: var(--darkgray); margin-bottom: 0.25rem; }
 .xr-barra-val { font-variant-numeric: tabular-nums; color: var(--gray); }
-.xr-barra-pista { height: 7px; border-radius: 999px; background: var(--lightgray); overflow: hidden; }
-.xr-barra-relleno { height: 100%; border-radius: 999px; background: var(--secondary); }
-.xr-barra-nota { font-size: 0.7rem; color: var(--gray); }
-.xr-panel-pie { margin: 0.9rem 0 0; font-size: 0.78rem; color: var(--gray); }
+.xr-barra-pista { height: 7px; border-radius: 999px; background: color-mix(in srgb, var(--lightgray) 75%, transparent); overflow: hidden; }
+.xr-barra-relleno {
+  height: 100%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--secondary), var(--tertiary));
+}
+.xr-barra-nota { font-size: 0.71rem; color: var(--gray); }
+.xr-panel-pie { margin: 0.9rem 0 0; font-size: 0.78rem; color: var(--gray); line-height: 1.5; }
 @media (max-width: 800px) {
   .xr-cifra-num { font-size: 1.4rem; }
 }

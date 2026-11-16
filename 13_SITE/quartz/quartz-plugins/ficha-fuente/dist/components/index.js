@@ -205,8 +205,9 @@ const FichaFuente = () => {
   margin: 0;
   font-size: 0.82rem;
   color: var(--darkgray);
-  border-left: 3px solid var(--xr-warn, #c98a00);
-  padding-left: 0.6rem;
+  background: var(--xr-warn-soft, transparent);
+  border-radius: 7px;
+  padding: 0.45rem 0.65rem;
 }
 `
 
@@ -214,7 +215,12 @@ const FichaFuente = () => {
 (function () {
   if (window.__xrFicha) return;
   window.__xrFicha = true;
-  function init() {
+
+  var RAIZ = document.documentElement;
+  var reducido = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+  // --- 1. Botón «Copiar cita» -------------------------------------------
+  function initFicha() {
     document.querySelectorAll(".xr-boton-cita").forEach(function (b) {
       if (b.dataset.listo) return;
       b.dataset.listo = "1";
@@ -237,7 +243,97 @@ const FichaFuente = () => {
       });
     });
   }
-  document.addEventListener("nav", init);
+
+  // --- 2. Transición al cambiar de página --------------------------------
+  //
+  // Quartz navega sin recargar (SPA) y sustituye el contenido de golpe: el
+  // salto es seco y no se distingue de un parpadeo. Aquí se marca la raíz para
+  // que el contenido nuevo entre con un movimiento corto.
+  //
+  // Se usa el evento «prenav», no «nav», para saber si esto es una navegación
+  // de verdad. «nav» también se emite en la carga inicial —y además antes de
+  // que este script registre su listener—, así que con «nav» la primera
+  // navegación real se confundía con la inicial y no se animaba nunca.
+  // «prenav» solo se emite cuando alguien ha pulsado un enlace: es la señal
+  // exacta.
+  var voyANavegar = false;
+  document.addEventListener("prenav", function () { voyANavegar = true; });
+
+  function marcarEntrada() {
+    if (!voyANavegar) return;      // carga inicial: aparece ya puesta
+    voyANavegar = false;
+    if (reducido.matches) return;  // el sistema pide menos movimiento
+    RAIZ.classList.remove("xr-navegando");
+    // Forzar recálculo para que la animación vuelva a empezar.
+    void RAIZ.offsetWidth;
+    RAIZ.classList.add("xr-navegando");
+    clearTimeout(marcarEntrada._t);
+    marcarEntrada._t = setTimeout(function () {
+      RAIZ.classList.remove("xr-navegando");
+    }, 450);
+  }
+
+  // --- 3. Sección que se está leyendo ------------------------------------
+  //
+  // El índice de la derecha no marcaba ninguna sección: en una nota de 2 800 px
+  // no había forma de saber por dónde ibas. Se marca la última sección cuyo
+  // encabezado ya ha pasado por arriba.
+  var tocObs = null;
+  function initToc() {
+    var enlaces = [].slice.call(
+      document.querySelectorAll('.toc-content a[href^="#"]')
+    );
+    if (!enlaces.length) return;
+
+    var mapa = {};
+    enlaces.forEach(function (a) {
+      var id = decodeURIComponent(a.getAttribute("href").slice(1));
+      var li = a.closest("li");
+      if (id && li) mapa[id] = li;
+    });
+
+    var secciones = Object.keys(mapa)
+      .map(function (id) { return document.getElementById(id); })
+      .filter(Boolean);
+    if (!secciones.length) return;
+
+    var actual = null;
+    function pintar() {
+      var y = window.scrollY + 120;
+      var elegida = null;
+      for (var i = 0; i < secciones.length; i++) {
+        if (secciones[i].getBoundingClientRect().top + window.scrollY <= y) {
+          elegida = secciones[i].id;
+        }
+      }
+      if (elegida === actual) return;
+      actual = elegida;
+      Object.keys(mapa).forEach(function (id) {
+        if (id === elegida) mapa[id].setAttribute("data-xr-actual", "");
+        else mapa[id].removeAttribute("data-xr-actual");
+      });
+    }
+
+    var pendiente = false;
+    function alScroll() {
+      if (pendiente) return;
+      pendiente = true;
+      requestAnimationFrame(function () { pendiente = false; pintar(); });
+    }
+
+    window.addEventListener("scroll", alScroll, { passive: true });
+    if (window.addCleanup) window.addCleanup(function () {
+      window.removeEventListener("scroll", alScroll);
+    });
+    pintar();
+  }
+
+  function init() {
+    initFicha();
+    initToc();
+  }
+
+  document.addEventListener("nav", function () { marcarEntrada(); init(); });
   document.addEventListener("render", init);
   init();
 })();
