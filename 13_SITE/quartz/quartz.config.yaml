@@ -69,7 +69,9 @@ plugins:
     # layout. Sin este bloque el componente se carga y no se renderiza.
     layout:
       position: beforeBody
-      priority: 2
+      # Mismo criterio que la ficha: el panel resume la página, así que va
+      # después del título (article-title = 10), no encima de él.
+      priority: 25
   - source: ./quartz-plugins/anotaciones
     enabled: true
     layout:
