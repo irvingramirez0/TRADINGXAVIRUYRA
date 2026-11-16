@@ -40,6 +40,17 @@ BASE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DB = os.path.join(BASE, "07_KNOWLEDGE_BASE", "xavi_ruyra.db")
 VAULT = os.path.join(BASE, "12_VAULT")
 MEDIA = os.path.join(VAULT, "media")
+
+# El directorio de este script va al principio de `sys.path`.
+#
+# Sin esto, ejecutarlo con `python -I` (modo aislado, que es como lo invocan
+# `pipeline.py` y `publicar_sitio.py`) hace que `import paginas_sitio` falle:
+# `-I` quita el directorio del script de la ruta de importación. El fallo
+# quedaba atrapado por el `try/except` de más abajo y el vault se regeneraba
+# SIN las páginas del bootcamp, sin los índices y sin el comprobador, con
+# código de salida 0. El sitio se veía completo porque las páginas viejas
+# seguían en disco: no cambiaban, que es peor que faltar.
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 PREGUNTAS_MD = os.path.join(BASE, "05_METHODOLOGY", "11_PREGUNTAS_ABIERTAS.md")
 # La fecha de corte se calcula sola (ver `_fecha_de_corte`). Estaba escrita a
 # mano en "2026-11-14" y dejó de coincidir con el contenido en la primera
@@ -1178,6 +1189,11 @@ def main():
         generate_index(notas, slugs_concepto, reglas_count, trades_count,
                        cambios_count, preguntas_count, estado)
         # Páginas de navegación y auditoría.
+        #
+        # Si fallan se avisa en voz alta y se marca el fallo, pero no se aborta:
+        # las notas ya están escritas y perderlas tampoco ayudaría. Antes solo
+        # se imprimía un AVISO y el script terminaba con éxito, así que el
+        # llamador no tenía forma de saber que el vault salió incompleto.
         try:
             import paginas_sitio
             slugs_regla_todos = {r["id"]: slug(r["name"])
@@ -1186,7 +1202,10 @@ def main():
             paginas_sitio.generar_indices(con, slugs_concepto, slugs_regla_todos)
             paginas_sitio.generar_indice_preguntas(con)
         except Exception as e:  # una página de navegación no debe tumbar el vault
-            print(f"AVISO: páginas de navegación: {e}")
+            print(f"FALLO: páginas de navegación: {e}")
+            print("El vault se escribió, pero las páginas del bootcamp y los índices "
+                  "NO se actualizaron. No publiques hasta arreglarlo.")
+            return 4
         sin_fuente = comprobador_fuentes(con, slugs_concepto, slugs_regla, {}, {})
         print(f"Comprobador de fuentes: {sin_fuente} entidades sin respaldo")
 
