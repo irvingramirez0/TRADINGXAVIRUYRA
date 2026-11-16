@@ -147,11 +147,19 @@ Las reglas anteriores leen anotaciones. No pueden distinguir una diapositiva de
 otro tema de la que dice ser; eso solo se ve mirando. Para esa parte:
 
 ```bash
-node 09_AUTOMATION/verificar_sitio.mjs     # 19 casos de uso contra el sitio publicado
+node 09_AUTOMATION/verificar_sitio.mjs     # 22 casos de uso contra el sitio publicado
 python 09_AUTOMATION/revisar_capturas.py   # hoja HTML con todas las imágenes publicadas
 # se abre, se marca lo que no cuadre y se descarga veredictos.json
 python 09_AUTOMATION/vetar_fotogramas.py --veredictos veredictos.json
 python 09_AUTOMATION/vetar_fotogramas.py --listar    # qué está vetado y por qué
+```
+
+Para los conceptos que no tienen imagen hay una tanda aparte, más pequeña:
+
+```bash
+python 09_AUTOMATION/revisar_capturas.py --tanda
+# 49 fotogramas de las clases de esos conceptos, ninguno revisado todavía
+python 09_AUTOMATION/vetar_fotogramas.py --anotar anotaciones.json
 ```
 
 El veto se guarda en la tabla `frame_vetos` **por concepto**: un mismo fotograma

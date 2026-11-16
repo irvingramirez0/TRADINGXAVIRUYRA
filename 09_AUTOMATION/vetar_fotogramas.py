@@ -104,6 +104,11 @@ def main():
     ap.add_argument("--motivo", default="revisión visual: no muestra el concepto")
     ap.add_argument("--listar", action="store_true")
     ap.add_argument("--quitar", action="store_true")
+    ap.add_argument(
+        "--anotar", nargs="*", default=[],
+        help="JSON de la hoja de tanda: escribe la descripción de los fotogramas "
+             "pendientes y veta los que no sirven.",
+    )
     args = ap.parse_args()
 
     con = conectar()
@@ -156,7 +161,46 @@ def main():
     for fid in args.frame:
         cambios += vetar(con, fid, cid, args.motivo)
 
-    print(f"\nVetos nuevos: {cambios}")
+    # Anotación de fotogramas pendientes, escrita a mano en la hoja de tanda.
+    #
+    # Esto NO inventa nada: escribe exactamente el texto que una persona
+    # tecleó al mirar la imagen. Es el paso que convierte un fotograma
+    # «pendiente de anotación» en evidencia citable, y hasta ahora solo se
+    # podía hacer con SQL a mano.
+    anotados = 0
+    vetados_por_tanda = 0
+    for arch in args.anotar:
+        with open(arch, encoding="utf-8") as fh:
+            entradas = json.load(fh)
+        if isinstance(entradas, dict):
+            entradas = entradas.get("anotaciones") or []
+        print(f"{arch}: {len(entradas)} entradas")
+        for e in entradas:
+            fid = e.get("frame")
+            if fid is None:
+                continue
+            fid = int(fid)
+            veredicto = (e.get("veredicto") or "").lower()
+            desc = (e.get("descripcion") or "").strip()
+            if veredicto == "descartar" or (veredicto == "no sirve"):
+                c = id_concepto(con, e.get("concepto") or args.concepto)
+                vetados_por_tanda += vetar(
+                    con, fid, c, "revisión visual: no muestra el concepto"
+                )
+                continue
+            if not desc:
+                # Sin texto no hay nada que guardar. Se avisa en vez de
+                # dejar el fotograma como estaba silenciosamente.
+                print(f"  [{fid}] sin descripción: no se anota")
+                continue
+            con.execute(
+                "UPDATE frames SET description=? WHERE id=?", (desc, fid)
+            )
+            anotados += 1
+
+    con.commit()
+    print(f"\nVetos nuevos: {cambios + vetados_por_tanda}")
+    print(f"Fotogramas anotados: {anotados}")
     print("Regenera el sitio: python 09_AUTOMATION/pipeline.py --solo-vault")
     return 0
 

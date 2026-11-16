@@ -168,7 +168,53 @@ extensión y devuelve 404 aunque el archivo exista. GitHub Pages sí lo resuelve
 - **Extraer conceptos y reglas de una transcripción nueva.** Es lectura y
   criterio; hacerlo con una heurística sería inventar, que es justo lo que el
   proyecto prohíbe. La tarea de Claude Desktop lo hace al leer el texto.
+  Decidido así el 2026-11-15: se queda como está.
 - **Anotar fotogramas.** 695 marcos siguen sin anotación y no se publican como
-  prueba visual. `revisar_capturas.py` los pone delante para marcarlos a mano.
-- **Commit y push.** Ningún script los hace. Se sigue haciendo a mano tras
-  revisar el diff del vault.
+  prueba visual. Para los conceptos sin imagen hay una tanda preparada (abajo).
+- **Decidir si un fotograma ilustra un concepto.** La hoja presenta el material;
+  la persona escribe qué ve. No hay veredicto automático.
+
+## 6-bis. Publicación automática
+
+`09_AUTOMATION/publicar_sitio.py` hace la cadena entera: regenerar, verificar,
+comprobar que cambió algo, compilar y publicar. Se puede encadenar al ciclo
+diario con `--publicar`:
+
+```bash
+py -3.13 09_AUTOMATION/sync_bootcamp.py --download --process --publicar
+```
+
+Para y avisa en dos casos, que es su razón de ser:
+
+| Situación | Qué hace | Por qué |
+|---|---|---|
+| Hay cambios locales fuera de `12_VAULT/` | no publica, lista los archivos | mezclar trabajo en curso con una publicación automática es la forma más fácil de subir algo que no querías |
+| El build local no compila | no publica, muestra el error | el deploy de GitHub Actions fallaría igual, pero el error quedaría en un log remoto con el commit ya hecho |
+
+Si el vault no cambió, termina sin commit: no crea un commit vacío cada día.
+
+## 6-ter. La tanda de los conceptos sin imagen
+
+De los 26 conceptos sin ilustración, solo 9 se pueden fotografiar:
+
+- 11 son `NOT USED`: RSI, MACD, Elliott… Xavi declara que no los usa, así que
+  no hay nada suyo que ilustrar.
+- 6 son de psicología: no se ven en un gráfico.
+- Los 9 restantes: PD Array, Key Levels, PDH/PDL, Protected High/Low, Rejection
+  Block, Cuentas de fondeo, Sesión de Nueva York, No News Monday, Bank Holiday.
+
+```bash
+python 09_AUTOMATION/revisar_capturas.py --tanda
+# abre 09_AUTOMATION/.tmp/revision/tanda.html
+python 09_AUTOMATION/vetar_fotogramas.py --anotar anotaciones.json
+```
+
+La hoja trae **49 fotogramas** de las clases que hablan de esos conceptos y que
+nadie ha mirado. No es una lista de candidatos aprobados: hay que escribir qué
+se ve.
+
+De los 9, tres (Protected High/Low, Rejection Block, Cuentas de fondeo) no
+tienen ningún fotograma sin revisar: sus clases ya están anotadas de arriba
+abajo y ninguna anotación los menciona. Para esos tres no hay material sin
+mirar; haría falta extraer fotogramas nuevos de los minutos donde se mencionan
+en la transcripción.
