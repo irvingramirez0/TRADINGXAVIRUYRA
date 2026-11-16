@@ -11,8 +11,6 @@ clasificacion: "Bien ejecutado ganador"
 id: 6
 ---
 
-# Operación #6 — NQ — 2026-09-25
-
 > **Aviso:** P&L autodeclarado, no auditado. Las cifras provienen de lo que Xavi dice en el vídeo y no se han verificado con extractos de cuenta.
 
 > **Clasificación:** Bien ejecutado ganador · **Confianza:** observado

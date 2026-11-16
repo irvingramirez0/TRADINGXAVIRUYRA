@@ -10,8 +10,6 @@ id: 150
 version: 1
 ---
 
-# SMT: basta con que un índice toque la zona
-
 > **Confianza:** explícito · **Estado:** vigente · **Versión:** 1
 - **Clase del bootcamp:** [[../bootcamp/dia-17|Día 17 — SMT's y True Manipulation]]
 

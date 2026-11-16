@@ -10,8 +10,6 @@ id: 63
 version: 1
 ---
 
-# Logout tras error evitable; no revenge trading
-
 > **Confianza:** explícito · **Estado:** vigente · **Versión:** 1
 - **Clase del bootcamp:** [[../bootcamp/dia-14|Día 14 — Revenge Trading (psicología)]]
 

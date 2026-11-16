@@ -11,8 +11,6 @@ clasificacion: "Error de ejecución"
 id: 30
 ---
 
-# Operación #30 — NQ — 2025-07-28
-
 > **Aviso:** P&L autodeclarado, no auditado. Las cifras provienen de lo que Xavi dice en el vídeo y no se han verificado con extractos de cuenta.
 
 > **Clasificación:** Error de ejecución · **Confianza:** observado

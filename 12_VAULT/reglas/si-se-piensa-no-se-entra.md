@@ -10,8 +10,6 @@ id: 85
 version: 1
 ---
 
-# Si se piensa, no se entra
-
 > **Confianza:** explícito · **Estado:** vigente · **Versión:** 1
 
 ## Descripción

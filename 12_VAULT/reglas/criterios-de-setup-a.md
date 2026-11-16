@@ -10,8 +10,6 @@ id: 92
 version: 1
 ---
 
-# Criterios de setup A+
-
 > **Confianza:** explícito · **Estado:** vigente · **Versión:** 1
 
 ## Descripción

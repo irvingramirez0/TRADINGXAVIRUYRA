@@ -11,8 +11,6 @@ clasificacion: "Error de análisis"
 id: 11
 ---
 
-# Operación #11 — NQ (Nasdaq 100); referencia SP500 — 2026-04-29
-
 > **Aviso:** P&L autodeclarado, no auditado. Las cifras provienen de lo que Xavi dice en el vídeo y no se han verificado con extractos de cuenta.
 
 > **Clasificación:** Error de análisis · **Confianza:** observado

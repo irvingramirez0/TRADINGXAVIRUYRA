@@ -21,7 +21,6 @@ panel:
   pie: "Todo lo que aparece en este sitio se regenera desde una base SQLite con `python 09_AUTOMATION/pipeline.py`. Las cifras de esta portada se cuentan en cada generación, no se escriben a mano."
 ---
 
-# Metodología Xavi Ruyra — estudio no oficial
 
 > **Proyecto de estudio no oficial.** Este sitio es un resumen estructurado y trazable de contenido público de Xavi Ruyra. No es un curso oficial, no está afiliado ni respaldado por él, y no sustituye a sus vídeos. Todo lo que no tiene fuente con vídeo y minuto se marca como **no confirmado**.
 

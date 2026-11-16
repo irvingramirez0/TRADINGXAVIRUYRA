@@ -12,8 +12,6 @@ sinonimos: ["displacement", "desplazamiento"]
 id: 63
 ---
 
-# Displacement
-
 > **Confianza:** explícito · **Estado:** vigente · **Categoría:** SUPPORTING
 
 ## Definición

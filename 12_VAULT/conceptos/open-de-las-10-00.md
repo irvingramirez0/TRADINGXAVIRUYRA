@@ -12,8 +12,6 @@ sinonimos: ["open de las 10", "10:00 open", "po3 de las 10", "open de 4 horas"]
 id: 51
 ---
 
-# Open de las 10:00
-
 > **Confianza:** explícito · **Estado:** vigente · **Categoría:** CORE
 
 ## Definición

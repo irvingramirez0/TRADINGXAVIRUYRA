@@ -10,8 +10,6 @@ id: 86
 version: 1
 ---
 
-# FOMC: no operar o reducir el riesgo al mínimo
-
 > **Confianza:** explícito · **Estado:** vigente · **Versión:** 1
 
 ## Descripción

@@ -12,8 +12,6 @@ sinonimos: ["rejection block"]
 id: 65
 ---
 
-# Rejection Block
-
 > **Confianza:** explícito · **Estado:** experimental · **Categoría:** CONTEXTUAL
 
 ## Definición

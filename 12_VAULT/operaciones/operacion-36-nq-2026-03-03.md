@@ -11,8 +11,6 @@ clasificacion: "Mixto"
 id: 36
 ---
 
-# Operación #36 — NQ — 2026-03-03
-
 > **Aviso:** P&L autodeclarado, no auditado. Las cifras provienen de lo que Xavi dice en el vídeo y no se han verificado con extractos de cuenta.
 
 > **Clasificación:** Mixto · **Confianza:** observado

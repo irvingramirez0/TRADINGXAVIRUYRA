@@ -10,8 +10,6 @@ id: 43
 version: 1
 ---
 
-# Si hay dos DOL o ninguno, no operar
-
 > **Confianza:** explícito · **Estado:** vigente · **Versión:** 1
 
 ## Descripción

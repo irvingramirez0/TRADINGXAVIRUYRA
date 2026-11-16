@@ -12,8 +12,6 @@ sinonimos: ["chart patterns", "head and shoulders", "triangles", "flags"]
 id: 77
 ---
 
-# Patrones chartistas clásicos
-
 > **Confianza:** observado · **Estado:** no usado · **Categoría:** NOT USED
 - **Clase del bootcamp:** [[../bootcamp/dia-02|Día 2 — Preparación: configurar TradingView]]
 

@@ -11,7 +11,6 @@ categoria: "BOOTCAMP"
 duracion: "21:25"
 ---
 
-# Día 6 — Liquidez pt1
 
 > **Clase 6 de 21** · Duración 21:25 · **Vídeo:** `7HOAf7vHMqU`
 

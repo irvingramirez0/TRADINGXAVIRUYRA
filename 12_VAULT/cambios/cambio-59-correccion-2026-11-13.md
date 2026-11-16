@@ -11,8 +11,6 @@ tipo_cambio: "correccion"
 entidad: "rule#163"
 ---
 
-# Cambio #59 — correccion — 2026-11-13
-
 > **Tipo:** correccion · **Entidad:** `rule#163` · **Fecha:** 2026-11-13
 
 ## Descripción

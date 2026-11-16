@@ -9,8 +9,6 @@ timestamp: "07:19"
 id: 6
 ---
 
-# 5m vs 15m como HTF PD array
-
 > **Estado de la pregunta:** INFERIDO.
 
 **Qué sabemos:**

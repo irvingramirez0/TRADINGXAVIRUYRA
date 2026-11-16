@@ -12,8 +12,6 @@ sinonimos: ["cisd", "change in state of delivery"]
 id: 52
 ---
 
-# CISD (Change in State of Delivery)
-
 > **Confianza:** explícito · **Estado:** vigente · **Categoría:** SUPPORTING
 - **Clase del bootcamp:** [[../bootcamp/dia-13|Día 13 — IFVG]]
 

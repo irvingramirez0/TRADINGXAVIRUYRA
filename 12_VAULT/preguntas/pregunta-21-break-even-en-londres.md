@@ -9,8 +9,6 @@ timestamp: ""
 id: 21
 ---
 
-# Break-even en Londres
-
 > **Estado de la pregunta:** VACÍO.
 
 La regla está explicada en Nueva York. No se sabe si cambia en Londres.

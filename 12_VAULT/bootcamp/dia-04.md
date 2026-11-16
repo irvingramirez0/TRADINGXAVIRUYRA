@@ -11,7 +11,6 @@ categoria: "BOOTCAMP"
 duracion: "21:15"
 ---
 
-# Día 4 — Velas
 
 > **Clase 4 de 21** · Duración 21:15 · **Vídeo:** `SuRgJd8ONIc`
 

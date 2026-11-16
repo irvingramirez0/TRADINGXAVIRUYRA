@@ -10,8 +10,6 @@ id: 75
 version: 1
 ---
 
-# Definición de high/low y tendencia
-
 > **Confianza:** explícito · **Estado:** vigente · **Versión:** 1
 - **Clase del bootcamp:** [[../bootcamp/dia-04|Día 4 — Velas]]
 

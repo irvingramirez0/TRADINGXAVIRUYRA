@@ -12,8 +12,6 @@ sinonimos: ["leg; pata de manipulación; manipulation leg"]
 id: 79
 ---
 
-# Manipulation leg
-
 > **Confianza:** explícito · **Estado:** vigente · **Categoría:** CORE
 
 ## Definición

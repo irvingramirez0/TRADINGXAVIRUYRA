@@ -9,8 +9,6 @@ timestamp: "08:23"
 id: 26
 ---
 
-# Alcance de "todo funciona"
-
 > **Estado de la pregunta:** ABIERTO. No usar la frase para justificar mezclar conceptos.
 
 **Qué sabemos:** dice que "orderflow funciona, ICT funciona, soportes y resistencias funciona, ratios negativos funcionan, promediar funciona, todo funciona" [ `ZOxEUWwDSoQ` 08:23].

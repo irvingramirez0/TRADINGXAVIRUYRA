@@ -10,8 +10,6 @@ id: 127
 version: 1
 ---
 
-# Calendario en Forex Factory, hora NY y filtrado a USD
-
 > **Confianza:** explícito · **Estado:** vigente · **Versión:** 1
 - **Clase del bootcamp:** [[../bootcamp/dia-10|Día 10 — Noticias]]
 

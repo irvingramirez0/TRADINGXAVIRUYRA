@@ -10,8 +10,6 @@ id: 133
 version: 1
 ---
 
-# Data highs/lows: esperar la noticia y operar el barrido entre extremos
-
 > **Confianza:** explícito · **Estado:** vigente · **Versión:** 1
 - **Clase del bootcamp:** [[../bootcamp/dia-11|Día 11 — Liquidez pt2]]
 

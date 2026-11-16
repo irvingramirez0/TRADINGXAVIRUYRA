@@ -11,8 +11,6 @@ tipo_cambio: "ampliacion"
 entidad: "rule#137"
 ---
 
-# Cambio #44 — ampliacion — 2026-11-06
-
 > **Tipo:** ampliacion · **Entidad:** `rule#137` · **Fecha:** 2026-11-06
 
 ## Descripción

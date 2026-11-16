@@ -10,8 +10,6 @@ id: 48
 version: 1
 ---
 
-# Open de las 10:00: sweep + open low/high
-
 > **Confianza:** explícito · **Estado:** vigente · **Versión:** 1
 
 ## Descripción

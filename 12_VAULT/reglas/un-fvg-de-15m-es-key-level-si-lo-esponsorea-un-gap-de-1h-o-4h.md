@@ -10,8 +10,6 @@ id: 143
 version: 1
 ---
 
-# Un FVG de 15m es key level si lo esponsorea un gap de 1H o 4H
-
 > **Confianza:** explícito · **Estado:** vigente · **Versión:** 1
 - **Clase del bootcamp:** [[../bootcamp/dia-15|Día 15 — Key Levels]]
 

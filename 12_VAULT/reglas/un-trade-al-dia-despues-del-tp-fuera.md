@@ -10,8 +10,6 @@ id: 57
 version: 1
 ---
 
-# Un trade al día; después del TP, fuera
-
 > **Confianza:** explícito · **Estado:** vigente · **Versión:** 1
 
 ## Descripción

@@ -12,8 +12,6 @@ sinonimos: ["patrones de trade; trades trampa"]
 id: 80
 ---
 
-# Pattern trades
-
 > **Confianza:** explícito · **Estado:** vigente · **Categoría:** SUPPORTING
 
 ## Definición

@@ -12,8 +12,6 @@ sinonimos: ["true manipulation", "manipulación verdadera"]
 id: 54
 ---
 
-# True Manipulation
-
 > **Confianza:** explícito · **Estado:** vigente · **Categoría:** CORE
 - **Clase del bootcamp:** [[../bootcamp/dia-17|Día 17 — SMT's y True Manipulation]]
 

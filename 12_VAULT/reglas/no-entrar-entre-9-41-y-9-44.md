@@ -10,8 +10,6 @@ id: 46
 version: 1
 ---
 
-# No entrar entre 9:41 y 9:44
-
 > **Confianza:** explícito · **Estado:** vigente · **Versión:** 1
 
 ## Descripción

@@ -11,8 +11,6 @@ tipo_cambio: "matiz"
 entidad: "rule#93"
 ---
 
-# Cambio #31 — matiz — 2026-06-28
-
 > **Tipo:** matiz · **Entidad:** `rule#93` · **Fecha:** 2026-06-28
 
 ## Descripción

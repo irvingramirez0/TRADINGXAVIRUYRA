@@ -10,8 +10,6 @@ id: 91
 version: 1
 ---
 
-# CPI: targetear data highs/lows
-
 > **Confianza:** explícito · **Estado:** vigente · **Versión:** 1
 
 ## Descripción

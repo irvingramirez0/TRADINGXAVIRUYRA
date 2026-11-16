@@ -10,8 +10,6 @@ id: 115
 version: 1
 ---
 
-# Validar el FVG en la temporalidad en la que se marcó
-
 > **Confianza:** explícito · **Estado:** vigente · **Versión:** 1
 - **Clase del bootcamp:** [[../bootcamp/dia-08|Día 8 — FVG: definición, respeto y validación por temporalidad]]
 

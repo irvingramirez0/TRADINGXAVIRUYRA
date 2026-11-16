@@ -10,8 +10,6 @@ id: 173
 version: 1
 ---
 
-# Un día rojo es un día más del tablero; no gamblear para recuperarlo
-
 > **Confianza:** explícito · **Estado:** vigente · **Versión:** 1
 - **Clase del bootcamp:** [[../bootcamp/dia-20|Día 20 — Ego (psicología)]]
 

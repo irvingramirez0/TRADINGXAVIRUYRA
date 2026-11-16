@@ -10,8 +10,6 @@ id: 95
 version: 1
 ---
 
-# Escenarios premercado en 1H
-
 > **Confianza:** explícito · **Estado:** vigente · **Versión:** 1
 
 ## Descripción

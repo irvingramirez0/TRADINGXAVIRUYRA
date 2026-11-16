@@ -11,8 +11,6 @@ tipo_cambio: "evolución"
 entidad: "rule#107"
 ---
 
-# Cambio #26 — evolución — 2026-10-31
-
 > **Tipo:** evolución · **Entidad:** `rule#107` · **Fecha:** 2026-10-31
 
 ## Descripción

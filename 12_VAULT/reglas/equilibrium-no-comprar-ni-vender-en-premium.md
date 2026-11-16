@@ -10,8 +10,6 @@ id: 72
 version: 1
 ---
 
-# Equilibrium: no comprar ni vender en premium
-
 > **Confianza:** explícito · **Estado:** obsoleto · **Versión:** 1
 
 ## Descripción

@@ -10,8 +10,6 @@ id: 49
 version: 1
 ---
 
-# PO3 requiere HTF PD array de 15m o más
-
 > **Confianza:** explícito · **Estado:** vigente · **Versión:** 1
 
 ## Descripción

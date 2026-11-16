@@ -12,8 +12,6 @@ sinonimos: ["gambling", "gamblear", "casino", "apuesta", "aleatorio", "ludopatí
 id: 87
 ---
 
-# Gambling vs trading (psicología)
-
 > **Confianza:** explícito · **Estado:** vigente · **Categoría:** CONTEXTUAL
 - **Clase del bootcamp:** [[../bootcamp/dia-12|Día 12 — Gambling (psicología)]]
 

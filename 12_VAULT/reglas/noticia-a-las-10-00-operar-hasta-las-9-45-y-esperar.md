@@ -10,8 +10,6 @@ id: 87
 version: 1
 ---
 
-# Noticia a las 10:00: operar hasta las 9:45 y esperar
-
 > **Confianza:** explícito · **Estado:** vigente · **Versión:** 1
 
 ## Descripción

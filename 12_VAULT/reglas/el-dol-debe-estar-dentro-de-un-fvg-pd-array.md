@@ -10,8 +10,6 @@ id: 42
 version: 1
 ---
 
-# El DOL debe estar dentro de un FVG/PD array
-
 > **Confianza:** explícito · **Estado:** vigente · **Versión:** 1
 
 ## Descripción

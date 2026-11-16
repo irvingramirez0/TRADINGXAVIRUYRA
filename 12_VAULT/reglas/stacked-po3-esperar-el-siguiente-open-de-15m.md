@@ -10,8 +10,6 @@ id: 50
 version: 1
 ---
 
-# Stacked PO3: esperar el siguiente open de 15m
-
 > **Confianza:** explícito · **Estado:** vigente · **Versión:** 1
 
 ## Descripción

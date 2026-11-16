@@ -11,8 +11,6 @@ clasificacion: "Violación de reglas"
 id: 9
 ---
 
-# Operación #9 — NQ (Nasdaq 100); referencia SP500 — 2026-06-25
-
 > **Aviso:** P&L autodeclarado, no auditado. Las cifras provienen de lo que Xavi dice en el vídeo y no se han verificado con extractos de cuenta.
 
 > **Clasificación:** Violación de reglas · **Confianza:** observado

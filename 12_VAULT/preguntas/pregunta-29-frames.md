@@ -9,8 +9,6 @@ timestamp: ""
 id: 29
 ---
 
-# Frames
-
 > **Estado de la pregunta:** 761 fotogramas extraídos de 52 vídeos; 129 anotados manualmente; 136 de 259 evidencias enlazadas a un fotograma. Las 123 restantes son evidencia de transcripción, sin imagen asociada: 52 están en vídeos que ya tienen fotogramas y se revisaron sin encontrar una imagen representativa; 71 están en 23 vídeos sin ningún fotograma y siguen pendientes de extracción visual.
 
 **Estado:** 761 fotogramas extraídos de 52 vídeos; 129 anotados manualmente; 136 de 259 evidencias enlazadas a un fotograma. Las 123 restantes son evidencia de transcripción, sin imagen asociada: 52 están en vídeos que ya tienen fotogramas y se revisaron sin encontrar una imagen representativa; 71 están en 23 vídeos sin ningún fotograma y siguen pendientes de extracción visual.

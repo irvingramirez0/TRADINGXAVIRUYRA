@@ -12,8 +12,6 @@ sinonimos: ["po3", "power of 3", "power of three"]
 id: 47
 ---
 
-# PO3 (Power of 3)
-
 > **Confianza:** explícito · **Estado:** vigente · **Categoría:** CORE
 
 ## Definición

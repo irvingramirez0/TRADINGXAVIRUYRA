@@ -10,8 +10,6 @@ id: 138
 version: 1
 ---
 
-# IFVG obligatorio: nunca entrar sin IFVG
-
 > **Confianza:** explícito · **Estado:** vigente · **Versión:** 1
 - **Clase del bootcamp:** [[../bootcamp/dia-13|Día 13 — IFVG]]
 

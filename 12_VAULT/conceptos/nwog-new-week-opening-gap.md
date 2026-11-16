@@ -12,8 +12,6 @@ sinonimos: ["nwog", "new week opening gap"]
 id: 56
 ---
 
-# NWOG (New Week Opening Gap)
-
 > **Confianza:** explícito · **Estado:** vigente · **Categoría:** SUPPORTING
 
 ## Definición

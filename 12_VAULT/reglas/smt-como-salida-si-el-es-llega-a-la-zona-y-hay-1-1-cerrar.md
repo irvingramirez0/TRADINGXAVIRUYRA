@@ -10,8 +10,6 @@ id: 106
 version: 1
 ---
 
-# SMT como salida: si el ES llega a la zona y hay 1:1, cerrar
-
 > **Confianza:** explícito · **Estado:** vigente · **Versión:** 1
 
 ## Descripción

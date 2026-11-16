@@ -10,8 +10,6 @@ id: 101
 version: 1
 ---
 
-# La manipulation leg se mide desde el último swing antes de la zona
-
 > **Confianza:** explícito · **Estado:** vigente · **Versión:** 1
 
 ## Descripción

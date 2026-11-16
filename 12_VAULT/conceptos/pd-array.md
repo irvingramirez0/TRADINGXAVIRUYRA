@@ -12,8 +12,6 @@ sinonimos: ["pd array", "premium/discount array"]
 id: 46
 ---
 
-# PD Array
-
 > **Confianza:** explícito · **Estado:** vigente · **Categoría:** CORE
 
 ## Definición

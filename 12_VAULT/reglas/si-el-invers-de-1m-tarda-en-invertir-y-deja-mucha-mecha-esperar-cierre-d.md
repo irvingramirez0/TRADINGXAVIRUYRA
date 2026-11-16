@@ -10,8 +10,6 @@ id: 98
 version: 1
 ---
 
-# Si el invers de 1m tarda en invertir y deja mucha mecha, esperar cierre del CISD
-
 > **Confianza:** explícito · **Estado:** vigente · **Versión:** 1
 
 ## Descripción

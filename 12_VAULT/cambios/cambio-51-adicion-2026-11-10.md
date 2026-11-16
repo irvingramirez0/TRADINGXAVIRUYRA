@@ -11,8 +11,6 @@ tipo_cambio: "adicion"
 entidad: "rule#159"
 ---
 
-# Cambio #51 — adicion — 2026-11-10
-
 > **Tipo:** adicion · **Entidad:** `rule#159` · **Fecha:** 2026-11-10
 
 ## Descripción

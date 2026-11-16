@@ -10,8 +10,6 @@ id: 155
 version: 1
 ---
 
-# Tras una pérdida, no subir el riesgo ni reentrar
-
 > **Confianza:** explícito · **Estado:** vigente · **Versión:** 1
 - **Clase del bootcamp:** [[../bootcamp/dia-14|Día 14 — Revenge Trading (psicología)]]
 

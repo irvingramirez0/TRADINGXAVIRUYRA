@@ -10,8 +10,6 @@ id: 111
 version: 1
 ---
 
-# El tiempo no forma traders; el cambio de conducta sí
-
 > **Confianza:** explícito · **Estado:** vigente · **Versión:** 1
 - **Clases del bootcamp:** [[../bootcamp/dia-05|Día 5]] · [[../bootcamp/dia-07|Día 7]]
 

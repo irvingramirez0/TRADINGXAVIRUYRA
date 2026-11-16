@@ -11,8 +11,6 @@ tipo_cambio: "adicion"
 entidad: "concept#89"
 ---
 
-# Cambio #49 — adicion — 2026-11-08
-
 > **Tipo:** adicion · **Entidad:** `concept#89` · **Fecha:** 2026-11-08
 
 ## Descripción

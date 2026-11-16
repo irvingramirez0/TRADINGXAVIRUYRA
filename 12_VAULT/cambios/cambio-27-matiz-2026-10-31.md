@@ -11,8 +11,6 @@ tipo_cambio: "matiz"
 entidad: "concept#55"
 ---
 
-# Cambio #27 — matiz — 2026-10-31
-
 > **Tipo:** matiz · **Entidad:** `concept#55` · **Fecha:** 2026-10-31
 
 ## Descripción

@@ -16,7 +16,6 @@ panel:
   pie: "Los enlaces de cada día llevan a los conceptos y reglas que esa clase introduce. La cifra de fotogramas anotados es la parte del sitio que aún depende de revisión manual."
 ---
 
-# Bootcamp — 20 clases
 
 Las clases del bootcamp, en su orden. Cada día tiene su página con los conceptos que introduce, las reglas que salen de él y el enlace al minuto del vídeo.
 

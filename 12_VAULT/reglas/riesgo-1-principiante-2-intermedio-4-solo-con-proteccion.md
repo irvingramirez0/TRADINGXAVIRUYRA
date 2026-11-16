@@ -10,8 +10,6 @@ id: 60
 version: 2
 ---
 
-# Riesgo 1% principiante / 2% intermedio / 4% solo con protección
-
 > **Confianza:** explícito · **Estado:** vigente · **Versión:** 2
 
 ## Descripción

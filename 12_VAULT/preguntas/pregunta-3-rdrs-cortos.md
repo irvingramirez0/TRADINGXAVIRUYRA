@@ -9,8 +9,6 @@ timestamp: "11:19"
 id: 3
 ---
 
-# "RDRs cortos"
-
 > **Estado de la pregunta:** NO CONFIRMADO en la definición. El término está confirmado; lo que falta es qué significa para él.
 
 **Qué sabemos:** "Yo no opero reversiones, como sabéis, opero RDRs cortos, así que normalmente lo que hago es quedarme mi trocito del pastel" [ `oP7enoxXpfI` 11:19; el segmento va de 10:54 a 11:26]. Lo opone a las reversiones completas, pero no define el término.

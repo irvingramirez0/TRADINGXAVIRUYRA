@@ -9,8 +9,6 @@ timestamp: "19:16"
 id: 23
 ---
 
-# Rejection blocks
-
 > **Estado de la pregunta:** EXPERIMENTAL, EXCLUIDO.
 
 Él los prueba en backtesting y dice que no los operaría en fondeo [ `5aBdJLMDGJc` 19:16–20:18]. No son metodología establecida.

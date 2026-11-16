@@ -10,8 +10,6 @@ id: 135
 version: 1
 ---
 
-# Validar la estrategia en backtesting propio, no por redes ni exposes
-
 > **Confianza:** explícito · **Estado:** vigente · **Versión:** 1
 - **Clase del bootcamp:** [[../bootcamp/dia-12|Día 12 — Gambling (psicología)]]
 

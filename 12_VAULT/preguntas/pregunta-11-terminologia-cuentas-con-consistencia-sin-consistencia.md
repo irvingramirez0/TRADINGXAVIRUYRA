@@ -9,8 +9,6 @@ timestamp: "08:55"
 id: 11
 ---
 
-# Terminología "cuentas con consistencia / sin consistencia"
-
 > **Estado de la pregunta:** AMBIGUO.
 
 **Qué sabemos:** la usa para dividir cuentas fondeadas [ `ndABd2MECBA` 08:55]. En el vídeo se mezcla con el requisito de 5 días de $150.

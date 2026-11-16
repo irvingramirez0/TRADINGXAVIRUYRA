@@ -10,8 +10,6 @@ id: 175
 version: 1
 ---
 
-# Al equivocarse: aceptar, recordar que se puede volver y apagar el ordenador
-
 > **Confianza:** explícito · **Estado:** vigente · **Versión:** 1
 - **Clase del bootcamp:** [[../bootcamp/dia-20|Día 20 — Ego (psicología)]]
 

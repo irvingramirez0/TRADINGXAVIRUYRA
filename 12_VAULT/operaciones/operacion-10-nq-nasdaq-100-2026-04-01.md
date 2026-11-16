@@ -11,8 +11,6 @@ clasificacion: "Mixto"
 id: 10
 ---
 
-# Operación #10 — NQ (Nasdaq 100) — 2026-04-01
-
 > **Aviso:** P&L autodeclarado, no auditado. Las cifras provienen de lo que Xavi dice en el vídeo y no se han verificado con extractos de cuenta.
 
 > **Clasificación:** Mixto · **Confianza:** observado

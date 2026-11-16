@@ -10,8 +10,6 @@ id: 47
 version: 1
 ---
 
-# Judas Swing: acumulación → manipulación → distribución
-
 > **Confianza:** explícito · **Estado:** vigente · **Versión:** 1
 
 ## Descripción

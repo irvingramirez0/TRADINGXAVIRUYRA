@@ -10,8 +10,6 @@ id: 99
 version: 1
 ---
 
-# Data highs/lows tienen prioridad sobre los gaps de 15m
-
 > **Confianza:** explícito · **Estado:** vigente · **Versión:** 1
 
 ## Descripción

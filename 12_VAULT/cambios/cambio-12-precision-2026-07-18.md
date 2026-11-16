@@ -11,8 +11,6 @@ tipo_cambio: "precision"
 entidad: "rule#60"
 ---
 
-# Cambio #12 — precision — 2026-07-18
-
 > **Tipo:** precision · **Entidad:** `rule#60` · **Fecha:** 2026-07-18
 
 ## Descripción

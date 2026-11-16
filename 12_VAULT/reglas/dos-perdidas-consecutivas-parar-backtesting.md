@@ -10,8 +10,6 @@ id: 89
 version: 1
 ---
 
-# Dos pérdidas consecutivas: parar (backtesting)
-
 > **Confianza:** explícito · **Estado:** vigente · **Versión:** 1
 
 ## Descripción

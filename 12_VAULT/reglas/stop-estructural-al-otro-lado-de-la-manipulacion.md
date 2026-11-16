@@ -10,8 +10,6 @@ id: 55
 version: 1
 ---
 
-# Stop estructural al otro lado de la manipulación
-
 > **Confianza:** observado · **Estado:** vigente · **Versión:** 1
 
 ## Descripción

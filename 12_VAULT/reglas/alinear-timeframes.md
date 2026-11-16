@@ -10,8 +10,6 @@ id: 73
 version: 1
 ---
 
-# Alinear timeframes
-
 > **Confianza:** explícito · **Estado:** vigente · **Versión:** 1
 
 ## Descripción

@@ -11,8 +11,6 @@ tipo_cambio: "ampliacion"
 entidad: "concept#40"
 ---
 
-# Cambio #17 — ampliacion — 2026-10-31
-
 > **Tipo:** ampliacion · **Entidad:** `concept#40` · **Fecha:** 2026-10-31
 
 ## Descripción

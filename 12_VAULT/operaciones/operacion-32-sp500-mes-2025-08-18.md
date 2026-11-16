@@ -11,8 +11,6 @@ clasificacion: "Bien ejecutado perdedor"
 id: 32
 ---
 
-# Operación #32 — SP500 (MES) — 2025-08-18
-
 > **Aviso:** P&L autodeclarado, no auditado. Las cifras provienen de lo que Xavi dice en el vídeo y no se han verificado con extractos de cuenta.
 
 > **Clasificación:** Bien ejecutado perdedor · **Confianza:** observado

@@ -10,8 +10,6 @@ id: 56
 version: 1
 ---
 
-# Target habitual 1:1; 1:1,5 en evaluación
-
 > **Confianza:** explícito · **Estado:** vigente · **Versión:** 1
 
 ## Descripción

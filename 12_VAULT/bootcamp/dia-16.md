@@ -11,7 +11,6 @@ categoria: "BOOTCAMP"
 duracion: "6:46"
 ---
 
-# Día 16 — Check-in (psicología)
 
 > **Clase 16 de 21** · Duración 6:46 · **Vídeo:** `djkeIcfNGgs`
 

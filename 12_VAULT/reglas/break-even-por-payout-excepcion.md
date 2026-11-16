@@ -10,8 +10,6 @@ id: 93
 version: 1
 ---
 
-# Break-even por payout (excepción)
-
 > **Confianza:** explícito · **Estado:** vigente · **Versión:** 1
 
 ## Descripción

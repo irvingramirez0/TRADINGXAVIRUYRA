@@ -10,8 +10,6 @@ id: 62
 version: 1
 ---
 
-# Dos payouts en la misma cuenta antes de subir de fase
-
 > **Confianza:** explícito · **Estado:** vigente · **Versión:** 1
 
 ## Descripción

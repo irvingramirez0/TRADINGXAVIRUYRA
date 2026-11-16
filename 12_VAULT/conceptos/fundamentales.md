@@ -12,8 +12,6 @@ sinonimos: ["fundamentals", "noticias como método"]
 id: 78
 ---
 
-# Fundamentales
-
 > **Confianza:** observado · **Estado:** no usado · **Categoría:** NOT USED
 - **Clase del bootcamp:** [[../bootcamp/dia-10|Día 10 — Noticias]]
 

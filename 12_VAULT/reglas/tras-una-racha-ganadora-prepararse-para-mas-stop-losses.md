@@ -10,8 +10,6 @@ id: 170
 version: 1
 ---
 
-# Tras una racha ganadora, prepararse para más stop losses
-
 > **Confianza:** explícito · **Estado:** vigente · **Versión:** 1
 - **Clase del bootcamp:** [[../bootcamp/dia-20|Día 20 — Ego (psicología)]]
 

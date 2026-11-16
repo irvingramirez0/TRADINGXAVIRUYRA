@@ -10,8 +10,6 @@ id: 51
 version: 1
 ---
 
-# Si se invierte el FVG de 1H, no buscar PO3 alcista
-
 > **Confianza:** explícito · **Estado:** vigente · **Versión:** 1
 
 ## Descripción

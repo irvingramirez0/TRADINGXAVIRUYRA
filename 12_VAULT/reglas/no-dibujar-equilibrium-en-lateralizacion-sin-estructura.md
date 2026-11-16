@@ -10,8 +10,6 @@ id: 167
 version: 1
 ---
 
-# No dibujar equilibrium en lateralización sin estructura
-
 > **Confianza:** explícito · **Estado:** vigente · **Versión:** 1
 - **Clase del bootcamp:** [[../bootcamp/dia-19|Día 19 — Equilibrium (premium y discount)]]
 

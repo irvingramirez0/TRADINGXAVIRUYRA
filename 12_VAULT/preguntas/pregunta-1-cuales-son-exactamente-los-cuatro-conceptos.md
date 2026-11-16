@@ -9,8 +9,6 @@ timestamp: "06:52"
 id: 1
 ---
 
-# ¿Cuáles son exactamente los cuatro conceptos?
-
 > **Estado de la pregunta:** NO CONFIRMADO.
 
 **Qué sabemos:** en el Día 5 dice que pasó de 9–10 conceptos a **cuatro** y que simplificar le hizo mejorar [ `mBHtx-BfWWg` 06:52]. No los enumera.

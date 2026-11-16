@@ -9,8 +9,6 @@ timestamp: "03:39"
 id: 7
 ---
 
-# "Primer IFVG"
-
 > **Estado de la pregunta:** PARCIALMENTE RESUELTO; queda la ambigüedad de cuál es "el primero" en cada setup.
 
 **Qué sabemos:** dice "el primer inverse fair value gap que veas" [ `vz4rhIi5Joo` 03:39–04:11]. En los ejemplos, es el primero alineado con el DOL.

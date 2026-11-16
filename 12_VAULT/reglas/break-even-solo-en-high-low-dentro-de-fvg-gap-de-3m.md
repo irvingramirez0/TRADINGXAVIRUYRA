@@ -10,8 +10,6 @@ id: 58
 version: 1
 ---
 
-# Break-even solo en high/low dentro de FVG/gap de 3m+
-
 > **Confianza:** explícito · **Estado:** vigente · **Versión:** 1
 
 ## Descripción

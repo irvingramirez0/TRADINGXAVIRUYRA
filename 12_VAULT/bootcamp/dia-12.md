@@ -11,7 +11,6 @@ categoria: "BOOTCAMP"
 duracion: "9:22"
 ---
 
-# Día 12 — Gambling (psicología)
 
 > **Clase 12 de 21** · Duración 9:22 · **Vídeo:** `ZOxEUWwDSoQ`
 

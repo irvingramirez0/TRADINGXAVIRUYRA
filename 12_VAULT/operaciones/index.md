@@ -9,7 +9,6 @@ timestamp: ""
 anotaciones: false
 ---
 
-# Operaciones
 
 > [!warning] P&L autodeclarado, no auditado
 > Las cifras vienen de lo que se cuenta en los vídeos; no hay extractos ni capturas de la cuenta que las respalden.

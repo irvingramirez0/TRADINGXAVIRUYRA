@@ -10,8 +10,6 @@ id: 136
 version: 1
 ---
 
-# Progresión de validación: backtesting → demo → evaluación
-
 > **Confianza:** explícito · **Estado:** vigente · **Versión:** 1
 - **Clase del bootcamp:** [[../bootcamp/dia-12|Día 12 — Gambling (psicología)]]
 

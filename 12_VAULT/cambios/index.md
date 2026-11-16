@@ -8,7 +8,6 @@ video: ""
 timestamp: ""
 ---
 
-# Cambios metodológicos
 
 Lo que se decía antes y lo que se dice ahora, con el vídeo donde cambia. Un cambio no borra la regla anterior: la marca como obsoleta.
 

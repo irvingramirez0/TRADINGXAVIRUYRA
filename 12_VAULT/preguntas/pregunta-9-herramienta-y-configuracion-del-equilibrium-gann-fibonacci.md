@@ -9,8 +9,6 @@ timestamp: "02:19"
 id: 9
 ---
 
-# Herramienta y configuración del equilibrium (Gann → Fibonacci)
-
 > **Estado de la pregunta:** herramienta RESUELTA; configuración exacta y uso en HTF NO CONFIRMADOS.
 
 **Qué sabemos (versión antigua):** el 2025-12-27 usaba la **cuadrícula de Gann** para equilibrium [ `AacVWPPYK8Y` 02:19]. En el tramo 02:53–03:17 abre el diálogo "Cuadrícula de Gann" y muestra la pestaña "Estilo". El frame 0037 (03:06) recoge la configuración: niveles de precio `0`, `0.5` y `1`; niveles de tiempo, etiquetas y fondo desactivados. El `0.5` es el equilibrium.

@@ -12,8 +12,6 @@ sinonimos: ["funded accounts", "evals", "evaluaciones", "prop firms"]
 id: 67
 ---
 
-# Cuentas de fondeo
-
 > **Confianza:** explícito · **Estado:** vigente · **Categoría:** CONTEXTUAL
 - **Clase del bootcamp:** [[../bootcamp/dia-02|Día 2 — Preparación: configurar TradingView]]
 

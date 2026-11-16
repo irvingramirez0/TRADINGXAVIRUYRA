@@ -8,7 +8,6 @@ video: ""
 timestamp: ""
 ---
 
-# Reglas operativas
 
 **132** reglas vigentes y **3** obsoletas, que se conservan con la regla que las reemplaza: saber qué se dejó de hacer también es metodología.
 

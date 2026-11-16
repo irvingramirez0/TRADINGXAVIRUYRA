@@ -12,8 +12,6 @@ sinonimos: ["protected high", "protected low"]
 id: 64
 ---
 
-# Protected High / Low
-
 > **Confianza:** observado · **Estado:** vigente · **Categoría:** SUPPORTING
 
 ## Definición

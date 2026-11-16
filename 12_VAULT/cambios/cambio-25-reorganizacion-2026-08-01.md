@@ -11,8 +11,6 @@ tipo_cambio: "reorganizacion"
 entidad: "rule#101"
 ---
 
-# Cambio #25 — reorganizacion — 2026-08-01
-
 > **Tipo:** reorganizacion · **Entidad:** `rule#101` · **Fecha:** 2026-08-01
 
 ## Descripción

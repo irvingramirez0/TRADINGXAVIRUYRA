@@ -12,8 +12,6 @@ sinonimos: ["bias", "sesgo", "dirección del día"]
 id: 45
 ---
 
-# Daily Bias
-
 > **Confianza:** explícito · **Estado:** vigente · **Categoría:** CORE
 
 ## Definición

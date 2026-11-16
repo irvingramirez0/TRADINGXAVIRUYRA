@@ -10,8 +10,6 @@ id: 146
 version: 1
 ---
 
-# Alinear la liquidez con el key level antes de operar
-
 > **Confianza:** explícito · **Estado:** vigente · **Versión:** 1
 - **Clase del bootcamp:** [[../bootcamp/dia-15|Día 15 — Key Levels]]
 

@@ -11,8 +11,6 @@ clasificacion: "Inconcluso"
 id: 27
 ---
 
-# Operación #27 — NQ (micro Nasdaq) — 2026-02-05
-
 > **Aviso:** P&L autodeclarado, no auditado. Las cifras provienen de lo que Xavi dice en el vídeo y no se han verificado con extractos de cuenta.
 
 > **Clasificación:** Inconcluso · **Confianza:** observado

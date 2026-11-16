@@ -12,8 +12,6 @@ sinonimos: ["pdh", "pdl", "previous day high", "previous day low", "alto del dí
 id: 86
 ---
 
-# PDH / PDL (previous day high/low)
-
 > **Confianza:** explícito · **Estado:** vigente · **Categoría:** SUPPORTING
 - **Clase del bootcamp:** [[../bootcamp/dia-11|Día 11 — Liquidez pt2]]
 

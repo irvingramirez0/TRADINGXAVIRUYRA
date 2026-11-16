@@ -11,7 +11,6 @@ categoria: "BOOTCAMP"
 duracion: "9:35"
 ---
 
-# Día 14 — Revenge Trading (psicología)
 
 > **Clase 14 de 21** · Duración 9:35 · **Vídeo:** `eH7QCo2d0TU`
 

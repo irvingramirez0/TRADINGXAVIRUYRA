@@ -12,8 +12,6 @@ sinonimos: ["judas swing", "judas"]
 id: 50
 ---
 
-# Judas Swing
-
 > **Confianza:** explícito · **Estado:** vigente · **Categoría:** CORE
 
 ## Definición

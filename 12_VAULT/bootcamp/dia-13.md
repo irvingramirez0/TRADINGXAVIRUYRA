@@ -11,7 +11,6 @@ categoria: "BOOTCAMP"
 duracion: "20:10"
 ---
 
-# Día 13 — IFVG
 
 > **Clase 13 de 21** · Duración 20:10 · **Vídeo:** `ICOx4rdFSLg`
 

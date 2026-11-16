@@ -10,8 +10,6 @@ id: 123
 version: 1
 ---
 
-# No operar 3–5 minutos antes de una noticia
-
 > **Confianza:** explícito · **Estado:** vigente · **Versión:** 1
 - **Clase del bootcamp:** [[../bootcamp/dia-10|Día 10 — Noticias]]
 

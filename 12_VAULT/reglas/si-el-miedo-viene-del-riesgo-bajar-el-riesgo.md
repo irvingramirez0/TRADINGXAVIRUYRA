@@ -10,8 +10,6 @@ id: 120
 version: 1
 ---
 
-# Si el miedo viene del riesgo, bajar el riesgo
-
 > **Confianza:** explícito · **Estado:** vigente · **Versión:** 1
 - **Clase del bootcamp:** [[../bootcamp/dia-09|Día 9 — Miedo (psicología)]]
 

@@ -57,7 +57,10 @@ plugins:
     enabled: true
     layout:
       position: beforeBody
-      priority: 1
+      # Después del título y del breadcrumb (article-title va en 10): la ficha
+      # aporta datos de la nota, no la encabeza. Puesta en 1, lo primero que se
+      # ve al entrar es una caja de metadatos y el título queda debajo.
+      priority: 30
       display: all
   - source: ./quartz-plugins/panel-avance
     enabled: true

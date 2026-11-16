@@ -12,8 +12,6 @@ sinonimos: ["prisa", "urgencia", "presión por resultado", "haste"]
 id: 81
 ---
 
-# Prisa (psicología)
-
 > **Confianza:** explícito · **Estado:** vigente · **Categoría:** CONTEXTUAL
 - **Clase del bootcamp:** [[../bootcamp/dia-07|Día 7 — Prisa (psicología)]]
 

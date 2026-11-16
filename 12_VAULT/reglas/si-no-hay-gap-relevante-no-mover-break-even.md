@@ -10,8 +10,6 @@ id: 59
 version: 1
 ---
 
-# Si no hay gap relevante, no mover break-even
-
 > **Confianza:** explícito · **Estado:** vigente · **Versión:** 1
 
 ## Descripción

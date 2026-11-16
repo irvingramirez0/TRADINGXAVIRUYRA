@@ -12,8 +12,6 @@ sinonimos: ["key level", "key levels", "zona de conflicto", "nivel clave"]
 id: 88
 ---
 
-# Key Levels
-
 > **Confianza:** explícito · **Estado:** vigente · **Categoría:** CORE
 - **Clase del bootcamp:** [[../bootcamp/dia-15|Día 15 — Key Levels]]
 

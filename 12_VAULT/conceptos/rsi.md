@@ -12,8 +12,6 @@ sinonimos: ["relative strength index"]
 id: 69
 ---
 
-# RSI
-
 > **Confianza:** observado · **Estado:** no usado · **Categoría:** NOT USED
 - **Clase del bootcamp:** [[../bootcamp/dia-02|Día 2 — Preparación: configurar TradingView]]
 

@@ -11,8 +11,6 @@ tipo_cambio: "simplificacion"
 entidad: "concept#47"
 ---
 
-# Cambio #16 — simplificacion — 2026-10-30
-
 > **Tipo:** simplificacion · **Entidad:** `concept#47` · **Fecha:** 2026-10-30
 
 ## Descripción

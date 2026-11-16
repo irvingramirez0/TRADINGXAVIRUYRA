@@ -10,8 +10,6 @@ id: 174
 version: 1
 ---
 
-# Tras un error humano, no encadenar rupturas de reglas
-
 > **Confianza:** explícito · **Estado:** vigente · **Versión:** 1
 - **Clase del bootcamp:** [[../bootcamp/dia-20|Día 20 — Ego (psicología)]]
 

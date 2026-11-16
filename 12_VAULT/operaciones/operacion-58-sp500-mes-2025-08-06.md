@@ -11,8 +11,6 @@ clasificacion: "Mixto"
 id: 58
 ---
 
-# Operación #58 — SP500 (MES) — 2025-08-06
-
 > **Aviso:** P&L autodeclarado, no auditado. Las cifras provienen de lo que Xavi dice en el vídeo y no se han verificado con extractos de cuenta.
 
 > **Clasificación:** Mixto · **Confianza:** observado

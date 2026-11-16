@@ -10,8 +10,6 @@ id: 161
 version: 1
 ---
 
-# Desviarse del plan de backtesting es gambling
-
 > **Confianza:** explícito · **Estado:** vigente · **Versión:** 1
 - **Clase del bootcamp:** [[../bootcamp/dia-18|Día 18 — FOMO (psicología)]]
 

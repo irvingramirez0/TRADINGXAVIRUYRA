@@ -10,8 +10,6 @@ id: 94
 version: 1
 ---
 
-# Comprobar las noticias del día antes de analizar
-
 > **Confianza:** explícito · **Estado:** vigente · **Versión:** 1
 
 ## Descripción

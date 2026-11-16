@@ -10,8 +10,6 @@ id: 124
 version: 2
 ---
 
-# FOMC: no operar ni abrir el gráfico
-
 > **Confianza:** explícito · **Estado:** vigente · **Versión:** 2
 - **Clase del bootcamp:** [[../bootcamp/dia-10|Día 10 — Noticias]]
 

@@ -12,8 +12,6 @@ sinonimos: ["smt", "divergencia nq es"]
 id: 55
 ---
 
-# SMT (Smart Money Technique)
-
 > **Confianza:** explícito · **Estado:** vigente · **Categoría:** SUPPORTING
 - **Clase del bootcamp:** [[../bootcamp/dia-17|Día 17 — SMT's y True Manipulation]]
 

@@ -10,8 +10,6 @@ id: 65
 version: 1
 ---
 
-# Una estrategia, un mentor; no strategy hopping
-
 > **Confianza:** explícito · **Estado:** vigente · **Versión:** 1
 - **Clase del bootcamp:** [[../bootcamp/dia-05|Día 5 — Tiempo (psicología)]]
 

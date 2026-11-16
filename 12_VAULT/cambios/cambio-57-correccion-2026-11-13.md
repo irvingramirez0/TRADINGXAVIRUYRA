@@ -11,8 +11,6 @@ tipo_cambio: "correccion"
 entidad: "concept#53"
 ---
 
-# Cambio #57 — correccion — 2026-11-13
-
 > **Tipo:** correccion · **Entidad:** `concept#53` · **Fecha:** 2026-11-13
 
 ## Descripción

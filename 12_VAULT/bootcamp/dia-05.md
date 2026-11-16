@@ -11,7 +11,6 @@ categoria: "BOOTCAMP"
 duracion: "13:31"
 ---
 
-# Día 5 — Tiempo (psicología)
 
 > **Clase 5 de 21** · Duración 13:31 · **Vídeo:** `mBHtx-BfWWg`
 

@@ -11,8 +11,6 @@ tipo_cambio: "precision"
 entidad: "concept#52"
 ---
 
-# Cambio #48 — precision — 2026-11-07
-
 > **Tipo:** precision · **Entidad:** `concept#52` · **Fecha:** 2026-11-07
 
 ## Descripción

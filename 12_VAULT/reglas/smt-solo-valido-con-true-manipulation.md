@@ -10,8 +10,6 @@ id: 67
 version: 1
 ---
 
-# SMT solo válido con true manipulation
-
 > **Confianza:** explícito · **Estado:** vigente · **Versión:** 1
 - **Clase del bootcamp:** [[../bootcamp/dia-17|Día 17 — SMT's y True Manipulation]]
 

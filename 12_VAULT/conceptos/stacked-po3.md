@@ -12,8 +12,6 @@ sinonimos: ["stacked po3", "stack power of 3", "estaquear po3"]
 id: 49
 ---
 
-# Stacked PO3
-
 > **Confianza:** explícito · **Estado:** vigente · **Categoría:** CORE
 
 ## Definición

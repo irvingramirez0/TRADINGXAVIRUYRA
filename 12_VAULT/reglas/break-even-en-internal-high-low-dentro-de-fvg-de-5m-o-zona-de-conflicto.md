@@ -10,8 +10,6 @@ id: 105
 version: 1
 ---
 
-# Break-even en internal high/low dentro de FVG de 5m+ o zona de conflicto
-
 > **Confianza:** explícito · **Estado:** vigente · **Versión:** 1
 
 ## Descripción

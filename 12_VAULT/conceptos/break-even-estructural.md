@@ -12,8 +12,6 @@ sinonimos: ["break even", "be"]
 id: 62
 ---
 
-# Break-even estructural
-
 > **Confianza:** explícito · **Estado:** vigente · **Categoría:** SUPPORTING
 
 ## Definición

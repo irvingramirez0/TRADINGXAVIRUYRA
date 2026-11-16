@@ -11,7 +11,6 @@ categoria: "BOOTCAMP"
 duracion: "11:46"
 ---
 
-# Día 20 — Ego (psicología)
 
 > **Clase 20 de 21** · Duración 11:46 · **Vídeo:** `ygJya0srm8g`
 

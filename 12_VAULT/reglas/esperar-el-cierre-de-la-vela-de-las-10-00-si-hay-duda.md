@@ -10,8 +10,6 @@ id: 68
 version: 1
 ---
 
-# Esperar el cierre de la vela de las 10:00 si hay duda
-
 > **Confianza:** explícito · **Estado:** vigente · **Versión:** 1
 
 ## Descripción

@@ -10,8 +10,6 @@ id: 130
 version: 1
 ---
 
-# No operar contra NWOG/NDOG
-
 > **Confianza:** explícito · **Estado:** vigente · **Versión:** 1
 - **Clase del bootcamp:** [[../bootcamp/dia-11|Día 11 — Liquidez pt2]]
 

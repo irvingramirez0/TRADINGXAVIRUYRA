@@ -12,8 +12,6 @@ sinonimos: ["london", "londres"]
 id: 68
 ---
 
-# Sesión de Londres
-
 > **Confianza:** explícito · **Estado:** vigente · **Categoría:** CONTEXTUAL
 
 ## Definición

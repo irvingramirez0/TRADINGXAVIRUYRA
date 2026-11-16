@@ -8,7 +8,6 @@ video: ""
 timestamp: ""
 ---
 
-# Conceptos
 
 Los 53 conceptos de la metodología, agrupados por categoría. Cada nota lleva su definición, cómo identificarlo, condiciones, errores comunes y la cita que lo respalda.
 

@@ -10,8 +10,6 @@ id: 81
 version: 1
 ---
 
-# No operar contra low resistance liquidity (LRL)
-
 > **Confianza:** explícito · **Estado:** vigente · **Versión:** 1
 
 ## Descripción

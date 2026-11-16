@@ -9,8 +9,6 @@ timestamp: "07:47"
 id: 31
 ---
 
-# Bootcamp syllabus
-
 > **Estado de la pregunta:** NO CONFIRMADO
 
 Se conocen los títulos de los Días 1–18. Cronología reciente: Día 7 "Prisa" (psicología), Día 8 "FVG's", Día 9 "Miedo" (psicología), Día 10 "Noticias", Día 11 "Liquidez pt2", Día 12 "Gambling" (psicología), Día 13 "IFVG", Día 14 "Revenge Trading" (psicología), Día 15 "Key Levels", Día 16 "Check-in" (psicología), Día 17 "SMT's y True Manipulation", Día 18 "FOMO" (psicología).

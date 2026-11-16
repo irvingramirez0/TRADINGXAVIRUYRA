@@ -10,8 +10,6 @@ id: 64
 version: 1
 ---
 
-# Un payout no es tuyo hasta que se aprueba
-
 > **Confianza:** explícito · **Estado:** vigente · **Versión:** 1
 
 ## Descripción

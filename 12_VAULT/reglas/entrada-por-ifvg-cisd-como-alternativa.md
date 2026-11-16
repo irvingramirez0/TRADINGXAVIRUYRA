@@ -10,8 +10,6 @@ id: 53
 version: 1
 ---
 
-# Entrada por IFVG; CISD como alternativa
-
 > **Confianza:** explícito · **Estado:** vigente · **Versión:** 1
 
 ## Descripción

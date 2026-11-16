@@ -9,8 +9,6 @@ timestamp: "02:15"
 id: 12
 ---
 
-# Data highs/lows en días de noticia
-
 > **Estado de la pregunta:** FILTRO PREVIO DOCUMENTADO; integración en el análisis PARCIAL.
 
 **Qué sabemos (filtro previo):** el Día 10 documenta la rutina completa de calendario: Forex Factory en hora de Nueva York y filtrada a USD; FOMC no se opera ni se abre el gráfico; NFP, CPI y lunes sin noticias con cautela; bank holiday = mercado cerrado; nunca operar 3–5 minutos antes del dato [ `j4f8fV13GQM` 02:15–07:02].

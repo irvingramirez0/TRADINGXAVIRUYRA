@@ -9,8 +9,6 @@ timestamp: "01:03"
 id: 10
 ---
 
-# Porcentajes para cuentas de $25k y $100k
-
 > **Estado de la pregunta:** RESUELTO en lo esencial. Los porcentajes son EXPLÍCITOS; la aritmética por tamaño de cuenta es INFERIDA y no cambia la regla.
 
 **Qué sabemos:** dice que puso los porcentajes para hacer la conversión [ `ndABd2MECBA` 01:03]. El frame confirma que simula una cuenta de 50.000 $ y que el riesgo de principiante es 500 $ (1%).

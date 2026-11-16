@@ -10,8 +10,6 @@ id: 84
 version: 1
 ---
 
-# Día de mucha mecha y sin FVGs: baja probabilidad
-
 > **Confianza:** explícito · **Estado:** vigente · **Versión:** 1
 
 ## Descripción

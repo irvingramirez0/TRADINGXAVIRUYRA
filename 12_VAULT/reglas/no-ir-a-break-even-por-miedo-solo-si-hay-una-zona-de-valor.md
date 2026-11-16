@@ -10,8 +10,6 @@ id: 97
 version: 1
 ---
 
-# No ir a break-even por miedo; solo si hay una zona de valor
-
 > **Confianza:** explícito · **Estado:** vigente · **Versión:** 1
 
 ## Descripción

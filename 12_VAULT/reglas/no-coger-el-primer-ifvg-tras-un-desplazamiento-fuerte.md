@@ -10,8 +10,6 @@ id: 83
 version: 1
 ---
 
-# No coger el primer IFVG tras un desplazamiento fuerte
-
 > **Confianza:** explícito · **Estado:** vigente · **Versión:** 1
 
 ## Descripción

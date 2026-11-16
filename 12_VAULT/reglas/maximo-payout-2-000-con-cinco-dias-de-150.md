@@ -10,8 +10,6 @@ id: 80
 version: 1
 ---
 
-# Máximo payout $2.000 con cinco días de $150
-
 > **Confianza:** explícito · **Estado:** vigente · **Versión:** 1
 
 ## Descripción

@@ -10,8 +10,6 @@ id: 82
 version: 1
 ---
 
-# Stop en mechas, no en cuerpos
-
 > **Confianza:** explícito · **Estado:** vigente · **Versión:** 1
 
 ## Descripción

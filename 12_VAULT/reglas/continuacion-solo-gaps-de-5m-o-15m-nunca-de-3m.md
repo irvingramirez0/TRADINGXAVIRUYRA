@@ -10,8 +10,6 @@ id: 103
 version: 1
 ---
 
-# Continuación: solo gaps de 5m o 15m, nunca de 3m
-
 > **Confianza:** explícito · **Estado:** vigente · **Versión:** 1
 
 ## Descripción

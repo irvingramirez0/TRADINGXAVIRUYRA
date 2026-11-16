@@ -11,7 +11,6 @@ categoria: "BOOTCAMP"
 duracion: "20:45"
 ---
 
-# Día 8 — FVG: definición, respeto y validación por temporalidad
 
 > **Clase 8 de 21** · Duración 20:45 · **Vídeo:** `1McPSXSSR48`
 

@@ -10,8 +10,6 @@ id: 54
 version: 1
 ---
 
-# CISD: cuerpo, no mecha; 1m, el primero
-
 > **Confianza:** explícito · **Estado:** vigente · **Versión:** 1
 
 ## Descripción

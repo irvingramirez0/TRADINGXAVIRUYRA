@@ -10,8 +10,6 @@ id: 96
 version: 1
 ---
 
-# No buscar longs contra una estructura 4H fuertemente bajista
-
 > **Confianza:** explícito · **Estado:** vigente · **Versión:** 1
 
 ## Descripción

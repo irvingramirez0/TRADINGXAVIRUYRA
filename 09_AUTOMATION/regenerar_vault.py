@@ -174,8 +174,10 @@ class Nota:
                 lines.append(f"{k}: {yaml_str(v)}")
         lines.append("---")
         lines.append("")
-        lines.append(f"# {self.titulo}")
-        lines.append("")
+        # El título visible lo pinta el componente `article-title` de Quartz a
+        # partir de `title`. Si además se escribe aquí un `#`, la página acaba
+        # con dos <h1> idénticos: el segundo desplaza la cabecera y rompe el
+        # anclaje del título. El cuerpo empieza directamente en `##`.
         lines.extend(self.cuerpo)
         lines.append("")
         return "\n".join(lines)
@@ -1075,7 +1077,6 @@ def generate_index(conceptos_notas, slugs_concepto, reglas_count, trades_count,
         *_yaml_panel(panel),
         "---",
         "",
-        "# Metodología Xavi Ruyra — estudio no oficial",
         "",
         "> **Proyecto de estudio no oficial.** Este sitio es un resumen estructurado y trazable de "
         "contenido público de Xavi Ruyra. No es un curso oficial, no está afiliado ni respaldado por él, "
@@ -1303,7 +1304,6 @@ def comprobador_fuentes(con, slugs_concepto, slugs_regla, slugs_trade, slugs_cam
         "  pie: " + yaml_str(panel["pie"]),
         "---",
         "",
-        "# Comprobador de fuentes",
         "",
         "Este sitio se presenta como un resumen **trazable**. Esta página es su propia auditoría: "
         "enumera lo que no tiene fuente y, por tanto, no debería tomarse como establecido.",

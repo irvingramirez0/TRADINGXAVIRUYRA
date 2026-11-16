@@ -12,8 +12,6 @@ sinonimos: ["ny session", "sesión ny", "horario de nueva york"]
 id: 83
 ---
 
-# Sesión de Nueva York
-
 > **Confianza:** explícito · **Estado:** vigente · **Categoría:** CONTEXTUAL
 - **Clase del bootcamp:** [[../bootcamp/dia-10|Día 10 — Noticias]]
 

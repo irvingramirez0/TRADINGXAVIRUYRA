@@ -10,8 +10,6 @@ id: 108
 version: 1
 ---
 
-# En días con dos FVG de 4H tocados, manda el último
-
 > **Confianza:** explícito · **Estado:** vigente · **Versión:** 1
 
 ## Descripción

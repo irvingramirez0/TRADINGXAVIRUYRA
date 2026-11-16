@@ -10,8 +10,6 @@ id: 100
 version: 1
 ---
 
-# El bias se actualiza si el precio desplaza fuerte y cruza el gap de 4H
-
 > **Confianza:** explícito · **Estado:** vigente · **Versión:** 1
 
 ## Descripción

@@ -9,8 +9,6 @@ timestamp: "05:44"
 id: 25
 ---
 
-# Duración y salida de la fase de gambling
-
 > **Estado de la pregunta:** ABIERTO. No convertir "es obligatorio pasar por ahí" en "hay que gamblear para aprender".
 
 **Qué sabemos:** en el Día 12 dice que la fase de gambling es "obligatoria" y que fue la que más le hizo mejorar, pero que hay que estar "el menos tiempo posible" en ella [ `ZOxEUWwDSoQ` 05:44–06:15].

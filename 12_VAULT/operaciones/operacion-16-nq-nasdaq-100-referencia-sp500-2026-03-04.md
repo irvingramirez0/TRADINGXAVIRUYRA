@@ -11,8 +11,6 @@ clasificacion: "Bien ejecutado ganador"
 id: 16
 ---
 
-# Operación #16 — NQ (Nasdaq 100); referencia SP500 — 2026-03-04
-
 > **Aviso:** P&L autodeclarado, no auditado. Las cifras provienen de lo que Xavi dice en el vídeo y no se han verificado con extractos de cuenta.
 
 > **Clasificación:** Bien ejecutado ganador · **Confianza:** observado

@@ -10,8 +10,6 @@ id: 79
 version: 1
 ---
 
-# Buffer mínimo de $1.000
-
 > **Confianza:** explícito · **Estado:** vigente · **Versión:** 1
 
 ## Descripción

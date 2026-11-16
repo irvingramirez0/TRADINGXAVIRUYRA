@@ -12,8 +12,6 @@ sinonimos: ["ifvg", "inverse", "inverse fair value gap"]
 id: 43
 ---
 
-# Inverse Fair Value Gap (IFVG)
-
 > **Confianza:** explícito · **Estado:** vigente · **Categoría:** CORE
 - **Clases del bootcamp:** [[../bootcamp/dia-08|Día 8]] · [[../bootcamp/dia-13|Día 13]]
 

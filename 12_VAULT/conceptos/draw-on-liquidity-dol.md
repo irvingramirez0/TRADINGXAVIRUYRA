@@ -12,8 +12,6 @@ sinonimos: ["dol", "draw on liquidity", "objetivo", "target"]
 id: 44
 ---
 
-# Draw on Liquidity (DOL)
-
 > **Confianza:** explícito · **Estado:** vigente · **Categoría:** CORE
 
 ## Definición

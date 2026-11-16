@@ -10,8 +10,6 @@ id: 70
 version: 1
 ---
 
-# Si está confundido, lockout
-
 > **Confianza:** explícito · **Estado:** vigente · **Versión:** 1
 
 ## Descripción

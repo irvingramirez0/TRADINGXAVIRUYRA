@@ -10,8 +10,6 @@ id: 142
 version: 1
 ---
 
-# Key levels solo con FVG de 15m, 1H y 4H; nunca 5m
-
 > **Confianza:** explícito · **Estado:** vigente · **Versión:** 1
 - **Clase del bootcamp:** [[../bootcamp/dia-15|Día 15 — Key Levels]]
 

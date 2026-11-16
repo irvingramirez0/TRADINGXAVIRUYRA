@@ -11,7 +11,6 @@ categoria: "BOOTCAMP"
 duracion: "10:41"
 ---
 
-# Día 7 — Prisa (psicología)
 
 > **Clase 7 de 21** · Duración 10:41 · **Vídeo:** `GO9GLSF_vLo`
 

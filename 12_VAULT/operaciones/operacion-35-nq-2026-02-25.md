@@ -11,8 +11,6 @@ clasificacion: "Bien ejecutado perdedor"
 id: 35
 ---
 
-# Operación #35 — NQ — 2026-02-25
-
 > **Aviso:** P&L autodeclarado, no auditado. Las cifras provienen de lo que Xavi dice en el vídeo y no se han verificado con extractos de cuenta.
 
 > **Clasificación:** Bien ejecutado perdedor · **Confianza:** observado

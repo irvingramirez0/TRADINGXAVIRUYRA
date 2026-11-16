@@ -11,7 +11,6 @@ categoria: "BOOTCAMP"
 duracion: "0:00"
 ---
 
-# Día 21 — Daily bias + DOL
 
 > **Clase 21 de 21** · Duración 0:00 · **Vídeo:** `MQyNBiw-QVo`
 

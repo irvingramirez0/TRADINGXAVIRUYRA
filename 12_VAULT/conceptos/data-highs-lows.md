@@ -12,8 +12,6 @@ sinonimos: ["data highs", "data lows", "highs de noticia", "lows de noticia"]
 id: 61
 ---
 
-# Data Highs / Lows
-
 > **Confianza:** explícito · **Estado:** vigente · **Categoría:** CONTEXTUAL
 
 ## Definición

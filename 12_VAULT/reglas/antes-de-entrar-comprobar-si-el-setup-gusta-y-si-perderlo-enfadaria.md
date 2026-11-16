@@ -10,8 +10,6 @@ id: 113
 version: 1
 ---
 
-# Antes de entrar, comprobar si el setup gusta y si perderlo enfadaría
-
 > **Confianza:** explícito · **Estado:** vigente · **Versión:** 1
 - **Clases del bootcamp:** [[../bootcamp/dia-07|Día 7]] · [[../bootcamp/dia-18|Día 18]]
 

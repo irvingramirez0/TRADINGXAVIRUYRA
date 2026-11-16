@@ -10,8 +10,6 @@ id: 90
 version: 1
 ---
 
-# Normalmente no hacer re-entries
-
 > **Confianza:** explícito · **Estado:** vigente · **Versión:** 1
 - **Clase del bootcamp:** [[../bootcamp/dia-14|Día 14 — Revenge Trading (psicología)]]
 

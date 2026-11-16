@@ -10,8 +10,6 @@ id: 66
 version: 1
 ---
 
-# Simplificar a cuatro conceptos
-
 > **Confianza:** explícito · **Estado:** vigente · **Versión:** 1
 - **Clases del bootcamp:** [[../bootcamp/dia-05|Día 5]] · [[../bootcamp/dia-12|Día 12]]
 

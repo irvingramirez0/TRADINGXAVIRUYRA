@@ -10,8 +10,6 @@ id: 76
 version: 1
 ---
 
-# No operar días de baja probabilidad
-
 > **Confianza:** explícito · **Estado:** vigente · **Versión:** 1
 
 ## Descripción

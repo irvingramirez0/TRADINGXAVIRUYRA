@@ -10,8 +10,6 @@ id: 102
 version: 1
 ---
 
-# Usar el IFVG de la temporalidad más alta de la manipulation leg
-
 > **Confianza:** explícito · **Estado:** vigente · **Versión:** 1
 
 ## Descripción

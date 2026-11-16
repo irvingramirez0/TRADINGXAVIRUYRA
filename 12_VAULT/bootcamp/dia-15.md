@@ -11,7 +11,6 @@ categoria: "BOOTCAMP"
 duracion: "21:27"
 ---
 
-# Día 15 — Key Levels
 
 > **Clase 15 de 21** · Duración 21:27 · **Vídeo:** `J7Dh-aj9-e0`
 

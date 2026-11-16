@@ -9,8 +9,6 @@ timestamp: "03:39"
 id: 8
 ---
 
-# CISD de 30s vs 1m
-
 > **Estado de la pregunta:** DISCREPANCIA DE USO, con evidencia repetida de 30s en 2026.
 
 **Qué sabemos:**

@@ -9,8 +9,6 @@ timestamp: "07:54"
 id: 5
 ---
 
-# Metodología de Londres
-
 > **Estado de la pregunta:** PARCIALMENTE DOCUMENTADO; la lógica y el trade están documentados, falta la secuencia horaria de la sesión. La evolución de los niveles está registrada.
 
 **Qué sabemos:** pasa evaluaciones en Londres y fondeadas en Nueva York [ `ndABd2MECBA` 07:54]. No hay una explicación equivalente a la de Nueva York.

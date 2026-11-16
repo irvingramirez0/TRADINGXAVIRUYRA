@@ -261,7 +261,6 @@ def generar_bootcamp(con, slugs_concepto):
             "panel": panel,
         }),
         "",
-        "# Bootcamp — 20 clases",
         "",
         "Las clases del bootcamp, en su orden. Cada día tiene su página con los conceptos que "
         "introduce, las reglas que salen de él y el enlace al minuto del vídeo.",
@@ -303,7 +302,6 @@ def generar_bootcamp(con, slugs_concepto):
                 "duracion": meta_duracion,
             }),
             "",
-            f"# Día {f['orden']} — {titulo}",
             "",
             f"> **Clase {f['orden']} de {len(filas)}** · Duración {meta_duracion} · "
             f"**Vídeo:** `{f['video_id']}`",
@@ -380,7 +378,6 @@ def generar_indices(con, slugs_concepto, slugs_regla, slugs_trade=None):
             "timestamp": "",
         }),
         "",
-        "# Conceptos",
         "",
         f"Los {sum(len(v) for v in por_cat.values())} conceptos de la metodología, agrupados por "
         "categoría. Cada nota lleva su definición, cómo identificarlo, condiciones, errores "
@@ -418,7 +415,6 @@ def generar_indices(con, slugs_concepto, slugs_regla, slugs_trade=None):
             "timestamp": "",
         }),
         "",
-        "# Reglas operativas",
         "",
         f"**{len(vigentes)}** reglas vigentes y **{len(obsoletas)}** obsoletas, que se conservan "
         "con la regla que las reemplaza: saber qué se dejó de hacer también es metodología.",
@@ -488,8 +484,7 @@ def generar_indices(con, slugs_concepto, slugs_regla, slugs_trade=None):
                 "anotaciones": False,
             }),
             "",
-            "# Operaciones",
-            "",
+                "",
             "> [!warning] P&L autodeclarado, no auditado",
             "> Las cifras vienen de lo que se cuenta en los vídeos; no hay extractos ni capturas "
             "de la cuenta que las respalden.",
@@ -525,8 +520,7 @@ def generar_indices(con, slugs_concepto, slugs_regla, slugs_trade=None):
                 "timestamp": "",
             }),
             "",
-            "# Cambios metodológicos",
-            "",
+                "",
             "Lo que se decía antes y lo que se dice ahora, con el vídeo donde cambia. "
             "Un cambio no borra la regla anterior: la marca como obsoleta.",
             "",
@@ -639,7 +633,6 @@ def generar_indice_preguntas(con):
             "timestamp": "",
         }),
         "",
-        "# Preguntas abiertas",
         "",
         f"**{len(filas)} preguntas** que el material no cierra. No se responden aquí: se dejan "
         "formuladas con lo que sí se sabe y con lo que haría falta para resolverlas.",

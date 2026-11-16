@@ -8,7 +8,6 @@ video: ""
 timestamp: ""
 ---
 
-# Preguntas abiertas
 
 **31 preguntas** que el material no cierra. No se responden aquí: se dejan formuladas con lo que sí se sabe y con lo que haría falta para resolverlas.
 

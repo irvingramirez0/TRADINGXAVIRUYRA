@@ -10,8 +10,6 @@ id: 41
 version: 1
 ---
 
-# Análisis desde 4H y confirmación en 1H
-
 > **Confianza:** explícito · **Estado:** vigente · **Versión:** 1
 
 ## Descripción

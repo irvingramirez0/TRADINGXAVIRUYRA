@@ -9,8 +9,6 @@ timestamp: ""
 id: 4
 ---
 
-# Stop exacto por setup
-
 > **Estado de la pregunta:** OBSERVADO en operaciones concretas + preferencia EXPLÍCITA por mechas; sin regla numérica general.
 
 **Qué sabemos:** el stop es estructural, al otro lado de la manipulación/swing. No hay una regla numérica general.

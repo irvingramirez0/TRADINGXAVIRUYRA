@@ -10,8 +10,6 @@ id: 61
 version: 1
 ---
 
-# Riesgo agresivo $1.000–1.500 (histórico)
-
 > **Confianza:** explícito · **Estado:** obsoleto · **Versión:** 1
 
 ## Descripción

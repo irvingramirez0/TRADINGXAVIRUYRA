@@ -12,8 +12,6 @@ sinonimos: ["fomo", "fear of missing out", "miedo a perderse"]
 id: 90
 ---
 
-# FOMO (psicología)
-
 > **Confianza:** explícito · **Estado:** vigente · **Categoría:** CONTEXTUAL
 - **Clase del bootcamp:** [[../bootcamp/dia-18|Día 18 — FOMO (psicología)]]
 

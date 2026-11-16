@@ -12,8 +12,6 @@ sinonimos: ["mnq", "mes", "micro nasdaq", "micro sp500"]
 id: 66
 ---
 
-# MNQ / MES
-
 > **Confianza:** explícito · **Estado:** vigente · **Categoría:** CONTEXTUAL
 - **Clase del bootcamp:** [[../bootcamp/dia-05|Día 5 — Tiempo (psicología)]]
 

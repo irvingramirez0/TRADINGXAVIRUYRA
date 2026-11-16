@@ -12,8 +12,6 @@ sinonimos: ["fvg", "fair value gap", "imbalance", "gap"]
 id: 42
 ---
 
-# Fair Value Gap (FVG)
-
 > **Confianza:** explícito · **Estado:** vigente · **Categoría:** CORE
 - **Clase del bootcamp:** [[../bootcamp/dia-08|Día 8 — FVG: definición, respeto y validación por temporalidad]]
 

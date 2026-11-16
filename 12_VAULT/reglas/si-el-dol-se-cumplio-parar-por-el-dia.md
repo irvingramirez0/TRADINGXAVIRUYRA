@@ -10,8 +10,6 @@ id: 69
 version: 1
 ---
 
-# Si el DOL se cumplió, parar por el día
-
 > **Confianza:** explícito · **Estado:** vigente · **Versión:** 1
 
 ## Descripción

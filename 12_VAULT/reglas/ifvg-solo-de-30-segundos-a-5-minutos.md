@@ -10,8 +10,6 @@ id: 139
 version: 1
 ---
 
-# IFVG solo de 30 segundos a 5 minutos
-
 > **Confianza:** explícito · **Estado:** vigente · **Versión:** 1
 - **Clases del bootcamp:** [[../bootcamp/dia-13|Día 13]] · [[../bootcamp/dia-17|Día 17]]
 

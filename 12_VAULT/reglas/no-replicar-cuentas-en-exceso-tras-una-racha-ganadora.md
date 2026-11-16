@@ -10,8 +10,6 @@ id: 172
 version: 1
 ---
 
-# No replicar cuentas en exceso tras una racha ganadora
-
 > **Confianza:** explícito · **Estado:** vigente · **Versión:** 1
 - **Clase del bootcamp:** [[../bootcamp/dia-20|Día 20 — Ego (psicología)]]
 

@@ -12,8 +12,6 @@ sinonimos: ["liquidity", "buy-side liquidity", "sell-side liquidity", "bsl", "ss
 id: 40
 ---
 
-# Liquidez (BSL/SSL)
-
 > **Confianza:** explícito · **Estado:** vigente · **Categoría:** CORE
 - **Clase del bootcamp:** [[../bootcamp/dia-06|Día 6 — Liquidez pt1]]
 

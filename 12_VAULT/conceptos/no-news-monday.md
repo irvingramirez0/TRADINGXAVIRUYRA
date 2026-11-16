@@ -12,8 +12,6 @@ sinonimos: ["lunes sin noticias", "monday sin noticias"]
 id: 84
 ---
 
-# No News Monday
-
 > **Confianza:** explícito · **Estado:** vigente · **Categoría:** CONTEXTUAL
 - **Clase del bootcamp:** [[../bootcamp/dia-10|Día 10 — Noticias]]
 

@@ -9,8 +9,6 @@ timestamp: "14:20"
 id: 14
 ---
 
-# Alcance de la regla "validar el FVG en su temporalidad"
-
 > **Estado de la pregunta:** PARCIALMENTE RESUELTO. 5m EXPLÍCITO; el resto es INFERIDO, no formulado por él. Registrada como regla 115 en la base. Se resuelve cuando lo explicite en una clase o en un ejemplo visual con otra temporalidad.
 
 **Qué sabemos:** en el Día 8 dice que si el FVG está marcado en 5 minutos, se mira en 5 minutos; aunque una vela de 1 minuto cierre al otro lado, si la vela de 5 minutos sigue aguantando, el FVG no se considera invertido [ `1McPSXSSR48` 14:20–15:26]. El ejemplo es explícito para 5m frente a 1m.

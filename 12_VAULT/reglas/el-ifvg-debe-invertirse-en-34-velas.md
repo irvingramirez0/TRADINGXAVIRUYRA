@@ -10,8 +10,6 @@ id: 140
 version: 1
 ---
 
-# El IFVG debe invertirse en 3–4 velas
-
 > **Confianza:** explícito · **Estado:** vigente · **Versión:** 1
 - **Clase del bootcamp:** [[../bootcamp/dia-13|Día 13 — IFVG]]
 

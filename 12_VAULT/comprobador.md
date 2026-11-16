@@ -14,7 +14,6 @@ panel:
   pie: "«Con cita» significa que la base guarda al menos una fila de evidencia con vídeo y minuto. No mide si la cita es buena, solo si existe: la lectura crítica es tuya."
 ---
 
-# Comprobador de fuentes
 
 Este sitio se presenta como un resumen **trazable**. Esta página es su propia auditoría: enumera lo que no tiene fuente y, por tanto, no debería tomarse como establecido.
 

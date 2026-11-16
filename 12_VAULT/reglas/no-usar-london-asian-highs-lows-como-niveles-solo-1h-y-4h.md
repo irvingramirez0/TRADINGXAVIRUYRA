@@ -10,8 +10,6 @@ id: 107
 version: 1
 ---
 
-# No usar London/Asian highs/lows como niveles; solo 1H y 4H
-
 > **Confianza:** explícito · **Estado:** vigente · **Versión:** 1
 
 ## Descripción

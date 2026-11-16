@@ -12,8 +12,6 @@ sinonimos: ["moving average convergence divergence"]
 id: 70
 ---
 
-# MACD
-
 > **Confianza:** observado · **Estado:** no usado · **Categoría:** NOT USED
 - **Clase del bootcamp:** [[../bootcamp/dia-02|Día 2 — Preparación: configurar TradingView]]
 

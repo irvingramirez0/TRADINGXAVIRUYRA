@@ -10,8 +10,6 @@ id: 44
 version: 1
 ---
 
-# Horario 9:30–11:00 (histórico)
-
 > **Confianza:** explícito · **Estado:** obsoleto · **Versión:** 1
 
 ## Descripción

@@ -10,8 +10,6 @@ id: 109
 version: 1
 ---
 
-# No operar contra un NWOG
-
 > **Confianza:** explícito · **Estado:** vigente · **Versión:** 1
 
 ## Descripción

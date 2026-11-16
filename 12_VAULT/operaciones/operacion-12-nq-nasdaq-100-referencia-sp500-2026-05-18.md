@@ -11,8 +11,6 @@ clasificacion: "Bien ejecutado perdedor"
 id: 12
 ---
 
-# Operación #12 — NQ (Nasdaq 100); referencia SP500 — 2026-05-18
-
 > **Aviso:** P&L autodeclarado, no auditado. Las cifras provienen de lo que Xavi dice en el vídeo y no se han verificado con extractos de cuenta.
 
 > **Clasificación:** Bien ejecutado perdedor · **Confianza:** observado

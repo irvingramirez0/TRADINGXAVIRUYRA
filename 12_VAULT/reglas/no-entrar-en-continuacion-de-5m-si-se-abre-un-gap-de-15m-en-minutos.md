@@ -10,8 +10,6 @@ id: 104
 version: 1
 ---
 
-# No entrar en continuación de 5m si se abre un gap de 15m en minutos
-
 > **Confianza:** explícito · **Estado:** vigente · **Versión:** 1
 
 ## Descripción

@@ -9,8 +9,6 @@ timestamp: "06:13"
 id: 2
 ---
 
-# Double SMT
-
 > **Estado de la pregunta:** EXPLÍCITO que no usa el doble SMT y que siempre exige true manipulation. El objeto de la cancelación de octubre sigue NO CONFIRMADO, pero la regla operativa queda cerrada.
 
 **Qué sabemos (22/10):** al cerrar la explicación de *true manipulation*, Xavi dice: "Cuando tenemos doble SMT se cancela" [ `OdljBowQurk` 06:13; el segmento transcrito cubre 05:42–06:13]. Justo antes explica que solo un SMT se sostiene cuando ambos índices tienen motivos para bajar y que, en ese ejemplo, el ES aún no tiene motivo. Dice que desarrollará el punto en otro vídeo. La frase no especifica qué se cancela ni bajo qué configuración.

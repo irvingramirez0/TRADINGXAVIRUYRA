@@ -10,8 +10,6 @@ id: 118
 version: 1
 ---
 
-# CPI: alto impacto pero operable
-
 > **Confianza:** explícito · **Estado:** vigente · **Versión:** 1
 - **Clase del bootcamp:** [[../bootcamp/dia-10|Día 10 — Noticias]]
 

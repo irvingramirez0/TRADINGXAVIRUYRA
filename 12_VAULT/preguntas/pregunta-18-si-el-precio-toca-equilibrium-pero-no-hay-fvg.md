@@ -9,8 +9,6 @@ timestamp: ""
 id: 18
 ---
 
-# Si el precio toca equilibrium pero no hay FVG
-
 > **Estado de la pregunta:** NO CONFIRMADO.
 
 No lo dice. Probablemente no es plus setup, pero no está confirmado.

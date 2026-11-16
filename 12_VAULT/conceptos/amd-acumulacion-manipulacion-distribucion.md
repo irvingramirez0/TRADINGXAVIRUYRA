@@ -12,8 +12,6 @@ sinonimos: ["amd", "accumulation manipulation distribution"]
 id: 48
 ---
 
-# AMD (Acumulación, Manipulación, Distribución)
-
 > **Confianza:** explícito · **Estado:** vigente · **Categoría:** CORE
 
 ## Definición

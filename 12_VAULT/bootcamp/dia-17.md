@@ -11,7 +11,6 @@ categoria: "BOOTCAMP"
 duracion: "21:57"
 ---
 
-# Día 17 — SMT's y True Manipulation
 
 > **Clase 17 de 21** · Duración 21:57 · **Vídeo:** `sTS-iWJvTf0`
 

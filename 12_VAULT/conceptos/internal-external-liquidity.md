@@ -12,8 +12,6 @@ sinonimos: ["internal liquidity", "external liquidity", "liquidez interna", "liq
 id: 60
 ---
 
-# Internal / External Liquidity
-
 > **Confianza:** explícito · **Estado:** vigente · **Categoría:** SUPPORTING
 
 ## Definición

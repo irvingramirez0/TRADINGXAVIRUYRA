@@ -10,8 +10,6 @@ id: 71
 version: 1
 ---
 
-# No shortear una subida vertical de 400 puntos
-
 > **Confianza:** explícito · **Estado:** vigente · **Versión:** 1
 
 ## Descripción

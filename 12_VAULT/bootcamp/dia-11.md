@@ -11,7 +11,6 @@ categoria: "BOOTCAMP"
 duracion: "18:22"
 ---
 
-# Día 11 — Liquidez pt2
 
 > **Clase 11 de 21** · Duración 18:22 · **Vídeo:** `OtYATAfCfRA`
 

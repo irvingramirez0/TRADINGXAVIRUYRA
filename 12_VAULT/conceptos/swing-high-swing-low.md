@@ -12,8 +12,6 @@ sinonimos: ["swing high", "swing low", "alto", "bajo"]
 id: 41
 ---
 
-# Swing High / Swing Low
-
 > **Confianza:** explícito · **Estado:** vigente · **Categoría:** CORE
 - **Clases del bootcamp:** [[../bootcamp/dia-04|Día 4]] · [[../bootcamp/dia-06|Día 6]]
 

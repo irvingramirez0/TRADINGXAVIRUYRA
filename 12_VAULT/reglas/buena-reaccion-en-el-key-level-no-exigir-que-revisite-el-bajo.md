@@ -10,8 +10,6 @@ id: 147
 version: 1
 ---
 
-# Buena reacción en el key level: no exigir que revisite el bajo
-
 > **Confianza:** explícito · **Estado:** vigente · **Versión:** 1
 - **Clase del bootcamp:** [[../bootcamp/dia-15|Día 15 — Key Levels]]
 

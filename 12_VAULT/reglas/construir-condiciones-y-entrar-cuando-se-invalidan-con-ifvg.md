@@ -10,8 +10,6 @@ id: 88
 version: 1
 ---
 
-# Construir condiciones y entrar cuando se invalidan con IFVG
-
 > **Confianza:** explícito · **Estado:** vigente · **Versión:** 1
 
 ## Descripción

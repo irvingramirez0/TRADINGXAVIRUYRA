@@ -11,7 +11,6 @@ categoria: "BOOTCAMP"
 duracion: "8:44"
 ---
 
-# Día 10 — Noticias
 
 > **Clase 10 de 21** · Duración 8:44 · **Vídeo:** `j4f8fV13GQM`
 

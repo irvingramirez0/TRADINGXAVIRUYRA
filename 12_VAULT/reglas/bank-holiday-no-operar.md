@@ -10,8 +10,6 @@ id: 126
 version: 1
 ---
 
-# Bank Holiday: no operar
-
 > **Confianza:** explícito · **Estado:** vigente · **Versión:** 1
 - **Clase del bootcamp:** [[../bootcamp/dia-10|Día 10 — Noticias]]
 

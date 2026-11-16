@@ -12,8 +12,6 @@ sinonimos: ["ndog", "new day opening gap"]
 id: 57
 ---
 
-# NDOG (New Day Opening Gap)
-
 > **Confianza:** explícito · **Estado:** vigente · **Categoría:** SUPPORTING
 
 ## Definición
