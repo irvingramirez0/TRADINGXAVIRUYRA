@@ -221,8 +221,21 @@ def load_known_ids(con):
 
 
 def is_bootcamp(title):
-    t = (title or "").lower()
-    return "bootcamp" in t or bool(re.search(r"\bd[ií]a\s+\d+", t))
+    """¿El título corresponde a una clase del bootcamp?
+
+    `\\bd[ií]a\\s+\\d+` a secas era demasiado amplio: «MI 20 CUMPLEAÑOS en MIAMI
+    ¡Día 7 ALQUILAMOS un COCHE EXÓTICO!» cumple el patrón y es un VLOG. Marcarlo
+    como clase hace que se le descarguen subtítulos, se le cree página de día y
+    —desde el reintento— se le vuelva a buscar transcripción en cada ejecución.
+
+    Se exige que el título EMPIECE por «bootcamp» o por «día N», que es como
+    están escritos todos los del canal. Si algún día cambia el formato, el
+    vídeo se seguirá catalogando; solo deja de tratarse como clase.
+    """
+    t = (title or "").strip().lower()
+    if not t:
+        return False
+    return t.startswith("bootcamp") or bool(re.match(r"^d[ií]a\s+\d+\b", t))
 
 
 def append_catalog(entry, category):
@@ -359,10 +372,38 @@ def download_bootcamp(video_id):
         note = "Subtítulos e info.json descargados."
         if proc.returncode != 0:
             note += " Una variante de subtítulo falló, pero hay VTT válido en disco."
+        # `build_transcripts.py` SOLO lee `*.es-orig.vtt`. Si yt-dlp bajó
+        # únicamente la variante `.es.vtt` (pasa con 429 en «es-orig»), el glob
+        # de arriba la da por buena pero no se genera ni `.txt` ni
+        # `.segments.json`: la clase se queda sin transcripción y el reporte
+        # dice que la descarga fue bien. Se copia para que exista el archivo
+        # que el siguiente paso espera — es lo mismo que hace `download_subs.py`.
+        solo_variante = [
+            p for p in got if p.endswith(".es.vtt") and not p.endswith(".es-orig.vtt")
+        ]
+        esperado = [
+            p for p in got if p.endswith(".es-orig.vtt")
+        ]
+        if solo_variante and not esperado:
+            try:
+                for origen in solo_variante:
+                    destino = origen.replace(".es.vtt", ".es-orig.vtt")
+                    shutil.copy2(origen, destino)
+                note += " Solo había subtítulo «es»; se copió a «es-orig» para poder transcribir."
+            except OSError as exc:
+                return False, f"Descargado pero no se pudo preparar el subtítulo: {exc}"
         return True, note
     if proc.returncode != 0:
         return False, f"yt-dlp falló: {proc.stderr.strip()[:400]}"
-    return True, "Subtítulos e info.json descargados."
+    # Código 0 y ni un VTT en disco: yt-dlp no encontró subtítulos o no los
+    # escribió. Antes esta rama devolvía True con «descargados» y el reporte
+    # afirmaba una descarga inexistente; la clase se quedaba sin transcripción
+    # sin que nada lo dijera.
+    return False, (
+        "yt-dlp terminó sin error pero no dejó ningún subtítulo en disco "
+        "(¿el vídeo tiene subtítulos automáticos en español?). "
+        "No se generará transcripción."
+    )
 
 
 def run_processing():
@@ -501,8 +542,32 @@ def main():
             download_notes.append(f"{e['id']}: {msg}")
             log_lines.append(f"DESCARGA {e['id']}: {msg}")
 
+    # Reintento de clases que quedaron catalogadas SIN subtítulos.
+    #
+    # `new_entries` se calcula por IDs ausentes de `videos`, así que un vídeo
+    # ya catalogado no vuelve a entrar nunca: si el día que se detectó no
+    # había yt-dlp (o el vídeo aún no tenía subtítulos), se quedaba sin
+    # transcripción para siempre y ninguna ejecución posterior lo miraba. Es
+    # exactamente lo que le pasó al Día 21. Esta pasada recoge esos casos.
+    if args.download:
+        con.commit()
+        # Sin `row_factory`, `fetchall()` devuelve tuplas: se desempaqueta, no
+        # se indexa por nombre.
+        pendientes = con.execute(
+            "SELECT v.id, v.title FROM videos v "
+            "WHERE v.category='BOOTCAMP' AND v.status<>'no_disponible' "
+            "  AND NOT EXISTS (SELECT 1 FROM segments s WHERE s.video_id=v.id) "
+            "ORDER BY v.upload_date DESC LIMIT 5"
+        ).fetchall()
+        for vid_pend, titulo_pend in pendientes:
+            log_lines.append(f"REINTENTO {vid_pend}: estaba sin segmentos")
+            ok, msg = download_bootcamp(vid_pend)
+            download_notes.append(f"{vid_pend} (reintento): {msg}")
+            log_lines.append(f"REINTENTO DESCARGA {vid_pend}: {msg}")
+
     process_notes = []
-    if args.process and any(is_bootcamp(e["title"]) for e in new_entries):
+    hubo_descarga = any("descargados" in n for n in download_notes)
+    if args.process and (any(is_bootcamp(e["title"]) for e in new_entries) or hubo_descarga):
         # Cerrar la conexión antes de llamar a init_db.py: si sigue abierta con
         # locking_mode=EXCLUSIVE, el subproceso no puede escribir y falla.
         con.commit()
@@ -541,8 +606,13 @@ def main():
     # programada no podía distinguir «no había novedades» de «había novedades
     # y el procesamiento se rompió». Quien lea el código de salida —una tarea
     # programada, un `&&`— necesita que esa diferencia exista.
+    # Un fallo es que la nota NO empiece por el resultado bueno. Buscar
+    # subcadenas como «falló» marcaba como error «Subtítulos e info.json
+    # descargados. Una variante de subtítulo falló, pero hay VTT válido en
+    # disco»: el mensaje cuenta un fallo parcial que no impide nada y la
+    # comprobación diaria habría salido en rojo teniendo el vídeo transcrito.
     fallos = [n for n in process_notes if "ERROR" in n or "AVISO FTS" in n]
-    fallos += [n for n in download_notes if "no está instalado" in n or "falló" in n]
+    fallos += [n for n in download_notes if not n.split(":", 1)[-1].strip().startswith("Subtítulos")]
     if fallos:
         print("\nFallos:", " · ".join(fallos))
         return 1

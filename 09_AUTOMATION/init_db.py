@@ -246,7 +246,23 @@ def main():
             """UPDATE videos SET title=?, upload_date=?, duration_sec=?, description=?, view_count=?,
                category=CASE WHEN ? THEN 'BOOTCAMP' ELSE category END,
                priority=CASE WHEN ? THEN 1 ELSE priority END,
-               status=CASE WHEN status='analizado' THEN 'analizado' ELSE 'transcrito' END,
+               -- Solo se ASCIENDE a 'transcrito'. Antes esta rama era
+               -- `CASE WHEN status='analizado' THEN 'analizado' ELSE
+               -- 'transcrito' END`, que DEGRADABA dos estados:
+               --   'analizado'    -> se conservaba (única excepción)
+               --   'procesado'    -> volvía a 'transcrito' (Día 20)
+               --   'no_disponible'-> volvía a 'transcrito', y un vídeo
+               --                     caído reaparecía como si tuviera
+               --                     transcripción
+               -- `frames_selectivos.py` y `reporte_cobertura.py` filtran por
+               -- esos estados, así que la degradación cambiaba lo que el
+               -- pipeline intentaba descargar. Los estados no se pisan desde
+               -- aquí: reindexar segmentos no dice nada sobre si el vídeo se
+               -- procesó o sigue accesible.
+               status=CASE
+                   WHEN status IN ('analizado','procesado','no_disponible') THEN status
+                   ELSE 'transcrito'
+               END,
                updated_at=CURRENT_TIMESTAMP
                WHERE id=?""",
             (d.get("title"), d.get("upload_date"), d.get("duration"), d.get("description"),
