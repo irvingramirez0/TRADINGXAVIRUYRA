@@ -12,6 +12,7 @@ duracion: "20:45"
 ---
 
 
+
 > **Clase 8 de 21** · Duración 20:45 · **Vídeo:** `1McPSXSSR48`
 
 > [!note] Apunte del curriculum

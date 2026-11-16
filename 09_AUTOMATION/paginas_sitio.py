@@ -7,7 +7,7 @@ Se separa de `regenerar_vault.py` para que ese archivo siga centrado en las
 notas unitarias (concepto, regla, operación, cambio, pregunta). Aquí solo hay
 páginas de navegación, que se derivan de la misma base y no inventan datos:
 
-- `12_VAULT/bootcamp/index.md`        → las 20 clases con su orden y enlaces
+- `12_VAULT/bootcamp/index.md`        → las clases con su orden y enlaces
 - `12_VAULT/bootcamp/dia-NN.md`       → una página por clase, con lo que trata,
                                         los conceptos que introduce y los
                                         enlaces a sus notas
@@ -152,6 +152,9 @@ def datos_bootcamp(con):
         frames = con.execute(
             "SELECT COUNT(*) n FROM frames WHERE video_id=?", (vid,)
         ).fetchone()["n"]
+        ev_count = con.execute(
+            "SELECT COUNT(*) n FROM evidence WHERE video_id=?", (vid,)
+        ).fetchone()["n"]
         anotados = con.execute(
             "SELECT COUNT(*) n FROM frames WHERE video_id=? AND "
             "lower(coalesce(description,'')) NOT LIKE 'pendiente de anotaci%'",
@@ -169,6 +172,15 @@ def datos_bootcamp(con):
             "reglas": [(x["id"], x["name"], slug(x["name"])) for x in reglas],
             "notas": r["notes"] or "",
             "temas_declarados": temas_declarados,
+            # Una clase recién publicada puede estar en el curriculum sin
+            # transcripción todavía. En ese caso no hay conceptos, ni minutos que
+            # enlazar: la página debe decirlo, no rellenarlo.
+            #
+            # El criterio es la transcripción, no la duración: `videos` no
+            # siempre guarda `duration_sec` aunque la clase esté transcrita y
+            # trabajada (el Día 20 tiene 706 s y 13 evidencias, pero llegó a
+            # marcarse como «sin transcribir» con un criterio de duración).
+            "procesada": bool((v["transcript_path"] if v else None)) or ev_count >= 3,
             "estado": r["status"] or "",
             "frames": frames,
             "anotados": anotados,
@@ -210,7 +222,10 @@ def generar_bootcamp(con, slugs_concepto):
         titulo = re.sub(r"^Día \d+\s*[—-]\s*", "", f["leccion"])
         temas = _temas(f)
         meta = []
-        meta.append(pastilla(reloj(f["duracion"])))
+        if f["procesada"]:
+            meta.append(pastilla(reloj(f["duracion"])))
+        else:
+            meta.append(pastilla("aún sin transcribir"))
         if f["conceptos"]:
             meta.append(pastilla(f"{len(f['conceptos'])} conceptos"))
         if f["reglas"]:
@@ -252,8 +267,8 @@ def generar_bootcamp(con, slugs_concepto):
     cuerpo = [
         frontmatter({
             "tipo": "indice",
-            "title": "Bootcamp — 20 clases",
-            "titulo": "Bootcamp — 20 clases",
+            "title": f"Bootcamp — {len(filas)} clases",
+            "titulo": f"Bootcamp — {len(filas)} clases",
             "confianza": "explícito",
             "estado": "vigente",
             "video": "",
@@ -288,25 +303,42 @@ def generar_bootcamp(con, slugs_concepto):
         num = f"{f['orden']:02d}"
         titulo = re.sub(r"^Día \d+\s*[—-]\s*", "", f["leccion"])
         meta_duracion = reloj(f["duracion"])
+        # Una clase recién publicada puede estar en el curriculum sin que se
+        # haya transcrito todavía. En ese caso la nota NO puede decir
+        # «confianza: explícito» ni enlazar a un minuto: no hay nada que citar.
+        procesada = f["procesada"]
         lineas = [
             frontmatter({
                 "tipo": "bootcamp",
                 "title": f"Día {f['orden']} — {titulo}",
                 "titulo": f"Día {f['orden']} — {titulo}",
-                "confianza": "explícito",
+                "confianza": "explícito" if procesada else "no confirmado",
                 "estado": "vigente",
                 "video": f["video_id"],
-                "timestamp": "00:00",
+                "timestamp": "00:00" if procesada else "",
                 "dia": f["orden"],
                 "categoria": "BOOTCAMP",
-                "duracion": meta_duracion,
+                "duracion": meta_duracion if procesada else "",
             }),
             "",
             "",
-            f"> **Clase {f['orden']} de {len(filas)}** · Duración {meta_duracion} · "
-            f"**Vídeo:** `{f['video_id']}`",
             "",
         ]
+        if procesada:
+            lineas.append(
+                f"> **Clase {f['orden']} de {len(filas)}** · Duración {meta_duracion} · "
+                f"**Vídeo:** `{f['video_id']}`"
+            )
+        else:
+            lineas.append(
+                f"> **Clase {f['orden']} de {len(filas)}** · **Vídeo:** `{f['video_id']}`"
+            )
+            lineas.append(">")
+            lineas.append(
+                "> Publicada y anunciada, pero **todavía sin transcribir**: no hay duración, "
+                "ni conceptos, ni minutos que se puedan citar."
+            )
+        lineas.append("")
         if f["notas"]:
             lineas += [
                 "> [!note] Apunte del curriculum",

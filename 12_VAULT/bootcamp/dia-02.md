@@ -12,6 +12,7 @@ duracion: "22:09"
 ---
 
 
+
 > **Clase 2 de 21** · Duración 22:09 · **Vídeo:** `3aG0N7aHu4s`
 
 > [!note] Apunte del curriculum
