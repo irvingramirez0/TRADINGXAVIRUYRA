@@ -59,7 +59,22 @@ clase nueva se quedaba sin subtítulos — aunque el binario estuviera ahí y lo
 subtítulos existieran en YouTube. Pasó los días 2, 4, 6, 7, 12 y 15 de
 noviembre. En los días 12 y 13 se descargaron a mano, que es como se disimuló.
 
-Corregido: las dos listas de rutas son ahora la misma.
+Corregido: las dos listas de rutas son ahora la misma, y hay dos salidas más:
+`09_AUTOMATION/.bin/` (relativa al proyecto) y la variable `YTDLP_BIN`.
+
+### 2.1-bis. Y el entorno donde corre la tarea no es tu consola
+
+El log del 15 de noviembre está escrito en rutas de `/sessions/quirky-exciting-
+hypatia/mnt/TRADINGXAVIRUYRA`. La tarea programada **no** corre en tu consola de
+Windows: Claude Desktop monta el proyecto en un sandbox Linux. Ahí `~` no es
+`C:\Users\Asus` y el venv de AutoDownloader no existe, así que una ruta
+absoluta de Windows no cruza la frontera.
+
+Por eso la búsqueda empieza por `09_AUTOMATION/.bin/`, que es una ruta relativa
+al proyecto — la misma idea que ya usaba `frames_selectivos.py` con `ffmpeg`.
+En ese sandbox un `.exe` de Windows no sirve: lo que funciona es
+`python -m pip install yt-dlp`, que es lo que se hizo a mano el día 12. El
+mensaje de error ahora dice exactamente eso en vez de «no está instalado».
 
 ### 2.2 `build_transcripts.py` moría con el título del canal
 

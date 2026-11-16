@@ -265,21 +265,45 @@ def insert_video(con, entry, category):
     )
 
 
+def directorio_bin():
+    """Carpeta de binarios del propio proyecto.
+
+    Existe por el entorno donde corre la tarea programada: Claude Desktop monta
+    el proyecto en un sandbox Linux (`/sessions/…/mnt/TRADINGXAVIRUYRA`) donde
+    `~` no es `C:\\Users\\Asus` y el venv de AutoDownloader no existe. Una ruta
+    absoluta fuera del proyecto no cruza esa frontera; una ruta relativa a
+    `BASE` sí. Es el mismo criterio que ya usaba `frames_selectivos.py` con
+    `ffmpeg` (`09_AUTOMATION/.bin/`).
+    """
+    return os.path.join(BASE, "09_AUTOMATION", ".bin")
+
+
 def yt_dlp_cmd():
     """Localiza yt-dlp.
 
     El orden importa y el venv de AutoDownloader NO es un detalle: es el único
-    yt-dlp que existe en este equipo. Sin esta rama, cada ejecución diaria
+    yt-dlp que existe en este equipo. Sin esa rama, cada ejecución diaria
     reportaba «yt-dlp no está instalado» y la clase se quedaba sin subtítulos
     aunque el binario estuviera a un `os.path.isfile` de distancia. Se
     mantiene la misma lista de rutas que `frames_selectivos.py` para que los
     dos scripts no vuelvan a discrepar sobre si la herramienta está.
+
+    `YTDLP_BIN` manda sobre todo lo demás: es la salida cuando la tarea corre
+    en un entorno donde ninguna de estas rutas existe y se quiere apuntar a un
+    binario concreto sin tocar el código.
     """
+    for var in ("YTDLP_BIN", "YT_DLP_BIN"):
+        override = os.environ.get(var)
+        if override and os.path.isfile(override):
+            return [override]
     p = shutil.which("yt-dlp")
     if p:
         return [p]
     root = os.path.expanduser("~")
     for cand in (
+        # Dentro del proyecto primero: es lo único que sobrevive al sandbox.
+        os.path.join(directorio_bin(), "yt-dlp.exe"),
+        os.path.join(directorio_bin(), "yt-dlp"),
         os.path.join(root, "Documents", "AutoDownloader", ".venv", "Scripts", "yt-dlp.exe"),
         os.path.join(root, ".local", "bin", "yt-dlp"),
     ):
@@ -302,7 +326,15 @@ def download_bootcamp(video_id):
     """Descarga subtítulos automáticos en español + info.json. Devuelve (ok, mensaje)."""
     exe = yt_dlp_cmd()
     if not exe:
-        return False, "yt-dlp no está instalado; no se descargan subtítulos."
+        # El mensaje lleva la salida. El 2026-11-15 decía solo «no está
+        # instalado» y eso no dice qué hacer: la herramienta se resolvió con
+        # `pip install yt-dlp` el día 12 y con la ruta del venv el 15, y en
+        # ambos casos hizo falta adivinar el comando.
+        return False, (
+            "yt-dlp no está instalado. Instálalo con "
+            "`python -m pip install yt-dlp` (o define YTDLP_BIN con la ruta al "
+            "binario) y repite la comprobación."
+        )
     out_dir = os.path.join(BASE, "02_TRANSCRIPTS", "bootcamp")
     os.makedirs(out_dir, exist_ok=True)
     cmd = exe + [
@@ -510,7 +542,7 @@ def main():
     # y el procesamiento se rompió». Quien lea el código de salida —una tarea
     # programada, un `&&`— necesita que esa diferencia exista.
     fallos = [n for n in process_notes if "ERROR" in n or "AVISO FTS" in n]
-    fallos += [n for n in download_notes if "no se descargan" in n or "falló" in n]
+    fallos += [n for n in download_notes if "no está instalado" in n or "falló" in n]
     if fallos:
         print("\nFallos:", " · ".join(fallos))
         return 1

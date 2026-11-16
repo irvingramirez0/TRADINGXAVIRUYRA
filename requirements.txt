@@ -11,8 +11,18 @@ Pillow>=10.0
 
 # --- Binarios externos (NO van por pip) ---------------------------------
 #   ffmpeg 9.0.2 con libwebp  -> se localiza solo; o FFMPEG_BIN=/ruta/ffmpeg.exe
-#   yt-dlp                    -> en el PATH o en
-#                                ~/Documents/AutoDownloader/.venv/Scripts/yt-dlp.exe
+#   yt-dlp                    -> se busca en este orden:
+#                                  1. $YTDLP_BIN (ruta explícita)
+#                                  2. el PATH
+#                                  3. 09_AUTOMATION/.bin/  (relativo al
+#                                     proyecto: es el único que existe
+#                                     cuando el proyecto se monta en otro
+#                                     sistema, p. ej. el sandbox de la tarea
+#                                     programada en Linux)
+#                                  4. ~/Documents/AutoDownloader/.venv/Scripts/yt-dlp.exe
+#                                  5. como módulo: python -m yt_dlp
+#                                En un entorno sin ninguna de esas rutas:
+#                                  python -m pip install yt-dlp
 
 # --- Ingesta de Instagram (opcional, fuera del pipeline del sitio) ------
 # Solo lo necesitan instagram_*.py, que descargan Reels. El sitio excluye
