@@ -108,6 +108,7 @@ const Anotaciones = () => {
           " anotaciones",
         ),
       ),
+      h("div", { class: "xr-anot-recibida", id: "xr-anot-recibida", hidden: true }),
       h("div", { class: "xr-anot-lista", id: "xr-anot-lista", role: "list" }),
       h(
         "p",
@@ -175,14 +176,14 @@ const Anotaciones = () => {
         { class: "xr-anot-pie" },
         fm.endpoint_anotaciones
           ? "Las anotaciones se guardan en el servidor compartido del sitio: cualquiera que abra esta página las verá."
-          : "Las anotaciones se guardan en el almacenamiento de este navegador. Se pueden compartir con el botón «copiar enlace» o con «Exportar». ",
+          : "Las anotaciones se guardan en este navegador. El botón «enlace para compartir» crea una dirección que lleva la anotación dentro: quien la abra la verá y podrá guardarla, sin cuenta.",
       ),
       fm.endpoint_anotaciones
         ? null
         : h(
             "p",
             { class: "xr-anot-pie" },
-            "Para que queden guardadas para todo el mundo hace falta un punto de guardado compartido; el sitio no lleva uno de serie porque inventarlo daría una falsa sensación de permanencia. Está documentado en el LEEME.",
+            "Lo que no hay es un muro público: las anotaciones no aparecen solas a los demás, se comparten una a una por enlace. Para eso hace falta un punto de guardado compartido, documentado en el LEEME.",
           ),
     )
   }
@@ -197,6 +198,15 @@ const Anotaciones = () => {
 .xr-anot-sub { margin: 0.15rem 0 1rem; font-size: 0.82rem; color: var(--gray); }
 .xr-anot-contador { font-size: 0.76rem; color: var(--gray); font-variant-numeric: tabular-nums; }
 .xr-anot-lista { display: flex; flex-direction: column; gap: 0.6rem; margin-bottom: 0.5rem; }
+.xr-anot-recibida {
+  border: 1px solid var(--secondary);
+  border-radius: 9px;
+  padding: 0.7rem 0.85rem;
+  margin-bottom: 1rem;
+  background: var(--xr-accent-soft);
+}
+.xr-anot-recibida[hidden] { display: none; }
+.xr-anot-recibida .xr-anot-acciones { margin-top: 0.6rem; }
 .xr-anot-vacio { font-size: 0.85rem; color: var(--gray); margin: 0 0 1.1rem; }
 .xr-anot-item {
   border: 1px solid var(--lightgray);
@@ -274,6 +284,49 @@ h2:hover > .xr-anot-ancla, h3:hover > .xr-anot-ancla, .xr-anot-ancla:focus { opa
     try { localStorage.setItem(clave(nota), JSON.stringify(lista)); return true; }
     catch (e) { return false; }
   }
+  // Enlace compartible: la anotación viaja dentro de la propia URL, comprimida
+  // y codificada en base64url. Cualquiera que abra el enlace la ve, sin cuenta
+  // y sin servidor: el dato está en el enlace, no en una base de datos.
+  //
+  // Coste honesto: la dirección queda larga (~200 caracteres para una
+  // anotación normal) y sigue siendo un enlace, no un muro público donde
+  // aparezcan solas las anotaciones de los demás.
+  function aBase64Url(txt) {
+    var bytes = new TextEncoder().encode(txt);
+    var bin = "";
+    for (var i = 0; i < bytes.length; i++) bin += String.fromCharCode(bytes[i]);
+    return btoa(bin).split("+").join("-").split("/").join("_").split("=").join("");
+  }
+
+  function deBase64Url(txt) {
+    var b = txt.split("-").join("+").split("_").join("/");
+    while (b.length % 4) b += "=";
+    var bin = atob(b);
+    var bytes = new Uint8Array(bin.length);
+    for (var i = 0; i < bin.length; i++) bytes[i] = bin.charCodeAt(i);
+    return new TextDecoder().decode(bytes);
+  }
+
+  function enlaceDe(a) {
+    var datos = { t: a.texto, n: a.autor || "", s: a.seccion || "", st: a.seccionTexto || "" };
+    return location.origin + location.pathname + "#a=" + aBase64Url(JSON.stringify(datos));
+  }
+
+  function leerEnlace() {
+    var h = location.hash || "";
+    if (h.indexOf("#a=") !== 0) return null;
+    try {
+      var d = JSON.parse(deBase64Url(h.slice(3)));
+      if (!d || !d.t) return null;
+      return {
+        id: "enlace-" + aBase64Url(d.t).slice(0, 12),
+        ts: 0, autor: d.n || "", texto: d.t,
+        seccion: d.s || "", seccionTexto: d.st || "",
+        compartida: true,
+      };
+    } catch (e) { return null; }
+  }
+
   function uid() {
     return "a" + Date.now().toString(36) + Math.random().toString(36).slice(2, 7);
   }
@@ -338,9 +391,9 @@ h2:hover > .xr-anot-ancla, h3:hover > .xr-anot-ancla, .xr-anot-ancla:focus { opa
       bEnlace.className = "xr-anot-mini";
       bEnlace.type = "button";
       bEnlace.textContent = "copiar enlace";
+      bEnlace.textContent = "enlace para compartir";
       bEnlace.addEventListener("click", function () {
-        var u = location.origin + location.pathname + "#anot-" + a.id;
-        copiar(u, bEnlace, "enlace copiado");
+        copiar(enlaceDe(a), bEnlace, "enlace copiado");
       });
       var bCita = document.createElement("button");
       bCita.className = "xr-anot-mini";
@@ -458,6 +511,65 @@ h2:hover > .xr-anot-ancla, h3:hover > .xr-anot-ancla, .xr-anot-ancla:focus { opa
       });
       h.appendChild(b);
     });
+
+    // Si la URL trae una anotación compartida, se ofrece guardarla.
+    var recibida = leerEnlace();
+    var cajaRecibida = root.querySelector("#xr-anot-recibida");
+    if (recibida && cajaRecibida) {
+      var yaEsta = lista.some(function (x) { return x.texto === recibida.texto && x.autor === recibida.autor; });
+      if (!yaEsta) {
+        cajaRecibida.hidden = false;
+        cajaRecibida.innerHTML = "";
+        var titulo = document.createElement("div");
+        titulo.className = "xr-anot-meta";
+        titulo.innerHTML = '<span class="xr-anot-autor">Anotación compartida</span>';
+        cajaRecibida.appendChild(titulo);
+        var cuerpo = document.createElement("div");
+        cuerpo.className = "xr-anot-texto";
+        cuerpo.textContent = recibida.texto;
+        cajaRecibida.appendChild(cuerpo);
+        var pie = document.createElement("div");
+        pie.className = "xr-anot-meta";
+        if (recibida.autor) {
+          var q = document.createElement("span");
+          q.textContent = "de " + recibida.autor;
+          pie.appendChild(q);
+        }
+        if (recibida.seccionTexto) {
+          var sec = document.createElement("a");
+          sec.className = "xr-anot-sec";
+          sec.href = "#" + recibida.seccion;
+          sec.textContent = "§ " + recibida.seccionTexto;
+          pie.appendChild(sec);
+        }
+        cajaRecibida.appendChild(pie);
+        var acc = document.createElement("div");
+        acc.className = "xr-anot-acciones";
+        var bGuardar = document.createElement("button");
+        bGuardar.className = "xr-boton xr-boton-primario";
+        bGuardar.type = "button";
+        bGuardar.textContent = "Guardar en este navegador";
+        bGuardar.addEventListener("click", function () {
+          var n = leer(nota);
+          recibida.id = uid();
+          recibida.ts = new Date().getTime();
+          recibida.compartida = false;
+          n.push(recibida);
+          guardar(nota, n);
+          cajaRecibida.hidden = true;
+          pintar(contenedor, n, nota);
+          actualizarContador(n);
+        });
+        var bCerrar = document.createElement("button");
+        bCerrar.className = "xr-boton";
+        bCerrar.type = "button";
+        bCerrar.textContent = "Descartar";
+        bCerrar.addEventListener("click", function () { cajaRecibida.hidden = true; });
+        acc.appendChild(bGuardar);
+        acc.appendChild(bCerrar);
+        cajaRecibida.appendChild(acc);
+      }
+    }
 
     pintar(contenedor, lista, nota);
     actualizarContador(lista);
