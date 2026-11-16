@@ -102,6 +102,19 @@ cd 13_SITE/quartz && npx quartz build --serve -d ../../12_VAULT
 # http://localhost:8080
 ```
 
+Para publicar, un solo comando (regenera, verifica, compila y hace push):
+
+```bash
+python 09_AUTOMATION/publicar_sitio.py            # publica si hay algo nuevo
+python 09_AUTOMATION/publicar_sitio.py --simular  # dice qué haría
+```
+
+Y el ciclo diario completo, tal como lo ejecuta la tarea programada:
+
+```bash
+py -3.13 09_AUTOMATION/sync_bootcamp.py --download --process --publicar
+```
+
 Vista de grafo, búsqueda, explorador y backlinks están activos. El grafo local
 tiene `depth: -1` (todo el grafo); en cada nota, `depth: 1`.
 
@@ -222,7 +235,7 @@ Cada push a `main` compila y publica. Para volver a desplegar sin cambiar nada:
   aparte y no se inventa.
 - La portada declara el proyecto como **estudio no oficial** y lleva fecha de corte.
 
-## Estado verificado (2026-11-15)
+## Estado verificado (2026-11-16)
 
 | Comprobación | Resultado |
 |---|---|
@@ -236,6 +249,8 @@ Cada push a `main` compila y publica. Para volver a desplegar sin cambiar nada:
 | `quartz build` | 817 archivos, grafo y búsqueda activos |
 | **Anotaciones en navegador real** | Chrome headless: 14 secciones detectadas, anotación publicada y persistida en `localStorage` |
 | **Sitio en producción** | 200 en `/`, en las notas y en los `.webp`; grafo y búsqueda presentes |
+| `publicar_sitio.py` | Probado de punta a punta: regeneró, verificó, compiló y publicó solo. También se niega cuando hay trabajo local sin commitear. |
+| **Ciclo diario** | `sync_bootcamp.py --download --process --publicar`: detecta, transcribe, indexa, regenera y publica. El Día 21 quedó transcrito (62 segmentos, 32:17) y marcado «sin analizar», que es su estado real. |
 | **Ciclo de una clase nueva** | Documentado en [`CICLO_DE_UNA_CLASE.md`](CICLO_DE_UNA_CLASE.md): qué es automático, qué no, y los tres fallos silenciosos que se corrigieron el 2026-11-15 |
 | Auditoría de contenido | ninguna cita > 246 caracteres; ningún dato personal; sin Reels |
 | Imágenes | 38 WebP; la mayoría a 1200 px de ancho y sin la interfaz del gráfico |
