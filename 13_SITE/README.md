@@ -57,8 +57,18 @@ su propia carpeta.
 ### Comentarios: qué funciona de verdad
 
 Las anotaciones se guardan en el **navegador** de cada lector
-(`localStorage`), con sección, autor opcional, enlace directo y exportación a
-JSON. Son privadas por defecto y se comparten por enlace o por archivo.
+(`localStorage`), con sección, autor opcional y exportación a JSON.
+
+Para compartir una hay dos vías que sí funcionan sin cuenta:
+
+- **Enlace para compartir**: la anotación (texto, autor y sección) viaja
+  codificada en la propia URL, en base64url. Quien la abre —aunque sea su
+  primera visita— la ve en un recuadro aparte y puede guardarla con un clic.
+  Probado con dos perfiles de Chrome aislados contra el sitio en producción.
+- **Exportar / Importar**: un JSON con todas las anotaciones de una nota.
+
+Lo que **no** hay es un muro público: las anotaciones no aparecen solas a los
+demás, se comparten una a una.
 
 Publicar en el navegador no es publicar en un servidor. Para que un comentario lo
 vea todo el mundo hace falta un servicio de guardado, y **el sitio no lleva uno
@@ -74,7 +84,7 @@ perderla en silencio. Opciones, en orden creciente de esfuerzo:
 
 | Opción | Cuenta | Coste | Comentarios compartidos |
 |---|---|---|---|
-| Navegador + enlace + exportar (actual) | no | 0 | no (uno a uno) |
+| Navegador + enlace codificado (actual) | no | 0 | sí, una a una por enlace |
 | Supabase / Firebase (free tier) | sí | 0 | sí |
 | Cloudflare Worker + KV | sí | 0 | sí |
 | Giscus (GitHub) | sí (GitHub) | 0 | sí |
