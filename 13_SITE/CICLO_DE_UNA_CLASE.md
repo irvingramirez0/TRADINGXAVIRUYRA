@@ -19,11 +19,13 @@ Estado a 2026-11-15.
 | 5 | **Lee la transcripción y extrae conceptos, reglas, evidencia y cambios** | el agente de Claude Desktop, leyendo el texto | **no** |
 | 6 | Añade lo extraído a `populate_kb.py` y hace `--merge` | el agente | **no** |
 | 7 | Regenera el vault | `regenerar_vault.py` | **no** |
-| 8 | Compila y publica | GitHub Actions, al hacer push a `main` | sí (pero lo dispara el push) |
+| 8 | Revisa que el vault esté completo y compila | `publicar_sitio.py` | **no** |
+| 9 | Publica | el mismo script, con `git push` | **no** |
+| 10 | Compila y despliega | GitHub Actions, al recibir el push | sí (pero lo dispara el push) |
 
-Los pasos 1–4 los ejecuta la tarea programada sola. **Los pasos 5–7 no los hace
-ningún proceso automático**: son el trabajo de análisis que hace el agente al
-leer la transcripción, y sin ellos el sitio no cambia.
+Los pasos 1–4 los ejecuta la tarea programada sola. **Los pasos 5–9 los hace el
+agente de Claude Desktop**: leer, extraer, añadir a `populate_kb.py` y lanzar la
+publicación. Sin ellos el sitio no cambia.
 
 ### La consecuencia práctica
 
@@ -177,21 +179,50 @@ extensión y devuelve 404 aunque el archivo exista. GitHub Pages sí lo resuelve
 ## 6-bis. Publicación automática
 
 `09_AUTOMATION/publicar_sitio.py` hace la cadena entera: regenerar, verificar,
-comprobar que cambió algo, compilar y publicar. Se puede encadenar al ciclo
-diario con `--publicar`:
+comprobar que cambió algo, compilar y publicar.
+
+### Cómo se dispara: no va dentro de `sync_bootcamp.py`
+
+Estuvo ahí como flag `--publicar` y **era un error de orden**. Ese script corre
+antes de que el agente lea la transcripción y extraiga conceptos (pasos 5–6), así
+que habría publicado la clase recién transcrita, «sin analizar», y no habría
+vuelto a publicarse después del análisis: al día siguiente no hay vídeo nuevo ni
+descarga, y la condición no se cumpliría. El sitio se habría quedado con el
+esbozo para siempre.
+
+La publicación es el **último paso** del ciclo y la ejecuta el agente cuando ha
+terminado. Para eso hay que añadir un paso a las instrucciones de la tarea:
+
+> 7. Cuando termines de extraer y de ejecutar `populate_kb.py`, ejecuta
+>    `python3 09_AUTOMATION/publicar_sitio.py`. Copia literalmente su última
+>    línea al resumen (dice «Publicado…» o «no publicado…»). No la interpretes.
+
+El comando del paso 1 **no cambia**:
 
 ```bash
-py -3.13 09_AUTOMATION/sync_bootcamp.py --download --process --publicar
+python3 09_AUTOMATION/sync_bootcamp.py --download --process
 ```
 
-Para y avisa en dos casos, que es su razón de ser:
+### Paradas y avisos
 
 | Situación | Qué hace | Por qué |
 |---|---|---|
-| Hay cambios locales fuera de `12_VAULT/` | no publica, lista los archivos | mezclar trabajo en curso con una publicación automática es la forma más fácil de subir algo que no querías |
-| El build local no compila | no publica, muestra el error | el deploy de GitHub Actions fallaría igual, pero el error quedaría en un log remoto con el commit ya hecho |
+| Hay conflictos de merge sin resolver | no publica | un commit automático encima de un merge a medias deja el repo para deshacerlo a mano |
+| El build local falla | no publica, muestra el error | el deploy de GitHub Actions fallaría igual, pero con el commit ya hecho |
+| No hay `node` en el entorno | publica igual, avisa | en el sandbox de la tarea programada no hay node; GitHub Actions compila |
+| No hay credenciales de git | hace el commit y avisa (código 5) | el commit queda en local; se publica desde la consola |
+| El vault no cambió | termina sin commit | no crea un commit vacío cada día |
 
-Si el vault no cambió, termina sin commit: no crea un commit vacío cada día.
+**Solo viaja el vault.** El commit es `git commit -- 12_VAULT`, no `git add -A`:
+la tarea deja `05_METHODOLOGY/` y `populate_kb.py` tocados cada día —es su
+trabajo— y esos archivos no se suben con la publicación. Comprobado: con dos
+archivos ajenos modificados, el commit llevó únicamente
+`12_VAULT/bootcamp/dia-14.md` y los otros dos siguieron intactos.
+
+**Sobre el freno anterior.** Publicar se bloqueaba si había cualquier cambio
+fuera del vault. Con la publicación encadenada a la tarea eso habría fallado
+todos los días, porque la tarea siempre toca archivos versionados. El bloqueo
+estricto queda disponible como `--estricto`, para cuando se publique a mano.
 
 ## 6-ter. La tanda de los conceptos sin imagen
 

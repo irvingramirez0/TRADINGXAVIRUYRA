@@ -109,10 +109,12 @@ python 09_AUTOMATION/publicar_sitio.py            # publica si hay algo nuevo
 python 09_AUTOMATION/publicar_sitio.py --simular  # dice qué haría
 ```
 
-Y el ciclo diario completo, tal como lo ejecuta la tarea programada:
+Y el ciclo diario, tal como lo ejecuta la tarea programada (dos comandos, en
+este orden; el segundo **después** de extraer conceptos, no antes):
 
 ```bash
-py -3.13 09_AUTOMATION/sync_bootcamp.py --download --process --publicar
+py -3.13 09_AUTOMATION/sync_bootcamp.py --download --process
+python 09_AUTOMATION/publicar_sitio.py
 ```
 
 Vista de grafo, búsqueda, explorador y backlinks están activos. El grafo local
@@ -249,7 +251,7 @@ Cada push a `main` compila y publica. Para volver a desplegar sin cambiar nada:
 | `quartz build` | 817 archivos, grafo y búsqueda activos |
 | **Anotaciones en navegador real** | Chrome headless: 14 secciones detectadas, anotación publicada y persistida en `localStorage` |
 | **Sitio en producción** | 200 en `/`, en las notas y en los `.webp`; grafo y búsqueda presentes |
-| `publicar_sitio.py` | Probado de punta a punta: regeneró, verificó, compiló y publicó solo. También se niega cuando hay trabajo local sin commitear. |
+| `publicar_sitio.py` | Probado de punta a punta: regeneró, verificó, compiló y publicó solo. Solo commitea `12_VAULT`: comprobado con dos archivos ajenos modificados, el commit llevó únicamente el vault. |
 | **Ciclo diario** | `sync_bootcamp.py --download --process --publicar`: detecta, transcribe, indexa, regenera y publica. El Día 21 quedó transcrito (62 segmentos, 32:17) y marcado «sin analizar», que es su estado real. |
 | **Ciclo de una clase nueva** | Documentado en [`CICLO_DE_UNA_CLASE.md`](CICLO_DE_UNA_CLASE.md): qué es automático, qué no, y los tres fallos silenciosos que se corrigieron el 2026-11-15 |
 | Auditoría de contenido | ninguna cita > 246 caracteres; ningún dato personal; sin Reels |

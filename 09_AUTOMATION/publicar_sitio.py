@@ -39,6 +39,7 @@ Uso
 
 import argparse
 import os
+import shutil
 import subprocess
 import sys
 
@@ -62,7 +63,6 @@ def hay_cambios_fuera_del_vault():
     """Archivos modificados que no son el vault generado.
 
     El vault cambia en cada regeneración y es el objeto de esta publicación.
-    Cualquier otra cosa modificada es trabajo en curso de una persona.
     """
     r = git("status", "--porcelain")
     if r.returncode != 0:
@@ -79,21 +79,71 @@ def hay_cambios_fuera_del_vault():
     return ajenos
 
 
+def hay_conflicto():
+    """True si el repositorio está a medio merge o con conflictos sin resolver.
+
+    Esto sí bloquea: un commit automático encima de un merge a medias deja el
+    repositorio en un estado que después hay que deshacer a mano.
+    """
+    r = git("status", "--porcelain")
+    return any(
+        linea[:2] in ("UU", "AA", "DD", "AU", "UA", "DU", "UD")
+        for linea in r.stdout.splitlines()
+    )
+
+
+def node_disponible():
+    """¿Se puede compilar aquí?
+
+    En el sandbox donde corre la tarea programada puede no haber node. Si no
+    lo hay, intentar el build haría fallar la publicación todos los días por
+    un motivo que no tiene que ver con el contenido.
+    """
+    if not shutil.which("node"):
+        return False, "node no está en el PATH"
+    if not os.path.isdir(os.path.join(QUARTZ, "node_modules")):
+        return False, "faltan node_modules en 13_SITE/quartz"
+    return True, ""
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--simular", action="store_true", help="No escribe ni publica")
-    ap.add_argument("--forzar", action="store_true",
-                    help="Publica aunque haya cambios locales en otros archivos")
+    ap.add_argument(
+        "--estricto", action="store_true",
+        help="No publica si hay cambios locales fuera del vault (uso manual)",
+    )
+    ap.add_argument(
+        "--forzar", action="store_true",
+        help="Compatibilidad: equivale a no usar --estricto",
+    )
     ap.add_argument("--sin-build", action="store_true",
-                    help="No compila en local (CI lo hará); útil si falta npm")
+                    help="No compila en local (CI lo hará)")
     args = ap.parse_args()
 
+    # Ya no se bloquea por defecto ante cambios fuera del vault.
+    #
+    # La tarea programada edita cada día `05_METHODOLOGY/*.md` y
+    # `populate_kb.py`, que están versionados: con el freno anterior, la
+    # publicación automática habría dicho «hay cambios locales» todos los días
+    # y no habría publicado nunca. Y esos cambios son el trabajo que produce la
+    # propia clase, no trabajo en curso de una persona.
+    #
+    # El commit es selectivo (`git commit -- 12_VAULT`), así que esos archivos
+    # no se suben: solo viaja el vault. Para el uso manual queda `--estricto`.
     ajenos = hay_cambios_fuera_del_vault()
-    if ajenos and not args.forzar:
-        print("Hay cambios locales fuera del vault. No se publica nada:")
+    if ajenos and args.estricto and not args.forzar:
+        print("Hay cambios locales fuera del vault y se pidió --estricto:")
         for a in ajenos[:20]:
             print(f"  {a}")
-        print("\nCommitea o descarta esos cambios, o usa --forzar.")
+        print("\nCommitea o descarta esos cambios, o quita --estricto.")
+        return 3
+    if ajenos:
+        print(f"Aviso: {len(ajenos)} archivo(s) fuera del vault sin commitear "
+              "(no se publican; solo viaja el vault).")
+
+    if hay_conflicto():
+        print("El repositorio tiene conflictos sin resolver. No se publica.")
         return 3
 
     python = [sys.executable, "-I"]
@@ -121,20 +171,27 @@ def main():
     if args.sin_build:
         print("(--sin-build: se salta el build local; lo hará CI)")
     else:
-        print("=== Compilando el sitio en local ===")
-        r = correr(
-            ["node", "./quartz/bootstrap-cli.mjs", "build",
-             "-d", "../../12_VAULT", "-o", "public"],
-            cwd=QUARTZ, timeout=900,
-        )
-        if r.returncode != 0:
-            # No se publica un sitio que no compila: el deploy de GitHub
-            # Actions fallaría igual, pero entonces el error queda en un log
-            # remoto y el repositorio ya tendría el commit.
-            print("FALLO al compilar. No se publica:")
-            print((r.stderr or r.stdout)[-2000:])
-            return 1
-        print("Build correcto.")
+        puede, motivo = node_disponible()
+        if not puede:
+            # Se salta el build con aviso en vez de fallar: en el sandbox de la
+            # tarea programada no hay node, y bloquear por eso dejaría el sitio
+            # sin actualizar todos los días. GitHub Actions compila igual.
+            print(f"Build local omitido ({motivo}). Lo compilará GitHub Actions.")
+        else:
+            print("=== Compilando el sitio en local ===")
+            r = correr(
+                ["node", "./quartz/bootstrap-cli.mjs", "build",
+                 "-d", "../../12_VAULT", "-o", "public"],
+                cwd=QUARTZ, timeout=900,
+            )
+            if r.returncode != 0:
+                # No se publica un sitio que no compila: el deploy de GitHub
+                # Actions fallaría igual, pero entonces el error queda en un
+                # log remoto y el repositorio ya tendría el commit.
+                print("FALLO al compilar. No se publica:")
+                print((r.stderr or r.stdout)[-2000:])
+                return 1
+            print("Build correcto.")
 
     resumen = []
     for linea in cambiados:
@@ -148,16 +205,28 @@ def main():
         return 0
 
     print("=== Publicando ===")
-    for paso in (["add", VAULT], ["commit", "-m", mensaje_commit(cambiados)]):
-        r = git(*paso)
-        if r.returncode != 0:
-            print(f"FALLO en git {paso[0]}:")
-            print((r.stderr or r.stdout)[-800:])
-            return 1
+    # `git commit -- 12_VAULT` en vez de `add` + `commit`: el pathspec hace que
+    # solo entre el vault aunque haya otros archivos modificados en el índice.
+    # La tarea programada deja `05_METHODOLOGY/` y `populate_kb.py` tocados
+    # cada día (son su trabajo), y no deben viajar en el commit de publicación.
+    r = git("commit", "-m", mensaje_commit(cambiados), "--", VAULT)
+    if r.returncode != 0:
+        print("FALLO al commitear:")
+        print((r.stderr or r.stdout)[-800:])
+        return 1
     r = git("push", "origin", "HEAD")
     if r.returncode != 0:
         print("FALLO al hacer push:")
         print((r.stderr or r.stdout)[-800:])
+        # Un push sin credenciales es el fallo esperado en el sandbox de la
+        # tarea programada. Se distingue para que el reporte diga qué pasó.
+        salida = (r.stderr or "") + (r.stdout or "")
+        if "could not read Username" in salida or "Authentication failed" in salida \
+                or "not have push access" in salida:
+            print("Sin credenciales de git en este entorno. El commit queda "
+                  "hecho en local; publica desde tu consola con "
+                  "`python 09_AUTOMATION/publicar_sitio.py`.")
+            return 5
         return 1
     print("Publicado. GitHub Actions compilará y desplegará.")
     return 0

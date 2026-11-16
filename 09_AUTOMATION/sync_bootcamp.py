@@ -432,28 +432,6 @@ def run_processing():
     return results
 
 
-def run_publicacion():
-    """Regenera el vault y publica, con los frenos de `publicar_sitio.py`.
-
-    Va al final del ciclo diario y solo si hubo algo que descargar. El script
-    se niega a publicar si hay cambios locales fuera del vault o si el build
-    falla, así que un «no publicado» aquí es información, no un fallo: significa
-    que hay trabajo en curso o que la compilación está rota.
-    """
-    path = os.path.join(BASE, "09_AUTOMATION", "publicar_sitio.py")
-    if not os.path.exists(path):
-        return ["publicar_sitio.py: no encontrado; no se publica"]
-    proc = subprocess.run(
-        [sys.executable, "-I", path], capture_output=True, text=True,
-        timeout=1800, encoding="utf-8", errors="replace",
-    )
-    salida = (proc.stdout or proc.stderr or "").strip()
-    if proc.returncode == 0:
-        ultima = salida.splitlines()[-1] if salida else "sin salida"
-        return [f"publicar_sitio.py: OK — {ultima}"]
-    return [f"publicar_sitio.py: no publicado (código {proc.returncode}) — {salida[-400:]}"]
-
-
 def write_log(lines):
     path = os.path.join(LOG_DIR, f"sync_{now().strftime('%Y-%m-%d')}.log")
     with open(path, "a", encoding="utf-8") as fh:
@@ -461,7 +439,7 @@ def write_log(lines):
 
 
 def write_report(new_entries, feed_entries, status, download_notes, process_notes,
-                 publicacion_notes=None, source="RSS oficial"):
+                 source="RSS oficial"):
     date_str = now().strftime("%Y-%m-%d")
     path = os.path.join(REPORT_DIR, f"{date_str}.md")
     stamp = now().strftime("%H:%M:%S")
@@ -504,11 +482,6 @@ def write_report(new_entries, feed_entries, status, download_notes, process_note
         lines.append("### Procesamiento")
         for n in process_notes:
             lines.append(f"- {n}")
-    if publicacion_notes:
-        lines.append("")
-        lines.append("### Publicación del sitio")
-        for n in publicacion_notes:
-            lines.append(f"- {n}")
     lines.append("")
     with open(path, "a", encoding="utf-8") as fh:
         fh.write("\n".join(lines) + "\n")
@@ -519,10 +492,6 @@ def main():
     parser = argparse.ArgumentParser(description="Sincroniza el canal y el bootcamp de Xavi Ruyra.")
     parser.add_argument("--download", action="store_true", help="Descargar subtítulos del bootcamp nuevo.")
     parser.add_argument("--process", action="store_true", help="Reconstruir transcripciones e índice tras descargar.")
-    parser.add_argument(
-        "--publicar", action="store_true",
-        help="Regenerar el vault y publicar si hay algo nuevo (usa publicar_sitio.py).",
-    )
     args = parser.parse_args()
 
     ensure_dirs()
@@ -610,22 +579,18 @@ def main():
             con = connect()
         log_lines.extend(f"PROCESO: {n}" for n in process_notes)
 
-    # Publicación automática, solo cuando de verdad entró algo.
+    # Publicación: NO va aquí.
     #
-    # Se exige que haya habido descarga o vídeo nuevo: si no, el vault se
-    # regeneraría igual y `publicar_sitio.py` acabaría diciendo «no hay nada
-    # que publicar» en cada ejecución diaria, que es ruido en el reporte. Con
-    # esta condición, la publicación aparece en el reporte solo cuando cambió
-    # algo.
-    publicacion_notes = []
-    if args.publicar and (new_entries or hubo_descarga):
-        con.commit()
-        con.close()
-        try:
-            publicacion_notes = run_publicacion()
-        finally:
-            con = connect()
-        log_lines.extend(f"PUBLICACION: {n}" for n in publicacion_notes)
+    # Estuvo aquí como flag `--publicar` y era un error de orden. Este script
+    # corre ANTES de que el agente lea la transcripción y extraiga conceptos
+    # (pasos 5–6 del ciclo), así que publicaría la clase recién transcrita,
+    # «sin analizar», y no volvería a publicarse cuando el análisis estuviera
+    # hecho: al día siguiente no hay vídeo nuevo ni descarga, y la condición
+    # de abajo no se cumple. El sitio se quedaría con el esbozo.
+    #
+    # La publicación es el ÚLTIMO paso del ciclo, y lo ejecuta el agente
+    # cuando ha terminado de extraer: `python3 09_AUTOMATION/publicar_sitio.py`.
+    # Ver CICLO_DE_UNA_CLASE.md.
 
     status = "sin novedades" if not new_entries else f"{len(new_entries)} vídeo(s) nuevo(s)"
     con.execute(
@@ -635,7 +600,7 @@ def main():
     con.commit()
 
     report_path = write_report(new_entries, feed, status, download_notes, process_notes,
-                               publicacion_notes, source=source)
+                               source=source)
     log_lines.append(f"Resultado: {status}. Reporte: {report_path}")
     write_log(log_lines)
 
