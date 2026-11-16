@@ -147,6 +147,7 @@ Las reglas anteriores leen anotaciones. No pueden distinguir una diapositiva de
 otro tema de la que dice ser; eso solo se ve mirando. Para esa parte:
 
 ```bash
+node 09_AUTOMATION/verificar_sitio.mjs     # 19 casos de uso contra el sitio publicado
 python 09_AUTOMATION/revisar_capturas.py   # hoja HTML con todas las imágenes publicadas
 # se abre, se marca lo que no cuadre y se descarga veredictos.json
 python 09_AUTOMATION/vetar_fotogramas.py --veredictos veredictos.json
@@ -223,6 +224,7 @@ Cada push a `main` compila y publica. Para volver a desplegar sin cambiar nada:
 | `fotogramas reutilizados` | **0**: 38 imágenes = 38 fotogramas distintos (antes 9 fotogramas se repetían en 2–3 notas) |
 | `vetar_fotogramas.py --listar` | 21 vetos visuales, cada uno con su motivo y su concepto |
 | **Revisión visual de las 38 publicadas** | 38 de 38 miradas una a una contra su definición; 0 sin revisar |
+| `verificar_sitio.mjs` | **19/19** casos de uso contra el sitio publicado (navegador real, no grep) |
 | `quartz build` | 817 archivos, grafo y búsqueda activos |
 | **Anotaciones en navegador real** | Chrome headless: 14 secciones detectadas, anotación publicada y persistida en `localStorage` |
 | **Sitio en producción** | 200 en `/`, en las notas y en los `.webp`; grafo y búsqueda presentes |
