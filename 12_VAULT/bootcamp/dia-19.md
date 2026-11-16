@@ -15,8 +15,10 @@ duracion: "15:56"
 
 > **Clase 19 de 21** · Duración 15:56 · **Vídeo:** `56ES-W1d0xw`
 
-> [!note] Apunte del curriculum
+> [!note] Apunte del curriculum (cuando se catalogó)
 > Anuncia psicología, daily bias/DOL y sesiones, backtesting y sistemas de entrada.
+>
+> *Se conserva tal cual como historial. El estado actual está arriba.*
 
 ## Conceptos que introduce
 

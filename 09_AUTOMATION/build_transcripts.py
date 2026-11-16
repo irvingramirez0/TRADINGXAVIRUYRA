@@ -116,7 +116,17 @@ def main():
             for seg in segments:
                 fh.write(f"[{fmt(seg['start'])}] {seg['text']}\n\n")
         words = sum(len(s["text"].split()) for s in segments)
-        print(f"{name}: {len(segments)} segmentos, {words} palabras -> {txt_path}")
+        # Los títulos de YouTube traen «：» (U+FF1A, dos puntos de ancho
+        # completo; el canal usa ese carácter en «Bootcamp Día 21： …»). En una
+        # consola Windows con cp1252 eso lanza UnicodeEncodeError y aborta el
+        # script a mitad, dejando el Día 21 sin transcripción aunque los
+        # subtítulos estuvieran descargados. Se imprime saneado: el archivo en
+        # disco conserva el nombre original.
+        try:
+            print(f"{name}: {len(segments)} segmentos, {words} palabras -> {txt_path}")
+        except UnicodeEncodeError:
+            seguro = name.encode("ascii", "replace").decode("ascii")
+            print(f"{seguro}: {len(segments)} segmentos, {words} palabras")
 
 
 if __name__ == "__main__":

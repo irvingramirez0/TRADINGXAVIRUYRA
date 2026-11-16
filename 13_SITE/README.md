@@ -21,7 +21,7 @@ El sitio se construye **directamente** desde `12_VAULT/`; no hay copia intermedi
 
 | Sección | Qué es |
 |---|---|
-| `/bootcamp/` | Las 20 clases en orden. Cada día tiene su página con los conceptos que introduce, las reglas que salen de él, sus fotogramas y la navegación anterior/siguiente. |
+| `/bootcamp/` | Las 21 clases en orden. Cada día tiene su página con los conceptos que introduce, las reglas que salen de él, sus fotogramas y la navegación anterior/siguiente. |
 | `/conceptos/` | Índice por categoría (CORE / CONTEXTUAL / …) con tarjetas. |
 | `/reglas/` | Índice de reglas, separando vigentes y obsoletas. |
 | `/operaciones/` | Índice con el aviso de P&L autodeclarado. |
@@ -218,16 +218,17 @@ Cada push a `main` compila y publica. Para volver a desplegar sin cambiar nada:
 
 | Comprobación | Resultado |
 |---|---|
-| `regenerar_vault.py` | 356 notas: 53 conceptos, 135 reglas, 54 operaciones, 55 cambios, 31 preguntas, 20 días de bootcamp, 7 índices y el comprobador |
+| `regenerar_vault.py` | 357 notas: 53 conceptos, 135 reglas, 54 operaciones, 55 cambios, 31 preguntas, 21 días de bootcamp, 7 índices y el comprobador |
 | `verificar_vault.py` | 350 notas con frontmatter, 0 enlaces rotos, 0 imágenes rotas (las 6 restantes son portada e índices, que no llevan ficha) |
 | `auditar_fotogramas.py` | 46 imágenes muestran su concepto, 6 son de contexto, 26 conceptos sin imagen |
 | `fotogramas reutilizados` | **0**: 38 imágenes = 38 fotogramas distintos (antes 9 fotogramas se repetían en 2–3 notas) |
 | `vetar_fotogramas.py --listar` | 21 vetos visuales, cada uno con su motivo y su concepto |
 | **Revisión visual de las 38 publicadas** | 38 de 38 miradas una a una contra su definición; 0 sin revisar |
-| `verificar_sitio.mjs` | **19/19** casos de uso contra el sitio publicado (navegador real, no grep) |
+| `verificar_sitio.mjs` | **22/22** casos de uso contra el sitio publicado (navegador real, no grep). Incluye el Día 21, que existe para que no se vuelva a publicar una clase sin trabajar como si estuviera trabajada. |
 | `quartz build` | 817 archivos, grafo y búsqueda activos |
 | **Anotaciones en navegador real** | Chrome headless: 14 secciones detectadas, anotación publicada y persistida en `localStorage` |
 | **Sitio en producción** | 200 en `/`, en las notas y en los `.webp`; grafo y búsqueda presentes |
+| **Ciclo de una clase nueva** | Documentado en [`CICLO_DE_UNA_CLASE.md`](CICLO_DE_UNA_CLASE.md): qué es automático, qué no, y los tres fallos silenciosos que se corrigieron el 2026-11-15 |
 | Auditoría de contenido | ninguna cita > 246 caracteres; ningún dato personal; sin Reels |
 | Imágenes | 38 WebP; la mayoría a 1200 px de ancho y sin la interfaz del gráfico |
 | Repositorio local | sin vídeos, transcripciones, base ni modelos |

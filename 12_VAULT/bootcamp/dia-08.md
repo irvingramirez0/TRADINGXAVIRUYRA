@@ -15,8 +15,10 @@ duracion: "20:45"
 
 > **Clase 8 de 21** · Duración 20:45 · **Vídeo:** `1McPSXSSR48`
 
-> [!note] Apunte del curriculum
+> [!note] Apunte del curriculum (cuando se catalogó)
 > Anuncia liquidez parte dos.
+>
+> *Se conserva tal cual como historial. El estado actual está arriba.*
 
 ## Conceptos que introduce
 

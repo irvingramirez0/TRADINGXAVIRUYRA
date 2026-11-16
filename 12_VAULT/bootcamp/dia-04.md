@@ -15,8 +15,10 @@ duracion: "21:15"
 
 > **Clase 4 de 21** · Duración 21:15 · **Vídeo:** `SuRgJd8ONIc`
 
-> [!note] Apunte del curriculum
+> [!note] Apunte del curriculum (cuando se catalogó)
 > 
+>
+> *Se conserva tal cual como historial. El estado actual está arriba.*
 
 ## Conceptos que introduce
 

@@ -17,14 +17,15 @@ panel:
     - {etiqueta: "cambios", valor: 55}
     - {etiqueta: "preguntas abiertas", valor: 31}
   barras:
-    - {etiqueta: "Fotogramas con anotación verificable", hecho: 137, total: 1456, nota: "el resto está extraído pero sin revisar, y no se publica como prueba visual"}
+    - {etiqueta: "Fotogramas con anotación verificable", hecho: 129, total: 1456, nota: "el resto está extraído pero sin revisar, y no se publica como prueba visual"}
   pie: "Todo lo que aparece en este sitio se regenera desde una base SQLite con `python 09_AUTOMATION/pipeline.py`. Las cifras de esta portada se cuentan en cada generación, no se escriben a mano."
 ---
 
 
 > **Proyecto de estudio no oficial.** Este sitio es un resumen estructurado y trazable de contenido público de Xavi Ruyra. No es un curso oficial, no está afiliado ni respaldado por él, y no sustituye a sus vídeos. Todo lo que no tiene fuente con vídeo y minuto se marca como **no confirmado**.
 
-**Fecha de corte de las cifras:** 2026-11-14.
+**Fecha de corte de las cifras:** 2026-11-14. 
+Es la fecha del vídeo más reciente que **ya tiene evidencia citada**: lo anunciado pero aún sin trabajar no cuenta como contenido.
 
 ## Por dónde entrar
 

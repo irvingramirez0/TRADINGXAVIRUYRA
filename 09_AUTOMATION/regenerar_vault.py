@@ -41,7 +41,11 @@ DB = os.path.join(BASE, "07_KNOWLEDGE_BASE", "xavi_ruyra.db")
 VAULT = os.path.join(BASE, "12_VAULT")
 MEDIA = os.path.join(VAULT, "media")
 PREGUNTAS_MD = os.path.join(BASE, "05_METHODOLOGY", "11_PREGUNTAS_ABIERTAS.md")
-CORTE = "2026-11-14"
+# La fecha de corte se calcula sola (ver `_fecha_de_corte`). Estaba escrita a
+# mano en "2026-11-14" y dejó de coincidir con el contenido en la primera
+# generación posterior a una clase nueva: la portada decía «corte 14» con la
+# clase del 15 ya publicada. Una cifra que miente sobre su propia fecha es
+# peor que no tenerla.
 
 SKIP_DESC = {"keyword", "periodic", "scene", "frame de contexto"}
 PENDIENTE = "pendiente de anotaci"
@@ -1083,7 +1087,9 @@ def generate_index(conceptos_notas, slugs_concepto, reglas_count, trades_count,
         "y no sustituye a sus vídeos. Todo lo que no tiene fuente con vídeo y minuto se marca como "
         "**no confirmado**.",
         "",
-        f"**Fecha de corte de las cifras:** {CORTE}.",
+        f"**Fecha de corte de las cifras:** {estado.get('fecha_corte', '')}. ",
+        "Es la fecha del vídeo más reciente que **ya tiene evidencia citada**: "
+        "lo anunciado pero aún sin trabajar no cuenta como contenido.",
         "",
         "## Por dónde entrar",
         "",
@@ -1192,21 +1198,56 @@ def main():
     return 0
 
 
+def _fecha_de_corte(con):
+    """Fecha del vídeo más reciente que ya aporta contenido citado.
+
+    El criterio es `evidence`, no «tiene transcripción». La portada resume
+    cifras —conceptos, reglas, operaciones, cambios— y todas salen de filas
+    de evidencia: una clase con el `.txt` en disco pero sin analizar no suma
+    ninguna. Incluirla adelantaría la fecha de corte a una clase que la propia
+    página declara «transcrita, sin trabajar», y la portada diría que cubre
+    algo que no cubre.
+
+    Esto importa desde el 2026-11-15: el Día 21 se transcribió ese día y su
+    página avisa de que no está trabajado. Con la versión anterior de esta
+    consulta (que aceptaba `transcript_path`) el corte saltaba al 15 por una
+    clase vacía.
+    """
+    r = con.execute(
+        "SELECT MAX(v.upload_date) d FROM videos v "
+        "WHERE EXISTS (SELECT 1 FROM evidence e WHERE e.video_id=v.id)"
+    ).fetchone()
+    if not r or not r["d"]:
+        return ""
+    d = str(r["d"])
+    return f"{d[0:4]}-{d[4:6]}-{d[6:8]}" if len(d) == 8 else d
+
+
 def _estado_proyecto(con):
     """Cifras reales para la portada: se cuentan, no se escriben."""
     def uno(sql, *a):
         r = con.execute(sql, a).fetchone()
         return r[0] if r else 0
     total = uno("SELECT COUNT(*) FROM frames")
-    # «Anotado» aquí significa con descripción propia, no la etiqueta del
-    # extractor ni el aviso de pendiente.
+    # «Anotado» aquí significa con descripción propia: ni la etiqueta del
+    # extractor, ni el aviso de pendiente, ni el relleno de contexto.
+    #
+    # El relleno de contexto lleva minuto dentro del texto
+    # («frame de contexto (t+3 s)»), así que una igualdad exacta contra
+    # «frame de contexto» no lo alcanza. Ese detalle hacía que la portada
+    # contara 137 y `build_search_index.py` indexara 129: dos definiciones de
+    # «anotado» en el mismo proyecto, y la de la portada inflada. Se usa el
+    # mismo prefijo que el índice para que las dos cifras digan lo mismo.
     anotados = uno(
         "SELECT COUNT(*) FROM frames WHERE lower(coalesce(description,'')) "
-        "NOT LIKE 'pendiente de anotaci%' AND trim(coalesce(description,'')) NOT IN "
+        "NOT LIKE 'pendiente de anotaci%' "
+        "AND lower(coalesce(description,'')) NOT LIKE 'frame de contexto%' "
+        "AND trim(coalesce(description,'')) NOT IN "
         "('keyword','periodic','scene','visual','deictico','déictico','frame de contexto')"
     )
     dias = uno("SELECT COUNT(*) FROM curriculum")
-    return {"frames_total": total, "frames_anotados": anotados, "boot_dias": dias}
+    return {"frames_total": total, "frames_anotados": anotados, "boot_dias": dias,
+            "fecha_corte": _fecha_de_corte(con)}
 
 
 

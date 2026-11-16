@@ -266,18 +266,48 @@ def main():
             cur.execute("UPDATE videos SET transcript_path=? WHERE id=?", (seg_path, d.get("id")))
 
     # 3. Índice FTS
-    cur.execute("DELETE FROM segments_fts")
-    cur.execute(
-        "INSERT INTO segments_fts(text,video_id,start_sec) SELECT text,video_id,start_sec FROM segments"
-    )
-
+    #
+    # Se confirma ANTES de reconstruir el FTS, no después. El 2026-11-15 el
+    # INSERT del índice falló (el proyecto se ejecutaba sobre un montaje
+    # 9p/sandbox, donde `locking_mode=EXCLUSIVE` es frágil) y, como el único
+    # `con.commit()` estaba al final, se revirtió también el catálogo y los
+    # segmentos ya insertados. Se daba por perdida una clase entera por un
+    # índice que se puede reconstruir. El índice es derivado: si falla, se
+    # avisa y se sigue; los datos de origen no se tocan.
     con.commit()
+    try:
+        cur.execute("DELETE FROM segments_fts")
+        cur.execute(
+            "INSERT INTO segments_fts(text,video_id,start_sec) SELECT text,video_id,start_sec FROM segments"
+        )
+        con.commit()
+        fts_ok = True
+        fts_error = ""
+    except sqlite3.Error as exc:
+        con.rollback()
+        fts_ok = False
+        fts_error = f"{type(exc).__name__}: {exc}"
+
     print("Videos:", cur.execute("SELECT COUNT(*) FROM videos").fetchone()[0])
     print("Segmentos:", cur.execute("SELECT COUNT(*) FROM segments").fetchone()[0])
     print("Bootcamp:", cur.execute("SELECT COUNT(*) FROM videos WHERE category='BOOTCAMP'").fetchone()[0])
+    if fts_ok:
+        print("Índice de búsqueda:", cur.execute("SELECT COUNT(*) FROM segments_fts").fetchone()[0], "segmentos")
+    else:
+        # Salida reconocible por `sync_bootcamp.py`, que la refleja en el
+        # reporte diario. Reconstruible con `build_search_index.py` no: ese
+        # rehace `frames_fts`, no `segments_fts`; se rehace reejecutando esto.
+        print(f"AVISO FTS: no se pudo reconstruir segments_fts ({fts_error}). "
+              "Los vídeos y segmentos SÍ quedaron guardados.")
     print("DB:", DB_PATH)
     con.close()
+    return 0 if fts_ok else 2
 
 
 if __name__ == "__main__":
-    main()
+    # `sys.exit` con el código de `main()`: antes se llamaba y se descartaba,
+    # así que un fallo del índice terminaba en exit 0 y `sync_bootcamp` lo
+    # reportaba como «init_db.py: OK».
+    import sys
+
+    sys.exit(main())

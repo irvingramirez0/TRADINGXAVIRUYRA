@@ -15,8 +15,10 @@ duracion: "11:46"
 
 > **Clase 20 de 21** · Duración 11:46 · **Vídeo:** `ygJya0srm8g`
 
-> [!note] Apunte del curriculum
+> [!note] Apunte del curriculum (cuando se catalogó)
 > Anuncia Daily Bias y Draw on Liquidity para el Día 21.
+>
+> *Se conserva tal cual como historial. El estado actual está arriba.*
 
 ## Conceptos que introduce
 

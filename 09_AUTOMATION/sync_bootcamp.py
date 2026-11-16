@@ -175,9 +175,14 @@ def fetch_ytdlp_index(limit=15):
         entries.append({
             "id": vid,
             "title": d.get("title") or "",
-            "published": "",
+            # `--flat-playlist` no trae fecha, pero sí el id; el reporte
+            # imprimía «Bootcamp Día 21: … ()» porque `published` quedaba
+            # vacío y el formato corta a 10 caracteres. Se deja constancia con
+            # `upload_date` cuando yt-dlp lo da, y `""` cuando no: la función
+            # que completa metadatos lo rellena luego.
+            "published": d.get("upload_date") or "",
             "updated": "",
-            "upload_date": None,
+            "upload_date": d.get("upload_date"),
             "url": f"https://www.youtube.com/watch?v={vid}",
             "description": "",
             "view_count": d.get("view_count"),
@@ -261,12 +266,25 @@ def insert_video(con, entry, category):
 
 
 def yt_dlp_cmd():
+    """Localiza yt-dlp.
+
+    El orden importa y el venv de AutoDownloader NO es un detalle: es el único
+    yt-dlp que existe en este equipo. Sin esta rama, cada ejecución diaria
+    reportaba «yt-dlp no está instalado» y la clase se quedaba sin subtítulos
+    aunque el binario estuviera a un `os.path.isfile` de distancia. Se
+    mantiene la misma lista de rutas que `frames_selectivos.py` para que los
+    dos scripts no vuelvan a discrepar sobre si la herramienta está.
+    """
     p = shutil.which("yt-dlp")
     if p:
         return [p]
-    candidate = os.path.expanduser("~/.local/bin/yt-dlp")
-    if os.path.exists(candidate):
-        return [candidate]
+    root = os.path.expanduser("~")
+    for cand in (
+        os.path.join(root, "Documents", "AutoDownloader", ".venv", "Scripts", "yt-dlp.exe"),
+        os.path.join(root, ".local", "bin", "yt-dlp"),
+    ):
+        if os.path.isfile(cand):
+            return [cand]
     # Fallback: el módulo de Python (python3 -m yt_dlp).
     try:
         probe = subprocess.run(
@@ -323,11 +341,21 @@ def run_processing():
         if not os.path.exists(path):
             results.append(f"{script}: no encontrado")
             continue
-        proc = subprocess.run([sys.executable, path], capture_output=True, text=True, timeout=600)
+        # `encoding="utf-8"` explícito: los scripts imprimen acentos («Índice
+        # de búsqueda»), y sin fijarlo en Windows se decodificaba con la
+        # página de códigos de la consola y llegaba roto al reporte.
+        proc = subprocess.run(
+            [sys.executable, path], capture_output=True, text=True,
+            timeout=600, encoding="utf-8", errors="replace",
+        )
         if proc.returncode == 0:
             results.append(f"{script}: OK")
         else:
-            results.append(f"{script}: ERROR — {proc.stderr.strip()[:300]}")
+            # El detalle útil puede venir por stdout: `init_db.py` avisa de un
+            # FTS roto con un `print`, no con una excepción, y sin esta rama
+            # el reporte diario decía «ERROR —» y nada más.
+            detalle = (proc.stderr.strip() or proc.stdout.strip() or "sin salida")
+            results.append(f"{script}: ERROR — {detalle[-400:]}")
     return results
 
 
@@ -352,14 +380,20 @@ def write_report(new_entries, feed_entries, status, download_notes, process_note
     ]
     if feed_entries:
         latest = feed_entries[0]
-        lines.append(f"- **Última publicación del feed:** {latest['title']} ({latest['published'][:10]})")
+        # Sin fecha —el respaldo `--flat-playlist` no la trae— se imprime solo
+        # el título. Antes salía «Bootcamp Día 21: Daily bias + DOL ()», que
+        # parece un dato y es un hueco.
+        fecha = (latest.get("published") or "")[:10]
+        cuando = f" ({fecha})" if fecha else " (fecha no disponible)"
+        lines.append(f"- **Última publicación del feed:** {latest['title']}{cuando}")
     if new_entries:
         lines.append("")
         lines.append("### Nuevos detectados")
         lines.append("")
         for e in new_entries:
             tag = "BOOTCAMP" if is_bootcamp(e["title"]) else categorize(e["title"])
-            lines.append(f"- `{e['id']}` — {e['title']} — {e['published'][:10]} — {tag}")
+            fecha = (e.get("published") or "")[:10] or "fecha no disponible"
+            lines.append(f"- `{e['id']}` — {e['title']} — {fecha} — {tag}")
             lines.append(f"  - {e['url']}")
     else:
         lines.append("")
@@ -461,12 +495,25 @@ def main():
     print(f"[{stamp}] {status}")
     if new_entries:
         for e in new_entries:
-            print(f"  NUEVO {e['id']} — {e['title']} — {e['published'][:10]}")
+            fecha = (e.get("published") or "")[:10] or "fecha no disponible"
+            print(f"  NUEVO {e['id']} — {e['title']} — {fecha}")
     else:
         print("  Sin publicaciones nuevas. Comprobación registrada.")
     print(f"Reporte: {report_path}")
 
     con.close()
+    # Salida distinta de 0 si algún paso falló de verdad.
+    #
+    # Antes siempre era 0. El 2026-11-15 `init_db.py` falló, el reporte lo
+    # escribió como «ERROR», y el proceso terminó con éxito igual: la tarea
+    # programada no podía distinguir «no había novedades» de «había novedades
+    # y el procesamiento se rompió». Quien lea el código de salida —una tarea
+    # programada, un `&&`— necesita que esa diferencia exista.
+    fallos = [n for n in process_notes if "ERROR" in n or "AVISO FTS" in n]
+    fallos += [n for n in download_notes if "no se descargan" in n or "falló" in n]
+    if fallos:
+        print("\nFallos:", " · ".join(fallos))
+        return 1
     return 0
 
 

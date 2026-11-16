@@ -15,8 +15,10 @@ duracion: "7:58"
 
 > **Clase 9 de 21** · Duración 7:58 · **Vídeo:** `WHz8ySmAcnQ`
 
-> [!note] Apunte del curriculum
+> [!note] Apunte del curriculum (cuando se catalogó)
 > Anuncia noticias, otra psicología y liquidez pt2 (07:47).
+>
+> *Se conserva tal cual como historial. El estado actual está arriba.*
 
 ## Conceptos que introduce
 

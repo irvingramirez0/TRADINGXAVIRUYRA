@@ -14,6 +14,13 @@
 // Uso:
 //     node 09_AUTOMATION/verificar_sitio.mjs
 //     node 09_AUTOMATION/verificar_sitio.mjs http://localhost:8080
+//     node 09_AUTOMATION/verificar_sitio.mjs http://127.0.0.1:8899 build
+//
+// El tercer argumento, `build`, sirve para probar un build local servido con
+// `python -m http.server`, que NO resuelve `/bootcamp/dia-13` sin extensión
+// (devuelve 404 aunque el archivo exista). GitHub Pages y `quartz build
+// --serve` sí lo resuelven. Sin esta opción, probar en local daba 6 fallos
+// falsos y parecía que el sitio estaba roto.
 //
 // Requiere Chrome instalado y conexión al sitio. Sale con código 1 si algo
 // falla, para que sirva en un pipeline.
@@ -22,6 +29,9 @@
 import { spawn } from "node:child_process"
 const CHROME="C:/Program Files/Google/Chrome/Application/chrome.exe"
 const B=process.argv[2]||"https://irvingramirez0.github.io/TRADINGXAVIRUYRA"
+// Servidor de archivos planos: hay que pedir `.html` explícitamente.
+const ARCHIVOS_PLANOS = process.argv[3]==="build"
+const u = ruta => B + (ARCHIVOS_PLANOS && !/\.[a-z0-9]+$/i.test(ruta) ? ruta + ".html" : ruta)
 const dormir=ms=>new Promise(r=>setTimeout(r,ms))
 
 async function abrir(url,perfil,puerto){
@@ -65,15 +75,28 @@ check("bootcamp: cada día enlaza a su página", await A.ev("[...document.queryS
 A.cerrar()
 
 // 3. Un día
-A=await abrir(B+"/bootcamp/dia-13","qa-c3",9403)
+A=await abrir(u("/bootcamp/dia-13"),"qa-c3",9403)
 check("dia-13: ficha de fuente", await A.ev("!!document.querySelector('.xr-ficha')"))
 check("dia-13: enlace al vídeo en el minuto", await A.ev("/youtube\.com\/watch\?v=.+&t=\d+s/.test((document.querySelector('.xr-boton-fuente')||{}).href||'')"))
 check("dia-13: enlaza concepto IFVG", await A.ev("[...document.querySelectorAll('a.internal')].some(a=>a.getAttribute('href').includes('inverse-fair-value-gap-ifvg'))"))
 check("dia-13: navegación anterior/siguiente", await A.ev("document.body.innerHTML.includes('Día 12') && document.body.innerHTML.includes('Día 14')"))
 A.cerrar()
 
+// 3-bis. Un día recién transcrito y SIN trabajar.
+//
+// Este caso existe por un fallo real: el Día 21 se publicó con
+// `confianza: explícito` y enlace al segundo 0 sin tener una sola fila de
+// evidencia. La página tiene que decir «transcrita, sin trabajar», no fingir
+// que está analizada. Es el estado más fácil de romper sin querer al tocar el
+// generador, así que se comprueba aparte y contra la página que lo padeció.
+A=await abrir(u("/bootcamp/dia-21"),"qa-c3b",9408)
+check("dia-21: avisa de que no está trabajada", await A.ev("/sin trabajar|sin analizar/i.test(document.body.textContent)"))
+check("dia-21: no enlaza al segundo 0", await A.ev("!/[?&]t=0s/.test((document.querySelector('.xr-boton-fuente')||{}).href||'')"))
+check("dia-21: apunte del curriculum marcado como historial", await A.ev("/cuando se catalogó/i.test(document.body.textContent)"))
+A.cerrar()
+
 // 4. Concepto con imágenes
-A=await abrir(B+"/conceptos/inverse-fair-value-gap-ifvg","qa-c4",9404)
+A=await abrir(u("/conceptos/inverse-fair-value-gap-ifvg"),"qa-c4",9404)
 check("ifvg: imagen carga (naturalWidth>0)", await A.ev("[...document.querySelectorAll('article img')].every(i=>i.naturalWidth>0)"))
 check("ifvg: una imagen en el cuerpo (la otra es la de redes)", await A.ev("document.querySelectorAll('article p img, article figure img').length>=1"))
 check("ifvg: anotaciones montadas", await A.ev("document.querySelector('.xr-anot')?.dataset.iniciado==='1'"))

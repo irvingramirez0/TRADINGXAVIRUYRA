@@ -15,8 +15,10 @@ duracion: "6:46"
 
 > **Clase 16 de 21** · Duración 6:46 · **Vídeo:** `djkeIcfNGgs`
 
-> [!note] Apunte del curriculum
+> [!note] Apunte del curriculum (cuando se catalogó)
 > Anuncia FOMO, equilibrium o SMTs.
+>
+> *Se conserva tal cual como historial. El estado actual está arriba.*
 
 ## Reglas con fuente en esta clase
 

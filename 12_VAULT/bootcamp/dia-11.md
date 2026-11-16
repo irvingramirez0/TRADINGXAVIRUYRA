@@ -15,8 +15,10 @@ duracion: "18:22"
 
 > **Clase 11 de 21** · Duración 18:22 · **Vídeo:** `OtYATAfCfRA`
 
-> [!note] Apunte del curriculum
+> [!note] Apunte del curriculum (cuando se catalogó)
 > Anuncia IFVG y CISD para el siguiente episodio.
+>
+> *Se conserva tal cual como historial. El estado actual está arriba.*
 
 ## Conceptos que introduce
 

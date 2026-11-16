@@ -8,17 +8,19 @@ video: "MQyNBiw-QVo"
 timestamp: ""
 dia: 21
 categoria: "BOOTCAMP"
-duracion: ""
+duracion: "32:17"
 ---
 
 
 
-> **Clase 21 de 21** · **Vídeo:** `MQyNBiw-QVo`
+> **Clase 21 de 21** · Duración 32:17 · **Vídeo:** `MQyNBiw-QVo`
 >
-> Publicada y anunciada, pero **todavía sin transcribir**: no hay duración, ni conceptos, ni minutos que se puedan citar.
+> **Transcrita, pero aún sin trabajar.** El texto existe y se puede leer, pero todavía no se han extraído conceptos ni reglas con cita: nada de esta clase está respaldado en el sitio.
 
-> [!note] Apunte del curriculum
+> [!note] Apunte del curriculum (cuando se catalogó)
 > Título y fecha confirmados por el RSS oficial. yt-dlp no está instalado; no hay transcripción ni timestamps. No extraer conceptos ni reglas hasta revisar la fuente.
+>
+> *Se conserva tal cual como historial. El estado actual está arriba.*
 
 ---
 

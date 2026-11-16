@@ -33,7 +33,6 @@ from regenerar_vault import (
     mmss,
     slug,
     yaml_str,
-    CORTE,
 )
 
 # --------------------------------------------------------------------------
@@ -180,7 +179,17 @@ def datos_bootcamp(con):
             # siempre guarda `duration_sec` aunque la clase esté transcrita y
             # trabajada (el Día 20 tiene 706 s y 13 evidencias, pero llegó a
             # marcarse como «sin transcribir» con un criterio de duración).
+            #
+            # Hay TRES estados, no dos, y confundirlos fue el error del Día 21:
+            #   sin transcripción        -> la clase solo está anunciada
+            #   transcripción, sin evidencia -> se puede citar el texto, pero
+            #                                   nadie ha extraído conceptos ni
+            #                                   reglas todavía
+            #   transcripción + evidencia -> clase trabajada, se puede afirmar
+            # Un `.txt` en disco prueba que hay fuente, no que esté analizada.
             "procesada": bool((v["transcript_path"] if v else None)) or ev_count >= 3,
+            "trabajada": ev_count >= 1,
+            "evidencias": ev_count,
             "estado": r["status"] or "",
             "frames": frames,
             "anotados": anotados,
@@ -226,6 +235,11 @@ def generar_bootcamp(con, slugs_concepto):
             meta.append(pastilla(reloj(f["duracion"])))
         else:
             meta.append(pastilla("aún sin transcribir"))
+        if f["procesada"] and not f["trabajada"]:
+            # Distingue «hay vídeo» de «hay contenido citado». Sin esto, una
+            # clase recién transcrita aparece igual que una trabajada, y quien
+            # lee el índice supone que ya hay algo dentro.
+            meta.append(pastilla("sin analizar"))
         if f["conceptos"]:
             meta.append(pastilla(f"{len(f['conceptos'])} conceptos"))
         if f["reglas"]:
@@ -306,16 +320,23 @@ def generar_bootcamp(con, slugs_concepto):
         # Una clase recién publicada puede estar en el curriculum sin que se
         # haya transcrito todavía. En ese caso la nota NO puede decir
         # «confianza: explícito» ni enlazar a un minuto: no hay nada que citar.
+        #
+        # Y transcrita tampoco basta para decir «explícito»: eso significa que
+        # una afirmación está respaldada por una frase concreta. Una clase con
+        # la transcripción en disco pero sin una sola fila de `evidence` está
+        # en un estado intermedio — se puede citar el texto, pero no se ha
+        # extraído nada. El Día 21 pasó por aquí.
         procesada = f["procesada"]
+        trabajada = f["trabajada"]
         lineas = [
             frontmatter({
                 "tipo": "bootcamp",
                 "title": f"Día {f['orden']} — {titulo}",
                 "titulo": f"Día {f['orden']} — {titulo}",
-                "confianza": "explícito" if procesada else "no confirmado",
+                "confianza": "explícito" if trabajada else "no confirmado",
                 "estado": "vigente",
                 "video": f["video_id"],
-                "timestamp": "00:00" if procesada else "",
+                "timestamp": "00:00" if trabajada else "",
                 "dia": f["orden"],
                 "categoria": "BOOTCAMP",
                 "duracion": meta_duracion if procesada else "",
@@ -324,10 +345,21 @@ def generar_bootcamp(con, slugs_concepto):
             "",
             "",
         ]
-        if procesada:
+        if trabajada:
             lineas.append(
                 f"> **Clase {f['orden']} de {len(filas)}** · Duración {meta_duracion} · "
                 f"**Vídeo:** `{f['video_id']}`"
+            )
+        elif procesada:
+            lineas.append(
+                f"> **Clase {f['orden']} de {len(filas)}** · Duración {meta_duracion} · "
+                f"**Vídeo:** `{f['video_id']}`"
+            )
+            lineas.append(">")
+            lineas.append(
+                "> **Transcrita, pero aún sin trabajar.** El texto existe y se puede "
+                "leer, pero todavía no se han extraído conceptos ni reglas con cita: "
+                "nada de esta clase está respaldado en el sitio."
             )
         else:
             lineas.append(
@@ -339,12 +371,27 @@ def generar_bootcamp(con, slugs_concepto):
                 "ni conceptos, ni minutos que se puedan citar."
             )
         lineas.append("")
+        # El apunte del curriculum se conserva siempre como historial —dice lo
+        # que se sabía cuando se catalogó la clase—, pero cuando ya hay
+        # transcripción se antepone el estado actual. Si no, la nota acaba
+        # contradiciéndose a sí misma: el aviso de arriba dice «transcrita» y
+        # el apunte de abajo «no hay transcripción», porque se escribió el día
+        # en que yt-dlp no se encontraba.
         if f["notas"]:
-            lineas += [
-                "> [!note] Apunte del curriculum",
-                f"> {_temas(f)}",
-                "",
-            ]
+            if procesada:
+                lineas += [
+                    "> [!note] Apunte del curriculum (cuando se catalogó)",
+                    f"> {_temas(f)}",
+                    ">",
+                    "> *Se conserva tal cual como historial. El estado actual está arriba.*",
+                    "",
+                ]
+            else:
+                lineas += [
+                    "> [!note] Apunte del curriculum",
+                    f"> {_temas(f)}",
+                    "",
+                ]
 
         if f["conceptos"]:
             lineas += ["## Conceptos que introduce", ""]

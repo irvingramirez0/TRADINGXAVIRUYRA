@@ -15,8 +15,10 @@ duracion: "21:57"
 
 > **Clase 17 de 21** · Duración 21:57 · **Vídeo:** `sTS-iWJvTf0`
 
-> [!note] Apunte del curriculum
+> [!note] Apunte del curriculum (cuando se catalogó)
 > Cierra la cuestión del doble SMT: no lo usa. IFVG de entrada solo 30s–5m.
+>
+> *Se conserva tal cual como historial. El estado actual está arriba.*
 
 ## Conceptos que introduce
 
