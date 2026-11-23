@@ -13,7 +13,7 @@ duracion: "13:31"
 
 
 
-> **Clase 5 de 21** · Duración 13:31 · **Vídeo:** `mBHtx-BfWWg`
+> **Clase 5 de 29** · Duración 13:31 · **Vídeo:** `mBHtx-BfWWg`
 
 > [!note] Apunte del curriculum (cuando se catalogó)
 > 

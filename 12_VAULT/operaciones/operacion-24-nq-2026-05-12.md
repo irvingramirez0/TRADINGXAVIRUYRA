@@ -67,6 +67,6 @@ Fuente: recap del vídeo. Escribir condiciones antes de operar: 'si pasa esto, h
 
 - [[no-coger-el-primer-ifvg-tras-un-desplazamiento-fuerte|No coger el primer IFVG tras un desplazamiento fuerte]]
 - [[la-manipulation-leg-se-mide-desde-el-ultimo-swing-antes-de-la-zona|La manipulation leg se mide desde el último swing antes de la zona]]
+- [[hacer-backtesting-con-nq-y-es-abiertos-y-en-sesion-de-nueva-york|Hacer backtesting con NQ y ES abiertos y en sesión de Nueva York]]
 - [[el-dol-debe-estar-dentro-de-un-fvg-pd-array|El DOL debe estar dentro de un FVG/PD array]]
-- [[judas-swing-acumulacion-manipulacion-distribucion|Judas Swing: acumulación → manipulación → distribución]]
 

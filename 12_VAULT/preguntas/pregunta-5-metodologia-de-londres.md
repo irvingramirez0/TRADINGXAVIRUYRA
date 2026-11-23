@@ -9,7 +9,7 @@ timestamp: "07:54"
 id: 5
 ---
 
-> **Estado de la pregunta:** PARCIALMENTE DOCUMENTADO; la lógica y el trade están documentados, falta la secuencia horaria de la sesión. La evolución de los niveles está registrada.
+> **Estado de la pregunta:** PARCIALMENTE DOCUMENTADO; la lógica, el trade y la ventana vigente de Londres están documentados. Sigue sin haber una secuencia horaria detallada de entradas dentro de Londres equivalente a la de Nueva York. La evolución de los niveles está registrada.
 
 **Qué sabemos:** pasa evaluaciones en Londres y fondeadas en Nueva York [ `ndABd2MECBA` 07:54]. No hay una explicación equivalente a la de Nueva York.
 
@@ -23,4 +23,6 @@ id: 5
 
 **Cómo resolverlo:** buscar más vídeos de sesión de Londres; comparar horarios y manipulación con Nueva York.
 
-**Estado:** PARCIALMENTE DOCUMENTADO; la lógica y el trade están documentados, falta la secuencia horaria de la sesión. La evolución de los niveles está registrada.
+**Actualización (22/11, Día 28):** Xavi acota su ventana de Londres a **03:00–05:30 NY** (09:30–11:30 España) y declara que después, hasta la apertura de NY, el mercado está paradito y lo considera baja probabilidad [`CepE5r6rU00` 04:11–05:45]. Acepta que Londres funciona con la misma lógica de liquidez/imbalances, pero exige filtrarlo y testearlo; para el alumno la regla sigue siendo **solo NY AM** [`CepE5r6rU00` 07:18–07:49, 09:54–10:25]. Su uso personal de Londres/Asia con cuentas separadas es una excepción biográfica documentada, no una recomendación [`CepE5r6rU00` 06:16–07:18].
+
+**Estado:** PARCIALMENTE DOCUMENTADO; la lógica, el trade y la ventana vigente de Londres están documentados. Sigue sin haber una secuencia horaria detallada de entradas dentro de Londres equivalente a la de Nueva York. La evolución de los niveles está registrada.

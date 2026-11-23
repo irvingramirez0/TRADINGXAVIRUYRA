@@ -11,6 +11,7 @@ version: 1
 ---
 
 > **Confianza:** explícito · **Estado:** vigente · **Versión:** 1
+- **Clase del bootcamp:** [[../bootcamp/dia-23|Día 23 — Manipulation legs]]
 
 ## Descripción
 
@@ -61,6 +62,8 @@ Si el DOL es muy claro y el primer IFVG se invierte con fuerza, puede entrar del
 
 ## Evidencia
 
+- «Siempre vamos a estar pillando el FVG de la temporalidad más alta... de la manipulation leg.» — `JO1xDEW2Lhg` @ 07:15 (explícito)
 - «Si tengo un fair value de 5 minutos, pero también tengo uno de 2 y uno de 1, no voy a entrar después del inverso... me voy a esperar a que se inverse el de 5, porque cuanto más alta la temporalidad, más fuerza y más decisión tiene.» — `1C4dgloDQrY` @ 14:40 (explícito)
+- «Concentraros solo en pillar los de la temporalidad más alta... en un futuro... vais a desarrollar vuestra propia discreción.» — `JO1xDEW2Lhg` @ 18:19 (explícito)
 - «el invers del time frame de la temporalidad más alta» — `sKSAh5gky1M` @ 28:11 (explícito)
 

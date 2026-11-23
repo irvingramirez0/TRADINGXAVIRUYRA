@@ -13,7 +13,7 @@ id: 83
 ---
 
 > **Confianza:** explícito · **Estado:** vigente · **Categoría:** CONTEXTUAL
-- **Clase del bootcamp:** [[../bootcamp/dia-10|Día 10 — Noticias]]
+- **Clases del bootcamp:** [[../bootcamp/dia-10|Día 10]] · [[../bootcamp/dia-28|Día 28]]
 
 ## Definición
 
@@ -63,4 +63,5 @@ Bootcamp Día 10. No contradice la regla de horario 9:30–10:30: sesión vs ven
 ## Evidencia
 
 - «Nosotros operamos la sesión de Nueva York... es a las 9:30 horario Nueva York hasta las 11:00 de la mañana... en horario España es de 3:30 a 5:00 de la tarde.» — `j4f8fV13GQM` @ 00:37 (explícito)
+- «La sesión de Nueva York... es de 9:30 a 11 horario Estados Unidos y de 3:30 a 5 en España.» — `CepE5r6rU00` @ 05:45 (explícito)
 

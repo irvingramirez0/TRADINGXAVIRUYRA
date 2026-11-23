@@ -13,7 +13,7 @@ duracion: "20:10"
 
 
 
-> **Clase 13 de 21** · Duración 20:10 · **Vídeo:** `ICOx4rdFSLg`
+> **Clase 13 de 29** · Duración 20:10 · **Vídeo:** `ICOx4rdFSLg`
 
 > [!note] Apunte del curriculum (cuando se catalogó)
 > No explica CISD en el bootcamp. Anuncia key levels, SMT y true manipulation.

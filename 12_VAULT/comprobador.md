@@ -9,8 +9,8 @@ timestamp: ""
 panel:
   titulo: "Cobertura de fuentes"
   barras:
-    - {etiqueta: "Conceptos con cita de vídeo", hecho: 53, total: 53}
-    - {etiqueta: "Reglas con cita de vídeo", hecho: 135, total: 135}
+    - {etiqueta: "Conceptos con cita de vídeo", hecho: 58, total: 58}
+    - {etiqueta: "Reglas con cita de vídeo", hecho: 156, total: 156}
   pie: "«Con cita» significa que la base guarda al menos una fila de evidencia con vídeo y minuto. No mide si la cita es buena, solo si existe: la lectura crítica es tuya."
 ---
 

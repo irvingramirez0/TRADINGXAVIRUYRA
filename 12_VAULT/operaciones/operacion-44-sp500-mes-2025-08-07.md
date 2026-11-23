@@ -61,6 +61,7 @@ El importe exacto varía entre título (+550) y transcript (~500).
 - [[sesion-de-londres|Sesión de Londres]]
 - [[equilibrium-premium-descuento|Equilibrium (premium/descuento)]]
 - [[smt-smart-money-technique|SMT (Smart Money Technique)]]
+- [[narrativa-bias-dol-condiciones|Narrativa (bias + DOL + condiciones)]]
 
 ## Reglas relacionadas (detección automática)
 

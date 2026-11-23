@@ -13,7 +13,7 @@ duracion: "21:27"
 
 
 
-> **Clase 15 de 21** · Duración 21:27 · **Vídeo:** `J7Dh-aj9-e0`
+> **Clase 15 de 29** · Duración 21:27 · **Vídeo:** `J7Dh-aj9-e0`
 
 > [!note] Apunte del curriculum (cuando se catalogó)
 > 'Esponsoreado' queda pendiente de explicación.

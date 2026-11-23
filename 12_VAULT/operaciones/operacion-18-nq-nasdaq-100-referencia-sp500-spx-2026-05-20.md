@@ -67,6 +67,6 @@ Fuente: recap del vídeo. Entró sin que el FVG de 2m estuviera realmente invert
 
 - [[secuencia-del-analisis-key-levels-fvg-1h-4h-reversion-o-continuacion-fvg|Secuencia del análisis: key levels → FVG 1H/4H → reversión o continuación → FVG en equilibrium → IFVG → BSL/SSL]]
 - [[ifvg-obligatorio-nunca-entrar-sin-ifvg|IFVG obligatorio: nunca entrar sin IFVG]]
-- [[judas-swing-acumulacion-manipulacion-distribucion|Judas Swing: acumulación → manipulación → distribución]]
-- [[open-de-las-10-00-sweep-open-low-high|Open de las 10:00: sweep + open low/high]]
+- [[afirmaciones-htf-condiciones-5m-15m-ejecucion-con-ifvg-30s5m|Afirmaciones HTF, condiciones 5m/15m, ejecución con IFVG 30s–5m]]
+- [[hacer-backtesting-con-nq-y-es-abiertos-y-en-sesion-de-nueva-york|Hacer backtesting con NQ y ES abiertos y en sesión de Nueva York]]
 

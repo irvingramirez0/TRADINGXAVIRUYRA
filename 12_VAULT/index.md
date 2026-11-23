@@ -10,12 +10,12 @@ anotaciones: false
 panel:
   titulo: "El proyecto en cifras"
   bloques:
-    - {etiqueta: "clases de bootcamp", valor: 21}
-    - {etiqueta: "conceptos", valor: 53}
-    - {etiqueta: "reglas", valor: 135}
+    - {etiqueta: "clases de bootcamp", valor: 29}
+    - {etiqueta: "conceptos", valor: 58}
+    - {etiqueta: "reglas", valor: 156}
     - {etiqueta: "operaciones", valor: 54, nota: "P&L autodeclarado"}
-    - {etiqueta: "cambios", valor: 55}
-    - {etiqueta: "preguntas abiertas", valor: 31}
+    - {etiqueta: "cambios", valor: 67}
+    - {etiqueta: "preguntas abiertas", valor: 34}
   barras:
     - {etiqueta: "Fotogramas con anotación verificable", hecho: 129, total: 1456, nota: "el resto está extraído pero sin revisar, y no se publica como prueba visual"}
   pie: "Todo lo que aparece en este sitio se regenera desde una base SQLite con `python 09_AUTOMATION/pipeline.py`. Las cifras de esta portada se cuentan en cada generación, no se escriben a mano."
@@ -24,18 +24,18 @@ panel:
 
 > **Proyecto de estudio no oficial.** Este sitio es un resumen estructurado y trazable de contenido público de Xavi Ruyra. No es un curso oficial, no está afiliado ni respaldado por él, y no sustituye a sus vídeos. Todo lo que no tiene fuente con vídeo y minuto se marca como **no confirmado**.
 
-**Fecha de corte de las cifras:** 2026-11-14. 
+**Fecha de corte de las cifras:** 2026-11-23. 
 Es la fecha del vídeo más reciente que **ya tiene evidencia citada**: lo anunciado pero aún sin trabajar no cuenta como contenido.
 
 ## Por dónde entrar
 
 <div class="xr-tarjetas">
-<a class="xr-tarjeta" href="./bootcamp"><span class="xr-tarjeta-titulo">Bootcamp</span><span class="xr-tarjeta-desc">Las 21 clases en orden, con lo que da cada una.</span></a>
-<a class="xr-tarjeta" href="./conceptos"><span class="xr-tarjeta-titulo">Conceptos</span><span class="xr-tarjeta-desc">53 conceptos con definición, condiciones y errores.</span></a>
-<a class="xr-tarjeta" href="./reglas"><span class="xr-tarjeta-titulo">Reglas operativas</span><span class="xr-tarjeta-desc">135 reglas, incluidas las obsoletas con su sustituto.</span></a>
+<a class="xr-tarjeta" href="./bootcamp"><span class="xr-tarjeta-titulo">Bootcamp</span><span class="xr-tarjeta-desc">Las 29 clases en orden, con lo que da cada una.</span></a>
+<a class="xr-tarjeta" href="./conceptos"><span class="xr-tarjeta-titulo">Conceptos</span><span class="xr-tarjeta-desc">58 conceptos con definición, condiciones y errores.</span></a>
+<a class="xr-tarjeta" href="./reglas"><span class="xr-tarjeta-titulo">Reglas operativas</span><span class="xr-tarjeta-desc">156 reglas, incluidas las obsoletas con su sustituto.</span></a>
 <a class="xr-tarjeta" href="./operaciones"><span class="xr-tarjeta-titulo">Operaciones</span><span class="xr-tarjeta-desc">54 operaciones analizadas, con el P&L autodeclarado.</span></a>
-<a class="xr-tarjeta" href="./cambios"><span class="xr-tarjeta-titulo">Cambios</span><span class="xr-tarjeta-desc">55 cambios de criterio documentados.</span></a>
-<a class="xr-tarjeta" href="./preguntas"><span class="xr-tarjeta-titulo">Preguntas abiertas</span><span class="xr-tarjeta-desc">31 preguntas sin cerrar.</span></a>
+<a class="xr-tarjeta" href="./cambios"><span class="xr-tarjeta-titulo">Cambios</span><span class="xr-tarjeta-desc">67 cambios de criterio documentados.</span></a>
+<a class="xr-tarjeta" href="./preguntas"><span class="xr-tarjeta-titulo">Preguntas abiertas</span><span class="xr-tarjeta-desc">34 preguntas sin cerrar.</span></a>
 <a class="xr-tarjeta" href="./comprobador"><span class="xr-tarjeta-titulo">Comprobador de fuentes</span><span class="xr-tarjeta-desc">Lo que el sitio no puede respaldar, dicho en voz alta.</span></a>
 </div>
 

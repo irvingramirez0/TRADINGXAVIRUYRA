@@ -13,6 +13,7 @@ id: 45
 ---
 
 > **Confianza:** explícito · **Estado:** vigente · **Categoría:** CORE
+- **Clase del bootcamp:** [[../bootcamp/dia-21|Día 21 — Daily bias + DOL]]
 
 ## Definición
 
@@ -68,5 +69,7 @@ Documento 03.
 - «Paráfrasis: en 2025 el bias se construía con highs/lows de Londres y Asia, NWOG y SMT; proyección al Asian low.» — `DbWKWSy5ycY` @ 01:10 (observado)
 - «Paráfrasis: sweep del London high y proyección al London low / low de 1H.» — `rhWKoE6H5LU` @ 01:17 (observado)
 - «Paráfrasis: SMT entre ES y NQ y objetivo en el FVG sin filar.» — `gNsZXb8j1So` @ 01:30 (observado)
+- «Daily bias: 15 minutos antes de que caiga el mercado, haces un análisis determinando si estás más inclinado en compras o ventas.» — `MQyNBiw-QVo` @ 01:37 (explícito)
+- «¿Qué tenemos? 4 horas, una hora y diario. Alcista. Check. ¿Qué está haciendo el precio? Subir. Check.» — `MQyNBiw-QVo` @ 04:01 (explícito)
 - «Soy súper reactivo.» — `Imr4TPKUD-c` @ 04:51 (explícito)
 

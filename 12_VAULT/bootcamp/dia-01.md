@@ -2,10 +2,10 @@
 tipo: "bootcamp"
 title: "Día 1 — Mentalidad y formato del bootcamp"
 titulo: "Día 1 — Mentalidad y formato del bootcamp"
-confianza: "no confirmado"
+confianza: "explícito"
 estado: "vigente"
 video: "t9rcx-dDGvA"
-timestamp: ""
+timestamp: "00:00"
 dia: 1
 categoria: "BOOTCAMP"
 duracion: "20:51"
@@ -13,14 +13,17 @@ duracion: "20:51"
 
 
 
-> **Clase 1 de 21** · Duración 20:51 · **Vídeo:** `t9rcx-dDGvA`
->
-> **Transcrita, pero aún sin trabajar.** El texto existe y se puede leer, pero todavía no se han extraído conceptos ni reglas con cita: nada de esta clase está respaldado en el sitio.
+> **Clase 1 de 29** · Duración 20:51 · **Vídeo:** `t9rcx-dDGvA`
 
 > [!note] Apunte del curriculum (cuando se catalogó)
 > Primera clase.
 >
 > *Se conserva tal cual como historial. El estado actual está arriba.*
+
+## Reglas con fuente en esta clase
+
+- [[la-psicologia-va-primero-y-no-se-salta|La psicología va primero y no se salta]]
+- [[el-trading-no-es-rapido-ni-un-atajo-para-hacerse-millonario|El trading no es rápido ni un atajo para hacerse millonario]]
 
 ---
 

@@ -11,6 +11,7 @@ version: 1
 ---
 
 > **Confianza:** explícito · **Estado:** vigente · **Versión:** 1
+- **Clase del bootcamp:** [[../bootcamp/dia-26|Día 26 — TP, SL y RR]]
 
 ## Descripción
 
@@ -43,5 +44,6 @@ Preferencia declarada, no regla numérica.
 ## Evidencia
 
 - ««He puesto stop arriba de esta wick».» — `ukGn5HTsa8E` @ 02:37 (explícito)
+- «Mi stop loss va en la mecha de la manipulación. Va en la mecha, en el bajo que causa esta manipulación.» — `fTbf2EX6Cng` @ 12:03 (explícito)
 - «yo tengo probado que me va mejor ir a wicks» — `mCMpxc0NaN4` @ 29:29 (explícito)
 

@@ -13,7 +13,7 @@ id: 42
 ---
 
 > **Confianza:** explícito · **Estado:** vigente · **Categoría:** CORE
-- **Clase del bootcamp:** [[../bootcamp/dia-08|Día 8 — FVG: definición, respeto y validación por temporalidad]]
+- **Clases del bootcamp:** [[../bootcamp/dia-08|Día 8]] · [[../bootcamp/dia-29|Día 29]]
 
 ## Definición
 
@@ -72,5 +72,5 @@ Documento 02.
 - «Paráfrasis: el color y el tamaño de las tres velas son irrelevantes.» — `u-fG6bYvK7k` @ 02:31 (explícito)
 - «No es obligatorio, no 200% de porcentaje de acierto; con una buena dirección, la mayoría de las veces funciona.» — `1McPSXSSR48` @ 05:58 (explícito)
 - «Paráfrasis: el FVG no es una certeza; no acierta el 100% de las veces ni es obligatorio que el precio reaccione.» — `1McPSXSSR48` @ 05:59 (explícito)
-- «Paráfrasis: el cuerpo nunca cierra por debajo; no importa si hay mucha mecha; si el cuerpo cierra dentro del cuadradito, se respeta.» — `1McPSXSSR48` @ 10:21 (explícito)
+- «Si el FVG es de 15 minutos, nos tenemos que esperar a que cierre la vela de 15 minutos para saber si se ha invertido o no.» — `nxlZJ6abOYA` @ 06:15 (explícito)
 

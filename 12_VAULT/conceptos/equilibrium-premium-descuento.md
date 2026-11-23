@@ -13,7 +13,7 @@ id: 53
 ---
 
 > **Confianza:** explícito · **Estado:** vigente · **Categoría:** CORE
-- **Clase del bootcamp:** [[../bootcamp/dia-19|Día 19 — Equilibrium (premium y discount)]]
+- **Clases del bootcamp:** [[../bootcamp/dia-19|Día 19]] · [[../bootcamp/dia-29|Día 29]]
 
 ## Definición
 

@@ -63,8 +63,8 @@ El importe -443 se verbaliza.
 
 ## Reglas relacionadas (detección automática)
 
+- [[hacer-backtesting-con-nq-y-es-abiertos-y-en-sesion-de-nueva-york|Hacer backtesting con NQ y ES abiertos y en sesión de Nueva York]]
 - [[el-dol-debe-estar-dentro-de-un-fvg-pd-array|El DOL debe estar dentro de un FVG/PD array]]
 - [[judas-swing-acumulacion-manipulacion-distribucion|Judas Swing: acumulación → manipulación → distribución]]
 - [[el-fvg-se-invierte-solo-con-cierre-de-cuerpo-completo|El FVG se invierte solo con cierre de cuerpo completo]]
-- [[entrada-por-ifvg-cisd-como-alternativa|Entrada por IFVG; CISD como alternativa]]
 

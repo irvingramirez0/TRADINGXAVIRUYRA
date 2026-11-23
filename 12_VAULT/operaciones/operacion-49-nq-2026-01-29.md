@@ -65,6 +65,6 @@ El importe -140 por cuenta se verbaliza.
 
 - [[el-bias-se-actualiza-si-el-precio-desplaza-fuerte-y-cruza-el-gap-de-4h|El bias se actualiza si el precio desplaza fuerte y cruza el gap de 4H]]
 - [[secuencia-del-analisis-key-levels-fvg-1h-4h-reversion-o-continuacion-fvg|Secuencia del análisis: key levels → FVG 1H/4H → reversión o continuación → FVG en equilibrium → IFVG → BSL/SSL]]
+- [[no-operar-contra-el-high-time-frame|No operar contra el high time frame]]
 - [[el-dol-debe-estar-dentro-de-un-fvg-pd-array|El DOL debe estar dentro de un FVG/PD array]]
-- [[judas-swing-acumulacion-manipulacion-distribucion|Judas Swing: acumulación → manipulación → distribución]]
 

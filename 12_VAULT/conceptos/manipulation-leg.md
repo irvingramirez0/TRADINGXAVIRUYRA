@@ -13,6 +13,7 @@ id: 79
 ---
 
 > **Confianza:** explícito · **Estado:** vigente · **Categoría:** CORE
+- **Clase del bootcamp:** [[../bootcamp/dia-23|Día 23 — Manipulation legs]]
 
 ## Definición
 
@@ -61,6 +62,7 @@ Primera definición completa encontrada en el corpus; antes el término aparecí
 
 ## Evidencia
 
+- «La manipulation leg es, básicamente, del swing high al swing low del movimiento que ha quitado el último bajo.» — `JO1xDEW2Lhg` @ 05:44 (explícito)
 - «Siempre tenemos que mirar el último alto que se ha creado antes de que el precio llegue a la zona.» — `1C4dgloDQrY` @ 16:51 (explícito)
 
 ## Fragmentos visuales

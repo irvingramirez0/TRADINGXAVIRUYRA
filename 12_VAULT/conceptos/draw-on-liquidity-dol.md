@@ -13,6 +13,7 @@ id: 44
 ---
 
 > **Confianza:** explícito · **Estado:** vigente · **Categoría:** CORE
+- **Clase del bootcamp:** [[../bootcamp/dia-21|Día 21 — Daily bias + DOL]]
 
 ## Definición
 
@@ -67,6 +68,8 @@ Documento 03.
 - «Paráfrasis: el Asian low es el target de la proyección.» — `DbWKWSy5ycY` @ 01:10 (observado)
 - «Paráfrasis: el FVG sin filar arriba es el TP final.» — `gNsZXb8j1So` @ 01:30 (observado)
 - «Días en los que podemos tener un DOL aquí y un DOL aquí en los dos lados... son días en los que simplemente no puedes hacer nada.» — `zcT31zmE5Uc` @ 01:33 (explícito)
+- «Cuando yo os diga 'este es el DOL', es que yo quiero que el precio llegue hasta ahí.» — `MQyNBiw-QVo` @ 02:39 (explícito)
+- «El DOL puede ser un equal high, un data high o low resistance liquidity alineada con un key level.» — `MQyNBiw-QVo` @ 03:10 (explícito)
 - «Paráfrasis: el high dentro de un FVG de 15 minutos es el TP.» — `8gs6HOHXMsc` @ 05:47 (explícito)
 - «Necesito un high relevante de cuatro horas y de una hora que esté dentro de un fair value gap... un PD array viene a ser un fair value gap.» — `F3anMVV-VlI` @ 08:48 (explícito)
 

@@ -13,7 +13,7 @@ duracion: "7:58"
 
 
 
-> **Clase 9 de 21** · Duración 7:58 · **Vídeo:** `WHz8ySmAcnQ`
+> **Clase 9 de 29** · Duración 7:58 · **Vídeo:** `WHz8ySmAcnQ`
 
 > [!note] Apunte del curriculum (cuando se catalogó)
 > Anuncia noticias, otra psicología y liquidez pt2 (07:47).

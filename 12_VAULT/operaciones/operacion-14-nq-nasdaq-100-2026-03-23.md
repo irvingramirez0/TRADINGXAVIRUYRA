@@ -60,11 +60,12 @@ Fuente: recap del vídeo. Operó en condiciones malas: primer día de semana, ra
 - [[fair-value-gap-fvg|Fair Value Gap (FVG)]]
 - [[inverse-fair-value-gap-ifvg|Inverse Fair Value Gap (IFVG)]]
 - [[data-highs-lows|Data Highs / Lows]]
+- [[trading-journal-diario-de-trading|Trading Journal (diario de trading)]]
 
 ## Reglas relacionadas (detección automática)
 
 - [[secuencia-del-analisis-key-levels-fvg-1h-4h-reversion-o-continuacion-fvg|Secuencia del análisis: key levels → FVG 1H/4H → reversión o continuación → FVG en equilibrium → IFVG → BSL/SSL]]
+- [[no-exigir-perfeccion-en-el-equilibrium|No exigir perfección en el equilibrium]]
 - [[judas-swing-acumulacion-manipulacion-distribucion|Judas Swing: acumulación → manipulación → distribución]]
 - [[el-fvg-se-invierte-solo-con-cierre-de-cuerpo-completo|El FVG se invierte solo con cierre de cuerpo completo]]
-- [[entrada-por-ifvg-cisd-como-alternativa|Entrada por IFVG; CISD como alternativa]]
 

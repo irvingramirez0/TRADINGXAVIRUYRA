@@ -13,7 +13,7 @@ duracion: "10:41"
 
 
 
-> **Clase 7 de 21** · Duración 10:41 · **Vídeo:** `GO9GLSF_vLo`
+> **Clase 7 de 29** · Duración 10:41 · **Vídeo:** `GO9GLSF_vLo`
 
 > [!note] Apunte del curriculum (cuando se catalogó)
 > Anuncia FVG e imbalances para el siguiente episodio.

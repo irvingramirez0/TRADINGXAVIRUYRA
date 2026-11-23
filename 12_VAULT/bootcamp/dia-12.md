@@ -13,7 +13,7 @@ duracion: "9:22"
 
 
 
-> **Clase 12 de 21** · Duración 9:22 · **Vídeo:** `ZOxEUWwDSoQ`
+> **Clase 12 de 29** · Duración 9:22 · **Vídeo:** `ZOxEUWwDSoQ`
 
 > [!note] Apunte del curriculum (cuando se catalogó)
 > No cumple el anuncio de IFVG/CISD del Día 11. No anuncia el tema siguiente.

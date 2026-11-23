@@ -40,6 +40,10 @@ Puede operar si aparece un setup A+ aislado, pero no lo busca.
 
 Concreta el filtro general de 'día de baja probabilidad' (regla 76).
 
+## Conceptos relacionados
+
+- [[sesiones-de-mercado-asia-londres-nueva-york|Sesiones de mercado (Asia / Londres / Nueva York)]]
+
 ## Evidencia
 
 - «no te ha creado ningún gap. De hecho, lo único que ves es una mecha» — `_drb5sSmQZE` @ 11:21 (explícito)

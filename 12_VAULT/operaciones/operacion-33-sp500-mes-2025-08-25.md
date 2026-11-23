@@ -60,4 +60,10 @@ Primer día del recap; el P&L exacto no se verbaliza con claridad.
 - [[equilibrium-premium-descuento|Equilibrium (premium/descuento)]]
 - [[smt-smart-money-technique|SMT (Smart Money Technique)]]
 - [[sesion-de-londres|Sesión de Londres]]
+- [[sesiones-de-mercado-asia-londres-nueva-york|Sesiones de mercado (Asia / Londres / Nueva York)]]
+
+## Reglas relacionadas (detección automática)
+
+- [[secuencia-del-analisis-key-levels-fvg-1h-4h-reversion-o-continuacion-fvg|Secuencia del análisis: key levels → FVG 1H/4H → reversión o continuación → FVG en equilibrium → IFVG → BSL/SSL]]
+- [[operar-solo-la-sesion-de-nueva-york-am|Operar solo la sesión de Nueva York AM]]
 
