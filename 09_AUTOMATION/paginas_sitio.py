@@ -27,9 +27,14 @@ import sqlite3
 
 from regenerar_vault import (
     BASE,
+    MEDIA,
     VAULT,
     connect,
     confianza,
+    frame_is_annotated,
+    frame_sin_contenido,
+    frame_vacio,
+    jpg_a_webp,
     mmss,
     slug,
     yaml_str,
@@ -154,11 +159,13 @@ def datos_bootcamp(con):
         ev_count = con.execute(
             "SELECT COUNT(*) n FROM evidence WHERE video_id=?", (vid,)
         ).fetchone()["n"]
-        anotados = con.execute(
-            "SELECT COUNT(*) n FROM frames WHERE video_id=? AND "
-            "lower(coalesce(description,'')) NOT LIKE 'pendiente de anotaci%'",
-            (vid,),
-        ).fetchone()["n"]
+        # La cifra que se publica debe coincidir con las capturas que realmente
+        # se muestran. Contar aquí todo lo que no diga «pendiente» metía
+        # etiquetas automáticas (`keyword`, `periodic`, `scene`) y diapositivas
+        # sin gráfico, y la página decía que había decenas de pruebas visuales
+        # cuando solo unas pocas están revisadas.
+        publicables = fotogramas_clase(con, vid)
+        anotados = len(publicables)
 
         filas.append({
             "orden": r["order_num"],
@@ -193,6 +200,7 @@ def datos_bootcamp(con):
             "estado": r["status"] or "",
             "frames": frames,
             "anotados": anotados,
+            "fotogramas": publicables,
         })
     return filas
 
@@ -208,6 +216,40 @@ def _temas(f):
     t = (f["notas"] or "").strip()
     t = re.sub(r"^\d{4}-\d{2}-\d{2}\.\s*", "", t)
     return t
+
+
+def fotogramas_clase(con, video_id):
+    """Fotogramas anotados y verificados de una clase, para mostrarlos en su página.
+
+    No se publica todo lo extraído: solo lo que una persona revisó y describió.
+    Se aplican los mismos filtros que ya protegen las notas de concepto, para
+    que una captura sin revisar o una diapositiva vacía no aparezca como prueba.
+    """
+    filas = []
+    if not video_id:
+        return filas
+    for fr in con.execute(
+        "SELECT * FROM frames WHERE video_id=? ORDER BY timestamp_sec, id", (video_id,)
+    ):
+        if not frame_is_annotated(fr):
+            continue
+        desc = (fr["description"] or "").strip()
+        if frame_sin_contenido(desc):
+            continue
+        src = os.path.join(BASE, fr["path"])
+        if not os.path.exists(src) or frame_vacio(src):
+            continue
+        dest_name = f"clase-{slug(video_id, 40)}-{fr['id']}.webp"
+        dest = os.path.join(MEDIA, dest_name)
+        if not os.path.exists(dest) and not jpg_a_webp(src, dest):
+            continue
+        filas.append({
+            "id": fr["id"],
+            "timestamp": fr["timestamp_sec"],
+            "descripcion": desc,
+            "archivo": dest_name,
+        })
+    return filas
 
 
 def _temas_curso(f):
@@ -268,7 +310,7 @@ def generar_bootcamp(con, slugs_concepto):
             {"etiqueta": "reglas con fuente", "valor": total_reglas},
             {
                 "etiqueta": "fotogramas anotados",
-                "valor": sum(f["anotados"] for f in filas),
+                "valor": sum(len(f["fotogramas"]) for f in filas),
                 "nota": f"de {sum(f['frames'] for f in filas)}",
             },
         ],
@@ -411,6 +453,24 @@ def generar_bootcamp(con, slugs_concepto):
                 "",
                 f"Esta clase tiene **{f['frames']}** fotogramas extraídos; "
                 f"**{f['anotados']}** están anotados y verificados para ilustrar conceptos.",
+                "",
+            ]
+        if f["fotogramas"]:
+            lineas += ["### Capturas verificadas de esta clase", ""]
+            for cap in f["fotogramas"]:
+                lineas += [
+                    f"![Fotograma de {f['video_id']} en {mmss(cap['timestamp'])}]"
+                    f"(../media/{cap['archivo']})",
+                    "",
+                    f"**{f['video_id']}** · **{mmss(cap['timestamp'])}** · anotado y verificado",
+                    "",
+                    f"> {cap['descripcion'][:220]}{'…' if len(cap['descripcion']) > 220 else ''}",
+                    "",
+                ]
+        elif f["frames"]:
+            lineas += [
+                "No hay capturas verificadas de esta clase; las anotaciones disponibles no "
+                "respaldan ningún fotograma como prueba visual.",
                 "",
             ]
 
