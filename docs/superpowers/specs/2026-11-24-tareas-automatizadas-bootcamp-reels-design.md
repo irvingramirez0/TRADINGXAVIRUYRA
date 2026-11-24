@@ -45,14 +45,14 @@ con una ayuda ligera (`ciclo_estado.py`) que registra fases, `rc` y líneas sign
 
 ### Corrección técnica frente al borrador anterior
 
-**No se inserta `ig_<code>` en la tabla `videos` ni se escribe en `evidence`.** Verificado: las 469 filas de `evidence` apuntan a `youtube.com/watch?v=`, `validate_kb.py` exige que todo `video_id` exista en `videos`, y mezclar fuentes rompería enlaces. En su lugar: tablas propias `reel_items`, `reel_evidence`, `reel_revision`, y una sección `/reels/` separada con prefijo `IG:` en el frontmatter.
+**No se inserta `ig_<code>` en la tabla `videos` ni se escribe en `evidence`.** Verificado: las 469 filas de `evidence` apuntan a `youtube.com/watch?v=`, `validate_kb.py` exige que todo `video_id` exista en `videos`, y mezclar fuentes rompería enlaces. En su lugar: tablas propias `reel_items` y `reel_evidence` (la tabla `reel_revision` se retira: el usuario decidió el 2026-11-24 que los dudosos se descartan, no se listan para revisión), y una sección `/reels/` separada con prefijo `IG:` en el frontmatter.
 
 ### Componentes
 
 | Archivo | Acción | Responsabilidad |
 |---|---|---|
 | `09_AUTOMATION/ciclo_estado.py` | **nuevo** | `run <FASE> -- <cmd>`, `claim`, `finish`. Captura rc + últimas 40 líneas en `10_REPORTS/ciclo_<fecha>.md`, lock atómico en `.work/ciclo.lock`, estado en `.work/ciclo/estado.json`. Sin heurísticas de extracción. |
-| `09_AUTOMATION/importar_reels.py` | **nuevo** | `--import reels_<fecha>.json`. Crea `reel_items`, `reel_evidence`, `reel_revision` (`IF NOT EXISTS`), upsert por `code` y dedup por `(code,timestamp_sec,quote)`. Valida la cita contra el segmento real. No toca `videos`/`concepts`/`rules`/`evidence`. |
+| `09_AUTOMATION/importar_reels.py` | **nuevo** | `--import reels_<fecha>.json`. Crea `reel_items` y `reel_evidence` (`IF NOT EXISTS`), upsert por `code` y dedup por `(code,timestamp_sec,quote)`. Valida la cita contra el segmento real. No toca `videos`/`concepts`/`rules`/`evidence`. |
 | `09_AUTOMATION/validate_kb.py` | ampliar | Checks de reels: huérfanos, sin cita, cita sin segmento, fecha fuera de ventana, duplicados, contradicción no enviada a revisión. Conserva los actuales. |
 | `09_AUTOMATION/regenerar_vault.py` | editar | Cambiar la frase de exclusión (~línea 1135) y llamar a `generar_reels(con)`. El corte de cifras sigue siendo `MAX(upload_date)` de vídeos de YouTube con evidencia: los reels no lo alteran. |
 | `09_AUTOMATION/paginas_sitio.py` | ampliar | `generar_reels(con)`: `12_VAULT/reels/index.md` + nota por reel con `tipo: reel`, `video: IG:<code>`, `timestamp`, `confianza`, `fuente_url` y cita enlazada a concepto existente. Sin conceptos ni reglas nuevas. |
@@ -81,19 +81,20 @@ con una ayuda ligera (`ciclo_estado.py`) que registra fases, `rc` y líneas sign
 ### REELS
 
 1. `bash 09_AUTOMATION/instagram_batch_bootstrap.sh 3 4` (3–4 reels, reanudable; modelo y cookies dentro del proyecto). Ante 429/red: registrar y reintentar **una vez** al final del ciclo. Si el bootstrap sale 2 por falta de modelo: avisar con la ruta, no simular transcripción.
-2. Solo si faltan códigos en ventana: `instagram_reels_capture.py --cookies www.instagram.com_cookies.txt --max-steps 120` + `instagram_reels_metadata.py`. Ante 429/302 parar conservando los JSONL. Ventana móvil 6 meses sobre `date_utc` (hoy ~1.126 reels, 517 transcritos, 358 etiquetados, 201 transcritos sin etiqueta); marcar `in_window=0`, nunca borrar.
+2. **Punto de corte (decisión del usuario 2026-11-24): solo reels NUEVOS a partir del más reciente ya catalogado, `DfrZdVCMVWC` (2026-11-13), en adelante.** Los 536 pendientes anteriores y los 759 sin etiqueta quedan **descartados**: no se transcriben, no se clasifican, no se publican. No se aplica la ventana móvil de 6 meses al backlog; la ventana queda como referencia histórica de los JSONL, sin borrar filas.
+3. Captura de novedades: `instagram_reels_capture.py --cookies www.instagram.com_cookies.txt --max-steps 120` + `instagram_reels_metadata.py` para descubrir reels posteriores al corte. Ante 429/302 parar conservando los JSONL. Nunca borrar filas antiguas.
 3. `instagram_reels_status.py` + `instagram_reels_tono.py --queue`. Las señales (broma/humor, payout/eval, ratio 1:N, promesa, lifestyle) son **prioridad, no veredicto**.
 4. Hasta 4 códigos por ejecución: en ventana, `transcribed`, sin tono útil o con `evidencia` vacía, duración preferentemente ≥60 s, fecha reciente primero. Leer `02_TRANSCRIPTS/instagram/<code>.json`.
 5. Contrato `.work/ciclo/reels_<fecha>.json` por reel: `{code,url,date_utc,duration_sec,tono,contenido,riesgo,clasificacion,certainty,evidencia:[{timestamp_sec,quote,entity_name,accion}],motivo,revisor,fecha_revision}`. Cita normalizada obligatoria en el segmento; sin cita → `DUDOSO` automático.
 6. Criterios:
    - **RELEVANTE:** tono serio u humor con fondo docente verificable, cita literal de concepto/regla/procedimiento/corrección, riesgo bajo o medio. Si repite bootcamp/vídeo educativo → `accion=secundario`, `certainty=OBSERVADO`, sin regla nueva. Si es nuevo → solo `reel_evidence`, nunca concepto/regla nueva sin decisión.
-   - **DUDOSO:** `tono=dudoso`, riesgo alto, promesas de payout/ROI, RR extremo, hipérbole, humor sin lección, cita ambigua o contradicción con `05_METHODOLOGY`. Va a `10_REPORTS/instagram_reels_revision_<fecha>.md` con cita y motivo; **no bloquea** el cierre del lote.
+   - **DUDOSO → DESCARTADO (decisión del usuario 2026-11-24):** `tono=dudoso`, riesgo alto, promesas de payout/ROI, RR extremo, hipérbole, humor sin lección, cita ambigua o contradicción con `05_METHODOLOGY`. Se descarta con `motivo` escrito en el lote; **no** se lista para revisión, **no** entra a la base ni al sitio, y **no bloquea** el cierre. Solo se conserva el conteo de descartados en el reporte.
    - **IRRELEVANTE:** sin habla, música, lifestyle puro, reto, <60 s sin concepto. Se guarda con motivo, no se publica.
 7. `python3 09_AUTOMATION/importar_reels.py --import .work/ciclo/reels_<fecha>.json`. `estado_sitio=pendiente` solo para RELEVANTE. Reindexar solo si cambiaron vídeos/segmentos; repetir `validate_kb.py` + `integrity_check`. Fin de fase: resumen; **sin publicar, sin tocar `12_VAULT`, sin commit**.
 
 ### AUDITORÍA (solo si hubo capítulo nuevo)
 
-`verificar_vault.py`, `auditar_fotogramas.py --detalle`, `revisar_capturas.py` (revisión visual del día nuevo). Si `auditar_fotogramas` marca `contradice`, corregir con `vetar_fotogramas.py` antes de publicar. Si hay node + Chrome + sitio servido: build Quartz, `python -m http.server 8899 --directory public`, `node verificar_sitio.mjs http://127.0.0.1:8899 build` (27 casos; el tercer argumento es obligatorio con `http.server`). Sin node/Chrome: `AUDITORIA_DIFERIDA`, **no afirmar verificación**. Mejoras de UI solo con evidencia del test.
+`verificar_vault.py`, `auditar_fotogramas.py --detalle`, `revisar_capturas.py` (revisión visual del día nuevo). Si `auditar_fotogramas` marca `contradice`, corregir con `vetar_fotogramas.py` antes de publicar. **Además (decisión del usuario 2026-11-24): el ciclo avanza la tanda de los 9 conceptos fotografiables ejecutando `revisar_capturas.py --tanda`, y publica los conceptos que ya tengan anotación verificada; no inventa anotaciones de imágenes.** Si hay node + Chrome + sitio servido: build Quartz, `python -m http.server 8899 --directory public`, `node verificar_sitio.mjs http://127.0.0.1:8899 build` (27 casos; el tercer argumento es obligatorio con `http.server`). Sin node/Chrome: `AUDITORIA_DIFERIDA`, **no afirmar verificación**. Mejoras de UI solo con evidencia del test.
 
 ### PUBLICACIÓN
 
@@ -120,6 +121,7 @@ Cerrar `lote_id` en `estado.json` con `clase`, `reels[]`, `auditoria=OK|DIFERIDA
 - Idempotencia: `INSERT OR IGNORE`, `--merge`, dedup por `(code,timestamp,quote)`, sin commits vacíos.
 - **Un solo reintento** por fase y solo para transitorios (red, 429, HTTP 5xx, `disk I/O error`); errores de contenido/validación/compilación no se reintentan.
 - Todo rc ≠ 0 y toda línea `ERROR`, `FALLO`, `AVISO FTS`, `no publicado`, `BLOQUEADA`, `Sin credenciales` se copia literalmente al reporte; la fase dependiente se detiene.
+- **El resumen diario incluye siempre la hora exacta de ejecución y si fue al abrir la app o en ejecución programada** (decisión del usuario 2026-11-24), para detectar huecos y duplicados como los del 16→21 de noviembre.
 - Prohibido: `git reset --hard`, matar procesos por lock ajeno, exigir que toda la ventana esté resuelta para cerrar, dejar que un dudoso bloquee la publicación, afirmar verificación sin node/Chrome, interpretar rc 5 como éxito, preguntar salvo ante decisiones nuevas.
 
 ---
@@ -147,7 +149,7 @@ Cerrar `lote_id` en `estado.json` con `clase`, `reels[]`, `auditoria=OK|DIFERIDA
 - **R3:** `populate_kb.py` sin `--merge` es destructivo y tiene `TODAY` fijo en 2026-11-15; se fuerza `--merge` + `VIDEO_DATES`.
 - **R4:** ~471 archivos modificados en el árbol de trabajo → prohibido `git add -A`; los cambios de código se commitean aparte.
 - **R5:** si un reel dudoso contiene metodología real envuelta en humor, solo se acepta con cita que demuestre la lección; si no, a revisión.
-- **R6:** backlog de 536 reels sin transcribir en ventana → a 3–4/día son ~134–179 días; ritmo elegido por el usuario.
+- **R6:** backlog de 536 reels sin transcribir y 759 sin tono quedan **descartados por decisión del usuario** (2026-11-24); solo se procesan reels posteriores al 2026-11-13. No se pierde historial: los JSONL siguen intactos.
 - **R7:** commit selectivo deja `05_METHODOLOGY/` y scripts sin subir con la publicación; intencionado, debe saberlo el usuario.
 
 ---
