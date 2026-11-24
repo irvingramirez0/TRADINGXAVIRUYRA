@@ -38,7 +38,33 @@ duracion: "22:09"
 
 ## Fotogramas
 
-Esta clase tiene **54** fotogramas extraídos; **54** están anotados y verificados para ilustrar conceptos.
+Esta clase tiene **54** fotogramas extraídos; **4** están anotados y verificados para ilustrar conceptos.
+
+### Capturas verificadas de esta clase
+
+![Fotograma de 3aG0N7aHu4s en 03:42](../media/clase-3ag0n7ahu4s-61.webp)
+
+**3aG0N7aHu4s** · **03:42** · anotado y verificado
+
+> Ventana 'Opciones de configuración' de TradingView. Fondo del gráfico en color sólido CAC8C8. Se ve el selector de color abierto.
+
+![Fotograma de 3aG0N7aHu4s en 04:44](../media/clase-3ag0n7ahu4s-65.webp)
+
+**3aG0N7aHu4s** · **04:44** · anotado y verificado
+
+> Gráfico NQ 4H con velas gris claro y negro, mechas y bordes negros, fondo CAC8C8. Sin volumen ni indicadores.
+
+![Fotograma de 3aG0N7aHu4s en 06:49](../media/clase-3ag0n7ahu4s-68.webp)
+
+**3aG0N7aHu4s** · **06:49** · anotado y verificado
+
+> Gráfico NQ 4H con un rectángulo dibujado y el selector de color abierto; opacidad al 24%.
+
+![Fotograma de 3aG0N7aHu4s en 15:04](../media/clase-3ag0n7ahu4s-84.webp)
+
+**3aG0N7aHu4s** · **15:04** · anotado y verificado
+
+> Gráfico MNQ 4H limpio, fondo CAC8C8, velas grises/negras, sin indicadores. Se ve el precio y la escala.
 
 ---
 

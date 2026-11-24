@@ -34,6 +34,8 @@ duracion: "9:35"
 
 Esta clase tiene **4** fotogramas extraídos; **0** están anotados y verificados para ilustrar conceptos.
 
+No hay capturas verificadas de esta clase; las anotaciones disponibles no respaldan ningún fotograma como prueba visual.
+
 ---
 
 [← Día 13](./dia-13) · [Índice del bootcamp](./index) · [Día 15 →](./dia-15)

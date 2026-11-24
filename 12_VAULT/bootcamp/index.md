@@ -12,7 +12,7 @@ panel:
     - {etiqueta: "clases publicadas", valor: "29"}
     - {etiqueta: "conceptos enlazados", valor: "42"}
     - {etiqueta: "reglas con fuente", valor: "93"}
-    - {etiqueta: "fotogramas anotados", valor: "141", nota: "de 222"}
+    - {etiqueta: "fotogramas anotados", valor: "15", nota: "de 222"}
   pie: "Los enlaces de cada día llevan a los conceptos y reglas que esa clase introduce. La cifra de fotogramas anotados es la parte del sitio que aún depende de revisión manual."
 ---
 
