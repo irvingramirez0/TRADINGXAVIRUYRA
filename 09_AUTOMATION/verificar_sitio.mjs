@@ -101,7 +101,9 @@ const urlsDia = await A.ev("[...document.querySelectorAll('.xr-dia-titulo')].map
 let botonesCero = 0
 const paginaClase = await abrir(u("/bootcamp/"),"qa-todas",9413)
 for (const href of urlsDia) {
-  await paginaClase.ev(`location.href=${JSON.stringify(u("/bootcamp/" + href.split("/").pop().replace(/\.html$/, "")))}`)
+  const nombre = href.split("/").pop().replace(/\.html$/, "")
+  const destino = ARCHIVOS_PLANOS ? "/bootcamp/" + nombre + ".html" : "/bootcamp/" + nombre
+  await paginaClase.ev(`location.href=${JSON.stringify(u(destino))}`)
   await dormir(60)
   botonesCero += await paginaClase.ev("[...document.querySelectorAll('.xr-boton-fuente')].filter(a=>/[?&]t=0s/.test(a.href||'')).length")
 }
