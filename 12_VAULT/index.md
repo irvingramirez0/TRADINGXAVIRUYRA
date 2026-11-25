@@ -30,6 +30,7 @@ Es la fecha del vídeo más reciente que **ya tiene evidencia citada**: lo anunc
 ## Por dónde entrar
 
 <div class="xr-tarjetas">
+<a class="xr-tarjeta" href="./00-empieza-aqui"><span class="xr-tarjeta-titulo">Empieza aquí</span><span class="xr-tarjeta-desc">La metodología, en orden y con minuto.</span></a>
 <a class="xr-tarjeta" href="./bootcamp"><span class="xr-tarjeta-titulo">Bootcamp</span><span class="xr-tarjeta-desc">Las 29 clases en orden, con lo que da cada una.</span></a>
 <a class="xr-tarjeta" href="./conceptos"><span class="xr-tarjeta-titulo">Conceptos</span><span class="xr-tarjeta-desc">58 conceptos con definición, condiciones y errores.</span></a>
 <a class="xr-tarjeta" href="./reglas"><span class="xr-tarjeta-titulo">Reglas operativas</span><span class="xr-tarjeta-desc">156 reglas, incluidas las obsoletas con su sustituto.</span></a>

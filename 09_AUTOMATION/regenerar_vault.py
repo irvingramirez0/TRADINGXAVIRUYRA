@@ -1043,6 +1043,59 @@ def generate_preguntas():
             fh.write(nota.render())
 
 
+def leer_bloque_metodologia():
+    """Lee solo §3 del mapa; nunca copia el texto a mano."""
+    mapa = os.path.join(BASE, "05_METHODOLOGY", "00_MAPA_METODOLOGIA.md")
+    with open(mapa, encoding="utf-8") as fh:
+        texto = fh.read()
+    ini = texto.index("## 3. La metodología en una página")
+    fin = texto.index("\n## 4. ", ini)
+    return texto[ini:fin].strip()
+
+
+def generar_empieza_aqui(slugs_concepto, fecha_corte):
+    """Publica el bloque metodológico real como ruta principal."""
+    bloque = leer_bloque_metodologia()
+    lineas = [
+        "---", "tipo: indice", 'title: "Empieza aquí"', 'titulo: "Empieza aquí"',
+        'confianza: "explícito"', 'estado: "vigente"', 'video: ""', 'timestamp: ""',
+        f'corte: "{fecha_corte}"', "---", "", "", "# Empieza aquí", "",
+        f"**Corte de la metodología: {fecha_corte}.** Sigue este orden; cada etapa enlaza a la clase y al minuto donde se explica.",
+        "", "> [!warning] La ruta, no el archivo",
+        "> Esto es lo que Xavi hace, en el orden en que lo hace. El resto del sitio es la evidencia.", "",
+    ]
+    for sec in ["4H/1H", "DOL", "liquidez", "PO3", "entradas", "gestión", "riesgo", "psicología"]:
+        slug = slugs_concepto.get(sec)
+        lineas.append(f"- [[{slug}|{sec}]]" if slug else f"- {sec}")
+    lineas += ["", "## El mapa, paso a paso", "", bloque, "",
+               "## Cómo leer los enlaces", "",
+               "Cada botón «Ver en YouTube» abre el vídeo en el minuto citado. Si una etapa no "
+               "tiene minuto, el botón dice «Ver clase completa»: no se inventa el segundo cero.", ""]
+    with open(os.path.join(VAULT, "00-empieza-aqui.md"), "w", encoding="utf-8") as fh:
+        fh.write("\n".join(lineas))
+    # La portada se regenera limpia; si aún no existe, se crea aquí con la
+    # tarjeta delante para que la ruta principal esté siempre accesible.
+    index_path = os.path.join(VAULT, "index.md")
+    tarjeta = ('<a class="xr-tarjeta" href="./00-empieza-aqui">'
+               '<span class="xr-tarjeta-titulo">Empieza aquí</span>'
+               '<span class="xr-tarjeta-desc">La metodología, en orden y con minuto.</span></a>')
+    if os.path.exists(index_path):
+        with open(index_path, encoding="utf-8") as fh:
+            txt = fh.read()
+        if tarjeta not in txt:
+            txt = txt.replace('<div class="xr-tarjetas">',
+                              '<div class="xr-tarjetas">\n' + tarjeta, 1)
+    else:
+        txt = ('---\ntipo: portada\ntitulo: "Metodología Xavi Ruyra"\n'
+               'confianza: "no confirmado"\nestado: vigente\n---\n\n'
+               '## Por dónde entrar\n\n<div class="xr-tarjetas">\n' + tarjeta +
+               '\n<a class="xr-tarjeta" href="./bootcamp">'
+               '<span class="xr-tarjeta-titulo">Bootcamp</span>'
+               '<span class="xr-tarjeta-desc">Las clases en orden.</span></a>\n</div>\n')
+    with open(index_path, "w", encoding="utf-8") as fh:
+        fh.write(txt)
+
+
 def generate_index(conceptos_notas, slugs_concepto, reglas_count, trades_count,
                    cambios_count, preguntas_count, estado=None):
     """Portada: qué es esto, por dónde entrar y en qué estado está.
@@ -1104,6 +1157,7 @@ def generate_index(conceptos_notas, slugs_concepto, reglas_count, trades_count,
         return salida
 
     secciones = [
+        ("00-empieza-aqui", "Empieza aquí", "La metodología, en orden y con minuto."),
         ("bootcamp", "Bootcamp", f"Las {boot_dias} clases en orden, con lo que da cada una."),
         ("conceptos", "Conceptos", f"{len(conceptos_notas)} conceptos con definición, condiciones y errores."),
         ("reglas", "Reglas operativas", f"{reglas_count} reglas, incluidas las obsoletas con su sustituto."),
@@ -1228,6 +1282,7 @@ def main():
         estado = _estado_proyecto(con)
         generate_index(notas, slugs_concepto, reglas_count, trades_count,
                        cambios_count, preguntas_count, estado)
+        generar_empieza_aqui(slugs_concepto, estado.get("fecha_corte", ""))
         # Páginas de navegación y auditoría.
         #
         # Si fallan se avisa en voz alta y se marca el fallo, pero no se aborta:
