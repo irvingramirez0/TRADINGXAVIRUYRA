@@ -13,7 +13,7 @@ no corresponde deja el resto intacto.
 
 Cómo se guarda
 --------------
-Tabla `frame_vetos(frame_id, concept_id, motivo, fecha)`. El generador la
+Tabla `frame_vetos(frame_id, concept_id, motivo, fecha, entity_type)`. El generador la
 consulta en `candidate_frames`, así que el veto sobrevive a cualquier
 regeneración del vault. `concept_id` nulo significa «esta imagen no sirve para
 nada» (gráfico vacío, captura rota).
@@ -50,9 +50,16 @@ def conectar():
                concept_id INTEGER,
                motivo     TEXT,
                fecha      TEXT DEFAULT CURRENT_TIMESTAMP,
-               PRIMARY KEY (frame_id, concept_id)
+               entity_type TEXT NOT NULL DEFAULT 'concept',
+               PRIMARY KEY (frame_id, concept_id, entity_type)
            )"""
     )
+    # Migración idempotente: los vetos anteriores son todos de concepto.
+    columnas = {r[1] for r in con.execute("PRAGMA table_info(frame_vetos)")}
+    if "entity_type" not in columnas:
+        con.execute(
+            "ALTER TABLE frame_vetos ADD COLUMN entity_type TEXT NOT NULL DEFAULT 'concept'"
+        )
     con.commit()
     return con
 

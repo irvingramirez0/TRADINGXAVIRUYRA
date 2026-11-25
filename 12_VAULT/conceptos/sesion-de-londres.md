@@ -69,13 +69,3 @@ Documento 07. Vacío de investigación.
 **Así gané 800$ en 15 minutos operando el SP500 (trade recap)** (`ATh5cTpfgno`) · **00:15** · **Confianza:** explícito · anotado
 > SP500 5m. Position tool con entrada, stop y target; London highs.
 
-![Sesión de Londres en 579RkuLzgPQ](../media/sesion-de-londres-734.webp)
-
-**Así he perdido 450$ en dos días operando el SP500 (trade recap)** (`579RkuLzgPQ`) · **00:18** · **Confianza:** explícito · anotado
-> MESZ25 5m. 'London highs', 'Asian highs' y zona FVG; panel 'Locked out'.
-
-![Sesión de Londres en p6wC7iWh_Ps](../media/sesion-de-londres-707.webp)
-
-**TRADE RECAP NQ 28/07/25 (-1.019$) - TOPSTEP** (`p6wC7iWh_Ps`) · **00:32** · **Confianza:** explícito · anotado
-> NQ1! en 5 minutos. Caja azul vertical sobre la sesión de Londres. Etiquetas 'Asian highs' y 'London highs' en la parte superior y 'London lows' en la inferior. Banda horizontal azul claro y rectángulo gris (zona/FVG) baj…
-

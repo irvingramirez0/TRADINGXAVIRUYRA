@@ -320,6 +320,7 @@ NEGACIONES = (
     "no hay", "no se ve", "no verifica", "no muestra", "no identifica",
     "no aparece", "no aporta", "no se distingue", "no consta", "sin rótulo",
     "no hay rótulo", "no se aprecia", "no permite ver", "no se observa",
+    "no hay etiquetas de", "muy alejado", "no muestra el concepto",
 )
 _RE_NEG = re.compile("|".join(re.escape(n) for n in NEGACIONES))
 
@@ -352,12 +353,12 @@ def niega_concepto(desc, alts, cid=None, aliases_globales=None):
     pero «cuando no hay FVG uso CISD» no descarta nada para CISD.
     """
     propias = {a for a in alts if len(a) > 2}
+    texto = (desc or "").lower()
+    menciona_concepto = any(alt_en_texto(a, texto) for a in propias)
     for oracion in _oraciones(desc):
         o = oracion.lower()
         for m in _RE_NEG.finditer(o):
             ventana = o[m.end():m.end() + 70]
-            if not ventana.strip():
-                continue
             # Primer alias que aparece tras la negación, sea de este concepto o de otro.
             mejor = None
             for alt, otro_id in (aliases_globales or []):
@@ -372,7 +373,24 @@ def niega_concepto(desc, alts, cid=None, aliases_globales=None):
                         mejor = (pos, cid)
             if mejor is not None and mejor[1] == cid:
                 return True
+            if mejor is not None and mejor[1] != cid and any(
+                alt_en_texto(a, o) for a in propias
+            ):
+                # «El gráfico está muy alejado; no se distingue la estructura
+                # de la leg»: la negación no va seguida de un alias, pero el
+                # concepto aparece en la misma oración. No se publica una
+                # captura que el anotador dice no poder ver.
+                return True
             if mejor is None and any(alt_en_texto(a, ventana) for a in propias):
+                return True
+            if (m.group() in ("muy alejado", "no se distingue", "no se ve",
+                              "no se aprecia", "no se observa")
+                    and menciona_concepto):
+                # «... ifvg'. El gráfico está muy alejado; no se distingue ...
+                # La negación describe la visibilidad de la imagen, no una
+                # regla metodológica. Si el concepto aparece en la anotación,
+                # publicar la captura sería presentar como prueba visual lo
+                # que el anotador dice no poder ver.
                 return True
     return False
 
@@ -406,10 +424,12 @@ def vetos_de(con, cid):
     """
     vetados = set()
     try:
-        for r in con.execute(
-            "SELECT frame_id FROM frame_vetos WHERE concept_id IS NULL OR concept_id=?",
-            (cid,),
-        ):
+        columnas = {r[1] for r in con.execute("PRAGMA table_info(frame_vetos)")}
+        where = "WHERE concept_id IS NULL OR concept_id=?"
+        if "entity_type" in columnas:
+            # Los vetos de regla no pueden ocultar la ilustración de un concepto.
+            where += " AND (entity_type='concept' OR entity_type IS NULL)"
+        for r in con.execute(f"SELECT frame_id FROM frame_vetos {where}", (cid,)):
             vetados.add(r["frame_id"])
     except sqlite3.OperationalError:
         # Base antigua sin la tabla: no hay vetos, no es un error.
@@ -532,17 +552,23 @@ def asignar_fotogramas(con, conceptos):
     error que puso un Judas Swing en la nota de IFVG, pero multiplicado.
 
     Criterio, por orden:
-      1. si la fila de `evidence` apunta a este concepto explícitamente, gana;
-      2. si no, gana el concepto cuyo alias aparezca **todas** sus veces en la
+      1. prioridad de categoría: CORE antes que SUPPORTING, y este antes que
+         CONTEXTUAL, aunque el contextual tenga evidencia directa;
+      2. si la fila de `evidence` apunta a este concepto explícitamente, gana;
+      3. si no, gana el concepto cuyo alias aparezca **todas** sus veces en la
          anotación (una mención suelta es más probable que sea contexto);
-      3. si sigue habiendo empate, gana el alias más largo y específico;
-      4. si el empate persiste, el fotograma se queda con el concepto de id
+      4. si sigue habiendo empate, gana el alias más largo y específico;
+      5. si el empate persiste, el fotograma se queda con el concepto de id
          menor: es una decisión arbitraria pero estable y declarada.
 
-    Devuelve {frame_id: concept_id_dueño}.
+    Excepción declarada: si un CORE nombrado literalmente en la anotación
+    comparte imagen con otro CORE, ambos pueden quedársela. Es el único caso
+    de multi-propiedad permitido.
+
+    Devuelve {frame_id: {concept_id_dueño, ...}}.
     """
     from collections import defaultdict
-    peso = defaultdict(dict)  # fid -> {cid: (evidencia, menciones, largo)}
+    peso = defaultdict(dict)  # fid -> {cid: (prioridad, evidencia, menciones, largo, rank)}
     anotados = {c["id"]: c for c in conceptos}
 
     for c in conceptos:
@@ -559,14 +585,27 @@ def asignar_fotogramas(con, conceptos):
             ).fetchone()
             if fila:
                 ev = 1
-            peso[fid][c["id"]] = (ev, menciones, largo, rank)
+            prioridad = {"CORE": 0, "SUPPORTING": 1, "CONTEXTUAL": 2}.get(c.get("category"), 3)
+            peso[fid][c["id"]] = (prioridad, ev, menciones, largo, rank)
 
     dueno = {}
     for fid, opciones in peso.items():
         def clave(cid):
-            ev, menciones, largo, rank = opciones[cid]
-            return (-ev, -menciones, -largo, rank, cid)
-        dueno[fid] = sorted(opciones, key=clave)[0]
+            prio, ev, menciones, largo, rank = opciones[cid]
+            # `prio` ya es 0 para CORE: negarlo pondría al CONTEXTUAL primero.
+            return (prio, -ev, -menciones, -largo, rank, cid)
+
+        ganador = sorted(opciones, key=clave)[0]
+        duenos = {ganador}
+        if anotados[ganador].get("category") == "CORE":
+            fr = con.execute("SELECT description FROM frames WHERE id=?", (fid,)).fetchone()
+            desc = (fr["description"] or "").lower() if fr else ""
+            for cid in opciones:
+                if cid == ganador or anotados[cid].get("category") != "CORE":
+                    continue
+                if any(alt_en_texto(a, desc) for a in (anotados[cid].get("alts_propias") or anotados[cid]["alts"]) if len(a) > 2):
+                    duenos.add(cid)
+        dueno[fid] = duenos
     return dueno
 
 def build_media(con, concepto, slug_concepto, dry=False):
@@ -576,7 +615,8 @@ def build_media(con, concepto, slug_concepto, dry=False):
     for rank, fr, why in rows:
         # Un fotograma solo es prueba de un concepto. Si ya se asignó a otro
         # (o si aquí solo sería contexto), no se vuelve a publicar.
-        if DUENO_FOTOGRAMAS and DUENO_FOTOGRAMAS.get(fr["id"], concepto["id"]) != concepto["id"]:
+        duenos = DUENO_FOTOGRAMAS.get(fr["id"], {concepto["id"]})
+        if DUENO_FOTOGRAMAS and concepto["id"] not in duenos:
             continue
         src = os.path.join(BASE, fr["path"])
         if not os.path.exists(src):

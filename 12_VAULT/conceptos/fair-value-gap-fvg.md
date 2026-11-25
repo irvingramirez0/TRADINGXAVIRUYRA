@@ -74,3 +74,20 @@ Documento 02.
 - «Paráfrasis: el FVG no es una certeza; no acierta el 100% de las veces ni es obligatorio que el precio reaccione.» — `1McPSXSSR48` @ 05:59 (explícito)
 - «Si el FVG es de 15 minutos, nos tenemos que esperar a que cierre la vela de 15 minutos para saber si se ha invertido o no.» — `nxlZJ6abOYA` @ 06:15 (explícito)
 
+## Fragmentos visuales
+
+![Fair Value Gap (FVG) en 579RkuLzgPQ](../media/fair-value-gap-fvg-734.webp)
+
+**Así he perdido 450$ en dos días operando el SP500 (trade recap)** (`579RkuLzgPQ`) · **00:18** · **Confianza:** explícito · anotado
+> MESZ25 5m. 'London highs', 'Asian highs' y zona FVG; panel 'Locked out'.
+
+![Fair Value Gap (FVG) en TxoOh3MFdO0](../media/fair-value-gap-fvg-727.webp)
+
+**BIAS 03/11/25** (`TxoOh3MFdO0`) · **00:30** · **Confianza:** explícito · anotado
+> Gráfico MNQZ25 1H. Líneas 'high' y 'DOL' sobre dos highs; zona verde 'FVG' por debajo del precio.
+
+![Fair Value Gap (FVG) en p6wC7iWh_Ps](../media/fair-value-gap-fvg-707.webp)
+
+**TRADE RECAP NQ 28/07/25 (-1.019$) - TOPSTEP** (`p6wC7iWh_Ps`) · **00:32** · **Confianza:** explícito · anotado
+> NQ1! en 5 minutos. Caja azul vertical sobre la sesión de Londres. Etiquetas 'Asian highs' y 'London highs' en la parte superior y 'London lows' en la inferior. Banda horizontal azul claro y rectángulo gris (zona/FVG) baj…
+

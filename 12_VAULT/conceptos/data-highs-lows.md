@@ -63,10 +63,3 @@ Documento 04. Uso poco desarrollado.
 
 - «Paráfrasis: en días de CPI/FOMC se marcan los highs/lows de la noticia.» — `oP7enoxXpfI` @ 27:15 (explícito)
 
-## Fragmentos visuales
-
-![Data Highs / Lows en 1C4dgloDQrY](../media/data-highs-lows-701.webp)
-
-**La SIMPLE ESTRATEGIA con la que he podido RETIRAR +25k$ en PAYOUTS** (`1C4dgloDQrY`) · **45:51** · **Confianza:** explícito · anotado
-> La misma diapositiva 'LIQUIDEZ' completa: EH, REH, REL, EL, LRL, NWOG, NDOG, altos de noticias (data highs) e 'ITH, ITL (QUE ESTÉN DENTRO DE FVGS!!!!)'.
-

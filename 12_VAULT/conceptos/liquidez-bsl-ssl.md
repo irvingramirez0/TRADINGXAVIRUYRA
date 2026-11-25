@@ -84,3 +84,8 @@ Bootcamp Día 6. Liquidez pt2 pendiente de publicación.
 **Bootcamp Día 6: Liquidez pt1** (`7HOAf7vHMqU`) · **10:30** · **Confianza:** explícito · anotado
 > Gráfico MNQ 15m con múltiples niveles marcados. Se observa el conteo de 'billetes': varios altos (BSL) frente a un solo bajo (SSL) antes del movimiento.
 
+![Liquidez (BSL/SSL) en PzkT4SC47Jo](../media/liquidez-bsl-ssl-671.webp)
+
+**APLICANDO la MEJOR ESTRATEGIA de ICT (actualizada 2026)** (`PzkT4SC47Jo`) · **12:28** · **Confianza:** explícito · anotado
+> NQ y ES en 30 segundos, miércoles 6 de marzo de 2024, 09:43. Xavi explica la low resistance liquidity mirando el gráfico de 30s; se ven los últimos mínimos y la reacción del precio.
+

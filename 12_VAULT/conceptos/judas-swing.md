@@ -79,3 +79,8 @@ Documento 05.
 **La MEJOR estrategia de ICT para FUTUROS (IFVG updated 2026)** (`vz4rhIi5Joo`) · **04:11** · **Confianza:** explícito · anotado
 > Captura del esquema de precio durante la explicación del Judas Swing, con zonas horizontales. No hay un rótulo legible que identifique el primer IFVG ni su cierre.
 
+![Judas Swing en vz4rhIi5Joo](../media/judas-swing-402.webp)
+
+**La MEJOR estrategia de ICT para FUTUROS (IFVG updated 2026)** (`vz4rhIi5Joo`) · **10:55** · **Confianza:** explícito · anotado
+> Diapositiva 'Judas Swing AMD (9:30-9:45)' y 'Open de las 10 AMD' con un zigzag que baja, acumula, manipula y distribuye al alza. Flecha de entrada tras la manipulación.
+

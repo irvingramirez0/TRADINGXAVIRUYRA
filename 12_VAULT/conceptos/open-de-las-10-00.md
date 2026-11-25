@@ -71,6 +71,11 @@ Documento 05.
 
 ## Fragmentos visuales
 
+![Open de las 10:00 en vz4rhIi5Joo](../media/open-de-las-10-00-382.webp)
+
+**La MEJOR estrategia de ICT para FUTUROS (IFVG updated 2026)** (`vz4rhIi5Joo`) · **03:40** · **Confianza:** explícito · anotado
+> Diapositiva sobre NQ 5m: 'Judas Swing (9:30-9:45)' y 'Open de las 10, PO3 10, el open de la vela de 4h'. Esquema de zigzag con dos zonas azules, una arriba y otra abajo.
+
 ![Open de las 10:00 en OdljBowQurk](../media/open-de-las-10-00-241.webp)
 
 **Trade Recap +15.000$ operando NQ (true manipulation + po3 explicado)** (`OdljBowQurk`) · **08:17** · **Confianza:** explícito · anotado

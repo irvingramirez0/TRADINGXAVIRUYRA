@@ -80,8 +80,3 @@ Documento 02.
 **Trade Recap 19/02/2026 (5 wins seguidas)** (`B3zNsJ9LdVA`) · **01:33** · **Confianza:** explícito · anotado
 > NQ 5m. Inverse FVG de 1m y entrada marcada.
 
-![Inverse Fair Value Gap (IFVG) en 1C4dgloDQrY](../media/inverse-fair-value-gap-ifvg-681.webp)
-
-**La SIMPLE ESTRATEGIA con la que he podido RETIRAR +25k$ en PAYOUTS** (`1C4dgloDQrY`) · **14:40** · **Confianza:** explícito · anotado
-> NQ en temporalidad diaria con el eje temporal amplio y un recuadro de texto sobre el gráfico: 'No siempre me voy a esperar al higher time frame ifvg'. El gráfico está muy alejado; no se distingue la estructura de la leg.
-

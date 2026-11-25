@@ -67,10 +67,3 @@ Documento 05. Discrepancia 1m vs 30s documentada en 11_PREGUNTAS_ABIERTAS.
 - «No voy a explicaros CISD... de cada 100 trades igual lo uso una vez.» — `ICOx4rdFSLg` @ 00:34 (explícito)
 - «Paráfrasis: usar el 1m, el primero; el 15s es demasiado ruidoso.» — `_drb5sSmQZE` @ 03:39 (explícito)
 
-## Fragmentos visuales
-
-![CISD (Change in State of Delivery) en _drb5sSmQZE](../media/cisd-change-in-state-of-delivery-455.webp)
-
-**Todo lo que necesitas saber sobre este concepto - CISD** (`_drb5sSmQZE`) · **06:45** · **Confianza:** explícito · anotado
-> Cuadro de texto sobre el gráfico NQ 1m: 'CISD. Primera forma (recomendable): - ifvg + cisd - peor rr (pero trade más probable) - cisd de 1 minuto (el primero)'. Debajo: 'SEGUNDA FORMA (más experiencia en el mercado): cua…
-

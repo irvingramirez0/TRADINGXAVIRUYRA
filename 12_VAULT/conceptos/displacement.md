@@ -72,13 +72,13 @@ Documento 04.
 **APLICANDO la MEJOR ESTRATEGIA de ICT (actualizada 2026)** (`PzkT4SC47Jo`) · **03:39** · **Confianza:** explícito · anotado
 > FX Replay, pantalla dividida NQ (izquierda) y ES (derecha), temporalidad 1H, 27-29 de febrero de 2024. El NQ viene de un desplazamiento bajista y un rebote; Xavi está fijando el alto dentro del FVG de 1H para plantear lo…
 
-![Displacement en PzkT4SC47Jo](../media/displacement-669.webp)
-
-**APLICANDO la MEJOR ESTRATEGIA de ICT (actualizada 2026)** (`PzkT4SC47Jo`) · **05:40** · **Confianza:** explícito · anotado
-> NQ y ES en 1 minuto, viernes 1 de marzo de 2024, 10:36 en el replay. Se ve una zona sombreada azul (gap/FVG) y el desplazamiento de la sesión. No se ve el ticket de la entrada de 9:49-9:50.
-
 ![Displacement en mCMpxc0NaN4](../media/displacement-644.webp)
 
 **Sesión de backtesting APLICANDO mi ESTRATEGIA de IFVG** (`mCMpxc0NaN4`) · **05:45** · **Confianza:** explícito · anotado
 > Pantalla dividida NQ/ES en 5m; un rectángulo rojo marca el desplazamiento bajista previo a la apertura de Nueva York.
+
+![Displacement en PzkT4SC47Jo](../media/displacement-677.webp)
+
+**APLICANDO la MEJOR ESTRATEGIA de ICT (actualizada 2026)** (`PzkT4SC47Jo`) · **27:41** · **Confianza:** explícito · anotado
+> NQ 1m, jueves 14 de marzo de 2024, 09:38. Gráfico tras el desplazamiento; se ve una zona sombreada y el movimiento posterior. No hay marca explícita del CISD en la captura.
 

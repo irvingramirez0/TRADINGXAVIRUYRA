@@ -71,11 +71,6 @@ Definición explícita en PzkT4SC47Jo (2026-08-30, 12:28–12:58). Antes solo es
 
 ## Fragmentos visuales
 
-![Low Resistance Liquidity (LRL) en PzkT4SC47Jo](../media/low-resistance-liquidity-lrl-671.webp)
-
-**APLICANDO la MEJOR ESTRATEGIA de ICT (actualizada 2026)** (`PzkT4SC47Jo`) · **12:28** · **Confianza:** explícito · anotado
-> NQ y ES en 30 segundos, miércoles 6 de marzo de 2024, 09:43. Xavi explica la low resistance liquidity mirando el gráfico de 30s; se ven los últimos mínimos y la reacción del precio.
-
 ![Low Resistance Liquidity (LRL) en 1C4dgloDQrY](../media/low-resistance-liquidity-lrl-691.webp)
 
 **La SIMPLE ESTRATEGIA con la que he podido RETIRAR +25k$ en PAYOUTS** (`1C4dgloDQrY`) · **34:27** · **Confianza:** explícito · anotado
