@@ -82,8 +82,6 @@ check("dia-13: ficha de fuente", await A.ev("!!document.querySelector('.xr-ficha
 check("dia-13: enlace al vídeo en el minuto", await A.ev("/youtube\.com\/watch\?v=.+&t=\d+s/.test((document.querySelector('.xr-boton-fuente')||{}).href||'')"))
 check("dia-13: enlaza concepto IFVG", await A.ev("[...document.querySelectorAll('a.internal')].some(a=>a.getAttribute('href').includes('inverse-fair-value-gap-ifvg'))"))
 check("dia-13: navegación anterior/siguiente", await A.ev("document.body.innerHTML.includes('Día 12') && document.body.innerHTML.includes('Día 14')"))
-A.cerrar()
-
 // 3-bis. Un día recién transcrito y SIN trabajar.
 //
 // Este caso existe por un fallo real: el Día 21 se publicó con
@@ -98,6 +96,8 @@ check("dia-21: apunte del curriculum marcado como historial", await A.ev("/cuand
 A.cerrar()
 
 // 3-ter. Portada: ningún botón debe abrir el segundo cero.
+A.cerrar()
+
 // Recorre las páginas reales del índice: comprobar solo el índice dejaría
 // pasar un botón con t=0s dentro de cualquier clase.
 const urlsDia = await A.ev("[...document.querySelectorAll('.xr-dia-titulo')].map(a=>a.getAttribute('href')).filter(Boolean)")
