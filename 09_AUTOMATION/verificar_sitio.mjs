@@ -98,9 +98,16 @@ check("dia-21: apunte del curriculum marcado como historial", await A.ev("/cuand
 A.cerrar()
 
 // 3-ter. Portada: ningún botón debe abrir el segundo cero.
-A=await abrir(B+"/bootcamp/","qa-t0",9410)
-check("bootcamp: ningún botón abre el segundo 0", await A.ev("![...document.querySelectorAll('.xr-boton-fuente')].some(a=>/[?&]t=0s/.test(a.href||''))"))
-A.cerrar()
+// Recorre las páginas reales del índice: comprobar solo el índice dejaría
+// pasar un botón con t=0s dentro de cualquier clase.
+const urlsDia = await A.ev("[...document.querySelectorAll('.xr-dia-titulo')].map(a=>a.getAttribute('href')).filter(Boolean)")
+let botonesCero = 0
+for (const href of urlsDia) {
+  const pagina = await abrir(u(href.replace(/\.html$/, "")),"qa-t0",9410)
+  botonesCero += await pagina.ev("[...document.querySelectorAll('.xr-boton-fuente')].filter(a=>/[?&]t=0s/.test(a.href||'')).length")
+  pagina.cerrar()
+}
+check("bootcamp: ningún botón abre el segundo 0", botonesCero===0)
 A=await abrir(B+"/conceptos/","qa-core",9411)
 check("conceptos: ruta por dependencia publicada", await A.ev("!!document.querySelector('a[href*=\"ruta\"]')"))
 A.cerrar()
