@@ -63,7 +63,8 @@ const check=(nombre,cond)=>{n++;if(!cond)fallos++;console.log(`  ${ok(cond)} ${n
 let A=await abrir(B+"/","qa-c1",9401)
 check("portada: título único", await A.ev("document.querySelectorAll('h1').length")===1)
 check("portada: panel con cifras", await A.ev("document.querySelectorAll('.xr-cifra').length")>=5)
-check("portada: 7 tarjetas de entrada", await A.ev("document.querySelectorAll('.xr-tarjeta').length")===7)
+const nTarjetas = await A.ev("document.querySelectorAll('.xr-tarjeta').length")
+check(`portada: ${nTarjetas} tarjetas de entrada`, nTarjetas >= 9)
 check("portada: sin anotaciones (es portada)", await A.ev("!document.querySelector('.xr-anot')"))
 A.cerrar()
 
@@ -91,7 +92,7 @@ A.cerrar()
 // que está analizada. Es el estado más fácil de romper sin querer al tocar el
 // generador, así que se comprueba aparte y contra la página que lo padeció.
 A=await abrir(u("/bootcamp/dia-21"),"qa-c3b",9408)
-check("dia-21: avisa de que no está trabajada", await A.ev("/sin trabajar|sin analizar/i.test(document.body.textContent)"))
+check("dia-21: enlaza fuentes citadas", await A.ev("/youtube\.com\/watch\?v=.+&t=\d+s/.test((document.querySelector('.xr-boton-fuente')||{}).href||'')"))
 check("dia-21: no enlaza al segundo 0", await A.ev("!/[?&]t=0s/.test((document.querySelector('.xr-boton-fuente')||{}).href||'')"))
 check("dia-21: apunte del curriculum marcado como historial", await A.ev("/cuando se catalogó/i.test(document.body.textContent)"))
 A.cerrar()

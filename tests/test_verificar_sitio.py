@@ -20,3 +20,13 @@ def test_qa_comprueba_citas_core():
     assert " ningún botón abre el segundo 0" in txt
     assert "ruta por dependencia publicada" in txt
     assert "xr-boton-fuente" in txt
+
+
+def test_qa_portada_acepta_nueve_tarjetas():
+    assert "===7" not in txt
+    assert "xr-tarjeta').length" in txt
+
+
+def test_qa_portada_acepta_nueve_tarjetas():
+    assert "===7" not in txt
+    assert "xr-tarjeta').length" in txt
