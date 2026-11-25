@@ -53,7 +53,7 @@ Ninguna documentada.
 
 Día 19 [13:16–13:46].
 
-## Conceptos relacionados
+### Conceptos relacionados
 
 - [[equilibrium-premium-descuento|Equilibrium (premium/descuento)]]
 

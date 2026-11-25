@@ -55,7 +55,7 @@ La zona de break-even debe ser un nivel donde el precio probablemente se dé la 
 
 Fuente: recap del vídeo. La zona de break-even debe ser un nivel donde el precio probablemente se dé la vuelta, no un nivel arbitrario.; Evitar operar noticias rojas si no se sabe cómo va a reaccionar el precio.; Seguir las reglas y conformarse con un BE cuando el trade no da TP.; Un setup A+ puede acabar en BE; no por ello la ejecución es mala.; Un trade nada más.. Citas: [2.99s] He entrado con tres contratos pequeños del Nasdaq, del micro Nasdaq. | [33.08s] hemos tenido un velón de 3 minutos con un close s super bueno y eh hemos decidido entrar a partir de ello con el stop aquí en el body | [33.08s] hemos ido break even justo cuando el SP500 ha quitado este low | [64.76s] el break even está, la zona de break even está muy bien seleccionada | Clasificación original: Inconcluso (break-even). No es ni TP ni SL. Xavi lo considera bien ejecutado y está contento con la selección del BE, que evitó un stop loss.
 
-## Conceptos presentes
+### Conceptos presentes
 
 - [[fair-value-gap-fvg|Fair Value Gap (FVG)]]
 - [[inverse-fair-value-gap-ifvg|Inverse Fair Value Gap (IFVG)]]
@@ -63,7 +63,7 @@ Fuente: recap del vídeo. La zona de break-even debe ser un nivel donde el preci
 - [[smt-smart-money-technique|SMT (Smart Money Technique)]]
 - [[break-even-estructural|Break-even estructural]]
 
-## Reglas relacionadas (detección automática)
+### Reglas relacionadas (detección automática)
 
 - [[secuencia-del-analisis-key-levels-fvg-1h-4h-reversion-o-continuacion-fvg|Secuencia del análisis: key levels → FVG 1H/4H → reversión o continuación → FVG en equilibrium → IFVG → BSL/SSL]]
 - [[hacer-backtesting-con-nq-y-es-abiertos-y-en-sesion-de-nueva-york|Hacer backtesting con NQ y ES abiertos y en sesión de Nueva York]]

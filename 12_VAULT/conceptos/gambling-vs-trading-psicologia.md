@@ -19,41 +19,13 @@ id: 87
 
 Xavi acepta que el trading es gambling, pero distingue dos regímenes: entrar sin plan y de forma aleatoria (gambling) frente a ejecutar un sistema probabilístico con estadística a favor (trading). La diferencia no está en la actividad ni en el instrumento, sino en si se sigue el plan.
 
-## Interpretación de Xavi
-
-El trading sí es gambling, pero con la estadística de nuestra parte. Cada trade individual es aleatorio y puede perder aunque sea perfecto; la ventaja solo existe en la muestra. Cuando se rompe el plan, se deja de tradear y se empieza a gamblear, porque la ejecución deja de ser algo estadístico, probado y practicado.
-
 ## Cómo identificarlo
 
 Preguntarse, antes y después del trade: ¿esto está en mi plan? ¿Lo he backtesteado? Si la respuesta es no, es gambling aunque el trade salga bien. Señales típicas: entrar por impulso, operar una sesión que no tocaba, subir el riesgo para recuperar o pasar una cuenta.
 
-## Cuándo se usa
-
-Revisión psicológica y diario; también al explicar a terceros por qué el trading no es un casino.
-
-## Condiciones
-
-Aparece cuando se rompe el plan o cuando se juzga el trading por el resultado de un trade suelto.
-
-## Temporalidades
-
-No aplica.
-
-## Aplicación
-
-Aceptar que la apuesta existe y que el trade individual es aleatorio; trasladar la evaluación a la muestra y a la ejecución. Si se rompe el plan, registrarlo como gambling, no como trading.
-
 ## Errores comunes
 
 Creer que el trading no tiene nada de apuesta; o lo contrario, creer que es puro casino y que no se puede tener ventaja. Juzgar el sistema por el último trade. Usar la fase de gambling como excusa permanente.
-
-## Excepciones
-
-Dice que la fase de gambling es obligatoria y formativa; no la condena en el principiante, pero insiste en acortarla. No fija cuánto dura.
-
-## Notas
-
-Bootcamp Día 12. Concepto psicológico, no técnico. El 73% que cita no especifica muestra ni RR.
 
 ## Evidencia
 

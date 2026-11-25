@@ -53,7 +53,7 @@ Objetivos a largo plazo y sus acciones a corto.
 
 Bootcamp Día 3 [01:36–05:43]. Los cinco objetivos cortos que enumera están en 04:10–05:13.
 
-## Conceptos relacionados
+### Conceptos relacionados
 
 - [[trading-journal-diario-de-trading|Trading Journal (diario de trading)]]
 

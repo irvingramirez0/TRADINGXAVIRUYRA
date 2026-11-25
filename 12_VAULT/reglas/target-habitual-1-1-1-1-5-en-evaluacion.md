@@ -52,7 +52,7 @@ El 1:2,26 de diciembre de 2025 es una excepción, no la regla.
 
 Documento 07.
 
-## Conceptos relacionados
+### Conceptos relacionados
 
 - [[cuentas-de-fondeo|Cuentas de fondeo]]
 

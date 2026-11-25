@@ -53,7 +53,7 @@ La herramienta concreta es opcional: Xavi usa una web de pago y muestra una grat
 
 Bootcamp Día 29 [01:34–04:08, 13:39–14:10, 24:45–25:16]. No convierte la plataforma en metodología.
 
-## Conceptos relacionados
+### Conceptos relacionados
 
 - [[key-levels|Key Levels]]
 - [[inverse-fair-value-gap-ifvg|Inverse Fair Value Gap (IFVG)]]

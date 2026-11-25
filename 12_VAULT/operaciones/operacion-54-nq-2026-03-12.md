@@ -55,13 +55,13 @@ Trade claro con PO3 y SMT; la presión del directo no impidió ejecutar.
 
 El importe exacto es "700 y algo" según el transcript.
 
-## Conceptos presentes
+### Conceptos presentes
 
 - [[fair-value-gap-fvg|Fair Value Gap (FVG)]]
 - [[po3-power-of-3|PO3 (Power of 3)]]
 - [[smt-smart-money-technique|SMT (Smart Money Technique)]]
 
-## Reglas relacionadas (detección automática)
+### Reglas relacionadas (detección automática)
 
 - [[el-dol-debe-estar-dentro-de-un-fvg-pd-array|El DOL debe estar dentro de un FVG/PD array]]
 - [[judas-swing-acumulacion-manipulacion-distribucion|Judas Swing: acumulación → manipulación → distribución]]

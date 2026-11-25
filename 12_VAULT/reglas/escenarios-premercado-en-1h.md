@@ -44,7 +44,7 @@ Los escenarios son orientativos; el price action manda.
 
 Backtest de marzo. Regla explícita en el vídeo; no formulada como norma numerada.
 
-## Conceptos relacionados
+### Conceptos relacionados
 
 - [[fair-value-gap-fvg|Fair Value Gap (FVG)]]
 

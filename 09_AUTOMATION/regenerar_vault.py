@@ -231,7 +231,7 @@ def render_links(items, heading="Conceptos relacionados"):
             uniq.append((s, d))
     if not uniq:
         return []
-    out = [f"## {heading}", ""]
+    out = [f"### {heading}", ""]
     for s, d in uniq:
         out.append(f"- [[{s}|{d}]]")
     out.append("")
@@ -763,15 +763,8 @@ def generate_conceptos(con, conceptos, limite=None, sin_media=False, dry=False):
         nota.cuerpo.append("")
         for titulo, campo in [
             ("Definición", "definition"),
-            ("Interpretación de Xavi", "xavi_interpretation"),
             ("Cómo identificarlo", "how_identify"),
-            ("Cuándo se usa", "when_used"),
-            ("Condiciones", "conditions"),
-            ("Temporalidades", "timeframes"),
-            ("Aplicación", "application"),
             ("Errores comunes", "common_errors"),
-            ("Excepciones", "exceptions"),
-            ("Notas", "notes"),
         ]:
             if c[campo]:
                 nota.cuerpo += [f"## {titulo}", "", str(c[campo]), ""]
@@ -1302,7 +1295,16 @@ def main():
             print("El vault se escribió, pero las páginas del bootcamp y los índices "
                   "NO se actualizaron. No publiques hasta arreglarlo.")
             return 4
-        sin_fuente = comprobador_fuentes(con, slugs_concepto, slugs_regla, {}, {})
+        # `trades` no tiene columna `slug`: la ruta de la nota se deriva de los
+        # mismos campos que usa `generate_operaciones()`. Otra clave dejaría
+        # el comprobador apuntando a páginas que no existen.
+        slugs_trade = {t["id"]: slug(
+            f"operacion-{t['id']}-{t['instrument'] or ''}-{t['date'] or ''}"
+        ) for t in con.execute("SELECT id, instrument, date FROM trades")}
+        slugs_cambio = {c["id"]: slug(f"cambio-{c['id']}")
+                        for c in con.execute("SELECT id FROM changes")}
+        sin_fuente = comprobador_fuentes(
+            con, slugs_concepto, slugs_regla, slugs_trade, slugs_cambio)
         print(f"Comprobador de fuentes: {sin_fuente} entidades sin respaldo")
 
     print(f"Vault: {VAULT}")
@@ -1429,11 +1431,15 @@ def comprobador_fuentes(con, slugs_concepto, slugs_regla, slugs_trade, slugs_cam
         "SELECT COUNT(DISTINCT entity_id) n FROM evidence WHERE entity_type='rule'"
     ).fetchone()["n"]
 
+    total_trades = con.execute("SELECT COUNT(*) n FROM trades").fetchone()["n"]
     panel = {
         "titulo": "Cobertura de fuentes",
         "barras": [
             {"etiqueta": "Conceptos con cita de vídeo", "hecho": con_ev, "total": total_conceptos},
             {"etiqueta": "Reglas con cita de vídeo", "hecho": reg_con_ev, "total": total_reglas},
+            {"etiqueta": "Operaciones con cita formal (P&L autodeclarado)",
+             "hecho": 0, "total": total_trades,
+             "nota": "El P&L es autodeclarado: no hay extracto de cuenta que lo audite."},
         ],
         "pie": (
             "«Con cita» significa que la base guarda al menos una fila de evidencia con vídeo y "
@@ -1478,8 +1484,8 @@ def comprobador_fuentes(con, slugs_concepto, slugs_regla, slugs_trade, slugs_cam
     ]
     if not filas:
         lineas += [
-            "> [!success] Todo tiene fuente",
-            "> Todas las entidades tienen al menos una cita y todos los vídeos citados están en la base.",
+            "> [!note] Sin huecos en conceptos ni reglas",
+            "> Las operaciones siguen siendo autodeclaradas: ver la barra de arriba.",
             "",
         ]
     else:

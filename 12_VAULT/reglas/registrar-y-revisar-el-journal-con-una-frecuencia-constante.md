@@ -53,7 +53,7 @@ La rutina personal y la plataforma se pueden adaptar; la revisión sistemática 
 
 Bootcamp Día 27 [01:37–03:11, 27:21–31:34].
 
-## Conceptos relacionados
+### Conceptos relacionados
 
 - [[mnq-mes|MNQ / MES]]
 - [[trading-journal-diario-de-trading|Trading Journal (diario de trading)]]

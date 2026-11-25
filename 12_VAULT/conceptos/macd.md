@@ -19,41 +19,13 @@ id: 70
 
 Indicador de convergencia/divergencia de medias.
 
-## Interpretación de Xavi
-
-No aparece en su configuración ni en sus análisis.
-
 ## Cómo identificarlo
 
 No aplica.
 
-## Cuándo se usa
-
-No usado.
-
-## Condiciones
-
-No aplica.
-
-## Temporalidades
-
-No aplica.
-
-## Aplicación
-
-No introducirlo.
-
 ## Errores comunes
 
 Añadirlo para 'completar'.
-
-## Excepciones
-
-Ninguna.
-
-## Notas
-
-Excluido.
 
 ## Evidencia
 

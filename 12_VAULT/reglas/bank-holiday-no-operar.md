@@ -53,7 +53,7 @@ Ninguna documentada.
 
 Bootcamp Día 10 [05:19–05:51].
 
-## Conceptos relacionados
+### Conceptos relacionados
 
 - [[bank-holiday-festivo-ee-uu|Bank Holiday (festivo EE. UU.)]]
 

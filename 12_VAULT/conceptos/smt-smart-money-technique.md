@@ -19,43 +19,15 @@ id: 55
 
 Divergencia entre dos índices correlacionados: uno barre un high/low y el otro no.
 
-## Interpretación de Xavi
-
-No basta con la divergencia. El nivel barrido tiene que estar dentro de un FVG/PD array y ambos índices tienen que tener motivo para distribuir (true manipulation).
-
 ## Cómo identificarlo
 
 Comparar NQ y ES en el mismo momento; ver si uno barrió el high/low y el otro no; comprobar si la zona barrida está dentro de un FVG.
-
-## Cuándo se usa
-
-Como confirmación o excepción al DOL.
-
-## Condiciones
-
-Nivel barrido dentro de FVG/PD array; true manipulation.
-
-## Temporalidades
-
-4H/1H/15m/5m.
-
-## Aplicación
-
-Confirmar un giro o una continuación; si no cumple, ignorar.
 
 ## Errores comunes
 
 Usar cualquier divergencia; ignorar si el nivel está en una zona; no comprobar el segundo índice.
 
-## Excepciones
-
-Xavi dice que 'cuando tenemos doble SMT se cancela' (OdljBowQurk, 06:13), pero no identifica qué se cancela ni las condiciones; en junio describe dos SMT alineados con el dólar que refuerzan un corto (VE5H1qX50zA, 04:10–05:44). La relación entre ambos usos sigue abierta.
-
-## Notas
-
-Documento 03. Incluye un ejemplo de doble SMT como refuerzo en VE5H1qX50zA; no reconciliado con la frase de octubre.
-
-## Requiere / se combina con
+### Requiere / se combina con
 
 - [[draw-on-liquidity-dol|Draw on Liquidity (DOL)]]
 - [[true-manipulation|True Manipulation]]

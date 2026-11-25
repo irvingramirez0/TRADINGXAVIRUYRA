@@ -44,7 +44,7 @@ No es absoluto: con un motivo claro y un gap relevante puede buscar lo contrario
 
 Backtest de marzo. Regla explícita en el vídeo; no formulada como norma numerada.
 
-## Conceptos relacionados
+### Conceptos relacionados
 
 - [[draw-on-liquidity-dol|Draw on Liquidity (DOL)]]
 - [[displacement|Displacement]]

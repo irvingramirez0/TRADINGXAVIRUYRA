@@ -36,7 +36,7 @@ Data high/low.
 
 Backtest de marzo. Regla explícita en el vídeo; no formulada como norma numerada.
 
-## Conceptos relacionados
+### Conceptos relacionados
 
 - [[data-highs-lows|Data Highs / Lows]]
 

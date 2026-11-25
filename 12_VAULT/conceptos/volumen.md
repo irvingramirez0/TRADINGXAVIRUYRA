@@ -19,41 +19,13 @@ id: 73
 
 Indicador de volumen.
 
-## Interpretación de Xavi
-
-Lo elimina explícitamente de TradingView en el Día 2.
-
 ## Cómo identificarlo
 
 No aplica.
 
-## Cuándo se usa
-
-No usado.
-
-## Condiciones
-
-No aplica.
-
-## Temporalidades
-
-No aplica.
-
-## Aplicación
-
-No introducirlo.
-
 ## Errores comunes
 
 Usarlo para confirmar.
-
-## Excepciones
-
-Ninguna.
-
-## Notas
-
-Bootcamp Día 2.
 
 ## Evidencia
 

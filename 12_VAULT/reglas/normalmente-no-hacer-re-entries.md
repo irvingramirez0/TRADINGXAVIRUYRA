@@ -33,7 +33,7 @@ Reentry si el riesgo es bajo y el DOL sigue claro.
 
 Tensión con Imr4TPKUD-c 21:14; no reconciliada.
 
-## Conceptos relacionados
+### Conceptos relacionados
 
 - [[draw-on-liquidity-dol|Draw on Liquidity (DOL)]]
 

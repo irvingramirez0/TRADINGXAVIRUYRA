@@ -55,7 +55,7 @@ Trade válido que acabó en BE; el razonamiento era correcto, faltó recorrido.
 
 El título dice +0 $ - BE.
 
-## Conceptos presentes
+### Conceptos presentes
 
 - [[equal-highs-equal-lows|Equal Highs / Equal Lows]]
 - [[fair-value-gap-fvg|Fair Value Gap (FVG)]]
@@ -63,7 +63,7 @@ El título dice +0 $ - BE.
 - [[equilibrium-premium-descuento|Equilibrium (premium/descuento)]]
 - [[smt-smart-money-technique|SMT (Smart Money Technique)]]
 
-## Reglas relacionadas (detección automática)
+### Reglas relacionadas (detección automática)
 
 - [[el-dol-debe-estar-dentro-de-un-fvg-pd-array|El DOL debe estar dentro de un FVG/PD array]]
 - [[equilibrium-comprar-en-descuento-vender-en-premium|Equilibrium: comprar en descuento, vender en premium]]

@@ -53,7 +53,7 @@ Xavi opera Londres/Asia en cuentas de menor peso tras casi dos años y diez reti
 
 Bootcamp Día 28 [02:05–02:38, 05:45, 06:16–07:49, 08:20–09:23].
 
-## Conceptos relacionados
+### Conceptos relacionados
 
 - [[sesion-de-nueva-york|Sesión de Nueva York]]
 - [[sesiones-de-mercado-asia-londres-nueva-york|Sesiones de mercado (Asia / Londres / Nueva York)]]

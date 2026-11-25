@@ -52,7 +52,7 @@ Si no hay 1:1, break-even y dejar correr.
 
 'Lo que me gusta ver de los SMTs es para cerrar los trades.'
 
-## Conceptos relacionados
+### Conceptos relacionados
 
 - [[smt-smart-money-technique|SMT (Smart Money Technique)]]
 

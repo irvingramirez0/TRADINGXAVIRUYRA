@@ -52,7 +52,7 @@ Si no hay gap relevante, dejar correr hasta TP o stop.
 
 Documento 07.
 
-## Conceptos relacionados
+### Conceptos relacionados
 
 - [[fair-value-gap-fvg|Fair Value Gap (FVG)]]
 - [[key-levels|Key Levels]]

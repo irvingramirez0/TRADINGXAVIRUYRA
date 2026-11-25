@@ -53,7 +53,7 @@ El umbral de 'caída fuerte' no está cuantificado.
 
 Bootcamp Día 21 [25:20–25:51]. Xavi lo describe con su propio ejemplo del día.
 
-## Conceptos relacionados
+### Conceptos relacionados
 
 - [[daily-bias|Daily Bias]]
 

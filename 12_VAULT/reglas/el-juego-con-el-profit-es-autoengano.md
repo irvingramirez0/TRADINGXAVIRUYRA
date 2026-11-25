@@ -53,7 +53,7 @@ Ninguna documentada: la frase es fake.
 
 Bootcamp Día 14 [04:09–04:40].
 
-## Conceptos relacionados
+### Conceptos relacionados
 
 - [[gambling-vs-trading-psicologia|Gambling vs trading (psicología)]]
 

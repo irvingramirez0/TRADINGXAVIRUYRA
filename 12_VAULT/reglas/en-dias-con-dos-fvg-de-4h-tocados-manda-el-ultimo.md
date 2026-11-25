@@ -52,7 +52,7 @@ Ninguna documentada.
 
 'El último que se ha tocado es el bajista' (ejemplo del vídeo).
 
-## Conceptos relacionados
+### Conceptos relacionados
 
 - [[fair-value-gap-fvg|Fair Value Gap (FVG)]]
 - [[daily-bias|Daily Bias]]

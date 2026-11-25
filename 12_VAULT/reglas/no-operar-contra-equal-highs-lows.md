@@ -53,7 +53,7 @@ Ninguna documentada.
 
 Bootcamp Día 11 [06:48–07:19].
 
-## Conceptos relacionados
+### Conceptos relacionados
 
 - [[equal-highs-equal-lows|Equal Highs / Equal Lows]]
 

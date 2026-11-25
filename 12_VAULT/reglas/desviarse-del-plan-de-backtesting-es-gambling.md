@@ -53,7 +53,7 @@ Ninguna documentada.
 
 Bootcamp Día 18 [03:39].
 
-## Conceptos relacionados
+### Conceptos relacionados
 
 - [[gambling-vs-trading-psicologia|Gambling vs trading (psicología)]]
 - [[fomo-psicologia|FOMO (psicología)]]

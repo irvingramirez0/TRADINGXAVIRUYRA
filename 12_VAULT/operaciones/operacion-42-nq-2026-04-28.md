@@ -55,12 +55,12 @@ Segundo trade del día; la suma de ambos da el PNL récord. No se verbalizan pre
 
 El PNL 1.893 $ es del día, no de este trade.
 
-## Conceptos presentes
+### Conceptos presentes
 
 - [[fair-value-gap-fvg|Fair Value Gap (FVG)]]
 - [[inverse-fair-value-gap-ifvg|Inverse Fair Value Gap (IFVG)]]
 
-## Reglas relacionadas (detección automática)
+### Reglas relacionadas (detección automática)
 
 - [[judas-swing-acumulacion-manipulacion-distribucion|Judas Swing: acumulación → manipulación → distribución]]
 - [[el-fvg-se-invierte-solo-con-cierre-de-cuerpo-completo|El FVG se invierte solo con cierre de cuerpo completo]]

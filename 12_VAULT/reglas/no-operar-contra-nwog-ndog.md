@@ -53,7 +53,7 @@ Ninguna documentada.
 
 Bootcamp Día 11 [14:31].
 
-## Conceptos relacionados
+### Conceptos relacionados
 
 - [[nwog-new-week-opening-gap|NWOG (New Week Opening Gap)]]
 - [[ndog-new-day-opening-gap|NDOG (New Day Opening Gap)]]

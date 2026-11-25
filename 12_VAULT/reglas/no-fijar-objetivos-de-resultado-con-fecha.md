@@ -53,7 +53,7 @@ La urgencia y las ganas de ganar dinero no son el problema; el problema es el pl
 
 Bootcamp Día 7; documento 08.
 
-## Conceptos relacionados
+### Conceptos relacionados
 
 - [[mnq-mes|MNQ / MES]]
 - [[prisa-psicologia|Prisa (psicología)]]

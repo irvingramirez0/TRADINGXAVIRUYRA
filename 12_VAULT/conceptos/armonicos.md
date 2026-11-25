@@ -19,41 +19,13 @@ id: 76
 
 Patrones armónicos.
 
-## Interpretación de Xavi
-
-No aparecen en su metodología.
-
 ## Cómo identificarlo
 
 No aplica.
 
-## Cuándo se usa
-
-No usado.
-
-## Condiciones
-
-No aplica.
-
-## Temporalidades
-
-No aplica.
-
-## Aplicación
-
-No introducirlos.
-
 ## Errores comunes
 
 Añadirlos para 'completar'.
-
-## Excepciones
-
-Ninguna.
-
-## Notas
-
-Excluido.
 
 ## Evidencia
 

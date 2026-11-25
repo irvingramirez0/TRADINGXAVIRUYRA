@@ -53,7 +53,7 @@ El propio Xavi dice que el significado exacto de esponsorear se verá más adela
 
 Bootcamp Día 15 [02:40]. Alcance exacto de esponsorear: NO CONFIRMADO.
 
-## Conceptos relacionados
+### Conceptos relacionados
 
 - [[key-levels|Key Levels]]
 - [[fair-value-gap-fvg|Fair Value Gap (FVG)]]

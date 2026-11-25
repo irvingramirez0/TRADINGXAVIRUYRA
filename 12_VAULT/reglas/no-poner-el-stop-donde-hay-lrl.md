@@ -53,7 +53,7 @@ Ninguna documentada.
 
 Bootcamp Día 11 [17:40].
 
-## Conceptos relacionados
+### Conceptos relacionados
 
 - [[low-resistance-liquidity-lrl|Low Resistance Liquidity (LRL)]]
 - [[liquidez-bsl-ssl|Liquidez (BSL/SSL)]]

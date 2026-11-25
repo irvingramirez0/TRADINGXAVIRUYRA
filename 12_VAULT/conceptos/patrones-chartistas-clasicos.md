@@ -19,41 +19,13 @@ id: 77
 
 Patrones de gráfico clásicos.
 
-## Interpretación de Xavi
-
-No los usa como método.
-
 ## Cómo identificarlo
 
 No aplica.
 
-## Cuándo se usa
-
-No usado.
-
-## Condiciones
-
-No aplica.
-
-## Temporalidades
-
-No aplica.
-
-## Aplicación
-
-No introducirlos.
-
 ## Errores comunes
 
 Añadirlos para 'completar'.
-
-## Excepciones
-
-Ninguna.
-
-## Notas
-
-Excluido.
 
 ## Evidencia
 

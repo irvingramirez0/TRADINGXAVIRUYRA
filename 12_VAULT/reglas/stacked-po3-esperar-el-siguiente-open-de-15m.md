@@ -52,7 +52,7 @@ No shortear una subida vertical.
 
 Documento 04.
 
-## Conceptos relacionados
+### Conceptos relacionados
 
 - [[key-levels|Key Levels]]
 - [[stacked-po3|Stacked PO3]]

@@ -53,7 +53,7 @@ Ninguna documentada: es obligatoria en su estrategia.
 
 Bootcamp Día 17 [10:04–13:43].
 
-## Conceptos relacionados
+### Conceptos relacionados
 
 - [[true-manipulation|True Manipulation]]
 - [[low-resistance-liquidity-lrl|Low Resistance Liquidity (LRL)]]

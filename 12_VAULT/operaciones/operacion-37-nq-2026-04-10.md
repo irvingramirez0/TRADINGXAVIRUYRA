@@ -55,12 +55,12 @@ Trade forzado en un día de CPI, con volatilidad anómala; "no hagas esto". El s
 
 El frame muestra la zona y la entrada; las cifras exactas no se verbalizan.
 
-## Conceptos presentes
+### Conceptos presentes
 
 - [[fair-value-gap-fvg|Fair Value Gap (FVG)]]
 - [[inverse-fair-value-gap-ifvg|Inverse Fair Value Gap (IFVG)]]
 
-## Reglas relacionadas (detección automática)
+### Reglas relacionadas (detección automática)
 
 - [[judas-swing-acumulacion-manipulacion-distribucion|Judas Swing: acumulación → manipulación → distribución]]
 - [[el-fvg-se-invierte-solo-con-cierre-de-cuerpo-completo|El FVG se invierte solo con cierre de cuerpo completo]]

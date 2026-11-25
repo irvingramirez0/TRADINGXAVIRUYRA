@@ -55,13 +55,13 @@ Trade válido que perdió; el problema es psicológico (payout cerca), no de eje
 
 El importe -290 $ se verbaliza; las cifras exactas de entrada/stop no.
 
-## Conceptos presentes
+### Conceptos presentes
 
 - [[fair-value-gap-fvg|Fair Value Gap (FVG)]]
 - [[displacement|Displacement]]
 - [[revenge-trading-psicologia|Revenge Trading (psicología)]]
 
-## Reglas relacionadas (detección automática)
+### Reglas relacionadas (detección automática)
 
 - [[no-coger-el-primer-ifvg-tras-un-desplazamiento-fuerte|No coger el primer IFVG tras un desplazamiento fuerte]]
 - [[no-buscar-longs-contra-una-estructura-4h-fuertemente-bajista|No buscar longs contra una estructura 4H fuertemente bajista]]

@@ -53,7 +53,7 @@ Ninguna documentada.
 
 Bootcamp Día 15 [04:15–04:46].
 
-## Conceptos relacionados
+### Conceptos relacionados
 
 - [[key-levels|Key Levels]]
 - [[fair-value-gap-fvg|Fair Value Gap (FVG)]]

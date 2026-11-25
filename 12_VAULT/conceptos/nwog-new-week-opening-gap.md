@@ -18,43 +18,15 @@ id: 56
 
 Gap de apertura semanal. Funcionalmente actúa como un FVG.
 
-## Interpretación de Xavi
-
-Se respeta como un fair value gap; puede ser zona de reacción y target.
-
 ## Cómo identificarlo
 
 Marcar el gap entre el cierre del viernes y la apertura del domingo/lunes.
-
-## Cuándo se usa
-
-Como zona de liquidez/imbalance y excepción al DOL.
-
-## Condiciones
-
-Mismas que un FVG.
-
-## Temporalidades
-
-4H/1H/15m/5m.
-
-## Aplicación
-
-Esperar respeto o relleno; usarlo como target.
 
 ## Errores comunes
 
 No marcarlo; tratarlo como una simple línea.
 
-## Excepciones
-
-No siempre se rellena.
-
-## Notas
-
-Documento 02.
-
-## Requiere / se combina con
+### Requiere / se combina con
 
 - [[fair-value-gap-fvg|Fair Value Gap (FVG)]]
 - [[draw-on-liquidity-dol|Draw on Liquidity (DOL)]]

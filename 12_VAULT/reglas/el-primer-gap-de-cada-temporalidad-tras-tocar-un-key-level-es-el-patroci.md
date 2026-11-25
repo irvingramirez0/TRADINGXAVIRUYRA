@@ -53,7 +53,7 @@ Xavi dice que no le da mucha importancia; su peso cuantitativo no está definido
 
 Bootcamp Día 25 [18:44–20:50].
 
-## Conceptos relacionados
+### Conceptos relacionados
 
 - [[key-levels|Key Levels]]
 - [[sponsorship-gap-patrocinado|Sponsorship (gap patrocinado)]]

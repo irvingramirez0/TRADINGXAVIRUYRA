@@ -53,7 +53,7 @@ No es una prohibición.
 
 Bootcamp Día 10 [04:48; 05:19].
 
-## Conceptos relacionados
+### Conceptos relacionados
 
 - [[no-news-monday|No News Monday]]
 

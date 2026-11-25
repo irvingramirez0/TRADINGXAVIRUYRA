@@ -55,13 +55,13 @@ El sell model y el inverse eran válidos, pero el precio no continuó. Pérdida 
 
 El importe exacto no se verbaliza; el título no lo da.
 
-## Conceptos presentes
+### Conceptos presentes
 
 - [[fair-value-gap-fvg|Fair Value Gap (FVG)]]
 - [[inverse-fair-value-gap-ifvg|Inverse Fair Value Gap (IFVG)]]
 - [[displacement|Displacement]]
 
-## Reglas relacionadas (detección automática)
+### Reglas relacionadas (detección automática)
 
 - [[no-coger-el-primer-ifvg-tras-un-desplazamiento-fuerte|No coger el primer IFVG tras un desplazamiento fuerte]]
 - [[la-manipulation-leg-se-mide-desde-el-ultimo-swing-antes-de-la-zona|La manipulation leg se mide desde el último swing antes de la zona]]

@@ -53,7 +53,7 @@ Ninguna documentada.
 
 Bootcamp Día 28 [10:55–11:25]. Horarios orientativos por la propia advertencia de Xavi.
 
-## Conceptos relacionados
+### Conceptos relacionados
 
 - [[sesiones-de-mercado-asia-londres-nueva-york|Sesiones de mercado (Asia / Londres / Nueva York)]]
 - [[inverse-fair-value-gap-ifvg|Inverse Fair Value Gap (IFVG)]]

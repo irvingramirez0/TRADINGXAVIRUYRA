@@ -53,7 +53,7 @@ Ninguna documentada.
 
 Día 19 [14:17–15:18]. Anuncia vídeos de daily bias/DOL, sesiones, backtesting y sistemas de entrada.
 
-## Conceptos relacionados
+### Conceptos relacionados
 
 - [[liquidez-bsl-ssl|Liquidez (BSL/SSL)]]
 - [[daily-bias|Daily Bias]]

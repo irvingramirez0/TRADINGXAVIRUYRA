@@ -52,7 +52,7 @@ NDOG, LRL, relative equal highs/lows y SMT pueden cambiar el DOL.
 
 Documento 03.
 
-## Conceptos relacionados
+### Conceptos relacionados
 
 - [[fair-value-gap-fvg|Fair Value Gap (FVG)]]
 - [[pd-array|PD Array]]

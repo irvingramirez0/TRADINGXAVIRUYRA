@@ -53,7 +53,7 @@ Usa herramientas de dibujo y cuadrícula de Gann; no son indicadores convenciona
 
 Bootcamp Día 2; documento 00.
 
-## Conceptos relacionados
+### Conceptos relacionados
 
 - [[rsi|RSI]]
 - [[macd|MACD]]

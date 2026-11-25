@@ -19,41 +19,13 @@ id: 69
 
 Indicador de fuerza relativa.
 
-## Interpretación de Xavi
-
-No aparece en su configuración ni en sus análisis.
-
 ## Cómo identificarlo
 
 No aplica.
 
-## Cuándo se usa
-
-No usado.
-
-## Condiciones
-
-No aplica.
-
-## Temporalidades
-
-No aplica.
-
-## Aplicación
-
-No introducirlo en la enseñanza.
-
 ## Errores comunes
 
 Añadirlo para 'completar' el análisis.
-
-## Excepciones
-
-Ninguna.
-
-## Notas
-
-Excluido por la regla del proyecto.
 
 ## Evidencia
 

@@ -53,7 +53,7 @@ Reentrada tras stop planificado si el riesgo es bajo y el DOL sigue claro.
 
 Documento 07 y 08.
 
-## Conceptos relacionados
+### Conceptos relacionados
 
 - [[revenge-trading-psicologia|Revenge Trading (psicología)]]
 - [[draw-on-liquidity-dol|Draw on Liquidity (DOL)]]

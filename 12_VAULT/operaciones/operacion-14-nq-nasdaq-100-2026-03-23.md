@@ -55,14 +55,14 @@ Si el price action está mal, es mejor no operar; las condiciones malas conviert
 
 Fuente: recap del vídeo. Operó en condiciones malas: primer día de semana, rango, chop; la pérdida era 'muy evitable'.; No analizó si merecía la pena operar ese día: faltó preguntarse '¿renta operar hoy?' antes de buscar el setup.; No recalculó los contratos tras un fill distinto; el menor riesgo fue suerte, no gestión.; Estaba a un día del payout, lo que aumentó el coste emocional.. Citas: [127.48s] Eh, stop en 3 minutos, después hemos chopeado durante 192 minutos y ahora parece que empiece empieza a tirar para arriba. | [160.04s] creo que lo que eran malas eran las condiciones. Eran condiciones poco favorables | [160.04s] muy evitable esta pérdida, tengo que decir muy evitable | [190.56s] Si está mal, es mejor no operar.
 
-## Conceptos presentes
+### Conceptos presentes
 
 - [[fair-value-gap-fvg|Fair Value Gap (FVG)]]
 - [[inverse-fair-value-gap-ifvg|Inverse Fair Value Gap (IFVG)]]
 - [[data-highs-lows|Data Highs / Lows]]
 - [[trading-journal-diario-de-trading|Trading Journal (diario de trading)]]
 
-## Reglas relacionadas (detección automática)
+### Reglas relacionadas (detección automática)
 
 - [[secuencia-del-analisis-key-levels-fvg-1h-4h-reversion-o-continuacion-fvg|Secuencia del análisis: key levels → FVG 1H/4H → reversión o continuación → FVG en equilibrium → IFVG → BSL/SSL]]
 - [[no-exigir-perfeccion-en-el-equilibrium|No exigir perfección en el equilibrium]]

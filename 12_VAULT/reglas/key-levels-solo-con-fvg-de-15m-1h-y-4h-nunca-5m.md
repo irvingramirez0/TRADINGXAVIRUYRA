@@ -53,7 +53,7 @@ Ninguna documentada: el 5m queda excluido como key level.
 
 Bootcamp Día 15 [02:09].
 
-## Conceptos relacionados
+### Conceptos relacionados
 
 - [[key-levels|Key Levels]]
 - [[fair-value-gap-fvg|Fair Value Gap (FVG)]]

@@ -53,7 +53,7 @@ Ninguna documentada.
 
 Bootcamp Día 17 [03:11–03:41].
 
-## Conceptos relacionados
+### Conceptos relacionados
 
 - [[smt-smart-money-technique|SMT (Smart Money Technique)]]
 

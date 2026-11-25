@@ -55,7 +55,7 @@ Escribir condiciones antes de operar: 'si pasa esto, hago esto' evita dudas y pe
 
 Fuente: recap del vídeo. Escribir condiciones antes de operar: 'si pasa esto, hago esto' evita dudas y permite ejecutar.; En all time highs, las continuaciones de 5 minutos son los trades más seguros.; La baja correlación entre NQ y SP500 es una señal de cautela.; El break-even puede ser incorrecto ex-post pero razonable ex-ante; él lo califica de error porque conocía el resultado.; Stop en el body y reducir contratos cuando sube la volatilidad para mantener el mismo riesgo.; Shortear en ATH solo cuando ambos índices apuntan al mismo objetivo y el SP500 confirma con desplazamiento.. Citas: [2.87s] nunca o casi nunca eh shorteo all time highs | [94.96s] Y cuando digo condiciones, me refiero a si pasa esto, hago esto. | [313.07s] creo que me he equivocado yendo break even | [530.32s] entonces he reducido contratos simplemente para arriesgar lo mismo y hemos hecho un TP de 500 dólares | Clasificación original: Trade 1: Error de ejecución (break-even prematuro; el propio Xavi dice 'creo que me he equivocado yendo break even'), aunque la entrada era correcta y el resultado fue BE. Trade 2: Bien ejecutado ganador.
 
-## Conceptos presentes
+### Conceptos presentes
 
 - [[fair-value-gap-fvg|Fair Value Gap (FVG)]]
 - [[inverse-fair-value-gap-ifvg|Inverse Fair Value Gap (IFVG)]]
@@ -63,7 +63,7 @@ Fuente: recap del vídeo. Escribir condiciones antes de operar: 'si pasa esto, h
 - [[break-even-estructural|Break-even estructural]]
 - [[displacement|Displacement]]
 
-## Reglas relacionadas (detección automática)
+### Reglas relacionadas (detección automática)
 
 - [[no-coger-el-primer-ifvg-tras-un-desplazamiento-fuerte|No coger el primer IFVG tras un desplazamiento fuerte]]
 - [[la-manipulation-leg-se-mide-desde-el-ultimo-swing-antes-de-la-zona|La manipulation leg se mide desde el último swing antes de la zona]]

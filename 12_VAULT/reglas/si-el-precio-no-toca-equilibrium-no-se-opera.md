@@ -53,7 +53,7 @@ No siempre el precio toca la zona; no se fuerza.
 
 Día 19 [10:40–11:11].
 
-## Conceptos relacionados
+### Conceptos relacionados
 
 - [[fair-value-gap-fvg|Fair Value Gap (FVG)]]
 - [[equilibrium-premium-descuento|Equilibrium (premium/descuento)]]

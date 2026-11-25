@@ -19,41 +19,13 @@ id: 74
 
 Análisis de flujo de órdenes.
 
-## Interpretación de Xavi
-
-No lo usa; en el Día 5 lo menciona como una de las metodologías que no hay que mezclar.
-
 ## Cómo identificarlo
 
 No aplica.
 
-## Cuándo se usa
-
-No usado.
-
-## Condiciones
-
-No aplica.
-
-## Temporalidades
-
-No aplica.
-
-## Aplicación
-
-No introducirlo.
-
 ## Errores comunes
 
 Mezclarlo con su método.
-
-## Excepciones
-
-Ninguna.
-
-## Notas
-
-Bootcamp Día 5.
 
 ## Evidencia
 

@@ -19,41 +19,13 @@ id: 71
 
 Indicadores de media móvil.
 
-## Interpretación de Xavi
-
-No aparecen en su configuración.
-
 ## Cómo identificarlo
 
 No aplica.
 
-## Cuándo se usa
-
-No usado.
-
-## Condiciones
-
-No aplica.
-
-## Temporalidades
-
-No aplica.
-
-## Aplicación
-
-No introducirlas.
-
 ## Errores comunes
 
 Añadirlas para 'completar'.
-
-## Excepciones
-
-Ninguna.
-
-## Notas
-
-Excluido.
 
 ## Evidencia
 

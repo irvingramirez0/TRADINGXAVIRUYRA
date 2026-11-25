@@ -53,7 +53,7 @@ Bajar el riesgo tras la racha se considera válido, pero no es su práctica.
 
 Día 20 [04:13–04:45].
 
-## Conceptos relacionados
+### Conceptos relacionados
 
 - [[ego-psicologia|Ego (psicología)]]
 

@@ -55,13 +55,13 @@ Mala operativa: entró por ganas, no por setup. Lo positivo: redujo riesgo y no 
 
 El importe -140 por cuenta se verbaliza.
 
-## Conceptos presentes
+### Conceptos presentes
 
 - [[fair-value-gap-fvg|Fair Value Gap (FVG)]]
 - [[draw-on-liquidity-dol|Draw on Liquidity (DOL)]]
 - [[daily-bias|Daily Bias]]
 
-## Reglas relacionadas (detección automática)
+### Reglas relacionadas (detección automática)
 
 - [[el-bias-se-actualiza-si-el-precio-desplaza-fuerte-y-cruza-el-gap-de-4h|El bias se actualiza si el precio desplaza fuerte y cruza el gap de 4H]]
 - [[secuencia-del-analisis-key-levels-fvg-1h-4h-reversion-o-continuacion-fvg|Secuencia del análisis: key levels → FVG 1H/4H → reversión o continuación → FVG en equilibrium → IFVG → BSL/SSL]]

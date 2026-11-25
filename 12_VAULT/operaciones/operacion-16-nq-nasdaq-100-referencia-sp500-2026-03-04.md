@@ -55,7 +55,7 @@ La discrecionalidad puede ser buena o mala; priorizar A+ sobre discreción.; No 
 
 Fuente: recap del vídeo. Entrada discrecional que no es A+ y que contradice su regla del día anterior de esperar solo 'iPlace setups'; él mismo se enfada por haberla tomado.; Aun así, dice que no tuvo FOMO: analizó, no tuvo prisa, le gustaba el trade y estaba dispuesto a perder 150 $.. Citas: [3.31s] hoy nos ha tocado a hacer un TP | [3.31s] hemos ganado 152 dólares, hemos asegurado el día de consistencia. | [156.56s] he entrado aquí, he puesto stop arriba de esta wick y he puesto | [156.56s] me ha pillado el 1 a 1 muy justo. | Clasificación original: Bien ejecutado ganador (con tensión de regla: entrada no A+)
 
-## Conceptos presentes
+### Conceptos presentes
 
 - [[liquidez-bsl-ssl|Liquidez (BSL/SSL)]]
 - [[fair-value-gap-fvg|Fair Value Gap (FVG)]]
@@ -63,7 +63,7 @@ Fuente: recap del vídeo. Entrada discrecional que no es A+ y que contradice su 
 - [[draw-on-liquidity-dol|Draw on Liquidity (DOL)]]
 - [[daily-bias|Daily Bias]]
 
-## Reglas relacionadas (detección automática)
+### Reglas relacionadas (detección automática)
 
 - [[secuencia-del-analisis-key-levels-fvg-1h-4h-reversion-o-continuacion-fvg|Secuencia del análisis: key levels → FVG 1H/4H → reversión o continuación → FVG en equilibrium → IFVG → BSL/SSL]]
 - [[judas-swing-acumulacion-manipulacion-distribucion|Judas Swing: acumulación → manipulación → distribución]]

@@ -55,7 +55,7 @@ El bias y la narrativa eran correctos; el BE evitó la pérdida. Habría ganado 
 
 El título dice +0 $ - BE.
 
-## Conceptos presentes
+### Conceptos presentes
 
 - [[equal-highs-equal-lows|Equal Highs / Equal Lows]]
 - [[fair-value-gap-fvg|Fair Value Gap (FVG)]]
@@ -63,7 +63,7 @@ El título dice +0 $ - BE.
 - [[daily-bias|Daily Bias]]
 - [[equilibrium-premium-descuento|Equilibrium (premium/descuento)]]
 
-## Reglas relacionadas (detección automática)
+### Reglas relacionadas (detección automática)
 
 - [[secuencia-del-analisis-key-levels-fvg-1h-4h-reversion-o-continuacion-fvg|Secuencia del análisis: key levels → FVG 1H/4H → reversión o continuación → FVG en equilibrium → IFVG → BSL/SSL]]
 - [[equilibrium-comprar-en-descuento-vender-en-premium|Equilibrium: comprar en descuento, vender en premium]]

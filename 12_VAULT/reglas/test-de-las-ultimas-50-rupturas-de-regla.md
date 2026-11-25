@@ -53,7 +53,7 @@ Es un ejercicio personal, no una regla de mercado.
 
 Bootcamp Día 14 [08:17–08:47].
 
-## Conceptos relacionados
+### Conceptos relacionados
 
 - [[revenge-trading-psicologia|Revenge Trading (psicología)]]
 

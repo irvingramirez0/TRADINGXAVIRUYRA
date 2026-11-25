@@ -48,7 +48,7 @@ No es una prohibición absoluta si el setup es A+ y la LRL ya está mitigada.
 
 Primera evidencia clara en la sesión de backtesting de enero 2026.
 
-## Conceptos relacionados
+### Conceptos relacionados
 
 - [[low-resistance-liquidity-lrl|Low Resistance Liquidity (LRL)]]
 - [[liquidez-bsl-ssl|Liquidez (BSL/SSL)]]

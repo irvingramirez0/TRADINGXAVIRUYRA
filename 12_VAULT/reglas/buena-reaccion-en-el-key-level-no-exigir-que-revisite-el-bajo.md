@@ -53,7 +53,7 @@ Si no hay reacción, se aplica la regla de consolidación.
 
 Bootcamp Día 15 [06:49–07:22].
 
-## Conceptos relacionados
+### Conceptos relacionados
 
 - [[inverse-fair-value-gap-ifvg|Inverse Fair Value Gap (IFVG)]]
 - [[key-levels|Key Levels]]

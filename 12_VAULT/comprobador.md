@@ -11,6 +11,7 @@ panel:
   barras:
     - {etiqueta: "Conceptos con cita de vídeo", hecho: 58, total: 58}
     - {etiqueta: "Reglas con cita de vídeo", hecho: 156, total: 156}
+    - {etiqueta: "Operaciones con cita formal (P&L autodeclarado)", hecho: 0, total: 54}
   pie: "«Con cita» significa que la base guarda al menos una fila de evidencia con vídeo y minuto. No mide si la cita es buena, solo si existe: la lectura crítica es tuya."
 ---
 
@@ -28,8 +29,8 @@ Este sitio se presenta como un resumen **trazable**. Esta página es su propia a
 
 ## Qué falta
 
-> [!success] Todo tiene fuente
-> Todas las entidades tienen al menos una cita y todos los vídeos citados están en la base.
+> [!note] Sin huecos en conceptos ni reglas
+> Las operaciones siguen siendo autodeclaradas: ver la barra de arriba.
 
 ## Regla del proyecto
 

@@ -18,43 +18,15 @@ id: 51
 
 Apertura de la vela de las 10:00 NY, que coincide con el open de la vela de 4H y de 1H. Se busca un PO3 con liquidity sweep y entrada por IFVG/CISD.
 
-## Interpretación de Xavi
-
-Es el segundo sistema de entrada. Para largos quiere open low (manipulación abajo) y cierre alcista; para cortos, open high y cierre bajista. El open high/low solo cuenta si hay sweep.
-
 ## Cómo identificarlo
 
 Acumulación antes de las 10:00; sweep de un high/low; open low/high en 1m; cierre en la dirección del DOL; IFVG/CISD.
-
-## Cuándo se usa
-
-10:00–10:30; a veces 10:15/10:30 como continuación.
-
-## Condiciones
-
-Liquidity sweep; zona de manipulación (gap de 5m o más); DOL claro; true manipulation.
-
-## Temporalidades
-
-1m para open high/low y entrada; 5m/15m/1H/4H para contexto y target.
-
-## Aplicación
-
-Esperar el sweep de las 10:00; entrar en el IFVG de 1m; stop al otro lado del sweep; target en gap/liquidez.
 
 ## Errores comunes
 
 Entrar antes de las 10:00 (ej. 9:59:45); usar el color de la primera vela sin sweep; buscar la reversión completa; ignorar el correlacionado.
 
-## Excepciones
-
-No es mecánico; no todas las velas de las 10:00 abren al revés. Si el DOL ya se cumplió, no operar.
-
-## Notas
-
-Documento 05.
-
-## Requiere / se combina con
+### Requiere / se combina con
 
 - [[inverse-fair-value-gap-ifvg|Inverse Fair Value Gap (IFVG)]]
 - [[po3-power-of-3|PO3 (Power of 3)]]

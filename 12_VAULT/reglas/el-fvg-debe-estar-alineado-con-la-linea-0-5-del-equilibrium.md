@@ -53,7 +53,7 @@ Puede haber dos rangos válidos si duda al dibujar.
 
 Día 19 [03:11–03:42].
 
-## Conceptos relacionados
+### Conceptos relacionados
 
 - [[liquidez-bsl-ssl|Liquidez (BSL/SSL)]]
 - [[fair-value-gap-fvg|Fair Value Gap (FVG)]]

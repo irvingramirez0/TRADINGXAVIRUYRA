@@ -53,7 +53,7 @@ Puede aparecer como recurso puntual, no como sistema.
 
 Bootcamp Día 13 [00:34–01:05].
 
-## Conceptos relacionados
+### Conceptos relacionados
 
 - [[cisd-change-in-state-of-delivery|CISD (Change in State of Delivery)]]
 

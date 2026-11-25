@@ -52,7 +52,7 @@ Ninguna.
 
 Documento 05 y 09.
 
-## Conceptos relacionados
+### Conceptos relacionados
 
 - [[inverse-fair-value-gap-ifvg|Inverse Fair Value Gap (IFVG)]]
 - [[sesiones-de-mercado-asia-londres-nueva-york|Sesiones de mercado (Asia / Londres / Nueva York)]]

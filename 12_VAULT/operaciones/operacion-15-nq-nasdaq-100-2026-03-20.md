@@ -55,7 +55,7 @@ El DOL/draw liquidity puede guiar la entrada cuando no hay un gatillo limpio; pe
 
 Fuente: recap del vídeo. Entrada discrecional sin IFVG de 30s; él mismo duda que la defendería si hubiera perdido: 'es muy fácil decir he sido discrecional porque he ganado'.; No esperó al FVG de 2m; quienes esperaron tuvieron mejor entrada/BE (él lo reconoce).. Citas: [2.67s] no hay mejor manera de acabar la semana que con un buen take profit | [2.67s] Cuatro contratos. Cerramos cuatro contratos aquí abajo | [34.4s] Una hora doll clarísimo. Este low de aquí, o sea, este lad de aquí, perdonar, supercaro porque aparte de que estamos en un claro sell model | [155.72s] no hay ni fair valg, o sea, ni invers de 30 segundos. | Clasificación original: Bien ejecutado ganador (entrada discrecional, con duda reconocida)
 
-## Conceptos presentes
+### Conceptos presentes
 
 - [[liquidez-bsl-ssl|Liquidez (BSL/SSL)]]
 - [[fair-value-gap-fvg|Fair Value Gap (FVG)]]
@@ -63,7 +63,7 @@ Fuente: recap del vídeo. Entrada discrecional sin IFVG de 30s; él mismo duda q
 - [[draw-on-liquidity-dol|Draw on Liquidity (DOL)]]
 - [[low-resistance-liquidity-lrl|Low Resistance Liquidity (LRL)]]
 
-## Reglas relacionadas (detección automática)
+### Reglas relacionadas (detección automática)
 
 - [[secuencia-del-analisis-key-levels-fvg-1h-4h-reversion-o-continuacion-fvg|Secuencia del análisis: key levels → FVG 1H/4H → reversión o continuación → FVG en equilibrium → IFVG → BSL/SSL]]
 - [[no-operar-contra-low-resistance-liquidity-lrl|No operar contra low resistance liquidity (LRL)]]

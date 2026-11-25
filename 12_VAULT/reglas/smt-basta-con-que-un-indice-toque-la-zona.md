@@ -53,7 +53,7 @@ La true manipulation sigue siendo obligatoria.
 
 Bootcamp Día 17 [02:08–02:40].
 
-## Conceptos relacionados
+### Conceptos relacionados
 
 - [[true-manipulation|True Manipulation]]
 - [[key-levels|Key Levels]]

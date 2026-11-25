@@ -19,41 +19,13 @@ id: 81
 
 Presión por alcanzar un resultado (pasar una evaluación, retirar dinero) antes de una fecha autoimpuesta. Xavi la distingue de la urgencia y de las ganas de trabajar.
 
-## Interpretación de Xavi
-
-La prisa como plazo de resultado añade presión innecesaria y empuja a romper el sistema. El foco debe ser construir la habilidad y ejecutar bien; el retiro llega como consecuencia.
-
 ## Cómo identificarlo
 
 Detectar frases como 'quiero retirar antes de fin de año', 'quiero pasar la evaluación ya' o 'me queda poco tiempo'. Preguntarse por qué se persigue ese objetivo y si la forma de perseguirlo respeta el sistema.
 
-## Cuándo se usa
-
-En la revisión psicológica y en la definición de objetivos.
-
-## Condiciones
-
-Aparece sobre todo cuando queda un plazo externo (fin de año, meses para 2027) o después de una racha.
-
-## Temporalidades
-
-No aplica.
-
-## Aplicación
-
-Sustituir el objetivo de resultado por un objetivo de proceso (construir la habilidad, 60 días de ejecución) y revisar antes de cada trade si el setup gusta y si perderlo enfadaría.
-
 ## Errores comunes
 
 Fijar 'payout antes de fin de año'; confundir urgencia con presión; creer que el tiempo por sí solo mejorará el trading; hacer promesas diarias sin cambiar la conducta.
-
-## Excepciones
-
-Xavi no condena la urgencia ni las ganas de ganar dinero; dice que están bien. El problema es el plazo y la presión que llevan a romper reglas.
-
-## Notas
-
-Bootcamp Día 7. Concepto psicológico, no técnico.
 
 ## Evidencia
 

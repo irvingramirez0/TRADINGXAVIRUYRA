@@ -53,7 +53,7 @@ Si el DOL es muy claro y el primer IFVG se invierte con fuerza, puede entrar del
 
 'Cuanto más alta la temporalidad, más fuerza y más decisión tiene.'
 
-## Conceptos relacionados
+### Conceptos relacionados
 
 - [[inverse-fair-value-gap-ifvg|Inverse Fair Value Gap (IFVG)]]
 - [[draw-on-liquidity-dol|Draw on Liquidity (DOL)]]

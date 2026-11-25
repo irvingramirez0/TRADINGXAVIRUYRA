@@ -55,7 +55,7 @@ La entrada fue incorrecta en retrospectiva; movió el stop; dejó revertir +300 
 
 Fuente: recap del vídeo (transcripción automática). Citas: [00:32] "mi daily bias era que al haber equilibrium del high time frame... subiría hacia London Lows"; [01:39] "he decidido proteger mi stop loss... de un 800 inicial a un 600"; [03:53] "me permito un solo trade el día. Y hoy pérdida bastante más grande de la que yo..."
 
-## Conceptos presentes
+### Conceptos presentes
 
 - [[daily-bias|Daily Bias]]
 - [[fair-value-gap-fvg|Fair Value Gap (FVG)]]
@@ -63,7 +63,7 @@ Fuente: recap del vídeo (transcripción automática). Citas: [00:32] "mi daily 
 - [[nwog-new-week-opening-gap|NWOG (New Week Opening Gap)]]
 - [[sesion-de-londres|Sesión de Londres]]
 
-## Reglas relacionadas (detección automática)
+### Reglas relacionadas (detección automática)
 
 - [[secuencia-del-analisis-key-levels-fvg-1h-4h-reversion-o-continuacion-fvg|Secuencia del análisis: key levels → FVG 1H/4H → reversión o continuación → FVG en equilibrium → IFVG → BSL/SSL]]
 - [[po3-requiere-htf-pd-array-de-15m-o-mas|PO3 requiere HTF PD array de 15m o más]]

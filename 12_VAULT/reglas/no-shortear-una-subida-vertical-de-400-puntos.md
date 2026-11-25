@@ -52,7 +52,7 @@ Ninguna.
 
 Documento 04 y 05.
 
-## Conceptos relacionados
+### Conceptos relacionados
 
 - [[equal-highs-equal-lows|Equal Highs / Equal Lows]]
 - [[low-resistance-liquidity-lrl|Low Resistance Liquidity (LRL)]]

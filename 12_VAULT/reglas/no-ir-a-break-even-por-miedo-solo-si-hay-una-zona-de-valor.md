@@ -45,7 +45,7 @@ Payout o racha (regla 93).
 
 Backtest de marzo. Regla explícita en el vídeo; no formulada como norma numerada.
 
-## Conceptos relacionados
+### Conceptos relacionados
 
 - [[fair-value-gap-fvg|Fair Value Gap (FVG)]]
 - [[key-levels|Key Levels]]

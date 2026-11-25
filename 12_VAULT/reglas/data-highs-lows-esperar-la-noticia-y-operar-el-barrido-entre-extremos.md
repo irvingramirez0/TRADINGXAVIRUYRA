@@ -53,7 +53,7 @@ A veces el precio no llega al extremo contrario y el movimiento sigue siendo apr
 
 Bootcamp Día 11 [09:54–11:58].
 
-## Conceptos relacionados
+### Conceptos relacionados
 
 - [[data-highs-lows|Data Highs / Lows]]
 

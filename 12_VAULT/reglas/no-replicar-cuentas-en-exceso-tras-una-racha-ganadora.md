@@ -53,7 +53,7 @@ Ninguna documentada.
 
 Día 20 [07:52–08:23]; caso personal 03:42–04:13.
 
-## Conceptos relacionados
+### Conceptos relacionados
 
 - [[ego-psicologia|Ego (psicología)]]
 

@@ -19,43 +19,15 @@ id: 59
 
 Muchos highs que están juntos o lows que no se han llegado a quitar nunca entre ellos.
 
-## Interpretación de Xavi
-
-Es un objetivo: hay muchísima liquidez hacia un lado y el precio tiene que ir a tocarla para decidir si sigue o gira. Cuanta más LRL, más peso tiene como draw.
-
 ## Cómo identificarlo
 
 Varios highs próximos entre sí, o varios lows que nunca se han quitado entre ellos; comprobar que no hay un FVG relevante que los proteja.
-
-## Cuándo se usa
-
-Antes de validar un PO3 o un short tras una subida.
-
-## Condiciones
-
-Estructura clara; no vertical.
-
-## Temporalidades
-
-15m/5m/1m.
-
-## Aplicación
-
-Confirmar que hay espacio para la distribución.
 
 ## Errores comunes
 
 Shortear una subida vertical sin LRL; confundir LRL con cualquier zona.
 
-## Excepciones
-
-No está definido con precisión; se reconoce por estructura.
-
-## Notas
-
-Definición explícita en PzkT4SC47Jo (2026-08-30, 12:28–12:58). Antes solo estaba inferida.
-
-## Requiere / se combina con
+### Requiere / se combina con
 
 - [[po3-power-of-3|PO3 (Power of 3)]]
 - [[equal-highs-equal-lows|Equal Highs / Equal Lows]]

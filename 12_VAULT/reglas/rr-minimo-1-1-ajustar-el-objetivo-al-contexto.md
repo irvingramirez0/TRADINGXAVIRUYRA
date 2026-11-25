@@ -53,7 +53,7 @@ RR variable según condiciones; él dice que el máximo habitual suele ser 1:2, 
 
 Bootcamp Día 26 [02:05–04:40, 09:56–10:26, 16:11–17:17]. El ejemplo de 1:2,22 impide tratar 1:2 como techo absoluto.
 
-## Conceptos relacionados
+### Conceptos relacionados
 
 - [[draw-on-liquidity-dol|Draw on Liquidity (DOL)]]
 - [[cuentas-de-fondeo|Cuentas de fondeo]]

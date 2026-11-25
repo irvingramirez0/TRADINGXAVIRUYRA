@@ -53,7 +53,7 @@ La liquidez LTF sigue siendo útil para ejecución.
 
 Documento 01.
 
-## Conceptos relacionados
+### Conceptos relacionados
 
 - [[liquidez-bsl-ssl|Liquidez (BSL/SSL)]]
 

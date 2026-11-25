@@ -19,43 +19,15 @@ id: 86
 
 Alto y bajo de la última vela diaria cerrada. Se marcan en gráfico diario: la mecha más alta y la más baja.
 
-## Interpretación de Xavi
-
-El precio tiende a visitarlos y reaccionar como si fueran BSL/SSL. Funcionan mejor alineados con un FVG. Es el tipo de liquidez que menos usa: lo considera prescindible.
-
 ## Cómo identificarlo
 
 En gráfico diario, tomar la última vela cerrada y marcar su mecha superior (PDH) y su mecha inferior (PDL).
-
-## Cuándo se usa
-
-Contexto previo a la sesión; se combina con FVG y con el resto de tipos de liquidez.
-
-## Condiciones
-
-Debe haber reacción previa o alineación con una zona (FVG, NWOG/NDOG) para usarlo.
-
-## Temporalidades
-
-Diario para marcarlo; se proyecta a temporalidades menores.
-
-## Aplicación
-
-Usarlo como objetivo o como punto de reacción si coincide con una zona; en su ejemplo, PDH alineado con FVG bajista y objetivo en el PDL.
 
 ## Errores comunes
 
 Marcarlo en temporalidades menores; usarlo aislado sin FVG; darle más peso que a LRL o NWOG/NDOG.
 
-## Excepciones
-
-Él mismo dice que se puede saltar: usa cinco de los seis tipos.
-
-## Notas
-
-Bootcamp Día 11. Definición 00:32–02:07; ejemplo con FVG 02:37.
-
-## Requiere / se combina con
+### Requiere / se combina con
 
 - [[liquidez-bsl-ssl|Liquidez (BSL/SSL)]]
 - [[fair-value-gap-fvg|Fair Value Gap (FVG)]]

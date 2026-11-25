@@ -55,14 +55,14 @@ Se puede ejecutar bien y perder si la dirección del día es equivocada; no pasa
 
 Fuente: recap del vídeo. Error de análisis: el bias/dirección del día era incorrecto ('Lo único que he tenido mal hoy, el vallas, e la dirección del día').; No reconoce errores de ejecución ni de gestión; considera el trade 'super bueno'.. Citas: [2.83s] Hoy ha tocado perder, no pasa absolutamente nada. Venimos de una racha de wins bastante top, así que la verdad que ya tocaba ya tocaba perder. | [95.0s] Hemos abierto un fair value up de 15 minutos. Perfecto. Lo hemos tapeado y el SP500 no lo ha tapeado, así que teníamos un SMT | [125.36s] hoy directamente dirección del día mala, eh, no hemos acertado, no pasa absolutamente nada | [125.36s] Lo único que he tenido mal hoy, el vallas, e la dirección del día.
 
-## Conceptos presentes
+### Conceptos presentes
 
 - [[daily-bias|Daily Bias]]
 - [[fair-value-gap-fvg|Fair Value Gap (FVG)]]
 - [[inverse-fair-value-gap-ifvg|Inverse Fair Value Gap (IFVG)]]
 - [[smt-smart-money-technique|SMT (Smart Money Technique)]]
 
-## Reglas relacionadas (detección automática)
+### Reglas relacionadas (detección automática)
 
 - [[secuencia-del-analisis-key-levels-fvg-1h-4h-reversion-o-continuacion-fvg|Secuencia del análisis: key levels → FVG 1H/4H → reversión o continuación → FVG en equilibrium → IFVG → BSL/SSL]]
 - [[hacer-backtesting-con-nq-y-es-abiertos-y-en-sesion-de-nueva-york|Hacer backtesting con NQ y ES abiertos y en sesión de Nueva York]]

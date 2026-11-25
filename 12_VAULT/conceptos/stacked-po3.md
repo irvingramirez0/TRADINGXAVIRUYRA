@@ -18,43 +18,15 @@ id: 49
 
 Secuencia de PO3 en aperturas consecutivas de 15m (9:30 → 9:45 → 10:00 → 10:15 → 10:30) mientras se respetan los key levels.
 
-## Interpretación de Xavi
-
-Si el primer PO3 no distribuye, no se descarta el día: se espera al siguiente open. Cada nuevo high sin romper el primer nivel deja el precio en mejor descuento para cortos, siempre que haya estructura.
-
 ## Cómo identificarlo
 
 Ver que el precio sigue manipulando sin romper el nivel clave; esperar el siguiente open de 15m.
-
-## Cuándo se usa
-
-Cuando el PO3 de las 9:30 o 9:45 no distribuye.
-
-## Condiciones
-
-Key levels respetados; DOL vigente; estructura (LRL, equal lows, subida lenta).
-
-## Temporalidades
-
-15m.
-
-## Aplicación
-
-Esperar la distribución en 9:45, 10:00, 10:15 o 10:30; entrar con IFVG/CISD.
 
 ## Errores comunes
 
 Abandonar el día tras el primer PO3 fallido; estaquear sin estructura; shortear una subida vertical.
 
-## Excepciones
-
-Si se invierte el gap de 1H, no se busca PO3 alcista.
-
-## Notas
-
-Documento 04.
-
-## Requiere / se combina con
+### Requiere / se combina con
 
 - [[po3-power-of-3|PO3 (Power of 3)]]
 - [[amd-acumulacion-manipulacion-distribucion|AMD (Acumulación, Manipulación, Distribución)]]

@@ -53,7 +53,7 @@ El proceso es una síntesis de ejemplos, no una plantilla mecánica para todos l
 
 Bootcamp Día 25 [02:04–06:09].
 
-## Conceptos relacionados
+### Conceptos relacionados
 
 - [[inverse-fair-value-gap-ifvg|Inverse Fair Value Gap (IFVG)]]
 - [[draw-on-liquidity-dol|Draw on Liquidity (DOL)]]

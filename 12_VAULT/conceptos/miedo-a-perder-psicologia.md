@@ -19,41 +19,13 @@ id: 82
 
 Bloqueo o duda al ejecutar un setup por temor a que el trade pierda. Xavi lo trata como un problema diagnosticable, no como un rasgo de carácter.
 
-## Interpretación de Xavi
-
-Casi siempre tiene una causa concreta: o el riesgo es demasiado alto respecto a la cuenta, o no se confía en la estrategia. Cada causa tiene su solución: bajar el riesgo o construir confianza con backtesting y diario.
-
 ## Cómo identificarlo
 
 El trade se presenta y no se entra; se entra tarde y se cierra antes; después se ve en redes que otros cogieron el trade y se siente que se 'merecía' ganar el día.
 
-## Cuándo se usa
-
-Revisión psicológica y diario; también antes de comprar una evaluación.
-
-## Condiciones
-
-Suele aparecer tras rachas de pérdidas, con riesgo alto o con cuentas caras para el bolsillo.
-
-## Temporalidades
-
-No aplica.
-
-## Aplicación
-
-Preguntar: ¿qué me pasa? ¿por qué? ¿qué hago? Si el miedo viene del riesgo, bajarlo. Si viene de la desconfianza, backtesting, práctica y revisión de entradas.
-
 ## Errores comunes
 
 Buscar motivación en lugar de diagnóstico; subir el riesgo para 'recuperar'; entrar tarde por miedo y luego forzar un trade peor.
-
-## Excepciones
-
-No distingue umbrales de riesgo entre evaluación y cuenta fondeada; solo dice 'bajar el riesgo'.
-
-## Notas
-
-Bootcamp Día 9. Tema completo del vídeo.
 
 ## Evidencia
 

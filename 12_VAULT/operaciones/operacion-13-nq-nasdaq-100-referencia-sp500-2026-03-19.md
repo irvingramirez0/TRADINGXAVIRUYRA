@@ -55,7 +55,7 @@ Un setup válido puede saltar en 30-40 segundos; el stop no siempre implica erro
 
 Fuente: recap del vídeo. No reconoce errores: 'No me he saltado ninguna regla'; está contento y pillaría el trade 100 veces más.; Única pega: el inverse no era el más fuerte/bonito que ha visto; lo atribuye al timing/price action, no al sistema.. Citas: [3.07s] hemos entrado con ocho contratos aquí, con el stop aquí abajo y nos ha dado stop loss y cuando os digo que nos ha dado stop literalmente en 30 segundos, 40 segundos | [218.68s] estoy muy contento con con trade, muy contento. No me he saltado ninguna regla, mi riesgo son normalmente 500 dólares, así que bastante acertado, 450 dólares. | [310.96s] Simplemente creo que no lo he pillado, o sea, no he tenido el timing de pillarlo bien | [341.12s] el lockout me lo hago instantáneamente cuando hago el stop, porque sé que me van a entrar ganas de reentrar, de sobreoperar
 
-## Conceptos presentes
+### Conceptos presentes
 
 - [[fair-value-gap-fvg|Fair Value Gap (FVG)]]
 - [[equal-highs-equal-lows|Equal Highs / Equal Lows]]
@@ -63,7 +63,7 @@ Fuente: recap del vídeo. No reconoce errores: 'No me he saltado ninguna regla';
 - [[draw-on-liquidity-dol|Draw on Liquidity (DOL)]]
 - [[daily-bias|Daily Bias]]
 
-## Reglas relacionadas (detección automática)
+### Reglas relacionadas (detección automática)
 
 - [[secuencia-del-analisis-key-levels-fvg-1h-4h-reversion-o-continuacion-fvg|Secuencia del análisis: key levels → FVG 1H/4H → reversión o continuación → FVG en equilibrium → IFVG → BSL/SSL]]
 - [[el-dol-debe-estar-dentro-de-un-fvg-pd-array|El DOL debe estar dentro de un FVG/PD array]]

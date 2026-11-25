@@ -19,41 +19,13 @@ id: 75
 
 Teoría de ondas.
 
-## Interpretación de Xavi
-
-No aparece en su metodología.
-
 ## Cómo identificarlo
 
 No aplica.
 
-## Cuándo se usa
-
-No usado.
-
-## Condiciones
-
-No aplica.
-
-## Temporalidades
-
-No aplica.
-
-## Aplicación
-
-No introducirlo.
-
 ## Errores comunes
 
 Añadirlo para 'completar'.
-
-## Excepciones
-
-Ninguna.
-
-## Notas
-
-Excluido.
 
 ## Evidencia
 

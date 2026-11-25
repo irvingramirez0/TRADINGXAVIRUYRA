@@ -52,7 +52,7 @@ No es mecánico; no todas las velas de las 10:00 abren al revés.
 
 Documento 05.
 
-## Conceptos relacionados
+### Conceptos relacionados
 
 - [[open-de-las-10-00|Open de las 10:00]]
 - [[true-manipulation|True Manipulation]]

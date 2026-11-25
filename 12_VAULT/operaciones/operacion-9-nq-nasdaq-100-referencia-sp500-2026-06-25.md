@@ -55,7 +55,7 @@ Tras una caída inhumana (~1.000 puntos) lo normal es chop/QR; no operar.; Si te
 
 Fuente: recap del vídeo. Miedo/bloqueo: no tomó el A+ del open (inverse FVG de 30 s) por miedo a llegar al daily loss limit ('me he cagado').; Forzó un trade para pasar las evals, con prisa y razonamiento dopaminérgico; se autoconvenció.; Operó después de una caída de ~1.000 puntos, en un QR/chopfest donde él mismo dice que no hay nada de alta probabilidad.; Confundió cumplir el checklist con que el trade fuera bueno: el setup cumplía las condiciones de la estrategia, pero las condiciones del día no eran operables.. Citas: [32.88s] Al final, el trade no ha sido muy bueno y os voy a explicar cómo he perdido, pues, en total $5,000 operando el Nasdaq. | [95.28s] he tenido miedo, o sea, me he cagado, literalmente, he tenido miedo de llegar al daily los limit | [186.56s] ¿Qué he hecho? Forzar un trade porque quería pasar las evals, no sé, tenía prisa para pasarlas. | [216.76s] el razonamiento del trade ha sido pura dopamina
 
-## Conceptos presentes
+### Conceptos presentes
 
 - [[liquidez-bsl-ssl|Liquidez (BSL/SSL)]]
 - [[fair-value-gap-fvg|Fair Value Gap (FVG)]]
@@ -63,7 +63,7 @@ Fuente: recap del vídeo. Miedo/bloqueo: no tomó el A+ del open (inverse FVG de
 - [[daily-bias|Daily Bias]]
 - [[smt-smart-money-technique|SMT (Smart Money Technique)]]
 
-## Reglas relacionadas (detección automática)
+### Reglas relacionadas (detección automática)
 
 - [[secuencia-del-analisis-key-levels-fvg-1h-4h-reversion-o-continuacion-fvg|Secuencia del análisis: key levels → FVG 1H/4H → reversión o continuación → FVG en equilibrium → IFVG → BSL/SSL]]
 - [[equilibrium-comprar-en-descuento-vender-en-premium|Equilibrium: comprar en descuento, vender en premium]]

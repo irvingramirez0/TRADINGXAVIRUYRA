@@ -19,43 +19,15 @@ id: 94
 
 El primer gap de cada temporalidad que se crea después de tocar un key level queda respaldado por ese key level.
 
-## Interpretación de Xavi
-
-Xavi dice que puede ayudar a confiar o decidir si le gusta un trade, pero aclara que no lo usa plenamente ni le da mucha importancia.
-
 ## Cómo identificarlo
 
 Tras tocar un key level, localizar el primer gap creado en cada temporalidad por separado; los gaps posteriores de esa misma temporalidad no heredan ese sponsorship.
-
-## Cuándo se usa
-
-Como confluencia secundaria después del toque de un key level.
-
-## Condiciones
-
-Toque previo de un key level; evaluar cada temporalidad de forma independiente.
-
-## Temporalidades
-
-Ejemplos de 5m y 15m respaldados por key levels de 1H/4H.
-
-## Aplicación
-
-Puede aportar confianza; no se documenta como requisito de entrada.
 
 ## Errores comunes
 
 Tratar cada gap posterior como patrocinado o convertirlo en condición obligatoria.
 
-## Excepciones
-
-La relación exacta entre temporalidades y su peso operativo no queda completamente formalizada.
-
-## Notas
-
-Bootcamp Día 25 [18:44–20:50]. Xavi dice que el concepto no tiene mucha importancia práctica para él.
-
-## Requiere / se combina con
+### Requiere / se combina con
 
 - [[fair-value-gap-fvg|Fair Value Gap (FVG)]]
 - [[equilibrium-premium-descuento|Equilibrium (premium/descuento)]]

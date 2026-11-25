@@ -55,7 +55,7 @@ Todo sistema ganador tiene pérdidas; un buen trade puede no darse.; En 'no news
 
 Fuente: recap del vídeo. Bias/draw diario equivocado: 'mi vallas estaba mal, ha sido simplemente incorrecto. El precio quería bajar.'; Única mejora que propone: era 'no news Monday'; podría haber reducido el riesgo y esperado más confirmación (por ejemplo, que se invirtiera el FVG grande de 5m) porque no había prisa.; Reconoce que pilló el primer inverse tras una bajada fuerte, justo lo que él mismo había advertido el día anterior; lo justifica porque era 'free TP o free BE'.. Citas: [3.23s] los recaps donde pierdo creo que son los mejores porque es donde se aprenden más cosas | [223.28s] Nuestro primer trade, de hecho, ha sido este inverse de 5 minutos. | [347.48s] hemos bajado casi 200 tres casi 300 | [379.44s] ¿estoy contento con el trade? Sí. ¿Me ha enfadado el stop? No. | Clasificación original: Bien ejecutado perdedor (trade 2); Inconcluso (trade 1, BE)
 
-## Conceptos presentes
+### Conceptos presentes
 
 - [[liquidez-bsl-ssl|Liquidez (BSL/SSL)]]
 - [[fair-value-gap-fvg|Fair Value Gap (FVG)]]
@@ -63,7 +63,7 @@ Fuente: recap del vídeo. Bias/draw diario equivocado: 'mi vallas estaba mal, ha
 - [[daily-bias|Daily Bias]]
 - [[smt-smart-money-technique|SMT (Smart Money Technique)]]
 
-## Reglas relacionadas (detección automática)
+### Reglas relacionadas (detección automática)
 
 - [[secuencia-del-analisis-key-levels-fvg-1h-4h-reversion-o-continuacion-fvg|Secuencia del análisis: key levels → FVG 1H/4H → reversión o continuación → FVG en equilibrium → IFVG → BSL/SSL]]
 - [[equilibrium-comprar-en-descuento-vender-en-premium|Equilibrium: comprar en descuento, vender en premium]]

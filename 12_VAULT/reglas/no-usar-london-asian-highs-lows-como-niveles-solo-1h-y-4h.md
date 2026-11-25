@@ -52,7 +52,7 @@ Puede operar la sesión de Londres, pero no usar sus extremos como niveles.
 
 'Ya no los uso.' Antes marcaba highs/lows de Asia y Londres como niveles operativos: vUt2D7S3ss8 (2025-12-02, 00:31) y p6wC7iWh_Ps (2025-07-28, 00:32). En junio de 2026 declara que ya no los usa. No confundir con operar la sesión de Londres (concepto 68, CONTEXTUAL).
 
-## Conceptos relacionados
+### Conceptos relacionados
 
 - [[sesion-de-londres|Sesión de Londres]]
 

@@ -18,43 +18,15 @@ id: 63
 
 Movimiento impulsivo del precio que deja un FVG y muestra intención.
 
-## Interpretación de Xavi
-
-Puede confirmar la distribución y servir como trigger si no hay un IFVG limpio.
-
 ## Cómo identificarlo
 
 Velas de impulso que rompen estructura y dejan un gap.
-
-## Cuándo se usa
-
-En la entrada del PO3.
-
-## Condiciones
-
-Contexto y DOL.
-
-## Temporalidades
-
-1m/5m.
-
-## Aplicación
-
-Confirmar la entrada; a veces sustituye al IFVG.
 
 ## Errores comunes
 
 Confundir cualquier vela grande con displacement.
 
-## Excepciones
-
-No está desarrollado como concepto independiente.
-
-## Notas
-
-Documento 04.
-
-## Requiere / se combina con
+### Requiere / se combina con
 
 - [[fair-value-gap-fvg|Fair Value Gap (FVG)]]
 - [[inverse-fair-value-gap-ifvg|Inverse Fair Value Gap (IFVG)]]

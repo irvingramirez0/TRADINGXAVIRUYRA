@@ -55,13 +55,13 @@ Trade limpio con NWOG y sweep; la entrada por inverse de 3m dio el 1:1.
 
 +324 $ según el transcript.
 
-## Conceptos presentes
+### Conceptos presentes
 
 - [[fair-value-gap-fvg|Fair Value Gap (FVG)]]
 - [[inverse-fair-value-gap-ifvg|Inverse Fair Value Gap (IFVG)]]
 - [[nwog-new-week-opening-gap|NWOG (New Week Opening Gap)]]
 
-## Reglas relacionadas (detección automática)
+### Reglas relacionadas (detección automática)
 
 - [[judas-swing-acumulacion-manipulacion-distribucion|Judas Swing: acumulación → manipulación → distribución]]
 - [[el-fvg-se-invierte-solo-con-cierre-de-cuerpo-completo|El FVG se invierte solo con cierre de cuerpo completo]]

@@ -40,7 +40,7 @@ Un miembro del FOMC (p. ej. Bullard) no es el FOMC grande y no le impide operar.
 
 Confirmado en tres sesiones distintas (enero, febrero y junio de 2026).
 
-## Conceptos relacionados
+### Conceptos relacionados
 
 - [[sesiones-de-mercado-asia-londres-nueva-york|Sesiones de mercado (Asia / Londres / Nueva York)]]
 

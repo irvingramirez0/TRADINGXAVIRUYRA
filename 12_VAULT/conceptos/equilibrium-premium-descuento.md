@@ -19,43 +19,15 @@ id: 53
 
 Línea media de un rango que separa la zona premium (cara, arriba) de la zona de descuento (barata, abajo). En el bootcamp se dibuja con el retroceso de Fibonacci (0.5); la cuadrícula de Gann es la versión histórica de 2025.
 
-## Interpretación de Xavi
-
-El precio busca la zona operativa para llenar órdenes a mejor precio. En cortos, el premium es donde el precio no necesita subir más. El FVG debe estar alineado con la línea 0.5 y la confirmación es el IFVG.
-
 ## Cómo identificarlo
 
 Compras: anclar swing low→swing high; la mitad inferior es descuento (zona gris). Ventas: anclar swing high→swing low; la mitad superior es premium (zona gris). El 0.5 es el equilibrium. En 5m, rango creado; si duda, dos rangos.
-
-## Cuándo se usa
-
-Para filtrar entradas y definir el plus setup.
-
-## Condiciones
-
-El precio debe tocar equilibrium; si no, normalmente no hay trade. Combinar con FVG alineado, liquidez e IFVG.
-
-## Temporalidades
-
-5m (rango creado); HTF pendiente de confirmar con Fibonacci (la regla del rango completo es de la versión Gann).
-
-## Aplicación
-
-Esperar que el precio llegue a la zona gris, reaccione y dar entrada con IFVG.
 
 ## Errores comunes
 
 Comprar en premium o vender en descuento; entrar antes de que el precio toque equilibrium; usar el rango completo en 5m; no esperar la reacción ni el IFVG; entrar por un FVG que no está en la zona; dibujar equilibrium en lateralización.
 
-## Excepciones
-
-'El precio no siempre tiene que estar en el descuento'; la regla es no operar en la zona contraria, no exigir que todo el movimiento esté en descuento.
-
-## Notas
-
-Documento 06. Día 19 (2026-11-13): Fibonacci vigente; Gann histórico; etiqueta premium corregida; IFVG como confirmación.
-
-## Requiere / se combina con
+### Requiere / se combina con
 
 - [[fair-value-gap-fvg|Fair Value Gap (FVG)]]
 - [[inverse-fair-value-gap-ifvg|Inverse Fair Value Gap (IFVG)]]

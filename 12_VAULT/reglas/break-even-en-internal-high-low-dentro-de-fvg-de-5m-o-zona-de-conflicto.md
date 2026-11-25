@@ -52,7 +52,7 @@ Excepción por payout/racha (regla 93).
 
 Precisa el umbral de la regla 58 (3m+) para el caso de internal high/low; no la invalida.
 
-## Conceptos relacionados
+### Conceptos relacionados
 
 - [[fair-value-gap-fvg|Fair Value Gap (FVG)]]
 - [[key-levels|Key Levels]]

@@ -53,7 +53,7 @@ En relative equal se admite la diferencia mínima.
 
 Bootcamp Día 11 [04:10–04:42].
 
-## Conceptos relacionados
+### Conceptos relacionados
 
 - [[equal-highs-equal-lows|Equal Highs / Equal Lows]]
 

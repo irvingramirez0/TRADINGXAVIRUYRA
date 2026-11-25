@@ -52,7 +52,7 @@ En el recap del 22/10 también mira daily como contexto.
 
 Documento 03 y 09.
 
-## Conceptos relacionados
+### Conceptos relacionados
 
 - [[fair-value-gap-fvg|Fair Value Gap (FVG)]]
 

@@ -55,7 +55,7 @@ Trade con narrativa clara y SMT; el TP llegó rápido. Buen ejemplo de short tra
 
 El importe exacto varía entre título (+550) y transcript (~500).
 
-## Conceptos presentes
+### Conceptos presentes
 
 - [[equal-highs-equal-lows|Equal Highs / Equal Lows]]
 - [[sesion-de-londres|Sesión de Londres]]
@@ -63,7 +63,7 @@ El importe exacto varía entre título (+550) y transcript (~500).
 - [[smt-smart-money-technique|SMT (Smart Money Technique)]]
 - [[narrativa-bias-dol-condiciones|Narrativa (bias + DOL + condiciones)]]
 
-## Reglas relacionadas (detección automática)
+### Reglas relacionadas (detección automática)
 
 - [[el-dol-debe-estar-dentro-de-un-fvg-pd-array|El DOL debe estar dentro de un FVG/PD array]]
 

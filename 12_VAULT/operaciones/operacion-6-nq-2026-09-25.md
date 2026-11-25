@@ -55,14 +55,14 @@ Llama error evitable a la entrada de las 9:43; reentra porque el riesgo era bajo
 
 Masterclass en vivo. | Clasificación original: Ganador con error de ejecución corregido
 
-## Conceptos presentes
+### Conceptos presentes
 
 - [[fair-value-gap-fvg|Fair Value Gap (FVG)]]
 - [[draw-on-liquidity-dol|Draw on Liquidity (DOL)]]
 - [[daily-bias|Daily Bias]]
 - [[smt-smart-money-technique|SMT (Smart Money Technique)]]
 
-## Reglas relacionadas (detección automática)
+### Reglas relacionadas (detección automática)
 
 - [[el-dol-debe-estar-dentro-de-un-fvg-pd-array|El DOL debe estar dentro de un FVG/PD array]]
 - [[el-bias-se-actualiza-si-el-precio-desplaza-fuerte-y-cruza-el-gap-de-4h|El bias se actualiza si el precio desplaza fuerte y cruza el gap de 4H]]

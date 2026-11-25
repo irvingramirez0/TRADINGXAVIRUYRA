@@ -52,7 +52,7 @@ Ninguna.
 
 Documento 09.
 
-## Conceptos relacionados
+### Conceptos relacionados
 
 - [[draw-on-liquidity-dol|Draw on Liquidity (DOL)]]
 

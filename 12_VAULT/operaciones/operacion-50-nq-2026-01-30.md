@@ -55,7 +55,7 @@ Día de price action malo; lo correcto fue proteger el BE y cerrar la semana pos
 
 El +50 $ es de la semana, no del día.
 
-## Conceptos presentes
+### Conceptos presentes
 
 - [[fair-value-gap-fvg|Fair Value Gap (FVG)]]
 

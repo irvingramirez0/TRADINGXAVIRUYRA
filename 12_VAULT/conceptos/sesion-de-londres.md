@@ -18,41 +18,13 @@ id: 68
 
 Sesión europea; Xavi la usa para pasar evaluaciones.
 
-## Interpretación de Xavi
-
-Pasa evaluaciones en Londres y opera fondeadas en Nueva York. No hay una explicación detallada de su metodología en Londres.
-
 ## Cómo identificarlo
 
 Horario europeo.
 
-## Cuándo se usa
-
-Evaluaciones, si el trader ya tiene experiencia.
-
-## Condiciones
-
-Backtestear antes.
-
-## Temporalidades
-
-No documentado.
-
-## Aplicación
-
-Probar evaluaciones en Londres; no es la base del bootcamp.
-
 ## Errores comunes
 
 Asumir que la metodología de NY se traslada sin probarla.
-
-## Excepciones
-
-No documentado.
-
-## Notas
-
-Documento 07. Vacío de investigación.
 
 ## Evidencia
 

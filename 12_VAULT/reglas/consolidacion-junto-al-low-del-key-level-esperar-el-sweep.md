@@ -53,7 +53,7 @@ Ninguna documentada.
 
 Bootcamp Día 15 [07:22–08:23].
 
-## Conceptos relacionados
+### Conceptos relacionados
 
 - [[inverse-fair-value-gap-ifvg|Inverse Fair Value Gap (IFVG)]]
 - [[key-levels|Key Levels]]

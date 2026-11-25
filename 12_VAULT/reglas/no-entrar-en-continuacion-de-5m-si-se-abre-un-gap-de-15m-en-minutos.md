@@ -52,7 +52,7 @@ Si el DOL es clarísimo puede aceptarlo; es discrecional.
 
 Ejemplo: a las 9:56 no entra aunque tenga el IFVG, porque a las 10:00 se crea el gap.
 
-## Conceptos relacionados
+### Conceptos relacionados
 
 - [[inverse-fair-value-gap-ifvg|Inverse Fair Value Gap (IFVG)]]
 - [[draw-on-liquidity-dol|Draw on Liquidity (DOL)]]

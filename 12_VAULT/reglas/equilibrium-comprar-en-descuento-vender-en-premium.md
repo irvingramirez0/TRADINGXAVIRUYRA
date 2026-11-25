@@ -53,7 +53,7 @@ La versión antigua llamaba 'descuento' a la mitad superior en cortos; la zona e
 
 Día 19 [06:22–06:52]. Sustituye en la práctica a 'Equilibrium: no comprar ni vender en premium', que queda obsoleta.
 
-## Conceptos relacionados
+### Conceptos relacionados
 
 - [[equilibrium-premium-descuento|Equilibrium (premium/descuento)]]
 - [[liquidez-bsl-ssl|Liquidez (BSL/SSL)]]

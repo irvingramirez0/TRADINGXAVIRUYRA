@@ -55,7 +55,7 @@ Trade A+ con SMT y FVG; el stop se protegió con dos highs de 1m. La gestión fu
 
 +799 $ exactos según el transcript; título +800 $.
 
-## Conceptos presentes
+### Conceptos presentes
 
 - [[equal-highs-equal-lows|Equal Highs / Equal Lows]]
 - [[sesion-de-londres|Sesión de Londres]]
@@ -63,7 +63,7 @@ Trade A+ con SMT y FVG; el stop se protegió con dos highs de 1m. La gestión fu
 - [[daily-bias|Daily Bias]]
 - [[smt-smart-money-technique|SMT (Smart Money Technique)]]
 
-## Reglas relacionadas (detección automática)
+### Reglas relacionadas (detección automática)
 
 - [[el-dol-debe-estar-dentro-de-un-fvg-pd-array|El DOL debe estar dentro de un FVG/PD array]]
 - [[si-se-invierte-el-fvg-de-1h-no-buscar-po3-alcista|Si se invierte el FVG de 1H, no buscar PO3 alcista]]
