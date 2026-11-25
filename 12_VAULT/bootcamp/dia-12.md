@@ -5,7 +5,7 @@ titulo: "Día 12 — Gambling (psicología)"
 confianza: "explícito"
 estado: "vigente"
 video: "ZOxEUWwDSoQ"
-timestamp: "00:00"
+timestamp: "0:03"
 dia: 12
 categoria: "BOOTCAMP"
 duracion: "9:22"

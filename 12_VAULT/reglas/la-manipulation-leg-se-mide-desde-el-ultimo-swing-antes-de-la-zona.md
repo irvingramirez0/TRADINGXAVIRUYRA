@@ -52,7 +52,7 @@ En continuación, la leg se reconstruye con el nuevo high/low.
 
 Definición literal: 'Siempre tenemos que mirar el último alto que se ha creado antes de que el precio llegue a la zona.'
 
-## Conceptos relacionados
+### Conceptos relacionados
 
 - [[swing-high-swing-low|Swing High / Swing Low]]
 - [[fair-value-gap-fvg|Fair Value Gap (FVG)]]

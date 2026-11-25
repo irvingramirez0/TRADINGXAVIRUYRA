@@ -55,7 +55,7 @@ Trade válido que no dio recorrido; el BE evitó la pérdida. El -400 del transc
 
 Título: +0 $ - BE; transcript: "sigo menos 400". Dato ambiguo.
 
-## Conceptos presentes
+### Conceptos presentes
 
 - [[fair-value-gap-fvg|Fair Value Gap (FVG)]]
 - [[daily-bias|Daily Bias]]
@@ -63,7 +63,7 @@ Título: +0 $ - BE; transcript: "sigo menos 400". Dato ambiguo.
 - [[equal-highs-equal-lows|Equal Highs / Equal Lows]]
 - [[sesion-de-londres|Sesión de Londres]]
 
-## Reglas relacionadas (detección automática)
+### Reglas relacionadas (detección automática)
 
 - [[secuencia-del-analisis-key-levels-fvg-1h-4h-reversion-o-continuacion-fvg|Secuencia del análisis: key levels → FVG 1H/4H → reversión o continuación → FVG en equilibrium → IFVG → BSL/SSL]]
 - [[el-dol-debe-estar-dentro-de-un-fvg-pd-array|El DOL debe estar dentro de un FVG/PD array]]

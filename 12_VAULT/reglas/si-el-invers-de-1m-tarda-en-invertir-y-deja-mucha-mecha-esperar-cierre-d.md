@@ -40,7 +40,7 @@ Acepta peor RR a cambio de dirección.
 
 Backtest de marzo. Regla explícita en el vídeo; no formulada como norma numerada.
 
-## Conceptos relacionados
+### Conceptos relacionados
 
 - [[cisd-change-in-state-of-delivery|CISD (Change in State of Delivery)]]
 

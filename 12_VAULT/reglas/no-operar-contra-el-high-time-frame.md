@@ -53,7 +53,7 @@ Xavi no dice 'nunca': admite la actualización del bias si el precio cambia la e
 
 Bootcamp Día 21 [13:11–13:42]. Refleja también PzkT4SC47Jo y OdljBowQurk como caso concreto.
 
-## Conceptos relacionados
+### Conceptos relacionados
 
 - [[fair-value-gap-fvg|Fair Value Gap (FVG)]]
 - [[draw-on-liquidity-dol|Draw on Liquidity (DOL)]]

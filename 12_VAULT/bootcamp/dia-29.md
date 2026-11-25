@@ -5,15 +5,15 @@ titulo: "Día 29 — Backtesting integrado"
 confianza: "explícito"
 estado: "vigente"
 video: "nxlZJ6abOYA"
-timestamp: "00:00"
+timestamp: "2:37"
 dia: 29
 categoria: "BOOTCAMP"
-duracion: "0:00"
+duracion: "duración desconocida"
 ---
 
 
 
-> **Clase 29 de 29** · Duración 0:00 · **Vídeo:** `nxlZJ6abOYA`
+> **Clase 29 de 29** · Duración duración desconocida · **Vídeo:** `nxlZJ6abOYA`
 
 > [!note] Apunte del curriculum (cuando se catalogó)
 > La herramienta mostrada es de ejemplo; win rate/RR objetivo para fondeo anunciados para otra clase.

@@ -5,7 +5,7 @@ titulo: "Día 19 — Equilibrium (premium y discount)"
 confianza: "explícito"
 estado: "vigente"
 video: "56ES-W1d0xw"
-timestamp: "00:00"
+timestamp: "0:35"
 dia: 19
 categoria: "BOOTCAMP"
 duracion: "15:56"

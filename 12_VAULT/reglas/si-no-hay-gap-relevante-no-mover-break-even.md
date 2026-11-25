@@ -52,7 +52,7 @@ Si el SP500 quita su high/low primero, se puede mover BE.
 
 Documento 07.
 
-## Conceptos relacionados
+### Conceptos relacionados
 
 - [[fair-value-gap-fvg|Fair Value Gap (FVG)]]
 

@@ -55,7 +55,7 @@ Trade A+ con SMT y FVG; la entrada de 9:32 fue la principal del día.
 
 El PNL 1.893 $ es del día, no de este trade.
 
-## Conceptos presentes
+### Conceptos presentes
 
 - [[fair-value-gap-fvg|Fair Value Gap (FVG)]]
 - [[inverse-fair-value-gap-ifvg|Inverse Fair Value Gap (IFVG)]]
@@ -63,7 +63,7 @@ El PNL 1.893 $ es del día, no de este trade.
 - [[judas-swing|Judas Swing]]
 - [[smt-smart-money-technique|SMT (Smart Money Technique)]]
 
-## Reglas relacionadas (detección automática)
+### Reglas relacionadas (detección automática)
 
 - [[judas-swing-acumulacion-manipulacion-distribucion|Judas Swing: acumulación → manipulación → distribución]]
 - [[entrada-por-ifvg-cisd-como-alternativa|Entrada por IFVG; CISD como alternativa]]

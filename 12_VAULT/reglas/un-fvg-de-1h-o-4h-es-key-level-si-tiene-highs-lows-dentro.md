@@ -53,7 +53,7 @@ El bajo puede quedar cerca del FVG sin tocarlo exactamente y seguir valiendo.
 
 Bootcamp Día 15 [02:40–04:46].
 
-## Conceptos relacionados
+### Conceptos relacionados
 
 - [[key-levels|Key Levels]]
 - [[fair-value-gap-fvg|Fair Value Gap (FVG)]]

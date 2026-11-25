@@ -55,7 +55,7 @@ Londres se mueve más lento, pero igual: busca liquidez e imbalances.; En all ti
 
 Fuente: recap del vídeo. Londres se mueve más lento, pero igual: busca liquidez e imbalances.; En all time highs, solo compras salvo que el precio diga lo contrario.; La calidad de la estructura se lee en la velocidad de la caída: caída lenta es estructura buena; velones bajistas, no comprar contra tendencia.; El break-even puede ser instantáneo si la zona es muy segura.; Si el trade A+ se va al stop, no se opera la siguiente sesión por el límite de pérdida diario.. Citas: [35.32s] hemos entrado con un contrato del Nasdaq grande, son 10 micro Nasdaq | [35.32s] el riesgo ha sido lo que os digo, 500 dólares | [66.36s] Para buscar nuestro 1:1,29 más o menos | [130.79s] Un montón de low resistance liquidity. | Clasificación original: Bien ejecutado ganador. Entrada en Londres con confluencia de low resistance liquidity, resweep, FVG de 4 horas, all time highs y SMT; BE inmediato y TP en 1:1,29.
 
-## Conceptos presentes
+### Conceptos presentes
 
 - [[sesion-de-londres|Sesión de Londres]]
 - [[liquidez-bsl-ssl|Liquidez (BSL/SSL)]]
@@ -63,7 +63,7 @@ Fuente: recap del vídeo. Londres se mueve más lento, pero igual: busca liquide
 - [[inverse-fair-value-gap-ifvg|Inverse Fair Value Gap (IFVG)]]
 - [[smt-smart-money-technique|SMT (Smart Money Technique)]]
 
-## Reglas relacionadas (detección automática)
+### Reglas relacionadas (detección automática)
 
 - [[equilibrium-comprar-en-descuento-vender-en-premium|Equilibrium: comprar en descuento, vender en premium]]
 - [[el-fvg-debe-estar-alineado-con-la-linea-0-5-del-equilibrium|El FVG debe estar alineado con la línea 0.5 del equilibrium]]

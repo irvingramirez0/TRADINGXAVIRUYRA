@@ -53,7 +53,7 @@ Alcance explícito 5m; la generalización a 15m/1H/4H es inferida.
 
 Documento 02 §4.4. No contradice la alineación de timeframes (regla 73): la alineación elige contexto; la validación se hace en la temporalidad del gap.
 
-## Conceptos relacionados
+### Conceptos relacionados
 
 - [[fair-value-gap-fvg|Fair Value Gap (FVG)]]
 - [[inverse-fair-value-gap-ifvg|Inverse Fair Value Gap (IFVG)]]

@@ -53,7 +53,7 @@ Ninguna documentada.
 
 Día 20 [08:23–09:25].
 
-## Conceptos relacionados
+### Conceptos relacionados
 
 - [[mnq-mes|MNQ / MES]]
 

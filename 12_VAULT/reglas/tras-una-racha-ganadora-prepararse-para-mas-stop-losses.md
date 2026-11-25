@@ -53,7 +53,7 @@ Ninguna documentada.
 
 Día 20 [02:09–03:10].
 
-## Conceptos relacionados
+### Conceptos relacionados
 
 - [[mnq-mes|MNQ / MES]]
 - [[ego-psicologia|Ego (psicología)]]

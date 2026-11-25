@@ -5,7 +5,7 @@ titulo: "Día 3 — Objetivos"
 confianza: "explícito"
 estado: "vigente"
 video: "NDVbDdE5TW0"
-timestamp: "00:00"
+timestamp: "1:36"
 dia: 3
 categoria: "BOOTCAMP"
 duracion: "13:53"

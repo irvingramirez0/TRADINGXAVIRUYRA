@@ -55,14 +55,14 @@ En all time high siempre compras, nunca vendemos.; En ATH los retrocesos son cor
 
 Fuente: recap del vídeo. En all time high siempre compras, nunca vendemos.; En ATH los retrocesos son cortos: no esperar equilibrium ni un segundo FVG.; El SMT con el SP500 confirma la continuación.; La agresividad se justifica solo en cuentas sin consistencia, de bajo coste y con dirección clara.; El ROI manda en cuentas baratas: arriesgar 70 € para ganar 3.100 €.; Cuidar la consistencia en las cuentas que la tienen: cerrar 1:1 al tick si ganar más sube el porcentaje.. Citas: [3.07s] cómo hoy he podido ganar $4,000 con las cuentas que tengo ahora mismo de fondeo activas | [64.32s] all time highs os recomiendo que solo busquéis compras | [191.16s] siempre compras, nunca vendemos. | [97.12s] me estaba esperando a un trade con un vallas claro para arriesgar $2,000 en el trade | Clasificación original: Bien ejecutado ganador. Continuación en ATH con SMT e IFVG de 30 segundos; gestión diferenciada por tipo de cuenta y objetivo de payout.
 
-## Conceptos presentes
+### Conceptos presentes
 
 - [[inverse-fair-value-gap-ifvg|Inverse Fair Value Gap (IFVG)]]
 - [[fair-value-gap-fvg|Fair Value Gap (FVG)]]
 - [[equilibrium-premium-descuento|Equilibrium (premium/descuento)]]
 - [[smt-smart-money-technique|SMT (Smart Money Technique)]]
 
-## Reglas relacionadas (detección automática)
+### Reglas relacionadas (detección automática)
 
 - [[equilibrium-comprar-en-descuento-vender-en-premium|Equilibrium: comprar en descuento, vender en premium]]
 - [[el-fvg-debe-estar-alineado-con-la-linea-0-5-del-equilibrium|El FVG debe estar alineado con la línea 0.5 del equilibrium]]

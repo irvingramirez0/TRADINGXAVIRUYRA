@@ -55,7 +55,7 @@ El AMD de market open (acumulación, manipulación y distribución) es la base d
 
 Fuente: recap del vídeo. El AMD de market open (acumulación, manipulación y distribución) es la base del trade.; La condición del FVG de 5 minutos define el sesgo: si se respeta, se busca el high; si se invalida, el low.; Esperar a que la condición se compruebe aumenta el win rate, pero también se puede targetear la condición.; Cerca del DOL y con fuerza, el primer IFVG suele fallar; hay que valorar esperar un resweep o un segundo inverse.; Los rejection blocks (50% del FVG) son una confluencia que está incorporando.; Un trade ganador no oculta un día global perdedor.. Citas: [32.88s] a mí me encanta el AMD de market open | [156.24s] El fair value up de 5 minutos es mi condición para yo saber si vamos a estar alcistas o bajistas | [282.8s] hemos metido dos contratos aquí | [188.32s] los días que nos acercamos al draw liquidity o a nuestra zona con muchísima fuerza, em el primero suele fallar | Clasificación original: Bien ejecutado ganador (el trade). El día en conjunto fue perdedor según el propio Xavi, pero por otras operaciones/cuentas que no se detallan en este vídeo.
 
-## Conceptos presentes
+### Conceptos presentes
 
 - [[inverse-fair-value-gap-ifvg|Inverse Fair Value Gap (IFVG)]]
 - [[daily-bias|Daily Bias]]
@@ -63,7 +63,7 @@ Fuente: recap del vídeo. El AMD de market open (acumulación, manipulación y d
 - [[liquidez-bsl-ssl|Liquidez (BSL/SSL)]]
 - [[fair-value-gap-fvg|Fair Value Gap (FVG)]]
 
-## Reglas relacionadas (detección automática)
+### Reglas relacionadas (detección automática)
 
 - [[secuencia-del-analisis-key-levels-fvg-1h-4h-reversion-o-continuacion-fvg|Secuencia del análisis: key levels → FVG 1H/4H → reversión o continuación → FVG en equilibrium → IFVG → BSL/SSL]]
 - [[equilibrium-comprar-en-descuento-vender-en-premium|Equilibrium: comprar en descuento, vender en premium]]

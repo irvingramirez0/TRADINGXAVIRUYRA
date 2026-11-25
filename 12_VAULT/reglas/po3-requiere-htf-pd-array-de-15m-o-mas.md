@@ -52,7 +52,7 @@ La zona inmediata de manipulación del open de las 10:00 puede ser un gap de 5m;
 
 Documento 04. Contradicción aparente con el 5m documentada en 11_PREGUNTAS_ABIERTAS.
 
-## Conceptos relacionados
+### Conceptos relacionados
 
 - [[pd-array|PD Array]]
 - [[open-de-las-10-00|Open de las 10:00]]

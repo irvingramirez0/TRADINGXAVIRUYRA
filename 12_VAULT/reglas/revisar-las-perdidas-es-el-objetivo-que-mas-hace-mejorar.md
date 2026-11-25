@@ -53,7 +53,7 @@ Ninguna documentada.
 
 Bootcamp Día 3 [05:13]. Refuerza WHz8ySmAcnQ (diario que no se revisa) y 5Nn4woC6xrI (journal).
 
-## Conceptos relacionados
+### Conceptos relacionados
 
 - [[trading-journal-diario-de-trading|Trading Journal (diario de trading)]]
 

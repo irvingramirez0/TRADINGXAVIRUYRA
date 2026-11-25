@@ -19,43 +19,15 @@ id: 44
 
 Nivel de liquidez hacia el que se espera que vaya el precio: un high/low relevante dentro de un FVG/PD array.
 
-## Interpretación de Xavi
-
-El DOL es el high/low relevante que está dentro de un FVG. No cualquier high/low: si no está dentro de una zona, no tiene peso. Se usa casi como sinónimo de daily bias, aunque el bias es la dirección y el DOL el nivel.
-
 ## Cómo identificarlo
 
 Abrir 4H; ver si respeta FVG alcistas e invalida bajistas (o al revés); localizar el high/low relevante dentro de un FVG de 4H/1H. Si hay dos DOL o ninguno, no operar.
-
-## Cuándo se usa
-
-Antes de buscar entradas; define la dirección y el target.
-
-## Condiciones
-
-Tiene que estar dentro de un FVG/PD array. Excepciones: NDOG, LRL, relative equal highs/lows, SMT.
-
-## Temporalidades
-
-4H/1H para DOL principal; 15m/5m para DOL interno.
-
-## Aplicación
-
-Fijar el DOL; buscar PO3 en su dirección; target en el DOL o en la liquidez intermedia.
 
 ## Errores comunes
 
 Usar un high/low que no está en ninguna zona; operar con DOL en ambos lados; forzar cuando el DOL ya se cumplió; sobreanalizar cada gap.
 
-## Excepciones
-
-NDOG, LRL, relative equal highs/lows y SMT pueden cambiar el DOL.
-
-## Notas
-
-Documento 03.
-
-## Requiere / se combina con
+### Requiere / se combina con
 
 - [[fair-value-gap-fvg|Fair Value Gap (FVG)]]
 - [[po3-power-of-3|PO3 (Power of 3)]]

@@ -5,7 +5,7 @@ titulo: "Día 9 — Miedo (psicología)"
 confianza: "explícito"
 estado: "vigente"
 video: "WHz8ySmAcnQ"
-timestamp: "00:00"
+timestamp: "0:02"
 dia: 9
 categoria: "BOOTCAMP"
 duracion: "7:58"

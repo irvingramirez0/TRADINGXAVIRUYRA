@@ -53,7 +53,7 @@ El 15m puede usarse como contexto o key level, no como entrada.
 
 Bootcamp Día 13 [10:45–11:47]; reafirmado en Día 17 [05:50].
 
-## Conceptos relacionados
+### Conceptos relacionados
 
 - [[inverse-fair-value-gap-ifvg|Inverse Fair Value Gap (IFVG)]]
 - [[key-levels|Key Levels]]

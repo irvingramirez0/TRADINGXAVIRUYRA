@@ -53,7 +53,7 @@ Xavi dice 'cuando tenemos doble SMT se cancela' dentro de true manipulation; no 
 
 Documento 03. El criterio principal de true manipulation está explícito; la excepción Double SMT sigue incompleta. Ver 11_PREGUNTAS_ABIERTAS.md §1.2.
 
-## Conceptos relacionados
+### Conceptos relacionados
 
 - [[pd-array|PD Array]]
 - [[true-manipulation|True Manipulation]]

@@ -48,11 +48,18 @@ VAULT = "12_VAULT"
 QUARTZ = os.path.join(BASE, "13_SITE", "quartz")
 
 
+class TimeoutExpirado(RuntimeError):
+    """Una fase del pipeline agotó su límite de tiempo."""
+
+
 def correr(cmd, cwd=BASE, timeout=1800):
-    return subprocess.run(
-        cmd, cwd=cwd, capture_output=True, text=True,
-        timeout=timeout, encoding="utf-8", errors="replace",
-    )
+    try:
+        return subprocess.run(
+            cmd, cwd=cwd, capture_output=True, text=True,
+            timeout=timeout, encoding="utf-8", errors="replace",
+        )
+    except subprocess.TimeoutExpired as e:
+        raise TimeoutExpirado(f"{' '.join(cmd)} agotó {timeout}s") from e
 
 
 def git(*args, **kw):
@@ -131,31 +138,43 @@ def main():
     #
     # El commit es selectivo (`git commit -- 12_VAULT`), así que esos archivos
     # no se suben: solo viaja el vault. Para el uso manual queda `--estricto`.
-    ajenos = hay_cambios_fuera_del_vault()
-    if ajenos and args.estricto and not args.forzar:
-        print("Hay cambios locales fuera del vault y se pidió --estricto:")
-        for a in ajenos[:20]:
-            print(f"  {a}")
-        print("\nCommitea o descarta esos cambios, o quita --estricto.")
-        return 3
-    if ajenos:
-        print(f"Aviso: {len(ajenos)} archivo(s) fuera del vault sin commitear "
-              "(no se publican; solo viaja el vault).")
+    try:
+        ajenos = hay_cambios_fuera_del_vault()
+        if ajenos and args.estricto and not args.forzar:
+            print("Hay cambios locales fuera del vault y se pidió --estricto:")
+            for a in ajenos[:20]:
+                print(f"  {a}")
+            print("\nCommitea o descarta esos cambios, o quita --estricto.")
+            return 3
+        if ajenos:
+            print(f"Aviso: {len(ajenos)} archivo(s) fuera del vault sin commitear "
+                  "(no se publican; solo viaja el vault).")
 
-    if hay_conflicto():
-        print("El repositorio tiene conflictos sin resolver. No se publica.")
+        if hay_conflicto():
+            print("El repositorio tiene conflictos sin resolver. No se publica.")
+            return 3
+    except TimeoutExpirado as e:
+        print(f"FALLO por timeout al inspeccionar git: {e}")
         return 3
 
     python = [sys.executable, "-I"]
     print("=== Regenerando el vault ===")
-    r = correr(python + [os.path.join(BASE, "09_AUTOMATION", "regenerar_vault.py")])
+    try:
+        r = correr(python + [os.path.join(BASE, "09_AUTOMATION", "regenerar_vault.py")])
+    except TimeoutExpirado as e:
+        print(f"FALLO por timeout al regenerar: {e}")
+        return 1
     if r.returncode != 0:
         print("FALLO al regenerar:")
         print((r.stderr or r.stdout)[-1500:])
         return 1
 
     print("=== Verificando el vault ===")
-    r = correr(python + [os.path.join(BASE, "09_AUTOMATION", "verificar_vault.py")])
+    try:
+        r = correr(python + [os.path.join(BASE, "09_AUTOMATION", "verificar_vault.py")])
+    except TimeoutExpirado as e:
+        print(f"FALLO por timeout al verificar: {e}")
+        return 1
     if r.returncode != 0:
         print("FALLO en la verificación:")
         print((r.stdout or r.stderr)[-1500:])
@@ -179,11 +198,15 @@ def main():
             print(f"Build local omitido ({motivo}). Lo compilará GitHub Actions.")
         else:
             print("=== Compilando el sitio en local ===")
-            r = correr(
-                ["node", "./quartz/bootstrap-cli.mjs", "build",
-                 "-d", "../../12_VAULT", "-o", "public"],
-                cwd=QUARTZ, timeout=900,
-            )
+            try:
+                r = correr(
+                    ["node", "./quartz/bootstrap-cli.mjs", "build",
+                     "-d", "../../12_VAULT", "-o", "public"],
+                    cwd=QUARTZ, timeout=900,
+                )
+            except TimeoutExpirado as e:
+                print(f"FALLO por timeout al compilar: {e}")
+                return 1
             if r.returncode != 0:
                 # No se publica un sitio que no compila: el deploy de GitHub
                 # Actions fallaría igual, pero entonces el error queda en un
@@ -209,24 +232,28 @@ def main():
     # solo entre el vault aunque haya otros archivos modificados en el índice.
     # La tarea programada deja `05_METHODOLOGY/` y `populate_kb.py` tocados
     # cada día (son su trabajo), y no deben viajar en el commit de publicación.
-    r = git("commit", "-m", mensaje_commit(cambiados), "--", VAULT)
-    if r.returncode != 0:
-        print("FALLO al commitear:")
-        print((r.stderr or r.stdout)[-800:])
-        return 1
-    r = git("push", "origin", "HEAD")
-    if r.returncode != 0:
-        print("FALLO al hacer push:")
-        print((r.stderr or r.stdout)[-800:])
-        # Un push sin credenciales es el fallo esperado en el sandbox de la
-        # tarea programada. Se distingue para que el reporte diga qué pasó.
-        salida = (r.stderr or "") + (r.stdout or "")
-        if "could not read Username" in salida or "Authentication failed" in salida \
-                or "not have push access" in salida:
-            print("Sin credenciales de git en este entorno. El commit queda "
-                  "hecho en local; publica desde tu consola con "
-                  "`python 09_AUTOMATION/publicar_sitio.py`.")
-            return 5
+    try:
+        r = git("commit", "-m", mensaje_commit(cambiados), "--", VAULT)
+        if r.returncode != 0:
+            print("FALLO al commitear:")
+            print((r.stderr or r.stdout)[-800:])
+            return 1
+        r = git("push", "origin", "HEAD")
+        if r.returncode != 0:
+            print("FALLO al hacer push:")
+            print((r.stderr or r.stdout)[-800:])
+            # Un push sin credenciales es el fallo esperado en el sandbox de la
+            # tarea programada. Se distingue para que el reporte diga qué pasó.
+            salida = (r.stderr or "") + (r.stdout or "")
+            if "could not read Username" in salida or "Authentication failed" in salida \
+                    or "not have push access" in salida:
+                print("Sin credenciales de git en este entorno. El commit queda "
+                      "hecho en local; publica desde tu consola con "
+                      "`python 09_AUTOMATION/publicar_sitio.py`.")
+                return 5
+            return 1
+    except TimeoutExpirado as e:
+        print(f"FALLO por timeout al publicar: {e}")
         return 1
     print("Publicado. GitHub Actions compilará y desplegará.")
     return 0

@@ -53,7 +53,7 @@ Ninguna documentada.
 
 Bootcamp Día 18 [02:37].
 
-## Conceptos relacionados
+### Conceptos relacionados
 
 - [[fomo-psicologia|FOMO (psicología)]]
 

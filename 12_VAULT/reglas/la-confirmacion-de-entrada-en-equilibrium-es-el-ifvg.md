@@ -53,7 +53,7 @@ Ninguna documentada.
 
 Día 19 [03:42–04:19].
 
-## Conceptos relacionados
+### Conceptos relacionados
 
 - [[liquidez-bsl-ssl|Liquidez (BSL/SSL)]]
 - [[inverse-fair-value-gap-ifvg|Inverse Fair Value Gap (IFVG)]]

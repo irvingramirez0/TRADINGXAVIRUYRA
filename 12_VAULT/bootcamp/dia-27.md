@@ -5,7 +5,7 @@ titulo: "Día 27 — Journal"
 confianza: "explícito"
 estado: "vigente"
 video: "5Nn4woC6xrI"
-timestamp: "00:00"
+timestamp: "1:37"
 dia: 27
 categoria: "BOOTCAMP"
 duracion: "34:20"

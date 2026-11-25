@@ -18,43 +18,15 @@ id: 60
 
 Liquidez interna: highs/lows dentro del rango. Liquidez externa: highs/lows fuera del rango.
 
-## Interpretación de Xavi
-
-En LTF se targetea liquidez interna; el DOL grande suele ser liquidez externa.
-
 ## Cómo identificarlo
 
 Marcar el rango; los extremos son externos; los highs/lows interiores son internos.
-
-## Cuándo se usa
-
-Para elegir targets intermedios y entender el recorrido.
-
-## Condiciones
-
-Contexto de rango.
-
-## Temporalidades
-
-15m/5m/1m.
-
-## Aplicación
-
-Target interno en 5m/15m; target externo en DOL.
 
 ## Errores comunes
 
 Confundir ambos; targetear solo external y no ver los internos.
 
-## Excepciones
-
-No siempre hay liquidez interna clara.
-
-## Notas
-
-Documento 02.
-
-## Requiere / se combina con
+### Requiere / se combina con
 
 - [[fair-value-gap-fvg|Fair Value Gap (FVG)]]
 - [[draw-on-liquidity-dol|Draw on Liquidity (DOL)]]

@@ -5,7 +5,7 @@ titulo: "Día 18 — FOMO (psicología)"
 confianza: "explícito"
 estado: "vigente"
 video: "2kBd2-bLuwU"
-timestamp: "00:00"
+timestamp: "0:32"
 dia: 18
 categoria: "BOOTCAMP"
 duracion: "10:12"

@@ -5,7 +5,7 @@ titulo: "Día 22 — Confía en ti"
 confianza: "explícito"
 estado: "vigente"
 video: "RHPEmfRGkw8"
-timestamp: "00:00"
+timestamp: "11:52"
 dia: 22
 categoria: "BOOTCAMP"
 duracion: "13:34"

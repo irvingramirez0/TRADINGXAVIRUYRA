@@ -55,13 +55,13 @@ Trade válido que no funcionó; el precio no dio la toma de liquidez esperada. E
 
 Position tool legible en frame 733; las cifras exactas no se verbalizan.
 
-## Conceptos presentes
+### Conceptos presentes
 
 - [[fair-value-gap-fvg|Fair Value Gap (FVG)]]
 - [[daily-bias|Daily Bias]]
 - [[equilibrium-premium-descuento|Equilibrium (premium/descuento)]]
 
-## Reglas relacionadas (detección automática)
+### Reglas relacionadas (detección automática)
 
 - [[secuencia-del-analisis-key-levels-fvg-1h-4h-reversion-o-continuacion-fvg|Secuencia del análisis: key levels → FVG 1H/4H → reversión o continuación → FVG en equilibrium → IFVG → BSL/SSL]]
 - [[po3-requiere-htf-pd-array-de-15m-o-mas|PO3 requiere HTF PD array de 15m o más]]

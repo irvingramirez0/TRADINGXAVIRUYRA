@@ -52,7 +52,7 @@ Con riesgo bajo puede reentrar tras un stop si el DOL sigue claro; sin límite n
 
 Documento 07.
 
-## Conceptos relacionados
+### Conceptos relacionados
 
 - [[draw-on-liquidity-dol|Draw on Liquidity (DOL)]]
 

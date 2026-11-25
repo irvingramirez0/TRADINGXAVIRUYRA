@@ -53,7 +53,7 @@ Mover a BE al alcanzar una zona de conflicto, no por miedo.
 
 Bootcamp Día 22 [11:52–12:54] y Día 26 [09:56–10:26]. El fragmento sobre 'no tocar nada' tiene palabras omitidas por ASR; se conserva el principio claro de no cerrar por dólares/emoción.
 
-## Conceptos relacionados
+### Conceptos relacionados
 
 - [[key-levels|Key Levels]]
 

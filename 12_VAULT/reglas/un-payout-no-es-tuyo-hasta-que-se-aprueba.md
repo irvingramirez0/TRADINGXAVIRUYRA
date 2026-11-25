@@ -52,7 +52,7 @@ Ninguna.
 
 Documento 07.
 
-## Conceptos relacionados
+### Conceptos relacionados
 
 - [[cuentas-de-fondeo|Cuentas de fondeo]]
 

@@ -55,7 +55,7 @@ No operes 'por estadística' para recuperar un TP perdido; cada trade debe soste
 
 Fuente: recap del vídeo. Gestión de cuentas: sin replicador externo, olvidó copiar trades de Topstep a Alpha; un TP de Topstep no se replicó en Alpha.; Al día siguiente entró 'por estadística, me tocaba perder' para compensar el TP perdido; las cuentas pasaron de estar a un día de payout a perderse.; Operó en un día con extensión grande en Asia/Londres y premarket; él mismo apunta que NY tendía a acumular y que debería haber ido con más cuidado.; Reconoce que la pérdida fue 'mala suerte' pero también 'mal gestionado por mi parte'.. Citas: [37.43s] Y hoy he perdido 100k, así que estoy fondeado con 250. | [37.43s] también mal gestionado por mi parte porque al no tener un replicador externo | [68.36s] perdí un take profit en alfa, voy a entrar por estadística, me tocaba perder. | [253.24s] los días que tenemos una extensión tan grande en Nueva York y Asia, creo que es mejor ir con mucho cuidado en Nueva York | Clasificación original: Bien ejecutado perdedor (trade); Error de ejecución (gestión de cuentas)
 
-## Conceptos presentes
+### Conceptos presentes
 
 - [[fair-value-gap-fvg|Fair Value Gap (FVG)]]
 - [[inverse-fair-value-gap-ifvg|Inverse Fair Value Gap (IFVG)]]
@@ -63,7 +63,7 @@ Fuente: recap del vídeo. Gestión de cuentas: sin replicador externo, olvidó c
 - [[data-highs-lows|Data Highs / Lows]]
 - [[mnq-mes|MNQ / MES]]
 
-## Reglas relacionadas (detección automática)
+### Reglas relacionadas (detección automática)
 
 - [[secuencia-del-analisis-key-levels-fvg-1h-4h-reversion-o-continuacion-fvg|Secuencia del análisis: key levels → FVG 1H/4H → reversión o continuación → FVG en equilibrium → IFVG → BSL/SSL]]
 - [[validar-el-fvg-en-la-temporalidad-en-la-que-se-marco|Validar el FVG en la temporalidad en la que se marcó]]

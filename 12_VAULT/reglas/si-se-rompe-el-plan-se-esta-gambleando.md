@@ -53,7 +53,7 @@ Xavi admite que al principio se rompen las reglas y lo considera parte del apren
 
 Bootcamp Día 12 [01:05–01:36].
 
-## Conceptos relacionados
+### Conceptos relacionados
 
 - [[gambling-vs-trading-psicologia|Gambling vs trading (psicología)]]
 

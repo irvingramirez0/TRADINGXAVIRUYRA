@@ -5,15 +5,15 @@ titulo: "Día 28 — Sesiones"
 confianza: "explícito"
 estado: "vigente"
 video: "CepE5r6rU00"
-timestamp: "00:00"
+timestamp: "1:35"
 dia: 28
 categoria: "BOOTCAMP"
-duracion: "0:00"
+duracion: "duración desconocida"
 ---
 
 
 
-> **Clase 28 de 29** · Duración 0:00 · **Vídeo:** `CepE5r6rU00`
+> **Clase 28 de 29** · Duración duración desconocida · **Vídeo:** `CepE5r6rU00`
 
 > [!note] Apunte del curriculum (cuando se catalogó)
 > Horarios orientativos en hora NY; la regla del alumno es explícita.

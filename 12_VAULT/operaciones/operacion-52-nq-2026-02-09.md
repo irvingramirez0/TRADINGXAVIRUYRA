@@ -55,13 +55,13 @@ Trade discrecional y rápido; el RR fue 1,64. La clave fue el intermediate low d
 
 +525 $ por cuenta según el transcript; el título no da el importe.
 
-## Conceptos presentes
+### Conceptos presentes
 
 - [[fair-value-gap-fvg|Fair Value Gap (FVG)]]
 - [[inverse-fair-value-gap-ifvg|Inverse Fair Value Gap (IFVG)]]
 - [[cisd-change-in-state-of-delivery|CISD (Change in State of Delivery)]]
 
-## Reglas relacionadas (detección automática)
+### Reglas relacionadas (detección automática)
 
 - [[judas-swing-acumulacion-manipulacion-distribucion|Judas Swing: acumulación → manipulación → distribución]]
 - [[entrada-por-ifvg-cisd-como-alternativa|Entrada por IFVG; CISD como alternativa]]

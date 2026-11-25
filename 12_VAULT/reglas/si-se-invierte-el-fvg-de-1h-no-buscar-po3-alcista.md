@@ -52,7 +52,7 @@ Ninguna documentada.
 
 Documento 04.
 
-## Conceptos relacionados
+### Conceptos relacionados
 
 - [[fair-value-gap-fvg|Fair Value Gap (FVG)]]
 - [[daily-bias|Daily Bias]]

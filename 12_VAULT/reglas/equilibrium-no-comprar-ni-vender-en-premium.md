@@ -52,7 +52,7 @@ No siempre el precio tiene que estar en descuento; la regla es no operar en prem
 
 Documento 06. Sustituida por "Equilibrium: comprar en descuento, vender en premium" (Día 19, 2026-11-13).
 
-## Conceptos relacionados
+### Conceptos relacionados
 
 - [[equilibrium-premium-descuento|Equilibrium (premium/descuento)]]
 - [[fair-value-gap-fvg|Fair Value Gap (FVG)]]

@@ -18,43 +18,15 @@ id: 48
 
 Tres fases: acumulación (el precio se prepara), manipulación (movimiento contra el DOL para barrer liquidez) y distribución (movimiento hacia el DOL).
 
-## Interpretación de Xavi
-
-El AMD es la base del PO3; la diferencia es que el PO3 añade el tiempo.
-
 ## Cómo identificarlo
 
 Observar la apertura: rango/accumulación, barrido de un high/low y desplazamiento en la dirección del DOL.
-
-## Cuándo se usa
-
-En cada apertura de 15m y en la sesión de Nueva York.
-
-## Condiciones
-
-Contexto HTF y DOL claro.
-
-## Temporalidades
-
-15m/5m/1m.
-
-## Aplicación
-
-No entrar en la manipulación; entrar en la distribución.
 
 ## Errores comunes
 
 Confundir la manipulación con la distribución; entrar en la primera vela de 15m.
 
-## Excepciones
-
-La manipulación puede durar varios PO3 (stacking).
-
-## Notas
-
-Documento 04.
-
-## Requiere / se combina con
+### Requiere / se combina con
 
 - [[inverse-fair-value-gap-ifvg|Inverse Fair Value Gap (IFVG)]]
 - [[po3-power-of-3|PO3 (Power of 3)]]
@@ -64,4 +36,11 @@ Documento 04.
 
 - «Paráfrasis: AMD se compone de acumulación, manipulación y distribución; el timing importa.» — `vz4rhIi5Joo` @ 01:37 (explícito)
 - «Paráfrasis: acumulación, manipulación y distribución; la manipulación va contra el DOL.» — `oP7enoxXpfI` @ 02:42 (explícito)
+
+## Fragmentos visuales
+
+![AMD (Acumulación, Manipulación, Distribución) en vz4rhIi5Joo](../media/amd-acumulacion-manipulacion-distribucion-402.webp)
+
+**La MEJOR estrategia de ICT para FUTUROS (IFVG updated 2026)** (`vz4rhIi5Joo`) · **10:55** · **Confianza:** explícito · anotado
+> Diapositiva 'Judas Swing AMD (9:30-9:45)' y 'Open de las 10 AMD' con un zigzag que baja, acumula, manipula y distribuye al alza. Flecha de entrada tras la manipulación.
 

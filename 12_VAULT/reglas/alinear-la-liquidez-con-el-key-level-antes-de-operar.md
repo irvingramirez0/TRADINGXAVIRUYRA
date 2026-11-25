@@ -53,7 +53,7 @@ No es una regla mecánica de contar; el ejemplo es 10 a favor y 1 en contra.
 
 Bootcamp Día 15 [05:16–06:17].
 
-## Conceptos relacionados
+### Conceptos relacionados
 
 - [[nwog-new-week-opening-gap|NWOG (New Week Opening Gap)]]
 - [[ndog-new-day-opening-gap|NDOG (New Day Opening Gap)]]

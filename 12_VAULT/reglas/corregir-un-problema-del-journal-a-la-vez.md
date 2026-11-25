@@ -53,7 +53,7 @@ No documentadas.
 
 Bootcamp Día 27 [27:53–28:55].
 
-## Conceptos relacionados
+### Conceptos relacionados
 
 - [[trading-journal-diario-de-trading|Trading Journal (diario de trading)]]
 

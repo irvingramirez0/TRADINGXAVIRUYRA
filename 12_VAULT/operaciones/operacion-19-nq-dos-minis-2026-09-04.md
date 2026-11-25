@@ -55,7 +55,7 @@ No es un trade A plus: lo A plus son las condiciones.; El precio es fractal: se 
 
 Fuente: recap del vídeo. No es un trade A plus: lo A plus son las condiciones.; El precio es fractal: se puede operar un Judas en 15 segundos si el contexto lo permite.; No ir a break-even por el primer high interno dentro de un gap; hay que valorar data highs, SMT y protección de la zona.; Poner en una balanza lo positivo y lo negativo y decidir rápido, porque siempre habrá algo en contra.; La decisión debe ser aceptable incluso si el trade acaba en stop.. Citas: [2.31s] no, no es un trade A plus. Lo que son A plus son las condiciones | [193.32s] hemos tenido una reacción de, chavales, 43 puntos en una vela de 15 segundos | [287.6s] No he hecho nada raro, o sea, dos minis. | [443.04s] tenéis que poner en una balanza lo que os pesa más a vosotros | Clasificación original: Bien ejecutado ganador. El segundo trade que describe como 'el trade del día' no lo ejecutó él; es una lectura hipotética, no una operación.
 
-## Conceptos presentes
+### Conceptos presentes
 
 - [[amd-acumulacion-manipulacion-distribucion|AMD (Acumulación, Manipulación, Distribución)]]
 - [[fair-value-gap-fvg|Fair Value Gap (FVG)]]
@@ -63,7 +63,7 @@ Fuente: recap del vídeo. No es un trade A plus: lo A plus son las condiciones.;
 - [[po3-power-of-3|PO3 (Power of 3)]]
 - [[judas-swing|Judas Swing]]
 
-## Reglas relacionadas (detección automática)
+### Reglas relacionadas (detección automática)
 
 - [[judas-swing-acumulacion-manipulacion-distribucion|Judas Swing: acumulación → manipulación → distribución]]
 - [[si-se-invierte-el-fvg-de-1h-no-buscar-po3-alcista|Si se invierte el FVG de 1H, no buscar PO3 alcista]]

@@ -55,14 +55,14 @@ Trade textbook: NWOG, FVG, SMT y reacción. Recupera dos cuentas que creía perd
 
 +1.000 $ es el titular; +500 $ por cuenta según el transcript.
 
-## Conceptos presentes
+### Conceptos presentes
 
 - [[fair-value-gap-fvg|Fair Value Gap (FVG)]]
 - [[inverse-fair-value-gap-ifvg|Inverse Fair Value Gap (IFVG)]]
 - [[smt-smart-money-technique|SMT (Smart Money Technique)]]
 - [[nwog-new-week-opening-gap|NWOG (New Week Opening Gap)]]
 
-## Reglas relacionadas (detección automática)
+### Reglas relacionadas (detección automática)
 
 - [[hacer-backtesting-con-nq-y-es-abiertos-y-en-sesion-de-nueva-york|Hacer backtesting con NQ y ES abiertos y en sesión de Nueva York]]
 - [[el-dol-debe-estar-dentro-de-un-fvg-pd-array|El DOL debe estar dentro de un FVG/PD array]]

@@ -55,7 +55,7 @@ Hacer análisis entre temporalidades: bias en 4 horas/1 hora y ejecución en 15 
 
 Fuente: recap del vídeo. Hacer análisis entre temporalidades: bias en 4 horas/1 hora y ejecución en 15 minutos/1 minuto.; Un SMT del high time frame sumado a un SMT del low time frame protege la zona dos veces.; La condición del FVG de 5 minutos determina si el precio quiere seguir subiendo o bajando.; No longuear contra equal lows de 1 hora.; No hacer más de un trade al día.. Citas: [2.31s] yo tenía un bias bajista | [125.96s] no puedo longuear con equal lows de una hora | [190.0s] me he llevado mi 1 a 1,4 | [251.32s] la confianza que he tenido en el inverse de un minuto ha sido básicamente el hecho de sumar un SMT del high time frame con un SMT del low time frame | Clasificación original: Bien ejecutado ganador. Entrada alineada con bias bajista, SMT doble y condición de FVG; TP rápido sin BE.
 
-## Conceptos presentes
+### Conceptos presentes
 
 - [[inverse-fair-value-gap-ifvg|Inverse Fair Value Gap (IFVG)]]
 - [[equal-highs-equal-lows|Equal Highs / Equal Lows]]
@@ -63,7 +63,7 @@ Fuente: recap del vídeo. Hacer análisis entre temporalidades: bias en 4 horas/
 - [[daily-bias|Daily Bias]]
 - [[smt-smart-money-technique|SMT (Smart Money Technique)]]
 
-## Reglas relacionadas (detección automática)
+### Reglas relacionadas (detección automática)
 
 - [[el-dol-debe-estar-dentro-de-un-fvg-pd-array|El DOL debe estar dentro de un FVG/PD array]]
 - [[secuencia-del-analisis-key-levels-fvg-1h-4h-reversion-o-continuacion-fvg|Secuencia del análisis: key levels → FVG 1H/4H → reversión o continuación → FVG en equilibrium → IFVG → BSL/SSL]]

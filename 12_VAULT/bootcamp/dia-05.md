@@ -5,7 +5,7 @@ titulo: "Día 5 — Tiempo (psicología)"
 confianza: "explícito"
 estado: "vigente"
 video: "mBHtx-BfWWg"
-timestamp: "00:00"
+timestamp: "0:35"
 dia: 5
 categoria: "BOOTCAMP"
 duracion: "13:31"

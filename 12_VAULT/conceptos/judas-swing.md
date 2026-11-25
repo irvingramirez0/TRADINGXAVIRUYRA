@@ -18,43 +18,15 @@ id: 50
 
 Primer PO3 del día: acumulación en premarket, manipulación en el market open (9:30) y distribución en la dirección del DOL.
 
-## Interpretación de Xavi
-
-Es el sistema de entrada de la primera hora. Se busca el primer IFVG alineado tras la manipulación.
-
 ## Cómo identificarlo
 
 Acumulación antes de las 9:30; velón de manipulación hacia una zona clave; desplazamiento en la dirección del DOL; primer IFVG.
-
-## Cuándo se usa
-
-9:30–9:45, normalmente.
-
-## Condiciones
-
-DOL claro; zona de manipulación (gap/key level); HTF PD array 15m+; alineación con el DOL.
-
-## Temporalidades
-
-3m/5m para el IFVG; 1m si el DOL es muy claro.
-
-## Aplicación
-
-Esperar la manipulación; entrar en el primer IFVG; stop al otro lado del swing; target 1:1 o DOL.
 
 ## Errores comunes
 
 Entrar en la manipulación; entrar 9:41–9:44; usar un IFVG contra el HTF; no esperar el cierre.
 
-## Excepciones
-
-Puede saltarse el 3m e ir al 1m si el DOL y el price action son claros.
-
-## Notas
-
-Documento 05.
-
-## Requiere / se combina con
+### Requiere / se combina con
 
 - [[inverse-fair-value-gap-ifvg|Inverse Fair Value Gap (IFVG)]]
 - [[po3-power-of-3|PO3 (Power of 3)]]
@@ -78,4 +50,9 @@ Documento 05.
 
 **La MEJOR estrategia de ICT para FUTUROS (IFVG updated 2026)** (`vz4rhIi5Joo`) · **04:11** · **Confianza:** explícito · anotado
 > Captura del esquema de precio durante la explicación del Judas Swing, con zonas horizontales. No hay un rótulo legible que identifique el primer IFVG ni su cierre.
+
+![Judas Swing en vz4rhIi5Joo](../media/judas-swing-402.webp)
+
+**La MEJOR estrategia de ICT para FUTUROS (IFVG updated 2026)** (`vz4rhIi5Joo`) · **10:55** · **Confianza:** explícito · anotado
+> Diapositiva 'Judas Swing AMD (9:30-9:45)' y 'Open de las 10 AMD' con un zigzag que baja, acumula, manipula y distribuye al alza. Flecha de entrada tras la manipulación.
 

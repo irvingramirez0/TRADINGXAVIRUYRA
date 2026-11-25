@@ -5,7 +5,7 @@ titulo: "Día 23 — Manipulation legs"
 confianza: "explícito"
 estado: "vigente"
 video: "JO1xDEW2Lhg"
-timestamp: "00:00"
+timestamp: "5:44"
 dia: 23
 categoria: "BOOTCAMP"
 duracion: "20:07"

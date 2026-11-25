@@ -53,7 +53,7 @@ Distinto del FOMC, que no se opera.
 
 Bootcamp Día 10 [02:15].
 
-## Conceptos relacionados
+### Conceptos relacionados
 
 - [[data-highs-lows|Data Highs / Lows]]
 

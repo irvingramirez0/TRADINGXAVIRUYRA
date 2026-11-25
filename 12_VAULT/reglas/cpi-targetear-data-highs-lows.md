@@ -40,7 +40,7 @@ Si el precio ya se ha desplazado mucho, puede ignorar el dato y operar el contex
 
 Regla contextual de días de noticia.
 
-## Conceptos relacionados
+### Conceptos relacionados
 
 - [[data-highs-lows|Data Highs / Lows]]
 - [[fair-value-gap-fvg|Fair Value Gap (FVG)]]

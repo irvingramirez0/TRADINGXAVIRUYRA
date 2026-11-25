@@ -19,41 +19,13 @@ id: 78
 
 Análisis fundamental o macro como método direccional.
 
-## Interpretación de Xavi
-
-No lo usa como método; solo marca los highs/lows de noticias (data highs/lows).
-
 ## Cómo identificarlo
 
 No aplica.
 
-## Cuándo se usa
-
-No usado.
-
-## Condiciones
-
-No aplica.
-
-## Temporalidades
-
-No aplica.
-
-## Aplicación
-
-No introducirlo.
-
 ## Errores comunes
 
 Convertir una noticia en tesis direccional.
-
-## Excepciones
-
-Data highs/lows como niveles.
-
-## Notas
-
-Excluido como método; los niveles de noticia sí se usan.
 
 ## Evidencia
 

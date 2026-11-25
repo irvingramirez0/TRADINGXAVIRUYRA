@@ -5,7 +5,7 @@ titulo: "Día 11 — Liquidez pt2"
 confianza: "explícito"
 estado: "vigente"
 video: "OtYATAfCfRA"
-timestamp: "00:00"
+timestamp: "1:05"
 dia: 11
 categoria: "BOOTCAMP"
 duracion: "18:22"

@@ -19,43 +19,15 @@ id: 92
 
 Exceso de confianza que aparece tras una racha de victorias y lleva a creer que el resultado está garantizado; puede relajar el filtro de entrada, subir el riesgo o replicar cuentas en exceso.
 
-## Interpretación de Xavi
-
-El ego sube después de ganar. Una racha de un mes no es una muestra significativa: el win rate tiende a volver al del backtesting, así que hay que esperar más stops. Su respuesta es mantener el riesgo, no replicar cuentas en exceso y no encadenar rupturas de reglas tras un error humano.
-
 ## Cómo identificarlo
 
 Racha de wins seguida de confianza excesiva; sensación de que todo va a verde; entrar en trades que se saben malos porque 'se gana rápido'; querer replicar cuentas o subir el riesgo para retirar más.
-
-## Cuándo se usa
-
-Después de una racha ganadora, especialmente si se acerca un objetivo de payout.
-
-## Condiciones
-
-La confianza sube por resultados recientes y se confunde con una ventaja sostenida.
-
-## Temporalidades
-
-No aplica.
-
-## Aplicación
-
-Recordar que la muestra de un mes no es significativa; esperar más stops; no subir el riesgo; no replicar cuentas en exceso; si se comete un error humano, no encadenar rupturas de reglas y cerrar el día.
 
 ## Errores comunes
 
 Creer que la racha es permanente; bajar el filtro porque 'todo sale bien'; doblar el riesgo para llegar al payout; replicar todas las cuentas; gamblear para recuperar el primer día rojo.
 
-## Excepciones
-
-Ninguna documentada.
-
-## Notas
-
-Bootcamp Día 20. Definición 00:33–01:06; racha de 23 TP 01:06–01:38; muestra y win rate 01:38–03:10; caso personal 03:10–04:13; mantener riesgo 04:13–04:45; calendario y día rojo 05:16–06:49; no replicar cuentas 07:21–08:23; cadena de rupturas 08:23–09:56.
-
-## Requiere / se combina con
+### Requiere / se combina con
 
 - [[gambling-vs-trading-psicologia|Gambling vs trading (psicología)]]
 - [[revenge-trading-psicologia|Revenge Trading (psicología)]]

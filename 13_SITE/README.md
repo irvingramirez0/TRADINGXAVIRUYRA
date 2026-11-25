@@ -1,6 +1,6 @@
 # 13 — SITIO DE CONOCIMIENTO (OBSIDIAN + QUARTZ + GITHUB PAGES)
 
-**Estado:** montado y verificado en local a 2026-11-14. **Sin publicar.**
+**Estado:** publicado en <https://irvingramirez0.github.io/TRADINGXAVIRUYRA> y verificado en navegador (27/27 casos de uso). Actualizado a 2026-11-24.
 **Coste:** cero (GitHub Pages en repositorio público + Quartz estático).
 
 ---
@@ -277,7 +277,7 @@ Cada push a `main` compila y publica. Para volver a desplegar sin cambiar nada:
 | **Anotaciones en navegador real** | Chrome headless: 14 secciones detectadas, anotación publicada y persistida en `localStorage` |
 | **Sitio en producción** | 200 en `/`, en las notas y en los `.webp`; grafo y búsqueda presentes |
 | `publicar_sitio.py` | Probado de punta a punta: regeneró, verificó, compiló y publicó solo. Solo commitea `12_VAULT`: comprobado con dos archivos ajenos modificados, el commit llevó únicamente el vault. |
-| **Ciclo diario** | `sync_bootcamp.py --download --process --publicar`: detecta, transcribe, indexa, regenera y publica. El Día 21 quedó transcrito (62 segmentos, 32:17) y marcado «sin analizar», que es su estado real. |
+| **Ciclo diario** | `sync_bootcamp.py --download --process` detecta, transcribe e indexa; `publicar_sitio.py` regenera, verifica, compila y publica **al final**, tras el análisis. El flag `--publicar` fue retirado: publicar antes del análisis dejaba la clase como «sin analizar» para siempre. |
 | **Ciclo de una clase nueva** | Documentado en [`CICLO_DE_UNA_CLASE.md`](CICLO_DE_UNA_CLASE.md): qué es automático, qué no, y los tres fallos silenciosos que se corrigieron el 2026-11-15 |
 | Auditoría de contenido | ninguna cita > 246 caracteres; ningún dato personal; sin Reels |
 | Imágenes | 38 WebP; la mayoría a 1200 px de ancho y sin la interfaz del gráfico |

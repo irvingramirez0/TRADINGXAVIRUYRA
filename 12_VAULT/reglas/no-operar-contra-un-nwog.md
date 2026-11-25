@@ -52,7 +52,7 @@ Ninguna documentada.
 
 'Son sitios que suelen tener mucha liquidez, entonces no me gusta ir en contra de ello.'
 
-## Conceptos relacionados
+### Conceptos relacionados
 
 - [[nwog-new-week-opening-gap|NWOG (New Week Opening Gap)]]
 

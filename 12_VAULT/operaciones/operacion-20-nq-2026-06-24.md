@@ -55,7 +55,7 @@ Confiar en el sistema, en el backtesting y en la data.; Ser mecánico da buen wi
 
 Fuente: recap del vídeo. Confiar en el sistema, en el backtesting y en la data.; Ser mecánico da buen win rate, pero el máximo win rate exige discreción en situaciones muy particulares.; No es 'creo que va a bajar', sino 'hay muchas cosas a favor como para que el precio no baje'.; No perseguir reentradas porque todo el mundo haya ganado.; Cada trader está en un nivel; esperar el IFVG de 3 minutos también es válido.; En Instagram no todo el mundo enseña las pérdidas.. Citas: [96.08s] día bastante asqueroso, o sea, acumulación en una hora | [281.24s] Entonces, SMT al canto, doble SMT alineado con el dólar. | [405.72s] he puesto break even en el low de las 9:30 | [467.8s] si tú eres mecánico vas a tener un muy buen win rate | Clasificación original: Bien ejecutado ganador. Entrada sin la confirmación del IFVG de 3 minutos, pero justificada por doble SMT, low de 9:30 y low resistance liquidity; BE en el nivel relevante y TP.
 
-## Conceptos presentes
+### Conceptos presentes
 
 - [[judas-swing|Judas Swing]]
 - [[liquidez-bsl-ssl|Liquidez (BSL/SSL)]]
@@ -63,7 +63,7 @@ Fuente: recap del vídeo. Confiar en el sistema, en el backtesting y en la data.
 - [[inverse-fair-value-gap-ifvg|Inverse Fair Value Gap (IFVG)]]
 - [[smt-smart-money-technique|SMT (Smart Money Technique)]]
 
-## Reglas relacionadas (detección automática)
+### Reglas relacionadas (detección automática)
 
 - [[judas-swing-acumulacion-manipulacion-distribucion|Judas Swing: acumulación → manipulación → distribución]]
 - [[entrada-por-ifvg-cisd-como-alternativa|Entrada por IFVG; CISD como alternativa]]

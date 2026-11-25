@@ -53,7 +53,7 @@ Dos rangos válidos si hay duda.
 
 Día 19 [07:23–07:55]. El HTF con Fibonacci no se desarrolla.
 
-## Conceptos relacionados
+### Conceptos relacionados
 
 - [[liquidez-bsl-ssl|Liquidez (BSL/SSL)]]
 - [[swing-high-swing-low|Swing High / Swing Low]]

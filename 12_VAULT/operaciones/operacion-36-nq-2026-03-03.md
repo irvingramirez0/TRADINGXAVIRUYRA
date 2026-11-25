@@ -55,13 +55,13 @@ Día de baja probabilidad; lo correcto fue reducir riesgo y parar. No fue un err
 
 No es una pérdida grande; se incluye por la lección de contexto.
 
-## Conceptos presentes
+### Conceptos presentes
 
 - [[fair-value-gap-fvg|Fair Value Gap (FVG)]]
 - [[daily-bias|Daily Bias]]
 - [[smt-smart-money-technique|SMT (Smart Money Technique)]]
 
-## Reglas relacionadas (detección automática)
+### Reglas relacionadas (detección automática)
 
 - [[el-dol-debe-estar-dentro-de-un-fvg-pd-array|El DOL debe estar dentro de un FVG/PD array]]
 - [[si-se-invierte-el-fvg-de-1h-no-buscar-po3-alcista|Si se invierte el FVG de 1H, no buscar PO3 alcista]]

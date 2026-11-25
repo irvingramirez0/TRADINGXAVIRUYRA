@@ -55,7 +55,7 @@ Nunca tener un FVG de 15 minutos dentro del stop: si se forma, se protege con BE
 
 Fuente: recap del vídeo. Nunca tener un FVG de 15 minutos dentro del stop: si se forma, se protege con BE.; El stop en el body puede marcar la diferencia entre BE y TP: el mismo trade en Topstep dio TP con stop en el body y BE en Alfa con stop más amplio.; Mantener la narrativa del día: si el DOL sigue claro tras filear un FVG, el segundo trade puede gustar más que el primero.; El DOL claro justifica esperar el segundo setup.; No operar con normalidad en FOMC si no se tiene clara la reacción.. Citas: [3.59s] yo buscaba ventas | [34.2s] han sido dos trades, uno break even y uno TP | [65.36s] era un 1 a 1,17 | [65.36s] no queremos tener nunca un fair value gap de 15 minutos en nuestro stop | Clasificación original: Trade 1: Inconcluso en Alfa (break-even) / Bien ejecutado ganador en Topstep (TP de 156 $); la diferencia es la colocación del stop, no la lectura. Trade 2: Bien ejecutado ganador.
 
-## Conceptos presentes
+### Conceptos presentes
 
 - [[fair-value-gap-fvg|Fair Value Gap (FVG)]]
 - [[inverse-fair-value-gap-ifvg|Inverse Fair Value Gap (IFVG)]]
@@ -63,7 +63,7 @@ Fuente: recap del vídeo. Nunca tener un FVG de 15 minutos dentro del stop: si s
 - [[break-even-estructural|Break-even estructural]]
 - [[bank-holiday-festivo-ee-uu|Bank Holiday (festivo EE. UU.)]]
 
-## Reglas relacionadas (detección automática)
+### Reglas relacionadas (detección automática)
 
 - [[judas-swing-acumulacion-manipulacion-distribucion|Judas Swing: acumulación → manipulación → distribución]]
 - [[entrada-por-ifvg-cisd-como-alternativa|Entrada por IFVG; CISD como alternativa]]

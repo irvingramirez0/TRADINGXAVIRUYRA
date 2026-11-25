@@ -55,14 +55,14 @@ El trade válido requería true manipulation; los intentos anteriores se descart
 
 Recap. No se ha verificado el P&L con extracto; se cita lo que él dice.
 
-## Conceptos presentes
+### Conceptos presentes
 
 - [[open-de-las-10-00|Open de las 10:00]]
 - [[true-manipulation|True Manipulation]]
 - [[inverse-fair-value-gap-ifvg|Inverse Fair Value Gap (IFVG)]]
 - [[cisd-change-in-state-of-delivery|CISD (Change in State of Delivery)]]
 
-## Reglas relacionadas (detección automática)
+### Reglas relacionadas (detección automática)
 
 - [[judas-swing-acumulacion-manipulacion-distribucion|Judas Swing: acumulación → manipulación → distribución]]
 - [[entrada-por-ifvg-cisd-como-alternativa|Entrada por IFVG; CISD como alternativa]]

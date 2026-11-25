@@ -53,7 +53,7 @@ Los ejemplos del Día 27 son el relato de Xavi y no una regla cuantitativa unive
 
 Bootcamp Día 27 [27:21–31:34] y ejemplo de seis trades con la misma estructura [32:35–33:39].
 
-## Conceptos relacionados
+### Conceptos relacionados
 
 - [[trading-journal-diario-de-trading|Trading Journal (diario de trading)]]
 

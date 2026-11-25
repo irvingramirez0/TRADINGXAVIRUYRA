@@ -52,7 +52,7 @@ Puede usarse IFVG de 1m si el DOL es muy claro.
 
 Documento 05.
 
-## Conceptos relacionados
+### Conceptos relacionados
 
 - [[judas-swing|Judas Swing]]
 - [[pd-array|PD Array]]

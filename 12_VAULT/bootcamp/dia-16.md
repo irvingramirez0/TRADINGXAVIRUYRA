@@ -5,7 +5,7 @@ titulo: "Día 16 — Check-in (psicología)"
 confianza: "explícito"
 estado: "vigente"
 video: "djkeIcfNGgs"
-timestamp: "00:00"
+timestamp: "4:01"
 dia: 16
 categoria: "BOOTCAMP"
 duracion: "6:46"

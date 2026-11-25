@@ -55,12 +55,12 @@ Trade A+ que justifica esperar; primer payout y cuenta recuperada. La calidad de
 
 El P&L exacto no se verbaliza; el hito es el primer payout de 750 $.
 
-## Conceptos presentes
+### Conceptos presentes
 
 - [[fair-value-gap-fvg|Fair Value Gap (FVG)]]
 - [[equal-highs-equal-lows|Equal Highs / Equal Lows]]
 
-## Reglas relacionadas (detección automática)
+### Reglas relacionadas (detección automática)
 
 - [[el-dol-debe-estar-dentro-de-un-fvg-pd-array|El DOL debe estar dentro de un FVG/PD array]]
 

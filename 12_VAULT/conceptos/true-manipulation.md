@@ -19,43 +19,15 @@ id: 54
 
 Situación en la que los dos índices correlacionados (NQ y ES) están en un punto donde tiene sentido que distribuyan.
 
-## Interpretación de Xavi
-
-Un SMT solo es válido si ambos índices tienen motivo para distribuir. Si solo uno ha tocado su zona, el SMT no vale y el trade se descarta.
-
 ## Cómo identificarlo
 
 Comprobar que el NQ y el ES han tocado sus zonas relevantes (FVG/PD array) o que ambos tienen liquidez que justifica la distribución.
-
-## Cuándo se usa
-
-Antes de validar un SMT o un trade basado en divergencia.
-
-## Condiciones
-
-Ambos índices listos; si solo uno, no hay true manipulation.
-
-## Temporalidades
-
-4H/1H/15m/5m.
-
-## Aplicación
-
-Validar o descartar el trade; en el 22/10 el short se valida cuando el ES toca su gap de 4H.
 
 ## Errores comunes
 
 Validar un SMT porque un índice barrió un high/low sin comprobar el otro; confundir divergencia con true manipulation.
 
-## Excepciones
-
-Xavi dice que 'cuando tenemos doble SMT se cancela' (OdljBowQurk, 06:13), pero no identifica qué se cancela ni las condiciones; en junio describe dos SMT alineados con el dólar que refuerzan un corto (VE5H1qX50zA, 04:10–05:44). La relación entre ambos usos sigue abierta.
-
-## Notas
-
-Documento 03. La explicación general de double SMT sigue incompleta; ver 11_PREGUNTAS_ABIERTAS.md §1.2.
-
-## Requiere / se combina con
+### Requiere / se combina con
 
 - [[draw-on-liquidity-dol|Draw on Liquidity (DOL)]]
 - [[po3-power-of-3|PO3 (Power of 3)]]

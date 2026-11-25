@@ -53,7 +53,7 @@ Ninguna documentada.
 
 Día 20 [06:18–06:49].
 
-## Conceptos relacionados
+### Conceptos relacionados
 
 - [[gambling-vs-trading-psicologia|Gambling vs trading (psicología)]]
 - [[ego-psicologia|Ego (psicología)]]

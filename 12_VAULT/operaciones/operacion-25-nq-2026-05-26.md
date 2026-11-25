@@ -55,7 +55,7 @@ En all time highs, buscar compras y usar los relative equal highs como objetivo.
 
 Fuente: recap del vídeo. En all time highs, buscar compras y usar los relative equal highs como objetivo.; No ir a break-even en el primer high por miedo: esperar a que se toque el high más relevante.; Si el primer IFVG no convence, esperar a que el precio cree mejor estructura y vuelva a dar entrada.; La vela de las 10:00 puede hacer open-low-high-close; cerrar antes puede proteger el TP.; Adaptar el RR al objetivo de payout: estira de 1:1 a 1:1,28/1:1,34 porque necesita días de consistencia para retirar.. Citas: [98.4s] son cuádruple relative equal highs, o sea, 1 2 3 4 | [255.12s] por encima del del order block del CISD y directamente hemos entrado | [286.76s] nuestro break even ha sido en all time highs, porque es el high más relevante de todos estos | [3.15s] tres contratos en compra y tres contratos en venta | Clasificación original: Bien ejecutado ganador. Entrada en CISD + IFVG de 30 segundos, BE en el high más relevante y TP ajustado al objetivo de payout.
 
-## Conceptos presentes
+### Conceptos presentes
 
 - [[open-de-las-10-00|Open de las 10:00]]
 - [[nwog-new-week-opening-gap|NWOG (New Week Opening Gap)]]
@@ -63,7 +63,7 @@ Fuente: recap del vídeo. En all time highs, buscar compras y usar los relative 
 - [[fair-value-gap-fvg|Fair Value Gap (FVG)]]
 - [[inverse-fair-value-gap-ifvg|Inverse Fair Value Gap (IFVG)]]
 
-## Reglas relacionadas (detección automática)
+### Reglas relacionadas (detección automática)
 
 - [[el-dol-debe-estar-dentro-de-un-fvg-pd-array|El DOL debe estar dentro de un FVG/PD array]]
 - [[judas-swing-acumulacion-manipulacion-distribucion|Judas Swing: acumulación → manipulación → distribución]]

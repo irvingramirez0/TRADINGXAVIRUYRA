@@ -55,7 +55,7 @@ En días de baja probabilidad (ATH, subida en Londres + bajada en premarket), re
 
 Fuente: recap del vídeo. No reconoce errores en su operación; sí critica el primer setup (FVG de 5m + inverse de 2m) como 'horrible' para quien entrara ahí.; Reconoce que era un día complicado/de baja probabilidad y que no le gustaban las condiciones, solo la dirección.. Citas: [33.36s] dos contratos pequeños, como podéis ver, hemos sido low risk por dos motivos principales. | [161.04s] obvio buscar shorts después de haber invalidado este fair value gap, ya que aquí más abajo no hay nada | [161.04s] tenemos equal lows con el new week opening gap, así que más que suficiente | [253.56s] este tapeo en el fair value gap de 5 minutos y este inverse de 2 minutos. Si habéis entrado aquí, el trade es horrible
 
-## Conceptos presentes
+### Conceptos presentes
 
 - [[equilibrium-premium-descuento|Equilibrium (premium/descuento)]]
 - [[fair-value-gap-fvg|Fair Value Gap (FVG)]]
@@ -63,7 +63,7 @@ Fuente: recap del vídeo. No reconoce errores en su operación; sí critica el p
 - [[daily-bias|Daily Bias]]
 - [[swing-high-swing-low|Swing High / Swing Low]]
 
-## Reglas relacionadas (detección automática)
+### Reglas relacionadas (detección automática)
 
 - [[equilibrium-comprar-en-descuento-vender-en-premium|Equilibrium: comprar en descuento, vender en premium]]
 - [[en-5m-usar-el-rango-creado-si-hay-duda-dos-rangos-validos|En 5m, usar el rango creado; si hay duda, dos rangos válidos]]

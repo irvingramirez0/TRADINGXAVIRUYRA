@@ -53,7 +53,7 @@ La relación con la regla previa de no tocar el trade fuera de zonas estructural
 
 Bootcamp Día 26 [16:47–17:17].
 
-## Conceptos relacionados
+### Conceptos relacionados
 
 - [[key-levels|Key Levels]]
 

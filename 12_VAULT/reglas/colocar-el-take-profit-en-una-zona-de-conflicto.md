@@ -53,7 +53,7 @@ El objetivo depende del contexto; no siempre se elige el primer gap si hay una r
 
 Bootcamp Día 26 [10:26–15:07].
 
-## Conceptos relacionados
+### Conceptos relacionados
 
 - [[fair-value-gap-fvg|Fair Value Gap (FVG)]]
 - [[draw-on-liquidity-dol|Draw on Liquidity (DOL)]]

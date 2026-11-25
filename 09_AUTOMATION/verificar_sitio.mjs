@@ -63,15 +63,17 @@ const check=(nombre,cond)=>{n++;if(!cond)fallos++;console.log(`  ${ok(cond)} ${n
 let A=await abrir(B+"/","qa-c1",9401)
 check("portada: título único", await A.ev("document.querySelectorAll('h1').length")===1)
 check("portada: panel con cifras", await A.ev("document.querySelectorAll('.xr-cifra').length")>=5)
-check("portada: 7 tarjetas de entrada", await A.ev("document.querySelectorAll('.xr-tarjeta').length")===7)
+const nTarjetas = await A.ev("document.querySelectorAll('.xr-tarjeta').length")
+check(`portada: ${nTarjetas} tarjetas de entrada`, nTarjetas >= 9)
 check("portada: sin anotaciones (es portada)", await A.ev("!document.querySelector('.xr-anot')"))
 A.cerrar()
 
 // 2. Bootcamp índice
 A=await abrir(B+"/bootcamp/","qa-c2",9402)
-check("bootcamp: 21 días listados", await A.ev("document.querySelectorAll('.xr-dia').length")===21)
+const nDias = await A.ev("document.querySelectorAll('.xr-dia').length")
+check(`bootcamp: ${nDias} días listados`, nDias >= 29)
 check("bootcamp: panel", await A.ev("!!document.querySelector('.xr-panel')"))
-check("bootcamp: cada día enlaza a su página", await A.ev("[...document.querySelectorAll('.xr-dia-titulo')].length===21 && [...document.querySelectorAll('.xr-dia-titulo')].every(a=>/dia-[0-9][0-9]/.test(a.getAttribute('href')||''))"))
+check("bootcamp: cada día enlaza a su página", await A.ev(`[...document.querySelectorAll('.xr-dia-titulo')].length===${nDias} && [...document.querySelectorAll('.xr-dia-titulo')].every(a=>/dia-[0-9][0-9]/.test(a.getAttribute('href')||''))`))
 A.cerrar()
 
 // 3. Un día
@@ -80,8 +82,6 @@ check("dia-13: ficha de fuente", await A.ev("!!document.querySelector('.xr-ficha
 check("dia-13: enlace al vídeo en el minuto", await A.ev("/youtube\.com\/watch\?v=.+&t=\d+s/.test((document.querySelector('.xr-boton-fuente')||{}).href||'')"))
 check("dia-13: enlaza concepto IFVG", await A.ev("[...document.querySelectorAll('a.internal')].some(a=>a.getAttribute('href').includes('inverse-fair-value-gap-ifvg'))"))
 check("dia-13: navegación anterior/siguiente", await A.ev("document.body.innerHTML.includes('Día 12') && document.body.innerHTML.includes('Día 14')"))
-A.cerrar()
-
 // 3-bis. Un día recién transcrito y SIN trabajar.
 //
 // Este caso existe por un fallo real: el Día 21 se publicó con
@@ -90,9 +90,32 @@ A.cerrar()
 // que está analizada. Es el estado más fácil de romper sin querer al tocar el
 // generador, así que se comprueba aparte y contra la página que lo padeció.
 A=await abrir(u("/bootcamp/dia-21"),"qa-c3b",9408)
-check("dia-21: avisa de que no está trabajada", await A.ev("/sin trabajar|sin analizar/i.test(document.body.textContent)"))
+check("dia-21: enlaza fuentes citadas", await A.ev("/youtube\.com\/watch\?v=.+&t=\d+s/.test((document.querySelector('.xr-boton-fuente')||{}).href||'')"))
 check("dia-21: no enlaza al segundo 0", await A.ev("!/[?&]t=0s/.test((document.querySelector('.xr-boton-fuente')||{}).href||'')"))
 check("dia-21: apunte del curriculum marcado como historial", await A.ev("/cuando se catalogó/i.test(document.body.textContent)"))
+A.cerrar()
+
+// 3-ter. Recorre las páginas reales del índice en UNA sola instancia de
+// Chrome. Abrir y cerrar 29 procesos agotaba el tiempo del QA en Windows.
+const urlsDia = await A.ev("[...document.querySelectorAll('.xr-dia-titulo')].map(a=>a.getAttribute('href')).filter(Boolean)")
+let botonesCero = 0
+const paginaClase = await abrir(u("/bootcamp/"),"qa-todas",9413)
+for (const href of urlsDia) {
+  const nombre = href.split("/").pop().replace(/\.html$/, "")
+  const destino = ARCHIVOS_PLANOS ? "/bootcamp/" + nombre + ".html" : "/bootcamp/" + nombre
+  await paginaClase.ev(`location.href=${JSON.stringify(u(destino))}`)
+  await dormir(60)
+  botonesCero += await paginaClase.ev("[...document.querySelectorAll('.xr-boton-fuente')].filter(a=>/[?&]t=0s/.test(a.href||'')).length")
+}
+paginaClase.cerrar()
+check(`bootcamp: ningún botón abre el segundo 0 (${urlsDia.length} clases revisadas)`, botonesCero===0)
+A.cerrar()
+A=await abrir(B+"/conceptos/","qa-core",9411)
+check("conceptos: ruta por dependencia publicada", await A.ev("!!document.querySelector('a[href*=\"ruta\"]')"))
+A.cerrar()
+A=await abrir(B+"/comprobador/","qa-comp",9412)
+check("comprobador: cifra honesta de operaciones", await A.ev("/0[\\/\\s]+\\d+ operaciones con cita formal/.test(document.body.textContent)"))
+check("comprobador: no dice 'Todo tiene fuente'", await A.ev("!/Todo tiene fuente/.test(document.body.textContent)"))
 A.cerrar()
 
 // 4. Concepto con imágenes

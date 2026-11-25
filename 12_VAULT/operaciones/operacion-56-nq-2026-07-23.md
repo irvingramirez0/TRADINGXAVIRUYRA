@@ -55,14 +55,14 @@ Trade simple y claro; el foco fue mantenerlo simple y ejecutar el plan.
 
 +67 $ es el total en cinco cuentas.
 
-## Conceptos presentes
+### Conceptos presentes
 
 - [[daily-bias|Daily Bias]]
 - [[fair-value-gap-fvg|Fair Value Gap (FVG)]]
 - [[inverse-fair-value-gap-ifvg|Inverse Fair Value Gap (IFVG)]]
 - [[equilibrium-premium-descuento|Equilibrium (premium/descuento)]]
 
-## Reglas relacionadas (detección automática)
+### Reglas relacionadas (detección automática)
 
 - [[secuencia-del-analisis-key-levels-fvg-1h-4h-reversion-o-continuacion-fvg|Secuencia del análisis: key levels → FVG 1H/4H → reversión o continuación → FVG en equilibrium → IFVG → BSL/SSL]]
 - [[equilibrium-comprar-en-descuento-vender-en-premium|Equilibrium: comprar en descuento, vender en premium]]

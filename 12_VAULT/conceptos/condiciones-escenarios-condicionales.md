@@ -19,43 +19,15 @@ id: 93
 
 Criterios observables, normalmente gaps de 5m o 15m, que permiten decidir qué hacer según el precio los respete o los invalide.
 
-## Interpretación de Xavi
-
-Sirven para escuchar la reacción del precio sin predecirla y para enlazar contexto HTF con ejecución LTF.
-
 ## Cómo identificarlo
 
 Antes de entrar, expresar el escenario como 'si ocurre X, haré Y'; observar respeto o cierre de invalidación del gap elegido.
-
-## Cuándo se usa
-
-Al tocar un key level cuando no se sabe si el precio continuará o se dará la vuelta.
-
-## Condiciones
-
-Afirmaciones/contexto en diario, 4H o 1H; condiciones en 5m/15m; ejecución con IFVG de timeframe superior dentro de 30s–5m.
-
-## Temporalidades
-
-Diario, 4H, 1H; condiciones 5m/15m; ejecuciones 30s–5m.
-
-## Aplicación
-
-Plantear escenarios alternativos; si el gap se respeta y aparece confirmación, considerar continuación; si se invalida y aparece IFVG, considerar el escenario opuesto.
 
 ## Errores comunes
 
 Predecir la reacción, reaccionar a una vela grande sin plan, o confundir el FVG de condición con el IFVG de ejecución.
 
-## Excepciones
-
-La secuencia es una explicación del Día 25; no se presenta como plantilla rígida para todo setup.
-
-## Notas
-
-Bootcamp Día 25 [01:03–06:09]. La ASR omite algunos términos técnicos; se conserva solo la estructura repetida y coherente del vídeo.
-
-## Requiere / se combina con
+### Requiere / se combina con
 
 - [[fair-value-gap-fvg|Fair Value Gap (FVG)]]
 - [[inverse-fair-value-gap-ifvg|Inverse Fair Value Gap (IFVG)]]

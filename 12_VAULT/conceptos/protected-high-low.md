@@ -18,43 +18,15 @@ id: 64
 
 High/low que el precio no debería romper si la idea direccional es correcta; sirve de referencia para el stop y para la gestión.
 
-## Interpretación de Xavi
-
-Si el high/low protegido se rompe, la idea del trade deja de ser válida.
-
 ## Cómo identificarlo
 
 Identificar el extremo que originó la manipulación o el último swing relevante.
-
-## Cuándo se usa
-
-Para gestionar el trade y decidir el stop.
-
-## Condiciones
-
-Contexto y estructura.
-
-## Temporalidades
-
-5m/15m/1H.
-
-## Aplicación
-
-Mantener el trade mientras el nivel se respete; si se rompe, salir.
 
 ## Errores comunes
 
 Mover el stop más allá del nivel protegido; ignorar la ruptura.
 
-## Excepciones
-
-No está definido formalmente.
-
-## Notas
-
-Documento 07. Término usado en ejemplos, no definido como concepto.
-
-## Requiere / se combina con
+### Requiere / se combina con
 
 - [[fair-value-gap-fvg|Fair Value Gap (FVG)]]
 

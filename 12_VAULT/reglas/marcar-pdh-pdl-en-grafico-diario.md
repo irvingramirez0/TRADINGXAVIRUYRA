@@ -53,7 +53,7 @@ Xavi lo considera el tipo menos esencial; puede saltarse.
 
 Bootcamp Día 11 [01:36–02:07].
 
-## Conceptos relacionados
+### Conceptos relacionados
 
 - [[pdh-pdl-previous-day-high-low|PDH / PDL (previous day high/low)]]
 

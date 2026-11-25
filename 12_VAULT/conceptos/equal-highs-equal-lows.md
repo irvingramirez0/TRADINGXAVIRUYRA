@@ -19,43 +19,15 @@ id: 58
 
 Dos o más highs/lows al mismo nivel o muy cercanos; generan una bolsa de liquidez.
 
-## Interpretación de Xavi
-
-Son liquidez pendiente y pueden cambiar el DOL. Los relative equal highs/lows son una versión menos exacta.
-
 ## Cómo identificarlo
 
 Marcar highs/lows repetidos; comprobar si están dentro de una zona.
-
-## Cuándo se usa
-
-Como target, como excepción al DOL y como contexto para el stacking.
-
-## Condiciones
-
-Contexto HTF; no operar contra ellos sin razón.
-
-## Temporalidades
-
-15m/1H/4H.
-
-## Aplicación
-
-Esperar el sweep; usarlos como target.
 
 ## Errores comunes
 
 Shortear una subida vertical con equal lows; ignorarlos como liquidez.
 
-## Excepciones
-
-Pueden ser relative (no exactos).
-
-## Notas
-
-Documento 03.
-
-## Requiere / se combina con
+### Requiere / se combina con
 
 - [[draw-on-liquidity-dol|Draw on Liquidity (DOL)]]
 - [[po3-power-of-3|PO3 (Power of 3)]]

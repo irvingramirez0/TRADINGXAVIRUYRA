@@ -55,7 +55,7 @@ Esperar el close/confirmación de la inversión del FVG; si hay que hacer zoom, 
 
 Fuente: recap del vídeo. Entró sin que el FVG de 2m estuviera realmente invertido; no hizo zoom y el requisito no se cumplió: 'El trade se invalida por el simple hecho de que no ha cumplido el requisito'.; En FOMC y con price action ranging, el setup no estaba claro; él mismo dice que no estaba 'clarísimo' y que debió esperar el close de la vela de 2m.; Si tienes que hacer zoom para ver la inversión, es mala señal.; No operó las cuentas 'tochas' ese día; no queda claro si fue intencional (protección de capital) o inconsistencia.. Citas: [34.67s] hemos entrado a partir de este inverse de dos, TP en la byside liquidity que teníamos marcada. | [34.67s] porque hay FOMC y se puede ver que el el price action está siendo horrible, o sea, estamos rangeando un montón. | [192.68s] Me han dicho en el Discord que no se ha inversado el gap. Y si haces zoom, no se ha inversado | [224.0s] El trade se invalida por el simple hecho de que no ha cumplido el requisito
 
-## Conceptos presentes
+### Conceptos presentes
 
 - [[key-levels|Key Levels]]
 - [[liquidez-bsl-ssl|Liquidez (BSL/SSL)]]
@@ -63,7 +63,7 @@ Fuente: recap del vídeo. Entró sin que el FVG de 2m estuviera realmente invert
 - [[inverse-fair-value-gap-ifvg|Inverse Fair Value Gap (IFVG)]]
 - [[draw-on-liquidity-dol|Draw on Liquidity (DOL)]]
 
-## Reglas relacionadas (detección automática)
+### Reglas relacionadas (detección automática)
 
 - [[secuencia-del-analisis-key-levels-fvg-1h-4h-reversion-o-continuacion-fvg|Secuencia del análisis: key levels → FVG 1H/4H → reversión o continuación → FVG en equilibrium → IFVG → BSL/SSL]]
 - [[ifvg-obligatorio-nunca-entrar-sin-ifvg|IFVG obligatorio: nunca entrar sin IFVG]]

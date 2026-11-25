@@ -231,7 +231,7 @@ def render_links(items, heading="Conceptos relacionados"):
             uniq.append((s, d))
     if not uniq:
         return []
-    out = [f"## {heading}", ""]
+    out = [f"### {heading}", ""]
     for s, d in uniq:
         out.append(f"- [[{s}|{d}]]")
     out.append("")
@@ -320,6 +320,7 @@ NEGACIONES = (
     "no hay", "no se ve", "no verifica", "no muestra", "no identifica",
     "no aparece", "no aporta", "no se distingue", "no consta", "sin rótulo",
     "no hay rótulo", "no se aprecia", "no permite ver", "no se observa",
+    "no hay etiquetas de", "muy alejado", "no muestra el concepto",
 )
 _RE_NEG = re.compile("|".join(re.escape(n) for n in NEGACIONES))
 
@@ -352,12 +353,12 @@ def niega_concepto(desc, alts, cid=None, aliases_globales=None):
     pero «cuando no hay FVG uso CISD» no descarta nada para CISD.
     """
     propias = {a for a in alts if len(a) > 2}
+    texto = (desc or "").lower()
+    menciona_concepto = any(alt_en_texto(a, texto) for a in propias)
     for oracion in _oraciones(desc):
         o = oracion.lower()
         for m in _RE_NEG.finditer(o):
             ventana = o[m.end():m.end() + 70]
-            if not ventana.strip():
-                continue
             # Primer alias que aparece tras la negación, sea de este concepto o de otro.
             mejor = None
             for alt, otro_id in (aliases_globales or []):
@@ -372,7 +373,24 @@ def niega_concepto(desc, alts, cid=None, aliases_globales=None):
                         mejor = (pos, cid)
             if mejor is not None and mejor[1] == cid:
                 return True
+            if mejor is not None and mejor[1] != cid and any(
+                alt_en_texto(a, o) for a in propias
+            ):
+                # «El gráfico está muy alejado; no se distingue la estructura
+                # de la leg»: la negación no va seguida de un alias, pero el
+                # concepto aparece en la misma oración. No se publica una
+                # captura que el anotador dice no poder ver.
+                return True
             if mejor is None and any(alt_en_texto(a, ventana) for a in propias):
+                return True
+            if (m.group() in ("muy alejado", "no se distingue", "no se ve",
+                              "no se aprecia", "no se observa")
+                    and menciona_concepto):
+                # «... ifvg'. El gráfico está muy alejado; no se distingue ...
+                # La negación describe la visibilidad de la imagen, no una
+                # regla metodológica. Si el concepto aparece en la anotación,
+                # publicar la captura sería presentar como prueba visual lo
+                # que el anotador dice no poder ver.
                 return True
     return False
 
@@ -406,10 +424,12 @@ def vetos_de(con, cid):
     """
     vetados = set()
     try:
-        for r in con.execute(
-            "SELECT frame_id FROM frame_vetos WHERE concept_id IS NULL OR concept_id=?",
-            (cid,),
-        ):
+        columnas = {r[1] for r in con.execute("PRAGMA table_info(frame_vetos)")}
+        where = "WHERE concept_id IS NULL OR concept_id=?"
+        if "entity_type" in columnas:
+            # Los vetos de regla no pueden ocultar la ilustración de un concepto.
+            where += " AND (entity_type='concept' OR entity_type IS NULL)"
+        for r in con.execute(f"SELECT frame_id FROM frame_vetos {where}", (cid,)):
             vetados.add(r["frame_id"])
     except sqlite3.OperationalError:
         # Base antigua sin la tabla: no hay vetos, no es un error.
@@ -532,17 +552,23 @@ def asignar_fotogramas(con, conceptos):
     error que puso un Judas Swing en la nota de IFVG, pero multiplicado.
 
     Criterio, por orden:
-      1. si la fila de `evidence` apunta a este concepto explícitamente, gana;
-      2. si no, gana el concepto cuyo alias aparezca **todas** sus veces en la
+      1. prioridad de categoría: CORE antes que SUPPORTING, y este antes que
+         CONTEXTUAL, aunque el contextual tenga evidencia directa;
+      2. si la fila de `evidence` apunta a este concepto explícitamente, gana;
+      3. si no, gana el concepto cuyo alias aparezca **todas** sus veces en la
          anotación (una mención suelta es más probable que sea contexto);
-      3. si sigue habiendo empate, gana el alias más largo y específico;
-      4. si el empate persiste, el fotograma se queda con el concepto de id
+      4. si sigue habiendo empate, gana el alias más largo y específico;
+      5. si el empate persiste, el fotograma se queda con el concepto de id
          menor: es una decisión arbitraria pero estable y declarada.
 
-    Devuelve {frame_id: concept_id_dueño}.
+    Excepción declarada: si un CORE nombrado literalmente en la anotación
+    comparte imagen con otro CORE, ambos pueden quedársela. Es el único caso
+    de multi-propiedad permitido.
+
+    Devuelve {frame_id: {concept_id_dueño, ...}}.
     """
     from collections import defaultdict
-    peso = defaultdict(dict)  # fid -> {cid: (evidencia, menciones, largo)}
+    peso = defaultdict(dict)  # fid -> {cid: (prioridad, evidencia, menciones, largo, rank)}
     anotados = {c["id"]: c for c in conceptos}
 
     for c in conceptos:
@@ -559,14 +585,27 @@ def asignar_fotogramas(con, conceptos):
             ).fetchone()
             if fila:
                 ev = 1
-            peso[fid][c["id"]] = (ev, menciones, largo, rank)
+            prioridad = {"CORE": 0, "SUPPORTING": 1, "CONTEXTUAL": 2}.get(c.get("category"), 3)
+            peso[fid][c["id"]] = (prioridad, ev, menciones, largo, rank)
 
     dueno = {}
     for fid, opciones in peso.items():
         def clave(cid):
-            ev, menciones, largo, rank = opciones[cid]
-            return (-ev, -menciones, -largo, rank, cid)
-        dueno[fid] = sorted(opciones, key=clave)[0]
+            prio, ev, menciones, largo, rank = opciones[cid]
+            # `prio` ya es 0 para CORE: negarlo pondría al CONTEXTUAL primero.
+            return (prio, -ev, -menciones, -largo, rank, cid)
+
+        ganador = sorted(opciones, key=clave)[0]
+        duenos = {ganador}
+        if anotados[ganador].get("category") == "CORE":
+            fr = con.execute("SELECT description FROM frames WHERE id=?", (fid,)).fetchone()
+            desc = (fr["description"] or "").lower() if fr else ""
+            for cid in opciones:
+                if cid == ganador or anotados[cid].get("category") != "CORE":
+                    continue
+                if any(alt_en_texto(a, desc) for a in (anotados[cid].get("alts_propias") or anotados[cid]["alts"]) if len(a) > 2):
+                    duenos.add(cid)
+        dueno[fid] = duenos
     return dueno
 
 def build_media(con, concepto, slug_concepto, dry=False):
@@ -576,7 +615,8 @@ def build_media(con, concepto, slug_concepto, dry=False):
     for rank, fr, why in rows:
         # Un fotograma solo es prueba de un concepto. Si ya se asignó a otro
         # (o si aquí solo sería contexto), no se vuelve a publicar.
-        if DUENO_FOTOGRAMAS and DUENO_FOTOGRAMAS.get(fr["id"], concepto["id"]) != concepto["id"]:
+        duenos = DUENO_FOTOGRAMAS.get(fr["id"], {concepto["id"]})
+        if DUENO_FOTOGRAMAS and concepto["id"] not in duenos:
             continue
         src = os.path.join(BASE, fr["path"])
         if not os.path.exists(src):
@@ -723,15 +763,8 @@ def generate_conceptos(con, conceptos, limite=None, sin_media=False, dry=False):
         nota.cuerpo.append("")
         for titulo, campo in [
             ("Definición", "definition"),
-            ("Interpretación de Xavi", "xavi_interpretation"),
             ("Cómo identificarlo", "how_identify"),
-            ("Cuándo se usa", "when_used"),
-            ("Condiciones", "conditions"),
-            ("Temporalidades", "timeframes"),
-            ("Aplicación", "application"),
             ("Errores comunes", "common_errors"),
-            ("Excepciones", "exceptions"),
-            ("Notas", "notes"),
         ]:
             if c[campo]:
                 nota.cuerpo += [f"## {titulo}", "", str(c[campo]), ""]
@@ -1003,6 +1036,59 @@ def generate_preguntas():
             fh.write(nota.render())
 
 
+def leer_bloque_metodologia():
+    """Lee solo §3 del mapa; nunca copia el texto a mano."""
+    mapa = os.path.join(BASE, "05_METHODOLOGY", "00_MAPA_METODOLOGIA.md")
+    with open(mapa, encoding="utf-8") as fh:
+        texto = fh.read()
+    ini = texto.index("## 3. La metodología en una página")
+    fin = texto.index("\n## 4. ", ini)
+    return texto[ini:fin].strip()
+
+
+def generar_empieza_aqui(slugs_concepto, fecha_corte):
+    """Publica el bloque metodológico real como ruta principal."""
+    bloque = leer_bloque_metodologia()
+    lineas = [
+        "---", "tipo: indice", 'title: "Empieza aquí"', 'titulo: "Empieza aquí"',
+        'confianza: "explícito"', 'estado: "vigente"', 'video: ""', 'timestamp: ""',
+        f'corte: "{fecha_corte}"', "---", "", "", "# Empieza aquí", "",
+        f"**Corte de la metodología: {fecha_corte}.** Sigue este orden; cada etapa enlaza a la clase y al minuto donde se explica.",
+        "", "> [!warning] La ruta, no el archivo",
+        "> Esto es lo que Xavi hace, en el orden en que lo hace. El resto del sitio es la evidencia.", "",
+    ]
+    for sec in ["4H/1H", "DOL", "liquidez", "PO3", "entradas", "gestión", "riesgo", "psicología"]:
+        slug = slugs_concepto.get(sec)
+        lineas.append(f"- [[{slug}|{sec}]]" if slug else f"- {sec}")
+    lineas += ["", "## El mapa, paso a paso", "", bloque, "",
+               "## Cómo leer los enlaces", "",
+               "Cada botón «Ver en YouTube» abre el vídeo en el minuto citado. Si una etapa no "
+               "tiene minuto, el botón dice «Ver clase completa»: no se inventa el segundo cero.", ""]
+    with open(os.path.join(VAULT, "00-empieza-aqui.md"), "w", encoding="utf-8") as fh:
+        fh.write("\n".join(lineas))
+    # La portada se regenera limpia; si aún no existe, se crea aquí con la
+    # tarjeta delante para que la ruta principal esté siempre accesible.
+    index_path = os.path.join(VAULT, "index.md")
+    tarjeta = ('<a class="xr-tarjeta" href="./00-empieza-aqui">'
+               '<span class="xr-tarjeta-titulo">Empieza aquí</span>'
+               '<span class="xr-tarjeta-desc">La metodología, en orden y con minuto.</span></a>')
+    if os.path.exists(index_path):
+        with open(index_path, encoding="utf-8") as fh:
+            txt = fh.read()
+        if tarjeta not in txt:
+            txt = txt.replace('<div class="xr-tarjetas">',
+                              '<div class="xr-tarjetas">\n' + tarjeta, 1)
+    else:
+        txt = ('---\ntipo: portada\ntitulo: "Metodología Xavi Ruyra"\n'
+               'confianza: "no confirmado"\nestado: vigente\n---\n\n'
+               '## Por dónde entrar\n\n<div class="xr-tarjetas">\n' + tarjeta +
+               '\n<a class="xr-tarjeta" href="./bootcamp">'
+               '<span class="xr-tarjeta-titulo">Bootcamp</span>'
+               '<span class="xr-tarjeta-desc">Las clases en orden.</span></a>\n</div>\n')
+    with open(index_path, "w", encoding="utf-8") as fh:
+        fh.write(txt)
+
+
 def generate_index(conceptos_notas, slugs_concepto, reglas_count, trades_count,
                    cambios_count, preguntas_count, estado=None):
     """Portada: qué es esto, por dónde entrar y en qué estado está.
@@ -1064,12 +1150,14 @@ def generate_index(conceptos_notas, slugs_concepto, reglas_count, trades_count,
         return salida
 
     secciones = [
+        ("00-empieza-aqui", "Empieza aquí", "La metodología, en orden y con minuto."),
         ("bootcamp", "Bootcamp", f"Las {boot_dias} clases en orden, con lo que da cada una."),
         ("conceptos", "Conceptos", f"{len(conceptos_notas)} conceptos con definición, condiciones y errores."),
         ("reglas", "Reglas operativas", f"{reglas_count} reglas, incluidas las obsoletas con su sustituto."),
         ("operaciones", "Operaciones", f"{trades_count} operaciones analizadas, con el P&L autodeclarado."),
         ("cambios", "Cambios", f"{cambios_count} cambios de criterio documentados."),
         ("preguntas", "Preguntas abiertas", f"{preguntas_count} preguntas sin cerrar."),
+        ("contradicciones", "Contradicciones", "Dos versiones conviven; la vigente se lee primero."),
         ("comprobador", "Comprobador de fuentes", "Lo que el sitio no puede respaldar, dicho en voz alta."),
     ]
     tarjetas = "\n".join(
@@ -1188,6 +1276,7 @@ def main():
         estado = _estado_proyecto(con)
         generate_index(notas, slugs_concepto, reglas_count, trades_count,
                        cambios_count, preguntas_count, estado)
+        generar_empieza_aqui(slugs_concepto, estado.get("fecha_corte", ""))
         # Páginas de navegación y auditoría.
         #
         # Si fallan se avisa en voz alta y se marca el fallo, pero no se aborta:
@@ -1200,13 +1289,24 @@ def main():
                                  for r in con.execute("SELECT id, name FROM rules")}
             paginas_sitio.generar_bootcamp(con, slugs_concepto)
             paginas_sitio.generar_indices(con, slugs_concepto, slugs_regla_todos)
+            paginas_sitio.generar_ruta_conceptos(con, slugs_concepto)
             paginas_sitio.generar_indice_preguntas(con)
+            generar_contradciones()
         except Exception as e:  # una página de navegación no debe tumbar el vault
             print(f"FALLO: páginas de navegación: {e}")
             print("El vault se escribió, pero las páginas del bootcamp y los índices "
                   "NO se actualizaron. No publiques hasta arreglarlo.")
             return 4
-        sin_fuente = comprobador_fuentes(con, slugs_concepto, slugs_regla, {}, {})
+        # `trades` no tiene columna `slug`: la ruta de la nota se deriva de los
+        # mismos campos que usa `generate_operaciones()`. Otra clave dejaría
+        # el comprobador apuntando a páginas que no existen.
+        slugs_trade = {t["id"]: slug(
+            f"operacion-{t['id']}-{t['instrument'] or ''}-{t['date'] or ''}"
+        ) for t in con.execute("SELECT id, instrument, date FROM trades")}
+        slugs_cambio = {c["id"]: slug(f"cambio-{c['id']}")
+                        for c in con.execute("SELECT id FROM changes")}
+        sin_fuente = comprobador_fuentes(
+            con, slugs_concepto, slugs_regla, slugs_trade, slugs_cambio)
         print(f"Comprobador de fuentes: {sin_fuente} entidades sin respaldo")
 
     print(f"Vault: {VAULT}")
@@ -1289,6 +1389,36 @@ def _tiene_video(con, vid):
     return con.execute("SELECT 1 FROM videos WHERE id=?", (vid,)).fetchone() is not None
 
 
+def generar_contradciones():
+    """Publica la tabla §5 de preguntas abiertas sin reescribir su contenido.
+
+    Las contradicciones se conservan en el documento metodológico; aquí solo se
+    cambia el orden de las columnas para que la versión vigente se lea primero.
+    """
+    with open(PREGUNTAS_MD, encoding="utf-8") as fh:
+        txt = fh.read()
+    ini = txt.index("## 5. Contradicciones documentadas")
+    fin = txt.index("\n**Regla:**", ini)
+    filas = [l for l in txt[ini:fin].splitlines()
+             if l.startswith("| ") and not l.startswith("|---") and "Tema" not in l]
+    lineas = [
+        "---", "tipo: indice", 'title: "Contradicciones"',
+        'titulo: "Contradicciones"', 'confianza: "no confirmado"',
+        'estado: "vigente"', 'video: ""', 'timestamp: ""', "---", "",
+        "# Contradicciones documentadas", "",
+        "Dos versiones conviven. Ninguna se borra: se marca cuál manda hoy.", "",
+        "| Tema | Vigente | Histórica | Estado |", "|---|---|---|---|",
+    ]
+    for f in filas:
+        celdas = [c.strip() for c in f.strip("|").split("|")]
+        if len(celdas) >= 4:
+            lineas.append(f"| {celdas[0]} | {celdas[2]} | {celdas[1]} | {celdas[3]} |")
+    lineas += ["", "Ver la clase que resuelve cada tensión desde la ficha de la regla correspondiente.", ""]
+    with open(os.path.join(VAULT, "contradicciones.md"), "w", encoding="utf-8") as fh:
+        fh.write("\n".join(lineas))
+    return len(filas)
+
+
 def comprobador_fuentes(con, slugs_concepto, slugs_regla, slugs_trade, slugs_cambio):
     """Página que dice, sin adornos, qué está respaldado y qué no.
 
@@ -1333,11 +1463,15 @@ def comprobador_fuentes(con, slugs_concepto, slugs_regla, slugs_trade, slugs_cam
         "SELECT COUNT(DISTINCT entity_id) n FROM evidence WHERE entity_type='rule'"
     ).fetchone()["n"]
 
+    total_trades = con.execute("SELECT COUNT(*) n FROM trades").fetchone()["n"]
     panel = {
         "titulo": "Cobertura de fuentes",
         "barras": [
             {"etiqueta": "Conceptos con cita de vídeo", "hecho": con_ev, "total": total_conceptos},
             {"etiqueta": "Reglas con cita de vídeo", "hecho": reg_con_ev, "total": total_reglas},
+            {"etiqueta": "Operaciones con cita formal (P&L autodeclarado)",
+             "hecho": 0, "total": total_trades,
+             "nota": "El P&L es autodeclarado: no hay extracto de cuenta que lo audite."},
         ],
         "pie": (
             "«Con cita» significa que la base guarda al menos una fila de evidencia con vídeo y "
@@ -1382,8 +1516,8 @@ def comprobador_fuentes(con, slugs_concepto, slugs_regla, slugs_trade, slugs_cam
     ]
     if not filas:
         lineas += [
-            "> [!success] Todo tiene fuente",
-            "> Todas las entidades tienen al menos una cita y todos los vídeos citados están en la base.",
+            "> [!note] Sin huecos en conceptos ni reglas",
+            "> Las operaciones siguen siendo autodeclaradas: ver la barra de arriba.",
             "",
         ]
     else:

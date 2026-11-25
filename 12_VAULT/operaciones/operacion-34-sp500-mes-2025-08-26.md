@@ -55,7 +55,7 @@ El transcript dice riesgo planeado de unos $700–$800 y pérdida de $560; no de
 
 Revisión 2026-11-01: el tramo 04:24 dice pérdida $560 con riesgo previsto de $700–$800. La clasificación anterior como Error de ejecución no queda respaldada; se corrige a Inconcluso. error_type=NONE.
 
-## Conceptos presentes
+### Conceptos presentes
 
 - [[equilibrium-premium-descuento|Equilibrium (premium/descuento)]]
 

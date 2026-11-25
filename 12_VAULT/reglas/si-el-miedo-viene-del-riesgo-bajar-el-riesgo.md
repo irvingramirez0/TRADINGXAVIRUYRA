@@ -53,7 +53,7 @@ No concreta el nuevo nivel de riesgo.
 
 Bootcamp Día 9 [02:37–03:08].
 
-## Conceptos relacionados
+### Conceptos relacionados
 
 - [[miedo-a-perder-psicologia|Miedo a perder (psicología)]]
 

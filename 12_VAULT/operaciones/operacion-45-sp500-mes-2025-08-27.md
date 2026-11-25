@@ -55,13 +55,13 @@ Trade rápido y limpio; el único incidente fue la ejecución del stop. Buen eje
 
 El importe exacto es el del título; el transcript no da el desglose.
 
-## Conceptos presentes
+### Conceptos presentes
 
 - [[fair-value-gap-fvg|Fair Value Gap (FVG)]]
 - [[equilibrium-premium-descuento|Equilibrium (premium/descuento)]]
 - [[sesion-de-londres|Sesión de Londres]]
 
-## Reglas relacionadas (detección automática)
+### Reglas relacionadas (detección automática)
 
 - [[po3-requiere-htf-pd-array-de-15m-o-mas|PO3 requiere HTF PD array de 15m o más]]
 - [[equilibrium-comprar-en-descuento-vender-en-premium|Equilibrium: comprar en descuento, vender en premium]]

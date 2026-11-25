@@ -18,43 +18,15 @@ id: 57
 
 Gap de apertura diaria.
 
-## Interpretación de Xavi
-
-Puede actuar como excepción que cambia el DOL.
-
 ## Cómo identificarlo
 
 Marcar el gap entre el cierre del día anterior y la apertura del día.
-
-## Cuándo se usa
-
-Como zona de referencia y excepción al DOL.
-
-## Condiciones
-
-Contexto HTF.
-
-## Temporalidades
-
-4H/1H/15m.
-
-## Aplicación
-
-Tenerlo en cuenta si el precio lo respeta o lo usa como target.
 
 ## Errores comunes
 
 Ignorarlo en el análisis del DOL.
 
-## Excepciones
-
-No siempre se rellena.
-
-## Notas
-
-Documento 03.
-
-## Requiere / se combina con
+### Requiere / se combina con
 
 - [[fair-value-gap-fvg|Fair Value Gap (FVG)]]
 - [[draw-on-liquidity-dol|Draw on Liquidity (DOL)]]

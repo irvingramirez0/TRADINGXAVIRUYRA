@@ -53,7 +53,7 @@ No define criterio de salida ni duración.
 
 Bootcamp Día 12 [05:44–06:47]. Duración y criterio de salida: NO CONFIRMADO.
 
-## Conceptos relacionados
+### Conceptos relacionados
 
 - [[gambling-vs-trading-psicologia|Gambling vs trading (psicología)]]
 

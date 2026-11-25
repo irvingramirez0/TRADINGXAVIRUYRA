@@ -36,7 +36,7 @@ Si el DOL está muy claro, puede entrar 9:49–9:50 con 10 minutos de margen.
 
 Backtest de marzo. Regla explícita en el vídeo; no formulada como norma numerada.
 
-## Conceptos relacionados
+### Conceptos relacionados
 
 - [[draw-on-liquidity-dol|Draw on Liquidity (DOL)]]
 

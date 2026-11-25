@@ -5,7 +5,7 @@ titulo: "Día 7 — Prisa (psicología)"
 confianza: "explícito"
 estado: "vigente"
 video: "GO9GLSF_vLo"
-timestamp: "00:00"
+timestamp: "1:08"
 dia: 7
 categoria: "BOOTCAMP"
 duracion: "10:41"

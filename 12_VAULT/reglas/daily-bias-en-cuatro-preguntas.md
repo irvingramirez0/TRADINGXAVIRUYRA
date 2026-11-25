@@ -53,7 +53,7 @@ No fija un número mínimo de confluencias.
 
 Bootcamp Día 21 [05:14–05:46].
 
-## Conceptos relacionados
+### Conceptos relacionados
 
 - [[daily-bias|Daily Bias]]
 - [[key-levels|Key Levels]]

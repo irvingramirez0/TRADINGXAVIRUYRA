@@ -52,7 +52,7 @@ CISD solo si el DOL/Judas es muy claro.
 
 Documento 05.
 
-## Conceptos relacionados
+### Conceptos relacionados
 
 - [[inverse-fair-value-gap-ifvg|Inverse Fair Value Gap (IFVG)]]
 - [[fair-value-gap-fvg|Fair Value Gap (FVG)]]

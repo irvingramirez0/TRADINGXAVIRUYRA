@@ -5,7 +5,7 @@ titulo: "Día 17 — SMT's y True Manipulation"
 confianza: "explícito"
 estado: "vigente"
 video: "sTS-iWJvTf0"
-timestamp: "00:00"
+timestamp: "0:33"
 dia: 17
 categoria: "BOOTCAMP"
 duracion: "21:57"

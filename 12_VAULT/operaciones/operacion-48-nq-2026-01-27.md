@@ -55,7 +55,7 @@ Trade limpio y A+; la confluencia de FVG 4H, equilibrium, LRL y SMT justificó l
 
 El P&L exacto no se verbaliza; el título lo llama A+ day.
 
-## Conceptos presentes
+### Conceptos presentes
 
 - [[fair-value-gap-fvg|Fair Value Gap (FVG)]]
 - [[inverse-fair-value-gap-ifvg|Inverse Fair Value Gap (IFVG)]]
@@ -63,7 +63,7 @@ El P&L exacto no se verbaliza; el título lo llama A+ day.
 - [[smt-smart-money-technique|SMT (Smart Money Technique)]]
 - [[low-resistance-liquidity-lrl|Low Resistance Liquidity (LRL)]]
 
-## Reglas relacionadas (detección automática)
+### Reglas relacionadas (detección automática)
 
 - [[secuencia-del-analisis-key-levels-fvg-1h-4h-reversion-o-continuacion-fvg|Secuencia del análisis: key levels → FVG 1H/4H → reversión o continuación → FVG en equilibrium → IFVG → BSL/SSL]]
 - [[el-dol-debe-estar-dentro-de-un-fvg-pd-array|El DOL debe estar dentro de un FVG/PD array]]

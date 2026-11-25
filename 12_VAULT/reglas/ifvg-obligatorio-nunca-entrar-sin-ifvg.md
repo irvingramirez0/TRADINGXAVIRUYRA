@@ -53,7 +53,7 @@ Ninguna documentada: es obligatorio.
 
 Bootcamp Día 13 [03:21–03:52].
 
-## Conceptos relacionados
+### Conceptos relacionados
 
 - [[inverse-fair-value-gap-ifvg|Inverse Fair Value Gap (IFVG)]]
 - [[fair-value-gap-fvg|Fair Value Gap (FVG)]]

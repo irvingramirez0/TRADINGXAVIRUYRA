@@ -53,7 +53,7 @@ No deroga el Día 19: la inversión sigue siendo obligatoria; solo matiza el pes
 
 Bootcamp Día 29 [17:18–18:20]. Matiz explícito de Xavi, no inferencia propia.
 
-## Conceptos relacionados
+### Conceptos relacionados
 
 - [[inverse-fair-value-gap-ifvg|Inverse Fair Value Gap (IFVG)]]
 - [[equilibrium-premium-descuento|Equilibrium (premium/descuento)]]

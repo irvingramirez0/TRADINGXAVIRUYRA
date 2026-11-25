@@ -55,7 +55,7 @@ Revenge trading; regla de logout; un payout no es tuyo hasta que se aprueba.
 
 Vídeo de pérdida. Cifras según su relato. | Clasificación original: Error de ejecución / violación de reglas
 
-## Conceptos presentes
+### Conceptos presentes
 
 - [[cuentas-de-fondeo|Cuentas de fondeo]]
 - [[revenge-trading-psicologia|Revenge Trading (psicología)]]

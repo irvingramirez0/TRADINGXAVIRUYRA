@@ -44,7 +44,7 @@ El gap de la condición superior.
 
 Es el proceso que él describe como 'ir construyendo condiciones'.
 
-## Conceptos relacionados
+### Conceptos relacionados
 
 - [[inverse-fair-value-gap-ifvg|Inverse Fair Value Gap (IFVG)]]
 

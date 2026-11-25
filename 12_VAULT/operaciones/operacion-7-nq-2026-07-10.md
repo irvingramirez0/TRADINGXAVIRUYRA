@@ -55,13 +55,13 @@ Ejemplo de simplificación: 4H + DOL + entrada, sin sobreanalizar.
 
 Ejemplo didáctico.
 
-## Conceptos presentes
+### Conceptos presentes
 
 - [[inverse-fair-value-gap-ifvg|Inverse Fair Value Gap (IFVG)]]
 - [[draw-on-liquidity-dol|Draw on Liquidity (DOL)]]
 - [[judas-swing|Judas Swing]]
 
-## Reglas relacionadas (detección automática)
+### Reglas relacionadas (detección automática)
 
 - [[judas-swing-acumulacion-manipulacion-distribucion|Judas Swing: acumulación → manipulación → distribución]]
 - [[entrada-por-ifvg-cisd-como-alternativa|Entrada por IFVG; CISD como alternativa]]

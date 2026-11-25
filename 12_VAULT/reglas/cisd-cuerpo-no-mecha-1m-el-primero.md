@@ -52,7 +52,7 @@ En el recap del 22/10 usa CISD de 30s; variante avanzada.
 
 Documento 05.
 
-## Conceptos relacionados
+### Conceptos relacionados
 
 - [[draw-on-liquidity-dol|Draw on Liquidity (DOL)]]
 - [[cisd-change-in-state-of-delivery|CISD (Change in State of Delivery)]]

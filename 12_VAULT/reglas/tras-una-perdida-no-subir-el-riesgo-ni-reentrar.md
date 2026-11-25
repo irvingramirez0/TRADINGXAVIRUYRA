@@ -53,7 +53,7 @@ Ninguna documentada.
 
 Bootcamp Día 14 [07:47]; patrón descrito en 01:03–04:40.
 
-## Conceptos relacionados
+### Conceptos relacionados
 
 - [[revenge-trading-psicologia|Revenge Trading (psicología)]]
 

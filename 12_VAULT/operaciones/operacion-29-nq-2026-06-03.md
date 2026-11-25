@@ -55,7 +55,7 @@ Reconoce que no era la mejor zona de break-even; sin payout ni racha habría hol
 
 Trade no mostrado con entrada/salida exactas; cifras de retiro aproximadas.
 
-## Conceptos presentes
+### Conceptos presentes
 
 - [[low-resistance-liquidity-lrl|Low Resistance Liquidity (LRL)]]
 - [[liquidez-bsl-ssl|Liquidez (BSL/SSL)]]
@@ -63,7 +63,7 @@ Trade no mostrado con entrada/salida exactas; cifras de retiro aproximadas.
 - [[inverse-fair-value-gap-ifvg|Inverse Fair Value Gap (IFVG)]]
 - [[smt-smart-money-technique|SMT (Smart Money Technique)]]
 
-## Reglas relacionadas (detección automática)
+### Reglas relacionadas (detección automática)
 
 - [[secuencia-del-analisis-key-levels-fvg-1h-4h-reversion-o-continuacion-fvg|Secuencia del análisis: key levels → FVG 1H/4H → reversión o continuación → FVG en equilibrium → IFVG → BSL/SSL]]
 - [[el-dol-debe-estar-dentro-de-un-fvg-pd-array|El DOL debe estar dentro de un FVG/PD array]]

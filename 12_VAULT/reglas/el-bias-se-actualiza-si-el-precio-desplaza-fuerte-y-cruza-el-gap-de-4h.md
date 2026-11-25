@@ -44,7 +44,7 @@ No cambia el bias por una sola vela; lo hace cuando el desplazamiento es claro.
 
 Backtest de marzo. Regla explícita en el vídeo; no formulada como norma numerada.
 
-## Conceptos relacionados
+### Conceptos relacionados
 
 - [[daily-bias|Daily Bias]]
 - [[cisd-change-in-state-of-delivery|CISD (Change in State of Delivery)]]

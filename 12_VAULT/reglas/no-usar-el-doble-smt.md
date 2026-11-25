@@ -53,7 +53,7 @@ Ninguna: exclusión explícita.
 
 Bootcamp Día 17 [20:19–20:51]. Cierra la pregunta abierta §1.2.
 
-## Conceptos relacionados
+### Conceptos relacionados
 
 - [[true-manipulation|True Manipulation]]
 - [[smt-smart-money-technique|SMT (Smart Money Technique)]]
