@@ -17,7 +17,7 @@ DB_PATH = os.path.join(BASE, "07_KNOWLEDGE_BASE", "xavi_ruyra.db")
 
 SCHEMA = """
 PRAGMA journal_mode=DELETE;
-PRAGMA locking_mode=EXCLUSIVE;
+PRAGMA locking_mode=NORMAL;
 PRAGMA synchronous=OFF;
 
 CREATE TABLE IF NOT EXISTS videos (
@@ -173,6 +173,42 @@ CREATE TABLE IF NOT EXISTS sync_log (
     status TEXT,
     notes TEXT
 );
+
+-- Relaciones entre conceptos para la ruta por dependencia (N3 del rediseño).
+CREATE TABLE IF NOT EXISTS concepto_relaciones (
+    concepto_id INTEGER NOT NULL,
+    requiere_id INTEGER NOT NULL,
+    tipo TEXT NOT NULL CHECK(tipo IN ('requiere','se_combina_con')),
+    PRIMARY KEY (concepto_id, requiere_id, tipo)
+);
+
+-- Reels citados: tablas propias. Nunca se mezclan con `videos`/`evidence`
+-- de YouTube: validate_kb exige que todo vídeo citado exista en `videos`.
+CREATE TABLE IF NOT EXISTS reel_items (
+    code TEXT PRIMARY KEY,
+    url TEXT NOT NULL,
+    date_utc TEXT,
+    duration_sec INTEGER,
+    tono TEXT,
+    clasificacion TEXT NOT NULL CHECK(clasificacion IN ('RELEVANTE','IRRELEVANTE','DESCARTADO')),
+    certainty TEXT NOT NULL,
+    motivo TEXT,
+    estado_sitio TEXT NOT NULL DEFAULT 'pendiente',
+    in_window INTEGER NOT NULL DEFAULT 1,
+    creado_en TEXT DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE IF NOT EXISTS reel_evidence (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    reel_code TEXT NOT NULL,
+    timestamp_sec REAL NOT NULL,
+    quote TEXT NOT NULL,
+    entity_tipo TEXT NOT NULL CHECK(entity_tipo IN ('concept','rule')),
+    entity_id INTEGER NOT NULL,
+    certainty TEXT NOT NULL,
+    FOREIGN KEY(reel_code) REFERENCES reel_items(code),
+    UNIQUE (reel_code, timestamp_sec, quote)
+);
 """
 
 
@@ -237,6 +273,7 @@ def main():
 
     # 2. Metadatos exactos + segmentos (bootcamp y selección educativa)
     info_files = []
+    processed_video_ids = []
     for folder in ("bootcamp", "selected"):
         info_files.extend(sorted(glob.glob(os.path.join(BASE, "02_TRANSCRIPTS", folder, "*.info.json"))))
     for info_path in info_files:
@@ -280,6 +317,7 @@ def main():
                     (d.get("id"), s["start"], s["end"], s["text"]),
                 )
             cur.execute("UPDATE videos SET transcript_path=? WHERE id=?", (seg_path, d.get("id")))
+            processed_video_ids.append(d.get("id"))
 
     # 3. Índice FTS
     #
@@ -291,18 +329,29 @@ def main():
     # índice que se puede reconstruir. El índice es derivado: si falla, se
     # avisa y se sigue; los datos de origen no se tocan.
     con.commit()
-    try:
-        cur.execute("DELETE FROM segments_fts")
-        cur.execute(
-            "INSERT INTO segments_fts(text,video_id,start_sec) SELECT text,video_id,start_sec FROM segments"
-        )
-        con.commit()
-        fts_ok = True
-        fts_error = ""
-    except sqlite3.Error as exc:
-        con.rollback()
-        fts_ok = False
-        fts_error = f"{type(exc).__name__}: {exc}"
+    fts_ok = True
+    fts_error = ""
+    # Reindexado INCREMENTAL por vídeo. El rebuild completo
+    # (`DELETE FROM segments_fts` + un único INSERT de toda la tabla) falló
+    # el 2026-11-21 con «database or disk is full» sobre el montaje del
+    # proyecto: el journal temporal de una transacción tan grande no cabe
+    # en ese sistema de ficheros. Además dejaba el índice vacío si fallaba
+    # a mitad. Ahora cada vídeo procesado se refresca en su propia
+    # transacción; lo que no se ha tocado conserva su índice.
+    for vid in processed_video_ids:
+        try:
+            cur.execute("DELETE FROM segments_fts WHERE video_id=?", (vid,))
+            cur.execute(
+                "INSERT INTO segments_fts(text,video_id,start_sec) "
+                "SELECT text,video_id,start_sec FROM segments WHERE video_id=?",
+                (vid,),
+            )
+            con.commit()
+        except sqlite3.Error as exc:
+            con.rollback()
+            fts_ok = False
+            fts_error = f"{type(exc).__name__}: {exc}"
+            break
 
     print("Videos:", cur.execute("SELECT COUNT(*) FROM videos").fetchone()[0])
     print("Segmentos:", cur.execute("SELECT COUNT(*) FROM segments").fetchone()[0])
