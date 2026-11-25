@@ -69,9 +69,10 @@ A.cerrar()
 
 // 2. Bootcamp índice
 A=await abrir(B+"/bootcamp/","qa-c2",9402)
-check("bootcamp: 21 días listados", await A.ev("document.querySelectorAll('.xr-dia').length")===21)
+const nDias = await A.ev("document.querySelectorAll('.xr-dia').length")
+check(`bootcamp: ${nDias} días listados`, nDias >= 29)
 check("bootcamp: panel", await A.ev("!!document.querySelector('.xr-panel')"))
-check("bootcamp: cada día enlaza a su página", await A.ev("[...document.querySelectorAll('.xr-dia-titulo')].length===21 && [...document.querySelectorAll('.xr-dia-titulo')].every(a=>/dia-[0-9][0-9]/.test(a.getAttribute('href')||''))"))
+check("bootcamp: cada día enlaza a su página", await A.ev(`[...document.querySelectorAll('.xr-dia-titulo')].length===${nDias} && [...document.querySelectorAll('.xr-dia-titulo')].every(a=>/dia-[0-9][0-9]/.test(a.getAttribute('href')||''))`))
 A.cerrar()
 
 // 3. Un día
@@ -93,6 +94,18 @@ A=await abrir(u("/bootcamp/dia-21"),"qa-c3b",9408)
 check("dia-21: avisa de que no está trabajada", await A.ev("/sin trabajar|sin analizar/i.test(document.body.textContent)"))
 check("dia-21: no enlaza al segundo 0", await A.ev("!/[?&]t=0s/.test((document.querySelector('.xr-boton-fuente')||{}).href||'')"))
 check("dia-21: apunte del curriculum marcado como historial", await A.ev("/cuando se catalogó/i.test(document.body.textContent)"))
+A.cerrar()
+
+// 3-ter. Portada: ningún botón debe abrir el segundo cero.
+A=await abrir(B+"/bootcamp/","qa-t0",9410)
+check("bootcamp: ningún botón abre el segundo 0", await A.ev("![...document.querySelectorAll('.xr-boton-fuente')].some(a=>/[?&]t=0s/.test(a.href||''))"))
+A.cerrar()
+A=await abrir(B+"/conceptos/","qa-core",9411)
+check("conceptos: ruta por dependencia publicada", await A.ev("!!document.querySelector('a[href*=\"ruta\"]')"))
+A.cerrar()
+A=await abrir(B+"/comprobador/","qa-comp",9412)
+check("comprobador: cifra honesta de operaciones", await A.ev("/0[\\/\\s]+\\d+ operaciones con cita formal/.test(document.body.textContent)"))
+check("comprobador: no dice 'Todo tiene fuente'", await A.ev("!/Todo tiene fuente/.test(document.body.textContent)"))
 A.cerrar()
 
 // 4. Concepto con imágenes

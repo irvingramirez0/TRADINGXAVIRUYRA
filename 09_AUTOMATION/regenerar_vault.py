@@ -1157,6 +1157,7 @@ def generate_index(conceptos_notas, slugs_concepto, reglas_count, trades_count,
         ("operaciones", "Operaciones", f"{trades_count} operaciones analizadas, con el P&L autodeclarado."),
         ("cambios", "Cambios", f"{cambios_count} cambios de criterio documentados."),
         ("preguntas", "Preguntas abiertas", f"{preguntas_count} preguntas sin cerrar."),
+        ("contradicciones", "Contradicciones", "Dos versiones conviven; la vigente se lee primero."),
         ("comprobador", "Comprobador de fuentes", "Lo que el sitio no puede respaldar, dicho en voz alta."),
     ]
     tarjetas = "\n".join(
@@ -1290,6 +1291,7 @@ def main():
             paginas_sitio.generar_indices(con, slugs_concepto, slugs_regla_todos)
             paginas_sitio.generar_ruta_conceptos(con, slugs_concepto)
             paginas_sitio.generar_indice_preguntas(con)
+            generar_contradciones()
         except Exception as e:  # una página de navegación no debe tumbar el vault
             print(f"FALLO: páginas de navegación: {e}")
             print("El vault se escribió, pero las páginas del bootcamp y los índices "
@@ -1385,6 +1387,36 @@ def _tiene_video(con, vid):
     if not vid:
         return False
     return con.execute("SELECT 1 FROM videos WHERE id=?", (vid,)).fetchone() is not None
+
+
+def generar_contradciones():
+    """Publica la tabla §5 de preguntas abiertas sin reescribir su contenido.
+
+    Las contradicciones se conservan en el documento metodológico; aquí solo se
+    cambia el orden de las columnas para que la versión vigente se lea primero.
+    """
+    with open(PREGUNTAS_MD, encoding="utf-8") as fh:
+        txt = fh.read()
+    ini = txt.index("## 5. Contradicciones documentadas")
+    fin = txt.index("\n**Regla:**", ini)
+    filas = [l for l in txt[ini:fin].splitlines()
+             if l.startswith("| ") and not l.startswith("|---") and "Tema" not in l]
+    lineas = [
+        "---", "tipo: indice", 'title: "Contradicciones"',
+        'titulo: "Contradicciones"', 'confianza: "no confirmado"',
+        'estado: "vigente"', 'video: ""', 'timestamp: ""', "---", "",
+        "# Contradicciones documentadas", "",
+        "Dos versiones conviven. Ninguna se borra: se marca cuál manda hoy.", "",
+        "| Tema | Vigente | Histórica | Estado |", "|---|---|---|---|",
+    ]
+    for f in filas:
+        celdas = [c.strip() for c in f.strip("|").split("|")]
+        if len(celdas) >= 4:
+            lineas.append(f"| {celdas[0]} | {celdas[2]} | {celdas[1]} | {celdas[3]} |")
+    lineas += ["", "Ver la clase que resuelve cada tensión desde la ficha de la regla correspondiente.", ""]
+    with open(os.path.join(VAULT, "contradicciones.md"), "w", encoding="utf-8") as fh:
+        fh.write("\n".join(lineas))
+    return len(filas)
 
 
 def comprobador_fuentes(con, slugs_concepto, slugs_regla, slugs_trade, slugs_cambio):

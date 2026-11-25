@@ -37,6 +37,7 @@ Es la fecha del vídeo más reciente que **ya tiene evidencia citada**: lo anunc
 <a class="xr-tarjeta" href="./operaciones"><span class="xr-tarjeta-titulo">Operaciones</span><span class="xr-tarjeta-desc">54 operaciones analizadas, con el P&L autodeclarado.</span></a>
 <a class="xr-tarjeta" href="./cambios"><span class="xr-tarjeta-titulo">Cambios</span><span class="xr-tarjeta-desc">67 cambios de criterio documentados.</span></a>
 <a class="xr-tarjeta" href="./preguntas"><span class="xr-tarjeta-titulo">Preguntas abiertas</span><span class="xr-tarjeta-desc">34 preguntas sin cerrar.</span></a>
+<a class="xr-tarjeta" href="./contradicciones"><span class="xr-tarjeta-titulo">Contradicciones</span><span class="xr-tarjeta-desc">Dos versiones conviven; la vigente se lee primero.</span></a>
 <a class="xr-tarjeta" href="./comprobador"><span class="xr-tarjeta-titulo">Comprobador de fuentes</span><span class="xr-tarjeta-desc">Lo que el sitio no puede respaldar, dicho en voz alta.</span></a>
 </div>
 
