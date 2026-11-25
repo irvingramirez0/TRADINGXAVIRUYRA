@@ -14,3 +14,9 @@ def test_qa_detecta_segundo_cero():
     assert "t=0s" in txt
     assert "const nDias" in txt
     assert "nDias >= 29" in txt
+
+
+def test_qa_comprueba_citas_core():
+    assert " ningún botón abre el segundo 0" in txt
+    assert "ruta por dependencia publicada" in txt
+    assert "xr-boton-fuente" in txt
