@@ -9,7 +9,10 @@ timestamp: ""
 ---
 
 
-Los 58 conceptos de la metodología, agrupados por categoría. Cada nota lleva su definición, cómo identificarlo, condiciones, errores comunes y la cita que lo respalda.
+> [!tip] Ruta por dependencia (empieza aquí)
+> Si estás empezando, sigue la [ruta de conceptos](../conceptos/ruta): cuatro niveles, de liquidez y velas hasta sesiones y psicología.
+
+Los 58 conceptos de la metodología. Esta vista es un filtro por categoría (CORE, SUPPORTING, CONTEXTUAL), no un orden de aprendizaje.
 
 ## CONTEXTUAL
 

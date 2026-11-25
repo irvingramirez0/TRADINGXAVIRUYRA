@@ -212,6 +212,124 @@ CREATE TABLE IF NOT EXISTS reel_evidence (
 """
 
 
+# Relaciones derivadas de la metodología y de los campos `definition`,
+# `conditions` y `how_identify` de `concepts`. Cada fila se apoya en el mapa
+# metodológico o en una combinación descrita en la propia ficha; no se usa la
+# frecuencia para inventar un orden.
+RELACIONES_REQUIERE = [
+    (42, 40),
+    (42, 41),
+    (46, 42),
+    (48, 40),
+    (48, 41),
+    (56, 42),
+    (57, 42),
+    (58, 40),
+    (59, 40),
+    (59, 58),
+    (60, 40),
+    (63, 42),
+    (64, 40),
+    (64, 42),
+    (44, 40),
+    (44, 42),
+    (45, 42),
+    (47, 48),
+    (53, 41),
+    (53, 42),
+    (54, 44),
+    (55, 44),
+    (61, 40),
+    (79, 41),
+    (79, 40),
+    (86, 40),
+    (88, 40),
+    (88, 42),
+    (43, 42),
+    (43, 44),
+    (52, 42),
+    (52, 44),
+    (93, 42),
+    (93, 44),
+    (96, 45),
+    (96, 44),
+    (96, 93),
+    (95, 44),
+    (66, 40),
+    (67, 44),
+    (81, 95),
+    (82, 95),
+    (87, 95),
+    (89, 82),
+    (90, 95),
+    (92, 95),
+    (65, 40),
+    (62, 42),
+    (62, 44),
+    (49, 47),
+    (50, 47),
+    (51, 47),
+    (80, 63),
+    (94, 42),
+    (84, 83),
+    (85, 84),
+    (97, 44),
+]
+
+RELACIONES_COMBINA = [
+    (40, 44),
+    (40, 47),
+    (40, 42),
+    (41, 40),
+    (42, 43),
+    (42, 44),
+    (42, 47),
+    (42, 53),
+    (43, 52),
+    (43, 47),
+    (44, 45),
+    (44, 47),
+    (44, 54),
+    (44, 55),
+    (45, 96),
+    (46, 47),
+    (47, 49),
+    (47, 50),
+    (47, 51),
+    (52, 47),
+    (53, 47),
+    (55, 54),
+    (56, 42),
+    (57, 42),
+    (58, 44),
+    (59, 47),
+    (61, 44),
+    (62, 42),
+    (63, 47),
+    (66, 97),
+    (68, 97),
+    (84, 85),
+    (93, 96),
+    (95, 81),
+    (95, 82),
+    (95, 87),
+    (95, 89),
+    (95, 90),
+    (95, 92),
+    (96, 44),
+    (97, 83),
+]
+
+def sembrar_relaciones(con):
+    """Insertar relaciones conocidas sin borrar las añadidas después por revisión."""
+    con.executemany(
+        "INSERT OR IGNORE INTO concepto_relaciones(concepto_id,requiere_id,tipo) VALUES(?,?,?)",
+        [(a, b, "requiere") for a, b in RELACIONES_REQUIERE]
+        + [(a, b, "se_combina_con") for a, b in RELACIONES_COMBINA],
+    )
+    con.commit()
+
+
 def categorize(title: str) -> str:
     t = title.lower()
     if "bootcamp" in t:
@@ -353,6 +471,8 @@ def main():
             fts_error = f"{type(exc).__name__}: {exc}"
             break
 
+    sembrar_relaciones(con)
+    print("Relaciones:", cur.execute("SELECT COUNT(*) FROM concepto_relaciones").fetchone()[0])
     print("Videos:", cur.execute("SELECT COUNT(*) FROM videos").fetchone()[0])
     print("Segmentos:", cur.execute("SELECT COUNT(*) FROM segments").fetchone()[0])
     print("Bootcamp:", cur.execute("SELECT COUNT(*) FROM videos WHERE category='BOOTCAMP'").fetchone()[0])

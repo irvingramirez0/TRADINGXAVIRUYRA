@@ -534,6 +534,48 @@ def generar_bootcamp(con, slugs_concepto):
 # --------------------------------------------------------------------------
 
 
+def nivel_concepto(con, concepto_id, _vistos=None):
+    """1 + el máximo nivel de sus requisitos; 1 si no tiene."""
+    _vistos = _vistos or set()
+    if concepto_id in _vistos:
+        return 1
+    _vistos = _vistos | {concepto_id}
+    reqs = [r[0] for r in con.execute(
+        "SELECT requiere_id FROM concepto_relaciones "
+        "WHERE concepto_id=? AND tipo='requiere'", (concepto_id,))]
+    if not reqs:
+        return 1
+    return 1 + max(nivel_concepto(con, r, _vistos) for r in reqs)
+
+
+def generar_ruta_conceptos(con, slugs_concepto):
+    grupos = {1: [], 2: [], 3: [], 4: []}
+    for c in con.execute("SELECT id, name, definition FROM concepts ORDER BY name"):
+        s = slugs_concepto.get(c["id"])
+        if not s:
+            continue
+        nivel = min(4, nivel_concepto(con, c["id"]))
+        grupos[nivel].append((s, c))
+    lineas = [frontmatter({
+        "tipo": "indice", "title": "Ruta de conceptos", "titulo": "Ruta de conceptos",
+        "confianza": "explícito", "estado": "vigente", "video": "", "timestamp": "",
+    }), "", "# Ruta de conceptos", "",
+        "Cuatro niveles. No saltes al siguiente sin el anterior: cada nota cita el vídeo y el minuto donde Xavi la usa.", ""]
+    titulos = {1: "Nivel 1 — liquidez, swings y estructura de velas",
+               2: "Nivel 2 — FVG, PO3, equilibrium",
+               3: "Nivel 3 — IFVG, CISD, DOL",
+               4: "Nivel 4 — sesiones, noticias, psicología"}
+    for nivel in (1, 2, 3, 4):
+        lineas += [f"## {titulos[nivel]}", ""]
+        lineas.append(lista_tarjetas([
+            tarjeta(f"../conceptos/{s}", c["name"], "", (c["definition"] or "")[:140])
+            for s, c in grupos[nivel]
+        ]) or "_Sin conceptos en este nivel todavía._")
+        lineas.append("")
+    escribir("conceptos", "ruta.md", "\n".join(lineas))
+    return sum(len(g) for g in grupos.values())
+
+
 def generar_indices(con, slugs_concepto, slugs_regla, slugs_trade=None):
     hechos = {}
 
@@ -557,9 +599,13 @@ def generar_indices(con, slugs_concepto, slugs_regla, slugs_trade=None):
         }),
         "",
         "",
-        f"Los {sum(len(v) for v in por_cat.values())} conceptos de la metodología, agrupados por "
-        "categoría. Cada nota lleva su definición, cómo identificarlo, condiciones, errores "
-        "comunes y la cita que lo respalda.",
+        "> [!tip] Ruta por dependencia (empieza aquí)",
+        "> Si estás empezando, sigue la [ruta de conceptos](../conceptos/ruta): "
+        "cuatro niveles, de liquidez y velas hasta sesiones y psicología.",
+        "",
+        f"Los {sum(len(v) for v in por_cat.values())} conceptos de la metodología. "
+        "Esta vista es un filtro por categoría (CORE, SUPPORTING, CONTEXTUAL), "
+        "no un orden de aprendizaje.",
         "",
     ]
     for cat in sorted(por_cat):

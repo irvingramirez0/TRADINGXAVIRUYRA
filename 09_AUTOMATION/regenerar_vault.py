@@ -1240,6 +1240,7 @@ def main():
                                  for r in con.execute("SELECT id, name FROM rules")}
             paginas_sitio.generar_bootcamp(con, slugs_concepto)
             paginas_sitio.generar_indices(con, slugs_concepto, slugs_regla_todos)
+            paginas_sitio.generar_ruta_conceptos(con, slugs_concepto)
             paginas_sitio.generar_indice_preguntas(con)
         except Exception as e:  # una página de navegación no debe tumbar el vault
             print(f"FALLO: páginas de navegación: {e}")
