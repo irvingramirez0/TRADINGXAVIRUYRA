@@ -5,7 +5,7 @@ titulo: "Día 14 — Revenge Trading (psicología)"
 confianza: "explícito"
 estado: "vigente"
 video: "eH7QCo2d0TU"
-timestamp: "00:00"
+timestamp: "0:02"
 dia: 14
 categoria: "BOOTCAMP"
 duracion: "9:35"

@@ -5,7 +5,7 @@ titulo: "Día 2 — Preparación: configurar TradingView"
 confianza: "explícito"
 estado: "vigente"
 video: "3aG0N7aHu4s"
-timestamp: "00:00"
+timestamp: ""
 dia: 2
 categoria: "BOOTCAMP"
 duracion: "22:09"

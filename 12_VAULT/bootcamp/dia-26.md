@@ -5,7 +5,7 @@ titulo: "Día 26 — TP, SL y RR"
 confianza: "explícito"
 estado: "vigente"
 video: "fTbf2EX6Cng"
-timestamp: "00:00"
+timestamp: "3:06"
 dia: 26
 categoria: "BOOTCAMP"
 duracion: "19:31"

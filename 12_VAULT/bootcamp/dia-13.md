@@ -5,7 +5,7 @@ titulo: "Día 13 — IFVG"
 confianza: "explícito"
 estado: "vigente"
 video: "ICOx4rdFSLg"
-timestamp: "00:00"
+timestamp: "0:34"
 dia: 13
 categoria: "BOOTCAMP"
 duracion: "20:10"

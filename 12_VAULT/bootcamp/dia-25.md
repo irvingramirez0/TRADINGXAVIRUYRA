@@ -5,7 +5,7 @@ titulo: "Día 25 — Condiciones + Sponsorship"
 confianza: "explícito"
 estado: "vigente"
 video: "E3uwP18EYWI"
-timestamp: "00:00"
+timestamp: "1:03"
 dia: 25
 categoria: "BOOTCAMP"
 duracion: "21:40"

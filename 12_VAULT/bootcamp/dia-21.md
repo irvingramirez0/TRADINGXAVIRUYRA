@@ -5,7 +5,7 @@ titulo: "Día 21 — Daily bias + DOL"
 confianza: "explícito"
 estado: "vigente"
 video: "MQyNBiw-QVo"
-timestamp: "00:00"
+timestamp: "0:03"
 dia: 21
 categoria: "BOOTCAMP"
 duracion: "32:17"

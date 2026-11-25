@@ -5,7 +5,7 @@ titulo: "Día 15 — Key Levels"
 confianza: "explícito"
 estado: "vigente"
 video: "J7Dh-aj9-e0"
-timestamp: "00:00"
+timestamp: "0:03"
 dia: 15
 categoria: "BOOTCAMP"
 duracion: "21:27"

@@ -55,6 +55,26 @@ def reloj(seg):
     return f"{m}:{s:02d}"
 
 
+def minuto_clase(con, video_id):
+    """Primer minuto citado con fuente explícita u observada; '' si no hay."""
+    r = con.execute(
+        "SELECT MIN(timestamp_sec) t FROM evidence "
+        "WHERE video_id=? AND source_type IN ('EXPLICITO','OBSERVADO')",
+        (video_id,),
+    ).fetchone()
+    if not r or r["t"] is None:
+        return ""
+    return reloj(r["t"])
+
+
+def duracion_clase(fila):
+    """Nunca convierte NULL en 0: eso produjo los '0:00' de los días 28/29."""
+    d = fila.get("duracion")
+    if d is None or d == 0:
+        return "duración desconocida"
+    return reloj(d)
+
+
 def escribir(sub, nombre, texto):
     d = os.path.join(VAULT, sub)
     os.makedirs(d, exist_ok=True)
@@ -173,6 +193,8 @@ def datos_bootcamp(con):
             "video_id": vid,
             "titulo": (v["title"] if v else r["lesson"]),
             "duracion": (v["duration_sec"] if v else 0) or 0,
+            "duracion_texto": duracion_clase({"duracion": (v["duration_sec"] if v else None)}),
+            "timestamp": minuto_clase(con, vid),
             "fecha": (v["upload_date"] if v else "") or "",
             "conceptos": conceptos,
             "reglas": [(x["id"], x["name"], slug(x["name"])) for x in reglas],
@@ -262,6 +284,16 @@ def _temas_curso(f):
     return (f["temas_declarados"] or "").strip()
 
 
+def a_segundos(ts):
+    """Convierte 'm:ss' o 'h:mm:ss' a segundos para el parámetro `t` de YouTube."""
+    try:
+        return sum(int(x) * m for x, m in zip(
+            reversed(ts.split(":")), [1, 60, 3600][-len(ts.split(":")):]
+        ))
+    except (AttributeError, ValueError, IndexError):
+        return 0
+
+
 def generar_bootcamp(con, slugs_concepto):
     filas = datos_bootcamp(con)
     if not filas:
@@ -274,7 +306,7 @@ def generar_bootcamp(con, slugs_concepto):
         temas = _temas(f)
         meta = []
         if f["procesada"]:
-            meta.append(pastilla(reloj(f["duracion"])))
+            meta.append(pastilla(f["duracion_texto"]))
         else:
             meta.append(pastilla("aún sin transcribir"))
         if f["procesada"] and not f["trabajada"]:
@@ -286,6 +318,13 @@ def generar_bootcamp(con, slugs_concepto):
             meta.append(pastilla(f"{len(f['conceptos'])} conceptos"))
         if f["reglas"]:
             meta.append(pastilla(f"{len(f['reglas'])} reglas"))
+        ts = f["timestamp"]
+        href = f'https://www.youtube.com/watch?v={f["video_id"]}'
+        if ts:
+            href += f"&t={a_segundos(ts)}s"
+            etiqueta = f"Ver en YouTube · {ts} ↗"
+        else:
+            etiqueta = "Ver clase completa ↗"
         items.append(
             '<div class="xr-dia">'
             f'<span class="xr-dia-num">DÍA<br>{f["orden"]}</span>'
@@ -295,8 +334,8 @@ def generar_bootcamp(con, slugs_concepto):
             + "</div>"
             '<div class="xr-dia-meta">'
             + "".join(meta)
-            + f'<a class="xr-dia-ver" href="https://www.youtube.com/watch?v={f["video_id"]}" '
-            'target="_blank" rel="noopener noreferrer">Ver en YouTube ↗</a>'
+            + f'<a class="xr-dia-ver" href="{href}" '
+            f'target="_blank" rel="noopener noreferrer">{etiqueta}</a>'
             "</div></div>"
         )
 
@@ -358,7 +397,7 @@ def generar_bootcamp(con, slugs_concepto):
     for f in filas:
         num = f"{f['orden']:02d}"
         titulo = re.sub(r"^Día \d+\s*[—-]\s*", "", f["leccion"])
-        meta_duracion = reloj(f["duracion"])
+        meta_duracion = f["duracion_texto"]
         # Una clase recién publicada puede estar en el curriculum sin que se
         # haya transcrito todavía. En ese caso la nota NO puede decir
         # «confianza: explícito» ni enlazar a un minuto: no hay nada que citar.
@@ -378,7 +417,7 @@ def generar_bootcamp(con, slugs_concepto):
                 "confianza": "explícito" if trabajada else "no confirmado",
                 "estado": "vigente",
                 "video": f["video_id"],
-                "timestamp": "00:00" if trabajada else "",
+                "timestamp": f["timestamp"],
                 "dia": f["orden"],
                 "categoria": "BOOTCAMP",
                 "duracion": meta_duracion if procesada else "",

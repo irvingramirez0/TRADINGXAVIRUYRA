@@ -5,7 +5,7 @@ titulo: "Día 4 — Velas"
 confianza: "explícito"
 estado: "vigente"
 video: "SuRgJd8ONIc"
-timestamp: "00:00"
+timestamp: "15:12"
 dia: 4
 categoria: "BOOTCAMP"
 duracion: "21:15"

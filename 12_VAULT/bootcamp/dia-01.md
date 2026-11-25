@@ -5,7 +5,7 @@ titulo: "Día 1 — Mentalidad y formato del bootcamp"
 confianza: "explícito"
 estado: "vigente"
 video: "t9rcx-dDGvA"
-timestamp: "00:00"
+timestamp: "0:38"
 dia: 1
 categoria: "BOOTCAMP"
 duracion: "20:51"

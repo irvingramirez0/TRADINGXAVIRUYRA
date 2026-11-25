@@ -5,7 +5,7 @@ titulo: "Día 24 — Perder es normal"
 confianza: "explícito"
 estado: "vigente"
 video: "9QkzkdspTko"
-timestamp: "00:00"
+timestamp: "3:10"
 dia: 24
 categoria: "BOOTCAMP"
 duracion: "10:04"

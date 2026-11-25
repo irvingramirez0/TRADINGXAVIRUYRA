@@ -5,7 +5,7 @@ titulo: "Día 10 — Noticias"
 confianza: "explícito"
 estado: "vigente"
 video: "j4f8fV13GQM"
-timestamp: "00:00"
+timestamp: "0:37"
 dia: 10
 categoria: "BOOTCAMP"
 duracion: "8:44"

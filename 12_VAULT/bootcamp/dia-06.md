@@ -5,7 +5,7 @@ titulo: "Día 6 — Liquidez pt1"
 confianza: "explícito"
 estado: "vigente"
 video: "7HOAf7vHMqU"
-timestamp: "00:00"
+timestamp: "1:08"
 dia: 6
 categoria: "BOOTCAMP"
 duracion: "21:25"

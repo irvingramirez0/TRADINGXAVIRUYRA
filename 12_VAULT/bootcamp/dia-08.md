@@ -5,7 +5,7 @@ titulo: "Día 8 — FVG: definición, respeto y validación por temporalidad"
 confianza: "explícito"
 estado: "vigente"
 video: "1McPSXSSR48"
-timestamp: "00:00"
+timestamp: "0:31"
 dia: 8
 categoria: "BOOTCAMP"
 duracion: "20:45"

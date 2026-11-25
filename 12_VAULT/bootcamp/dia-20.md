@@ -5,7 +5,7 @@ titulo: "Día 20 — Ego (psicología)"
 confianza: "explícito"
 estado: "vigente"
 video: "ygJya0srm8g"
-timestamp: "00:00"
+timestamp: "0:33"
 dia: 20
 categoria: "BOOTCAMP"
 duracion: "11:46"
