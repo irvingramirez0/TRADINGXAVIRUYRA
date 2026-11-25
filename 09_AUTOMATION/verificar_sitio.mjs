@@ -95,20 +95,19 @@ check("dia-21: no enlaza al segundo 0", await A.ev("!/[?&]t=0s/.test((document.q
 check("dia-21: apunte del curriculum marcado como historial", await A.ev("/cuando se catalogó/i.test(document.body.textContent)"))
 A.cerrar()
 
-// 3-ter. Portada: ningún botón debe abrir el segundo cero.
-A.cerrar()
-
-// Recorre las páginas reales del índice: comprobar solo el índice dejaría
-// pasar un botón con t=0s dentro de cualquier clase.
+// 3-ter. Recorre las páginas reales del índice en UNA sola instancia de
+// Chrome. Abrir y cerrar 29 procesos agotaba el tiempo del QA en Windows.
 const urlsDia = await A.ev("[...document.querySelectorAll('.xr-dia-titulo')].map(a=>a.getAttribute('href')).filter(Boolean)")
 let botonesCero = 0
-const urlsRevisar = process.env.QA_MUESTRA ? urlsDia.slice(0, Number(process.env.QA_MUESTRA)) : urlsDia
-for (const href of urlsRevisar) {
-  const pagina = await abrir(u(href.replace(/\.html$/, "")),"qa-t0",9410)
-  botonesCero += await pagina.ev("[...document.querySelectorAll('.xr-boton-fuente')].filter(a=>/[?&]t=0s/.test(a.href||'')).length")
-  pagina.cerrar()
+const paginaClase = await abrir(u("/bootcamp/"),"qa-todas",9413)
+for (const href of urlsDia) {
+  await paginaClase.ev(`location.href=${JSON.stringify(u("/bootcamp/" + href.split("/").pop().replace(/\.html$/, "")))}`)
+  await dormir(60)
+  botonesCero += await paginaClase.ev("[...document.querySelectorAll('.xr-boton-fuente')].filter(a=>/[?&]t=0s/.test(a.href||'')).length")
 }
-check(`bootcamp: ningún botón abre el segundo 0 (${urlsRevisar.length} clases revisadas)`, botonesCero===0)
+paginaClase.cerrar()
+check(`bootcamp: ningún botón abre el segundo 0 (${urlsDia.length} clases revisadas)`, botonesCero===0)
+A.cerrar()
 A=await abrir(B+"/conceptos/","qa-core",9411)
 check("conceptos: ruta por dependencia publicada", await A.ev("!!document.querySelector('a[href*=\"ruta\"]')"))
 A.cerrar()
