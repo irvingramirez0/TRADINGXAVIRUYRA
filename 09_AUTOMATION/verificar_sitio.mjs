@@ -102,15 +102,13 @@ A.cerrar()
 // pasar un botón con t=0s dentro de cualquier clase.
 const urlsDia = await A.ev("[...document.querySelectorAll('.xr-dia-titulo')].map(a=>a.getAttribute('href')).filter(Boolean)")
 let botonesCero = 0
-const mostrarProgreso = process.env.QA_PROGRESO === "1"
-for (let i=0; i<urlsDia.length; i++) {
-  const href = urlsDia[i]
+const urlsRevisar = process.env.QA_MUESTRA ? urlsDia.slice(0, Number(process.env.QA_MUESTRA)) : urlsDia
+for (const href of urlsRevisar) {
   const pagina = await abrir(u(href.replace(/\.html$/, "")),"qa-t0",9410)
   botonesCero += await pagina.ev("[...document.querySelectorAll('.xr-boton-fuente')].filter(a=>/[?&]t=0s/.test(a.href||'')).length")
   pagina.cerrar()
-  if (mostrarProgreso) console.log(`  revisada ${i+1}/${urlsDia.length}`)
 }
-check("bootcamp: ningún botón abre el segundo 0", botonesCero===0)
+check(`bootcamp: ningún botón abre el segundo 0 (${urlsRevisar.length} clases revisadas)`, botonesCero===0)
 A=await abrir(B+"/conceptos/","qa-core",9411)
 check("conceptos: ruta por dependencia publicada", await A.ev("!!document.querySelector('a[href*=\"ruta\"]')"))
 A.cerrar()
